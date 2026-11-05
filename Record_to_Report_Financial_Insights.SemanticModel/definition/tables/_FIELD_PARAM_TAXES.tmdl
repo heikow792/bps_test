@@ -1,0 +1,49 @@
+table _FIELD_PARAM_TAXES
+	lineageTag: ea7c9d2f-874c-496f-9de2-a84aae45a159
+
+	column FIELD_PARAM_TAXES
+		lineageTag: fb678741-a3ac-4be6-96d0-414aacb7d414
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'FIELD_PARAM_TAXES Order'
+
+		relatedColumnDetails
+			groupByColumn: 'FIELD_PARAM_TAXES Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FIELD_PARAM_TAXES Fields'
+		isHidden
+		lineageTag: 23666ec2-618f-4a18-8f50-4ce70a01c3b2
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'FIELD_PARAM_TAXES Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "kind": 2,
+				  "version": 3
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FIELD_PARAM_TAXES Order'
+		isHidden
+		isKey
+		formatString: 0
+		lineageTag: 6b9c6a3d-2dd8-4636-aa82-74344b331764
+		summarizeBy: none
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _FIELD_PARAM_TAXES = calculated
+		mode: import
+		source =
+				{
+				    ("Taxes", NAMEOF('__MEASURES_PROFITABILITY'[COMPANYCODE_TAXES]), 0),
+				    ("Taxes", NAMEOF('__MEASURES_PROFITABILITY'[GLOBAL_TAXES]), 1)
+				}
+
+	annotation PBI_Id = 64da8c7e34494cfcbcc7046aeb8944d8
+

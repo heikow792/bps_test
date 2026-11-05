@@ -1,0 +1,462 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "Lookup",
+        "typeProperties": {
+          "source": {
+            "type": "FabricSqlDatabaseSource",
+            "sqlReaderQuery": {
+              "value": "@concat('SELECT ISNULL(\n    (SELECT DISTINCT CDSViewName\n    FROM extractionMetadata\n    WHERE Type = ''FACT''\n        AND InScope = 1\n        AND SourceType = ''SAP''\n        AND systemName = ''', pipeline().parameters.p_system_name, '''\n        AND (''', pipeline().parameters.CdsViewNames, ''' = ''''\n            OR CDSViewName IN (SELECT LTRIM(RTRIM(value)) FROM STRING_SPLIT(''', pipeline().parameters.CdsViewNames, ''', '',''))) FOR JSON PATH), ''[]'') AS Fact')\n",
+              "type": "Expression"
+            },
+            "partitionOption": "None",
+            "queryTimeout": "02:00:00"
+          },
+          "datasetSettings": {
+            "type": "FabricSqlDatabaseTable",
+            "schema": [],
+            "connectionSettings": {
+              "name": "bps_metadata_db",
+              "properties": {
+                "type": "FabricSqlDatabase",
+                "typeProperties": {
+                  "artifactId": "c9571a1c-c878-be58-4a11-51b4a1b72d02",
+                  "workspaceId": "00000000-0000-0000-0000-000000000000"
+                },
+                "externalReferences": {
+                  "connection": "7fd468ec-8a28-4a44-b5ee-1a0b9017a135"
+                },
+                "annotations": []
+              }
+            },
+            "annotations": []
+          },
+          "firstRowOnly": false
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 2,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Get Fact Tables",
+        "description": "This gets the fact tables enabled for extraction for the given source system name.",
+        "dependsOn": []
+      },
+      {
+        "type": "ForEach",
+        "typeProperties": {
+          "isSequential": true,
+          "items": {
+            "value": "@json(activity('Get Fact Tables').output.value[0].Fact)",
+            "type": "Expression"
+          },
+          "activities": [
+            {
+              "type": "Lookup",
+              "typeProperties": {
+                "source": {
+                  "type": "FabricSqlDatabaseSource",
+                  "sqlReaderQuery": {
+                    "value": "@string(concat('SELECT DISTINCT KeyFields FROM extractionMetadata WHERE Type = ''FACT'' AND inScope = 1 AND CDSViewName = ''', item().CDSViewName, ''' AND systemName = ''', pipeline().parameters.p_system_name, ''''))",
+                    "type": "Expression"
+                  },
+                  "partitionOption": "None",
+                  "queryTimeout": "02:00:00"
+                },
+                "datasetSettings": {
+                  "type": "FabricSqlDatabaseTable",
+                  "schema": [],
+                  "connectionSettings": {
+                    "name": "bps_metadata_db",
+                    "properties": {
+                      "type": "FabricSqlDatabase",
+                      "typeProperties": {
+                        "artifactId": "c9571a1c-c878-be58-4a11-51b4a1b72d02",
+                        "workspaceId": "00000000-0000-0000-0000-000000000000"
+                      },
+                      "externalReferences": {
+                        "connection": "7fd468ec-8a28-4a44-b5ee-1a0b9017a135"
+                      },
+                      "annotations": []
+                    }
+                  },
+                  "annotations": []
+                },
+                "firstRowOnly": false
+              },
+              "policy": {
+                "timeout": "0.12:00:00",
+                "retry": 2,
+                "retryIntervalInSeconds": 30,
+                "secureInput": false,
+                "secureOutput": false
+              },
+              "name": "Get key fields",
+              "description": "This gets the key fields for the fact table.",
+              "dependsOn": []
+            },
+            {
+              "type": "Lookup",
+              "typeProperties": {
+                "source": {
+                  "type": "FabricSqlDatabaseSource",
+                  "sqlReaderQuery": {
+                    "value": "@concat('SELECT \n(SELECT Distinct FactTable, DimensionTable, JoinCondition, JoinOrder, SKColumn, DimColumns\nFROM dbo.cubeMetadata cm JOIN dbo.extractionMetadata em on em.SystemName = cm.SystemName and cm.DimensionTable = em.CDSViewName and em.inScope = 1 \nwhere cm.FactTable = ''', item().CDSViewName,''' AND cm.systemName = ''', pipeline().parameters.p_system_name, ''' ORDER BY cm.JoinOrder FOR JSON PATH) as CubeMetadata')",
+                    "type": "Expression"
+                  },
+                  "partitionOption": "None",
+                  "queryTimeout": "02:00:00"
+                },
+                "datasetSettings": {
+                  "type": "FabricSqlDatabaseTable",
+                  "schema": [],
+                  "connectionSettings": {
+                    "name": "bps_metadata_db",
+                    "properties": {
+                      "type": "FabricSqlDatabase",
+                      "typeProperties": {
+                        "artifactId": "c9571a1c-c878-be58-4a11-51b4a1b72d02",
+                        "workspaceId": "00000000-0000-0000-0000-000000000000"
+                      },
+                      "externalReferences": {
+                        "connection": "7fd468ec-8a28-4a44-b5ee-1a0b9017a135"
+                      },
+                      "annotations": []
+                    }
+                  },
+                  "annotations": []
+                },
+                "firstRowOnly": false
+              },
+              "policy": {
+                "timeout": "0.12:00:00",
+                "retry": 2,
+                "retryIntervalInSeconds": 30,
+                "secureInput": false,
+                "secureOutput": false
+              },
+              "name": "Get relationships",
+              "description": "This gets the relationships between given fact and dimension tables.",
+              "dependsOn": []
+            },
+            {
+              "type": "SetVariable",
+              "typeProperties": {
+                "variableName": "Keyfields",
+                "value": {
+                  "value": "@activity('Get key fields').output.value[0].KeyFields",
+                  "type": "Expression"
+                }
+              },
+              "policy": {
+                "secureInput": false,
+                "secureOutput": false
+              },
+              "name": "Set Keyfields",
+              "dependsOn": [
+                {
+                  "activity": "Get key fields",
+                  "dependencyConditions": [
+                    "Succeeded"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "SetVariable",
+              "typeProperties": {
+                "variableName": "Cubeconfig",
+                "value": {
+                  "value": "@activity('Get relationships').output.value[0].CubeMetadata",
+                  "type": "Expression"
+                }
+              },
+              "policy": {
+                "secureInput": false,
+                "secureOutput": false
+              },
+              "name": "Set Cubeconfig",
+              "dependsOn": [
+                {
+                  "activity": "Get relationships",
+                  "dependencyConditions": [
+                    "Succeeded"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "TridentNotebook",
+              "typeProperties": {
+                "notebookId": "84e420ab-e3a5-9e3e-4de7-707f3c132b0e",
+                "workspaceId": "00000000-0000-0000-0000-000000000000",
+                "parameters": {
+                  "p_guid": {
+                    "value": {
+                      "value": "@pipeline().parameters.p_guid",
+                      "type": "Expression"
+                    },
+                    "type": "string"
+                  },
+                  "p_silver_lakehouse_name": {
+                    "value": {
+                      "value": "@pipeline().parameters.p_silver_lakehouse_name",
+                      "type": "Expression"
+                    },
+                    "type": "string"
+                  },
+                  "p_gold_lakehouse_name": {
+                    "value": {
+                      "value": "@pipeline().parameters.p_gold_lakehouse_name",
+                      "type": "Expression"
+                    },
+                    "type": "string"
+                  },
+                  "p_CDSViewName": {
+                    "value": {
+                      "value": "@item().CDSViewName",
+                      "type": "Expression"
+                    },
+                    "type": "string"
+                  },
+                  "p_keyFields": {
+                    "value": {
+                      "value": "@variables('Keyfields')",
+                      "type": "Expression"
+                    },
+                    "type": "string"
+                  },
+                  "p_cubeConfig": {
+                    "value": {
+                      "value": "@variables('Cubeconfig')",
+                      "type": "Expression"
+                    },
+                    "type": "string"
+                  },
+                  "p_system_name": {
+                    "value": {
+                      "value": "@pipeline().parameters.p_system_name",
+                      "type": "Expression"
+                    },
+                    "type": "string"
+                  },
+                  "useRootDefaultLakehouse": {
+                    "value": true,
+                    "type": "bool"
+                  }
+                },
+                "sessionTag": {
+                  "value": "@concat('High_Concurrency_Session_Fact_', substring(pipeline().parameters.p_guid, 0, 8))",
+                  "type": "Expression"
+                }
+              },
+              "policy": {
+                "timeout": "0.12:00:00",
+                "retry": 0,
+                "retryIntervalInSeconds": 30,
+                "secureInput": false,
+                "secureOutput": false
+              },
+              "name": "Process Fact table",
+              "dependsOn": [
+                {
+                  "activity": "Set Cubeconfig",
+                  "dependencyConditions": [
+                    "Succeeded"
+                  ]
+                },
+                {
+                  "activity": "Set Keyfields",
+                  "dependencyConditions": [
+                    "Succeeded"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "name": "ForEach Fact",
+        "dependsOn": [
+          {
+            "activity": "Get Fact Tables",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "IfCondition",
+        "typeProperties": {
+          "expression": {
+            "value": "@contains(string(activity('Get Fact Tables').output.value), 'I_OPERATIONALACCTGDOCITEM')",
+            "type": "Expression"
+          },
+          "ifTrueActivities": [
+            {
+              "type": "TridentNotebook",
+              "typeProperties": {
+                "notebookId": "0808d45c-8688-88b5-421d-ef699e2b99c5",
+                "workspaceId": "00000000-0000-0000-0000-000000000000",
+                "parameters": {
+                  "p_guid": {
+                    "value": {
+                      "value": "@pipeline().parameters.p_guid",
+                      "type": "Expression"
+                    },
+                    "type": "string"
+                  },
+                  "p_gold_lakehouse_name": {
+                    "value": {
+                      "value": "@pipeline().parameters.p_gold_lakehouse_name",
+                      "type": "Expression"
+                    },
+                    "type": "string"
+                  },
+                  "p_silver_lakehouse_name": {
+                    "value": {
+                      "value": "@pipeline().parameters.p_silver_lakehouse_name",
+                      "type": "Expression"
+                    },
+                    "type": "string"
+                  },
+                  "p_output_table_name": {
+                    "value": "BPS_CUSTOMERBALANCEAGGR",
+                    "type": "string"
+                  },
+                  "p_system_name": {
+                    "value": {
+                      "value": "@pipeline().parameters.p_system_name",
+                      "type": "Expression"
+                    },
+                    "type": "string"
+                  }
+                },
+                "sessionTag": {
+                  "value": "@concat('High_Concurrency_Session_Fact_', substring(pipeline().parameters.p_guid, 0, 8))",
+                  "type": "Expression"
+                }
+              },
+              "policy": {
+                "timeout": "0.12:00:00",
+                "retry": 0,
+                "retryIntervalInSeconds": 30,
+                "secureInput": false,
+                "secureOutput": false
+              },
+              "name": "Customer Balance Aggregate",
+              "dependsOn": []
+            },
+            {
+              "type": "TridentNotebook",
+              "typeProperties": {
+                "notebookId": "aea39ff8-2e38-8676-4ca5-28909054b9c7",
+                "workspaceId": "00000000-0000-0000-0000-000000000000",
+                "parameters": {
+                  "p_guid": {
+                    "value": {
+                      "value": "@pipeline().parameters.p_guid",
+                      "type": "Expression"
+                    },
+                    "type": "string"
+                  },
+                  "p_gold_lakehouse_name": {
+                    "value": {
+                      "value": "@pipeline().parameters.p_gold_lakehouse_name",
+                      "type": "Expression"
+                    },
+                    "type": "string"
+                  },
+                  "p_silver_lakehouse_name": {
+                    "value": {
+                      "value": "@pipeline().parameters.p_silver_lakehouse_name",
+                      "type": "Expression"
+                    },
+                    "type": "string"
+                  },
+                  "p_output_table_name": {
+                    "value": "BPS_SUPPLIERBALANCEAGGR",
+                    "type": "string"
+                  },
+                  "p_system_name": {
+                    "value": {
+                      "value": "@pipeline().parameters.p_system_name",
+                      "type": "Expression"
+                    },
+                    "type": "string"
+                  }
+                },
+                "sessionTag": {
+                  "value": "@concat('High_Concurrency_Session_Fact_', substring(pipeline().parameters.p_guid, 0, 8))",
+                  "type": "Expression"
+                }
+              },
+              "policy": {
+                "timeout": "0.12:00:00",
+                "retry": 0,
+                "retryIntervalInSeconds": 30,
+                "secureInput": false,
+                "secureOutput": false
+              },
+              "name": "Supplier Balance Aggregate",
+              "dependsOn": [
+                {
+                  "activity": "Customer Balance Aggregate",
+                  "dependencyConditions": [
+                    "Succeeded"
+                  ]
+                }
+              ]
+            }
+          ],
+          "ifFalseActivities": []
+        },
+        "name": "Finance Aggregate notebooks",
+        "description": "If block the checks if 'I_OPERATIONALACCTGDOCITEM' is enabled for processing, if yes, then it run the aggregate notebooks to calculate supplier and customer balances.",
+        "dependsOn": [
+          {
+            "activity": "ForEach Fact",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      }
+    ],
+    "parameters": {
+      "CdsViewNames": {
+        "type": "string",
+        "defaultValue": " "
+      },
+      "p_system_name": {
+        "type": "string"
+      },
+      "p_guid": {
+        "type": "string",
+        "defaultValue": "Fact-2026-01-01"
+      },
+      "p_gold_lakehouse_name": {
+        "type": "string",
+        "defaultValue": "bps_gold_c792846f"
+      },
+      "p_silver_lakehouse_name": {
+        "type": "string",
+        "defaultValue": "bps_silver_c792846f"
+      }
+    },
+    "variables": {
+      "Keyfields": {
+        "type": "String"
+      },
+      "Cubeconfig": {
+        "type": "String"
+      },
+      "p_guid": {
+        "type": "String"
+      }
+    }
+  }
+}

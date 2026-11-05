@@ -1,0 +1,48 @@
+table _FIELD_PARAM_NETPROFIT
+	lineageTag: bef909f4-bf11-481a-a9da-41729c498850
+
+	column FIELD_PARAM_NETPROFIT
+		lineageTag: 5586f0d1-2d30-42b5-b4ef-dad83b449296
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'FIELD_PARAM_NETPROFIT Order'
+
+		relatedColumnDetails
+			groupByColumn: 'FIELD_PARAM_NETPROFIT Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FIELD_PARAM_NETPROFIT Fields'
+		isHidden
+		lineageTag: 786992dc-fb7e-4cd3-a2dc-aef5e55fb5f7
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'FIELD_PARAM_NETPROFIT Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "kind": 2,
+				  "version": 3
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FIELD_PARAM_NETPROFIT Order'
+		isHidden
+		formatString: 0
+		lineageTag: 63291f1e-73e9-4780-b95e-03fad8838a87
+		summarizeBy: none
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _FIELD_PARAM_NETPROFIT = calculated
+		mode: import
+		source =
+				{
+				    ("Net Profit", NAMEOF('__MEASURES_PROFITABILITY'[COMPANYCODE_NETPROFIT]), 0),
+				    ("Net Profit", NAMEOF('__MEASURES_PROFITABILITY'[GLOBAL_NETPROFIT]), 1)
+				}
+
+	annotation PBI_Id = 4179b9163e9b417fbd34682535025634
+

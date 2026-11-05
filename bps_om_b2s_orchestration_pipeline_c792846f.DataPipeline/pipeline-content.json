@@ -1,0 +1,170 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "Lookup",
+        "typeProperties": {
+          "source": {
+            "type": "FabricSqlDatabaseSource",
+            "sqlReaderQuery": "select * from SystemDetails where SourceType = 'SAP' and ConnectionType = 'OpenMirroring' and SystemType = 'S4HANA'",
+            "partitionOption": "None",
+            "queryTimeout": "02:00:00"
+          },
+          "datasetSettings": {
+            "type": "FabricSqlDatabaseTable",
+            "schema": [],
+            "connectionSettings": {
+              "name": "ei_metadata_db_5298f9bf",
+              "properties": {
+                "type": "FabricSqlDatabase",
+                "typeProperties": {
+                  "artifactId": "c9571a1c-c878-be58-4a11-51b4a1b72d02",
+                  "workspaceId": "00000000-0000-0000-0000-000000000000"
+                },
+                "externalReferences": {
+                  "connection": "7fd468ec-8a28-4a44-b5ee-1a0b9017a135"
+                },
+                "annotations": []
+              }
+            },
+            "annotations": []
+          },
+          "firstRowOnly": false
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Get Open Mirror System Details",
+        "dependsOn": []
+      },
+      {
+        "type": "ForEach",
+        "typeProperties": {
+          "isSequential": true,
+          "items": {
+            "value": "@activity('Get Open Mirror System Details').output.value",
+            "type": "Expression"
+          },
+          "activities": [
+            {
+              "type": "ExecutePipeline",
+              "typeProperties": {
+                "pipeline": {
+                  "referenceName": "b31636ac-f4d2-ac7c-40a9-e97f6bfe82b5",
+                  "type": "PipelineReference"
+                },
+                "parameters": {
+                  "Mirror_Database_Name": {
+                    "value": "@item().ServerName",
+                    "type": "Expression"
+                  },
+                  "Silver_Lakehouse_Name": {
+                    "value": "@pipeline().parameters.Silver_Lakehouse_Name",
+                    "type": "Expression"
+                  },
+                  "System_Name": {
+                    "value": "@item().SystemName",
+                    "type": "Expression"
+                  },
+                  "CdsViewNames": {
+                    "value": "@pipeline().parameters.CdsViewNames",
+                    "type": "Expression"
+                  },
+                  "Schema_Table_Name": {
+                    "value": "@pipeline().parameters.Schema_Table_Name",
+                    "type": "Expression"
+                  },
+                  "Schema_Name": {
+                    "value": "@item().SubscriberName",
+                    "type": "Expression"
+                  }
+                },
+                "waitOnCompletion": true
+              },
+              "policy": {
+                "secureInput": false
+              },
+              "name": "B2S Dimension Processing",
+              "dependsOn": []
+            },
+            {
+              "type": "ExecutePipeline",
+              "typeProperties": {
+                "pipeline": {
+                  "referenceName": "1d71d1eb-fb7b-a39f-4e69-b0b9a28d5a51",
+                  "type": "PipelineReference"
+                },
+                "parameters": {
+                  "Silver_Lakehouse_Name": {
+                    "value": "@pipeline().parameters.Silver_Lakehouse_Name",
+                    "type": "Expression"
+                  },
+                  "Mirror_Database_Name": {
+                    "value": "@item().ServerName",
+                    "type": "Expression"
+                  },
+                  "System_Name": {
+                    "value": "@item().SystemName",
+                    "type": "Expression"
+                  },
+                  "CdsViewNames": {
+                    "value": "@pipeline().parameters.CdsViewNames",
+                    "type": "Expression"
+                  },
+                  "Schema_Table_Name": {
+                    "value": "@pipeline().parameters.Schema_Table_Name",
+                    "type": "Expression"
+                  },
+                  "Schema_Name": {
+                    "value": "@item().SubscriberName",
+                    "type": "Expression"
+                  }
+                },
+                "waitOnCompletion": true
+              },
+              "policy": {
+                "secureInput": false
+              },
+              "name": "B2S Fact Processing",
+              "dependsOn": [
+                {
+                  "activity": "B2S Dimension Processing",
+                  "dependencyConditions": [
+                    "Succeeded"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "name": "For each system",
+        "dependsOn": [
+          {
+            "activity": "Get Open Mirror System Details",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      }
+    ],
+    "parameters": {
+      "Silver_Lakehouse_Name": {
+        "type": "string",
+        "defaultValue": "bps_silver_c792846f"
+      },
+      "CdsViewNames": {
+        "type": "string",
+        "defaultValue": " "
+      },
+      "Schema_Table_Name": {
+        "type": "string",
+        "defaultValue": "DD03ND"
+      }
+    }
+  }
+}

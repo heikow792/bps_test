@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Record_to_Report_Financial_Insights",
+    "description": "Power BI Report created from template 'Record_to_Report_Financial_Insights'"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "048f2edd-4ba2-b448-4e99-955e2eba4b4c"
+  }
+}

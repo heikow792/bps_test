@@ -1,0 +1,50 @@
+table _FIELD_PARAM_GLACCT_HRCHY_OPENING_BALANCE
+	lineageTag: cb011913-dbfc-4c84-b208-6a63b2d63cf8
+
+	column FIELD_PARAM_GLACCT_HRCHY_OPENING_BALANCE
+		lineageTag: 7aa1fa9d-313e-4ead-a3f7-cacdca106fa4
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'FIELD_PARAM_GLACCT_HRCHY_OPENING_BALANCE Order'
+
+		relatedColumnDetails
+			groupByColumn: 'FIELD_PARAM_GLACCT_HRCHY_OPENING_BALANCE Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FIELD_PARAM_GLACCT_HRCHY_OPENING_BALANCE Fields'
+		isHidden
+		lineageTag: 1755d6a8-0fc6-44c5-a083-9995159601c0
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'FIELD_PARAM_GLACCT_HRCHY_OPENING_BALANCE Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "kind": 2,
+				  "version": 3
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FIELD_PARAM_GLACCT_HRCHY_OPENING_BALANCE Order'
+		isHidden
+		isKey
+		formatString: 0
+		lineageTag: d9231c45-0b05-4831-bdc8-0d89d283463d
+		summarizeBy: none
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _FIELD_PARAM_GLACCT_HRCHY_OPENING_BALANCE-558e30a3-25fa-4c91-baee-e2c08e75572f = calculated
+		mode: import
+		source =
+				{
+				    ("Opening Balance", NAMEOF('__MEASURES_GLACCOUNTHIERARCHY'[GLACCT_HRCHY_COMPANYCODE_OPENING_BALANCE]), 0),
+				    ("Opening Balance", NAMEOF('__MEASURES_GLACCOUNTHIERARCHY'[GLACCT_HRCHY_GLOBAL_OPENING_BALANCE]), 1),
+				    ("Opening Balance", NAMEOF('__MEASURES_GLACCOUNTHIERARCHY'[GLACCT_HRCHY_TRANSACTION_OPENING_BALANCE]), 2)
+				}
+
+	annotation PBI_Id = f6878a424502475e817842e419300a60
+

@@ -1,0 +1,735 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "Lookup",
+        "typeProperties": {
+          "source": {
+            "type": "FabricSqlDatabaseSource",
+            "sqlReaderQuery": {
+              "value": "@concat('SELECT ISNULL( \n(SELECT DISTINCT\n    CDSViewName,\n    relatedCDSViewName,\n    Delta,\n    REPLACE(KeyFields, '''', ''\"'') AS KeyFields,\n    Type,\n    Inscope\nFROM extractionMetadata\nWHERE Type = ''DIMENSION'' \n    AND inScope = 1 AND SourceType = ''SAP'' \n    AND systemName = ''', pipeline().parameters.p_system_name, '''\n    AND Delta = 1\n    AND (''', pipeline().parameters.CdsViewNames, ''' = '''' \n         OR CDSViewName IN (SELECT LTRIM(RTRIM(value)) FROM STRING_SPLIT(''', pipeline().parameters.CdsViewNames, ''', '','')))\nFOR JSON PATH), ''[]'') AS DimDelta')",
+              "type": "Expression"
+            },
+            "partitionOption": "None",
+            "queryTimeout": "02:00:00"
+          },
+          "datasetSettings": {
+            "type": "FabricSqlDatabaseTable",
+            "schema": [],
+            "connectionSettings": {
+              "name": "bps_metadata_db",
+              "properties": {
+                "type": "FabricSqlDatabase",
+                "typeProperties": {
+                  "artifactId": "c9571a1c-c878-be58-4a11-51b4a1b72d02",
+                  "workspaceId": "00000000-0000-0000-0000-000000000000"
+                },
+                "externalReferences": {
+                  "connection": "7fd468ec-8a28-4a44-b5ee-1a0b9017a135"
+                },
+                "annotations": []
+              }
+            },
+            "annotations": []
+          },
+          "firstRowOnly": false
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 2,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Get Dimension Delta Tables",
+        "description": "This gets the dimension tables which are marked for delta extraction.",
+        "dependsOn": []
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "c97e6b46-170d-b72d-4ebc-a96f6fbf50ed",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "parameters": {
+            "p_lookup_output": {
+              "value": {
+                "value": "@string(activity('Get Dimension Delta Tables').output.value[0].DimDelta)",
+                "type": "Expression"
+              },
+              "type": "string"
+            },
+            "p_silver_lakehouse_name": {
+              "value": {
+                "value": "@pipeline().parameters.p_silver_lakehouse_name",
+                "type": "Expression"
+              },
+              "type": "string"
+            },
+            "p_gold_lakehouse_name": {
+              "value": {
+                "value": "@pipeline().parameters.p_gold_lakehouse_name",
+                "type": "Expression"
+              },
+              "type": "string"
+            },
+            "p_guid": {
+              "value": {
+                "value": "@pipeline().parameters.p_guid",
+                "type": "Expression"
+              },
+              "type": "string"
+            }
+          },
+          "sessionTag": "DimensionNotebook"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "S2G Dim Delta",
+        "dependsOn": [
+          {
+            "activity": "Get Dimension Delta Tables",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "Lookup",
+        "typeProperties": {
+          "source": {
+            "type": "FabricSqlDatabaseSource",
+            "sqlReaderQuery": {
+              "value": "@concat('SELECT ISNULL( (SELECT DISTINCT\n    CDSViewName,\n    relatedCDSViewName,\n    Delta,\n    REPLACE(KeyFields, '''', ''\"'') AS KeyFields,\n    Type,\n    Inscope\nFROM extractionMetadata\nWHERE Type = ''DIMENSION'' \n    AND inScope = 1 AND SourceType = ''SAP'' \n    AND systemName = ''', pipeline().parameters.p_system_name, '''\n    AND Delta = 0 \n    AND (''', pipeline().parameters.CdsViewNames, ''' = '''' \n        OR CDSViewName IN (SELECT LTRIM(RTRIM(value)) FROM STRING_SPLIT(''', pipeline().parameters.CdsViewNames, ''', '','')))\nFOR JSON PATH), ''[]'') AS DimNoDelta')",
+              "type": "Expression"
+            },
+            "partitionOption": "None",
+            "queryTimeout": "02:00:00"
+          },
+          "datasetSettings": {
+            "type": "FabricSqlDatabaseTable",
+            "schema": [],
+            "connectionSettings": {
+              "name": "bps_metadata_db",
+              "properties": {
+                "type": "FabricSqlDatabase",
+                "typeProperties": {
+                  "artifactId": "c9571a1c-c878-be58-4a11-51b4a1b72d02",
+                  "workspaceId": "00000000-0000-0000-0000-000000000000"
+                },
+                "externalReferences": {
+                  "connection": "7fd468ec-8a28-4a44-b5ee-1a0b9017a135"
+                },
+                "annotations": []
+              }
+            },
+            "annotations": []
+          },
+          "firstRowOnly": false
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 2,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Get Dimension Non-Delta Tables",
+        "description": "This gets the dimension tables which are marked for non-delta extraction.",
+        "dependsOn": [
+          {
+            "activity": "S2G Dim Delta",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "6a4e27e4-4ee4-bf92-4801-0f8525860d00",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "parameters": {
+            "p_lookup_output": {
+              "value": {
+                "value": "@string(activity('Get Dimension Non-Delta Tables').output.value[0].DimNoDelta)",
+                "type": "Expression"
+              },
+              "type": "string"
+            },
+            "p_silver_lakehouse_name": {
+              "value": {
+                "value": "@pipeline().parameters.p_silver_lakehouse_name",
+                "type": "Expression"
+              },
+              "type": "string"
+            },
+            "p_gold_lakehouse_name": {
+              "value": {
+                "value": "@pipeline().parameters.p_gold_lakehouse_name",
+                "type": "Expression"
+              },
+              "type": "string"
+            },
+            "p_guid": {
+              "value": {
+                "value": "@pipeline().parameters.p_guid",
+                "type": "Expression"
+              },
+              "type": "string"
+            }
+          },
+          "sessionTag": "DimensionNotebook"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "S2G Dim No Delta",
+        "dependsOn": [
+          {
+            "activity": "Get Dimension Non-Delta Tables",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "Lookup",
+        "typeProperties": {
+          "source": {
+            "type": "FabricSqlDatabaseSource",
+            "sqlReaderQuery": {
+              "value": "@concat('SELECT ISNULL( (SELECT DISTINCT \n    CDSViewName,\n    relatedCDSViewName,\n    Delta,\n    REPLACE(KeyFields, '''', ''\"'') AS KeyFields,\n    Type,\n    Inscope\nFROM extractionMetadata\nWHERE Type  IN (''DIMENSION-TD'',''HIERARCHY'') \n    AND inScope = 1 AND SourceType = ''SAP'' \n    AND systemName = ''', pipeline().parameters.p_system_name, '''\n    AND Delta = 1 \n    AND (''', pipeline().parameters.CdsViewNames, ''' = '''' \n         OR CDSViewName IN (SELECT LTRIM(RTRIM(value)) FROM STRING_SPLIT(''', pipeline().parameters.CdsViewNames, ''', '','')))\nFOR JSON PATH), ''[]'') AS DimTDDelta')",
+              "type": "Expression"
+            },
+            "partitionOption": "None",
+            "queryTimeout": "02:00:00"
+          },
+          "datasetSettings": {
+            "type": "FabricSqlDatabaseTable",
+            "schema": [],
+            "connectionSettings": {
+              "name": "bps_metadata_db",
+              "properties": {
+                "type": "FabricSqlDatabase",
+                "typeProperties": {
+                  "artifactId": "c9571a1c-c878-be58-4a11-51b4a1b72d02",
+                  "workspaceId": "00000000-0000-0000-0000-000000000000"
+                },
+                "externalReferences": {
+                  "connection": "7fd468ec-8a28-4a44-b5ee-1a0b9017a135"
+                },
+                "annotations": []
+              }
+            },
+            "annotations": []
+          },
+          "firstRowOnly": false
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 2,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Get Dimension-TD Delta Tables",
+        "description": "This gets the time dependent dimensions and hierarchy dimensions tables which are marked for delta extraction.",
+        "dependsOn": [
+          {
+            "activity": "S2G Dim No Delta",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "2476786e-dabb-9bf8-4f26-7005aeb4c589",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "parameters": {
+            "p_lookup_output": {
+              "value": {
+                "value": "@string(activity('Get Dimension-TD Delta Tables').output.value[0].DimTDDelta)",
+                "type": "Expression"
+              },
+              "type": "string"
+            },
+            "p_silver_lakehouse_name": {
+              "value": {
+                "value": "@pipeline().parameters.p_silver_lakehouse_name",
+                "type": "Expression"
+              },
+              "type": "string"
+            },
+            "p_gold_lakehouse_name": {
+              "value": {
+                "value": "@pipeline().parameters.p_gold_lakehouse_name",
+                "type": "Expression"
+              },
+              "type": "string"
+            },
+            "p_guid": {
+              "value": {
+                "value": "@pipeline().parameters.p_guid",
+                "type": "Expression"
+              },
+              "type": "string"
+            }
+          },
+          "sessionTag": "DimensionNotebook"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "S2G Dim TD Delta",
+        "dependsOn": [
+          {
+            "activity": "Get Dimension-TD Delta Tables",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "Lookup",
+        "typeProperties": {
+          "source": {
+            "type": "FabricSqlDatabaseSource",
+            "sqlReaderQuery": {
+              "value": "@concat('SELECT ISNULL( (SELECT DISTINCT\n    CDSViewName,\n    relatedCDSViewName,\n    Delta,\n    REPLACE(KeyFields, '''', ''\"'') AS KeyFields,\n    Type,\n    Inscope\nFROM extractionMetadata \nWHERE Type  IN (''DIMENSION-TD'', ''HIERARCHY'') \n    AND inScope = 1 AND SourceType = ''SAP'' \n    AND systemName = ''', pipeline().parameters.p_system_name, '''\n    AND Delta = 0 \n    AND (''', pipeline().parameters.CdsViewNames, ''' = '''' \n        OR CDSViewName IN (SELECT LTRIM(RTRIM(value)) FROM STRING_SPLIT(''', pipeline().parameters.CdsViewNames, ''', '','')))\nFOR JSON PATH), ''[]'') AS DimTDNoDelta')",
+              "type": "Expression"
+            },
+            "partitionOption": "None",
+            "queryTimeout": "02:00:00"
+          },
+          "datasetSettings": {
+            "type": "FabricSqlDatabaseTable",
+            "schema": [],
+            "connectionSettings": {
+              "name": "bps_metadata_db",
+              "properties": {
+                "type": "FabricSqlDatabase",
+                "typeProperties": {
+                  "artifactId": "c9571a1c-c878-be58-4a11-51b4a1b72d02",
+                  "workspaceId": "00000000-0000-0000-0000-000000000000"
+                },
+                "externalReferences": {
+                  "connection": "7fd468ec-8a28-4a44-b5ee-1a0b9017a135"
+                },
+                "annotations": []
+              }
+            },
+            "annotations": []
+          },
+          "firstRowOnly": false
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 2,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Get Dimension-TD Non-Delta Tables",
+        "description": "This gets the time dependent dimensions and hierarchy dimensions tables which are marked for non-delta extraction.",
+        "dependsOn": [
+          {
+            "activity": "S2G Dim TD Delta",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "9cd71b65-748a-a3ad-4a7d-d055366c6771",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "parameters": {
+            "p_lookup_output": {
+              "value": {
+                "value": "@string(activity('Get Dimension-TD Non-Delta Tables').output.value[0].DimTDNoDelta)",
+                "type": "Expression"
+              },
+              "type": "string"
+            },
+            "p_silver_lakehouse_name": {
+              "value": {
+                "value": "@pipeline().parameters.p_silver_lakehouse_name",
+                "type": "Expression"
+              },
+              "type": "string"
+            },
+            "p_gold_lakehouse_name": {
+              "value": {
+                "value": "@pipeline().parameters.p_gold_lakehouse_name",
+                "type": "Expression"
+              },
+              "type": "string"
+            },
+            "p_guid": {
+              "value": {
+                "value": "@pipeline().parameters.p_guid",
+                "type": "Expression"
+              },
+              "type": "string"
+            }
+          },
+          "sessionTag": "DimensionNotebook"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "S2G Dim TD No Delta",
+        "dependsOn": [
+          {
+            "activity": "Get Dimension-TD Non-Delta Tables",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "Lookup",
+        "typeProperties": {
+          "source": {
+            "type": "FabricSqlDatabaseSource",
+            "sqlReaderQuery": {
+              "value": "@concat('SELECT ISNULL( (SELECT DISTINCT\n    CDSViewName,\n    relatedCDSViewName,\n    Delta,\n    REPLACE(KeyFields, '''', ''\"'') AS KeyFields,\n    Type,\n    Inscope\nFROM extractionMetadata \nWHERE type IN (''TEXT'') \n    AND inScope = 1 AND SourceType = ''SAP'' \n    AND systemName = ''', pipeline().parameters.p_system_name, '''\n    AND Delta = 1 \n    AND (''', pipeline().parameters.CdsViewNames, ''' = '''' \n        OR CDSViewName IN (SELECT LTRIM(RTRIM(value)) FROM STRING_SPLIT(''', pipeline().parameters.CdsViewNames, ''', '','')))\nFOR JSON PATH), ''[]'') AS DimTextDelta')",
+              "type": "Expression"
+            },
+            "partitionOption": "None",
+            "queryTimeout": "02:00:00"
+          },
+          "datasetSettings": {
+            "type": "FabricSqlDatabaseTable",
+            "schema": [],
+            "connectionSettings": {
+              "name": "bps_metadata_db",
+              "properties": {
+                "type": "FabricSqlDatabase",
+                "typeProperties": {
+                  "artifactId": "c9571a1c-c878-be58-4a11-51b4a1b72d02",
+                  "workspaceId": "00000000-0000-0000-0000-000000000000"
+                },
+                "externalReferences": {
+                  "connection": "7fd468ec-8a28-4a44-b5ee-1a0b9017a135"
+                },
+                "annotations": []
+              }
+            },
+            "annotations": []
+          },
+          "firstRowOnly": false
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 2,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Get Text Dimension Delta Tables",
+        "description": "This gets the text dimension tables which are marked for delta extraction.",
+        "dependsOn": [
+          {
+            "activity": "S2G Dim TD No Delta",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "3f69af30-7254-a108-4189-7bfe8e1eb3bd",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "parameters": {
+            "p_lookup_output": {
+              "value": {
+                "value": "@string(activity('Get Text Dimension Delta Tables').output.value[0].DimTextDelta)",
+                "type": "Expression"
+              },
+              "type": "string"
+            },
+            "p_silver_lakehouse_name": {
+              "value": {
+                "value": "@pipeline().parameters.p_silver_lakehouse_name",
+                "type": "Expression"
+              },
+              "type": "string"
+            },
+            "p_gold_lakehouse_name": {
+              "value": {
+                "value": "@pipeline().parameters.p_gold_lakehouse_name",
+                "type": "Expression"
+              },
+              "type": "string"
+            },
+            "p_guid": {
+              "value": {
+                "value": "@pipeline().parameters.p_guid",
+                "type": "Expression"
+              },
+              "type": "string"
+            }
+          },
+          "sessionTag": "DimensionNotebook"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "S2G Text Delta",
+        "dependsOn": [
+          {
+            "activity": "Get Text Dimension Delta Tables",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "Lookup",
+        "typeProperties": {
+          "source": {
+            "type": "FabricSqlDatabaseSource",
+            "sqlReaderQuery": {
+              "value": "@concat('SELECT ISNULL( (SELECT DISTINCT\n    CDSViewName,\n    relatedCDSViewName,\n    Delta,\n    REPLACE(KeyFields, '''', ''\"'') AS KeyFields,\n    Type,\n    Inscope\nFROM extractionMetadata \nWHERE type IN (''TEXT'') \n    AND inScope = 1 AND SourceType = ''SAP'' \n    AND systemName = ''', pipeline().parameters.p_system_name, '''\n    AND Delta = 0 \n    AND (''', pipeline().parameters.CdsViewNames, ''' = '''' \n        OR CDSViewName IN (SELECT LTRIM(RTRIM(value)) FROM STRING_SPLIT(''', pipeline().parameters.CdsViewNames, ''', '','')))\nFOR JSON PATH), ''[]'') AS DimTextNoDelta')",
+              "type": "Expression"
+            },
+            "partitionOption": "None",
+            "queryTimeout": "02:00:00"
+          },
+          "datasetSettings": {
+            "type": "FabricSqlDatabaseTable",
+            "schema": [],
+            "connectionSettings": {
+              "name": "bps_metadata_db",
+              "properties": {
+                "type": "FabricSqlDatabase",
+                "typeProperties": {
+                  "artifactId": "c9571a1c-c878-be58-4a11-51b4a1b72d02",
+                  "workspaceId": "00000000-0000-0000-0000-000000000000"
+                },
+                "externalReferences": {
+                  "connection": "7fd468ec-8a28-4a44-b5ee-1a0b9017a135"
+                },
+                "annotations": []
+              }
+            },
+            "annotations": []
+          },
+          "firstRowOnly": false
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 2,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Get Text Dimension Non-Delta Tables",
+        "description": "This gets the text dimension tables which are marked for non-delta extraction.",
+        "dependsOn": [
+          {
+            "activity": "S2G Text Delta",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "ffbecfc9-4e10-9411-42cc-069522a5ff45",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "parameters": {
+            "p_lookup_output": {
+              "value": {
+                "value": "@string(activity('Get Text Dimension Non-Delta Tables').output.value[0].DimTextNoDelta)",
+                "type": "Expression"
+              },
+              "type": "string"
+            },
+            "p_silver_lakehouse_name": {
+              "value": {
+                "value": "@pipeline().parameters.p_silver_lakehouse_name",
+                "type": "Expression"
+              },
+              "type": "string"
+            },
+            "p_gold_lakehouse_name": {
+              "value": {
+                "value": "@pipeline().parameters.p_gold_lakehouse_name",
+                "type": "Expression"
+              },
+              "type": "string"
+            },
+            "p_guid": {
+              "value": {
+                "value": "@pipeline().parameters.p_guid",
+                "type": "Expression"
+              },
+              "type": "string"
+            }
+          },
+          "sessionTag": "DimensionNotebook"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "S2G Text No Delta",
+        "dependsOn": [
+          {
+            "activity": "Get Text Dimension Non-Delta Tables",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "IfCondition",
+        "typeProperties": {
+          "expression": {
+            "value": "@equals(activity('Get Exchange Table').output.firstRow.value, 1)",
+            "type": "Expression"
+          },
+          "ifTrueActivities": [
+            {
+              "type": "TridentNotebook",
+              "typeProperties": {
+                "notebookId": "9e52d892-b0e7-a51e-41d9-a7aec04d3369",
+                "workspaceId": "00000000-0000-0000-0000-000000000000"
+              },
+              "policy": {
+                "timeout": "0.12:00:00",
+                "retry": 0,
+                "retryIntervalInSeconds": 30,
+                "secureInput": false,
+                "secureOutput": false
+              },
+              "name": "Currency Conversion",
+              "dependsOn": []
+            }
+          ],
+          "ifFalseActivities": []
+        },
+        "name": "If Condition1",
+        "dependsOn": [
+          {
+            "activity": "Get Exchange Table",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "Lookup",
+        "typeProperties": {
+          "source": {
+            "type": "FabricSqlDatabaseSource",
+            "sqlReaderQuery": {
+              "value": "@concat(\n    'SELECT COUNT(*) AS value \n     FROM dbo.extractionMetadata \n     WHERE CDSViewName = ''I_EXCHANGERATERAWDATA'' \n       AND SystemName = ''',\n    pipeline().parameters.p_system_name,\n    ''''\n)",
+              "type": "Expression"
+            },
+            "partitionOption": "None",
+            "queryTimeout": "02:00:00"
+          },
+          "datasetSettings": {
+            "type": "FabricSqlDatabaseTable",
+            "schema": [],
+            "connectionSettings": {
+              "name": "bps_metadata_db",
+              "properties": {
+                "type": "FabricSqlDatabase",
+                "typeProperties": {
+                  "artifactId": "c9571a1c-c878-be58-4a11-51b4a1b72d02",
+                  "workspaceId": "00000000-0000-0000-0000-000000000000"
+                },
+                "externalReferences": {
+                  "connection": "7fd468ec-8a28-4a44-b5ee-1a0b9017a135"
+                },
+                "annotations": []
+              }
+            },
+            "annotations": []
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Get Exchange Table",
+        "dependsOn": [
+          {
+            "activity": "S2G Text No Delta",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      }
+    ],
+    "parameters": {
+      "CdsViewNames": {
+        "type": "string",
+        "defaultValue": " "
+      },
+      "p_system_name": {
+        "type": "string"
+      },
+      "p_guid": {
+        "type": "string"
+      },
+      "p_gold_lakehouse_name": {
+        "type": "string",
+        "defaultValue": "bps_gold_c792846f"
+      },
+      "p_silver_lakehouse_name": {
+        "type": "string",
+        "defaultValue": "bps_silver_c792846f"
+      }
+    }
+  }
+}

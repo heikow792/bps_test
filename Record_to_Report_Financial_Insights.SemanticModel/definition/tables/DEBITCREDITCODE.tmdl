@@ -1,0 +1,59 @@
+/// Debit/Credit code dimension for transaction type classification
+table DEBITCREDITCODE
+	lineageTag: 4291328d-e7bd-4e9f-ba97-93fa12bdadae
+
+	column DEBITCREDITCODE
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: eb07b9d9-51f4-4e2a-9a4f-02f985e1af69
+		summarizeBy: none
+		sourceColumn: DEBITCREDITCODE
+
+		annotation SummarizationSetBy = Automatic
+
+	column _UpdateTimeStamp
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 8f164797-62ac-4b02-9198-459a5c180107
+		summarizeBy: none
+		sourceColumn: _UpdateTimeStamp
+
+		annotation SummarizationSetBy = Automatic
+
+	column _SystemName
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: 42b556de-12bb-4db0-a04e-0776dd504a09
+		summarizeBy: none
+		sourceColumn: _SystemName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Key
+		dataType: int64
+		isHidden
+		formatString: 0
+		isAvailableInMdx: false
+		sourceProviderType: int
+		lineageTag: 45a90eff-fd3a-4bba-9df6-7d7e5c44f2d9
+		summarizeBy: none
+		sourceColumn: Key
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DEBITCREDITCODE = m
+		mode: dual
+		source =
+				let
+				    Source = Sql.Database(Server, Database),
+				    dmgold_vwDEBITCREDITCODETEXT = Source{[Schema=Schema_Name,Item="I_DEBITCREDITCODE"]}[Data]
+				in
+				    dmgold_vwDEBITCREDITCODETEXT
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

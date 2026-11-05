@@ -1,0 +1,123 @@
+table __MEASURES_GLACCOUNTHIERARCHY
+	lineageTag: fd2abfba-f488-4b03-83d5-23baec2028fe
+
+	measure GLACCT_HRCHY_COMPANYCODE_AMOUNT = CALCULATE(SUM(GLACCOUNTLINEITEMRAWDATA[AMOUNTINCOMPANYCODECURRENCY]) * GLACCOUNTHIERARCHYWTEXT[_Show])
+		displayFolder: COMPANYCODE_CURRENCY
+		lineageTag: 34aaac20-f738-49cf-a757-72372d9b6fa5
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure GLACCT_HRCHY_COMPANYCODE_CLOSING_BALANCE =
+			CALCULATE(
+			    [GLACCT_HRCHY_COMPANYCODE_AMOUNT],
+			    FILTER(GLACCOUNTLINEITEMRAWDATA, GLACCOUNTLINEITEMRAWDATA[FISCALPERIOD] <= [SELECTEDFISCALPERIOD]
+			    ))
+		displayFolder: COMPANYCODE_CURRENCY
+		lineageTag: a89ba618-b75a-4d9e-a02c-f902b61393a4
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure GLACCT_HRCHY_COMPANYCODE_CURRENT_PERIOD =
+			CALCULATE(
+			    [GLACCT_HRCHY_COMPANYCODE_AMOUNT],
+			    FILTER(GLACCOUNTLINEITEMRAWDATA, GLACCOUNTLINEITEMRAWDATA[FISCALPERIOD] = [SELECTEDFISCALPERIOD]
+			    ))
+		displayFolder: COMPANYCODE_CURRENCY
+		lineageTag: ceff57ba-f500-4cf8-ac66-94fa2b1d06e4
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure GLACCT_HRCHY_COMPANYCODE_OPENING_BALANCE =
+			CALCULATE(
+			    [GLACCT_HRCHY_COMPANYCODE_AMOUNT],
+			    FILTER(GLACCOUNTLINEITEMRAWDATA, GLACCOUNTLINEITEMRAWDATA[FISCALPERIOD] < [SELECTEDFISCALPERIOD]
+			    ))
+		displayFolder: COMPANYCODE_CURRENCY
+		lineageTag: d26f0286-0ac6-422b-833e-fb5c1389f62d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure GLACCT_HRCHY_GLOBAL_AMOUNT = CALCULATE(SUM(GLACCOUNTLINEITEMRAWDATA[AMOUNTINGLOBALCURRENCY]) * GLACCOUNTHIERARCHYWTEXT[_Show])
+		displayFolder: GLOBAL_CURRENCY
+		lineageTag: c019178d-da37-4b6d-b489-e28a06a7883c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure GLACCT_HRCHY_GLOBAL_CLOSING_BALANCE =
+			CALCULATE(
+			    [GLACCT_HRCHY_GLOBAL_AMOUNT],
+			    FILTER(GLACCOUNTLINEITEMRAWDATA, GLACCOUNTLINEITEMRAWDATA[FISCALPERIOD] <= [SELECTEDFISCALPERIOD]
+			    ))
+		displayFolder: GLOBAL_CURRENCY
+		lineageTag: 292a418e-8e0e-4f81-aa9a-3de470ee1f27
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure GLACCT_HRCHY_GLOBAL_CURRENT_PERIOD =
+			CALCULATE(
+			    [GLACCT_HRCHY_GLOBAL_AMOUNT],
+			    FILTER(GLACCOUNTLINEITEMRAWDATA, GLACCOUNTLINEITEMRAWDATA[FISCALPERIOD] = [SELECTEDFISCALPERIOD]
+			    ))
+		displayFolder: GLOBAL_CURRENCY
+		lineageTag: 37b26dee-da34-4f25-8ff8-e4389e3a93a3
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure GLACCT_HRCHY_GLOBAL_OPENING_BALANCE =
+			CALCULATE(
+			    [GLACCT_HRCHY_GLOBAL_AMOUNT],
+			    FILTER(GLACCOUNTLINEITEMRAWDATA, GLACCOUNTLINEITEMRAWDATA[FISCALPERIOD] < [SELECTEDFISCALPERIOD]
+			    ))
+		displayFolder: GLOBAL_CURRENCY
+		lineageTag: 91a8c273-0e88-4cbf-b871-b6fc4c51ef1e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure GLACCT_HRCHY_TRANSACTION_AMOUNT = CALCULATE(SUM(GLACCOUNTLINEITEMRAWDATA[AMOUNTINTRANSACTIONCURRENCY]) * GLACCOUNTHIERARCHYWTEXT[_Show])
+		displayFolder: TRANSACTION_CURRENCY
+		lineageTag: c3789eb3-618f-49df-830e-2f9528811884
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure GLACCT_HRCHY_TRANSACTION_CLOSING_BALANCE =
+			CALCULATE(
+			    [GLACCT_HRCHY_TRANSACTION_AMOUNT],
+			    FILTER(GLACCOUNTLINEITEMRAWDATA, GLACCOUNTLINEITEMRAWDATA[FISCALPERIOD] <= [SELECTEDFISCALPERIOD]
+			    ))
+		displayFolder: TRANSACTION_CURRENCY
+		lineageTag: 73bb7f66-292e-4125-989b-77a94c6a68a4
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure GLACCT_HRCHY_TRANSACTION_CURRENT_PERIOD =
+			CALCULATE(
+			    [GLACCT_HRCHY_TRANSACTION_AMOUNT],
+			    FILTER(GLACCOUNTLINEITEMRAWDATA, GLACCOUNTLINEITEMRAWDATA[FISCALPERIOD] = [SELECTEDFISCALPERIOD]
+			    ))
+		displayFolder: TRANSACTION_CURRENCY
+		lineageTag: 44061a3c-8481-4192-bf5f-cefdda322d3f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure GLACCT_HRCHY_TRANSACTION_OPENING_BALANCE =
+			CALCULATE(
+			    [GLACCT_HRCHY_TRANSACTION_AMOUNT],
+			    FILTER(GLACCOUNTLINEITEMRAWDATA, GLACCOUNTLINEITEMRAWDATA[FISCALPERIOD] < [SELECTEDFISCALPERIOD]
+			    ))
+		displayFolder: TRANSACTION_CURRENCY
+		lineageTag: 6968aab7-406c-40c3-bed3-52d6cac1baf1
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition __MEASURES_GLACCOUNTHIERARCHY-06c64b67-a072-40aa-a591-f9f0843c91c6 = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+

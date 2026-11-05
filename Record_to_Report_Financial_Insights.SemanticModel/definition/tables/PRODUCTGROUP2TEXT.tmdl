@@ -1,0 +1,86 @@
+/// Text descriptions for product group level 2
+table PRODUCTGROUP2TEXT
+	lineageTag: 40a94daa-3aa1-497e-ba84-71882ac8d415
+
+	column Key
+		dataType: int64
+		isHidden
+		isKey
+		formatString: 0
+		isAvailableInMdx: false
+		sourceProviderType: int
+		lineageTag: 67dd200c-f85a-4540-aa6a-9a6efb7ea9cd
+		summarizeBy: none
+		sourceColumn: Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column _SystemName
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(4000)
+		lineageTag: a4e70a0b-8b0d-45e8-859d-9b01914ced55
+		summarizeBy: none
+		sourceColumn: _SystemName
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRODUCTGROUP
+		dataType: string
+		sourceProviderType: nvarchar(9)
+		lineageTag: 62b584fa-548c-4cbf-9de1-9057fe98d929
+		summarizeBy: none
+		sourceColumn: PRODUCTGROUP
+
+		annotation SummarizationSetBy = Automatic
+
+	column DE
+		dataType: string
+		sourceProviderType: nvarchar(20)
+		lineageTag: 7b9f94c6-9f86-4fde-ac51-0213f22799d2
+		summarizeBy: none
+		sourceColumn: DE
+
+		annotation SummarizationSetBy = Automatic
+
+	column EN
+		dataType: string
+		sourceProviderType: nvarchar(20)
+		lineageTag: f2f300ce-6e5a-40c4-90b3-7770f2ae99b9
+		summarizeBy: none
+		sourceColumn: EN
+
+		annotation SummarizationSetBy = Automatic
+
+	column FR
+		dataType: string
+		sourceProviderType: nvarchar(20)
+		lineageTag: 17bcdf03-411d-43bb-b71d-a57b96e6bdce
+		summarizeBy: none
+		sourceColumn: FR
+
+		annotation SummarizationSetBy = Automatic
+
+	column ES
+		dataType: string
+		sourceProviderType: nvarchar(20)
+		lineageTag: fbaae004-3499-4010-a578-1f41ce6dd587
+		summarizeBy: none
+		sourceColumn: ES
+
+		annotation SummarizationSetBy = Automatic
+
+	partition PRODUCTGROUP2TEXT = m
+		mode: dual
+		source =
+				let
+				    Source = Sql.Database(Server, Database),
+				    dmgold_vtPRODUCTGROUP_2TEXT = Source{[Schema=Schema_Name,Item="vtPRODUCTGROUP_2TEXT"]}[Data],
+				    #"Columns removed by Measure Killer"= Table.RemoveColumns(dmgold_vtPRODUCTGROUP_2TEXT,{"ZH","RO","LT","LV","PL","KK","AR","SV","ET","HU","TH","NL","HI","DA","HR","JA","TR","NO","PT","EL","KO","CS","IT","ZF","VI","HE","UK","SL","SK","FI","SH","CA","BG","RU"})
+				in
+				    #"Columns removed by Measure Killer"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

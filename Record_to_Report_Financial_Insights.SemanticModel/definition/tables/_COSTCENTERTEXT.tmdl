@@ -1,0 +1,57 @@
+table _COSTCENTERTEXT
+	lineageTag: 357f6635-d3b7-43d4-ac0e-5ed32384da49
+
+	column FIELD_PARAM_COSTCENTERTEXT
+		lineageTag: 8fb2d049-97a6-44c2-a319-7b5daa54c040
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'FIELD_PARAM_COSTCENTERTEXT Order'
+
+		relatedColumnDetails
+			groupByColumn: 'FIELD_PARAM_COSTCENTERTEXT Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FIELD_PARAM_COSTCENTERTEXT Fields'
+		isHidden
+		lineageTag: 19615b6b-98bc-4fc5-bc64-48958c34b249
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'FIELD_PARAM_COSTCENTERTEXT Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "kind": 2,
+				  "version": 3
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FIELD_PARAM_COSTCENTERTEXT Order'
+		isHidden
+		formatString: 0
+		lineageTag: 894519b4-9ea9-4f60-93ce-210812d51c77
+		summarizeBy: none
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	column _ISOLanguage = MID(_COSTCENTERTEXT[FIELD_PARAM_COSTCENTERTEXT Fields], SEARCH("[", _COSTCENTERTEXT[FIELD_PARAM_COSTCENTERTEXT Fields])+1, 2)
+		isHidden
+		lineageTag: 44987464-8dd5-468a-a602-c54e1822d1c4
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _COSTCENTERTEXT = calculated
+		mode: import
+		source =
+				{
+				    ("CostCenterText", NAMEOF('COSTCENTERTEXT'[DE]), 0),
+				    ("CostCenterText", NAMEOF('COSTCENTERTEXT'[EN]), 1),
+				    ("CostCenterText", NAMEOF('COSTCENTERTEXT'[ES]), 2),
+				    ("CostCenterText", NAMEOF('COSTCENTERTEXT'[FR]), 3)
+				}
+
+	annotation PBI_Id = 868a33ebe66a41b0ac12d98b0e51abad
+

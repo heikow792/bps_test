@@ -1,0 +1,823 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "cbddb9d84a7933e1c1f2",
+  "position": {
+    "x": 239.45578231292518,
+    "y": 512.40188383045529,
+    "z": 13000,
+    "height": 356.67189952904238,
+    "width": 1011.4076399790686,
+    "tabOrder": 9000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "GLACCOUNTLINEITEMRAWDATA"
+                    }
+                  },
+                  "Property": "LEDGERGLLINEITEM"
+                }
+              },
+              "queryRef": "GLACCOUNTLINEITEMRAWDATA.LEDGERGLLINEITEM",
+              "nativeQueryRef": "LEDGERGLLINEITEM"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "GLACCOUNTLINEITEMRAWDATA"
+                    }
+                  },
+                  "Property": "POSTINGKEY"
+                }
+              },
+              "queryRef": "GLACCOUNTLINEITEMRAWDATA.POSTINGKEY",
+              "nativeQueryRef": "POSTINGKEY"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DEBITCREDITCODETEXT"
+                    }
+                  },
+                  "Property": "EN"
+                }
+              },
+              "queryRef": "DEBITCREDITCODETEXT.EN",
+              "nativeQueryRef": "Debit/Credit",
+              "displayName": "Debit/Credit"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "GLACCOUNTINCHARTOFACCOUNTS"
+                    }
+                  },
+                  "Property": "GLACCOUNT"
+                }
+              },
+              "queryRef": "GLACCOUNTINCHARTOFACCOUNTS.GLACCOUNT",
+              "nativeQueryRef": "GLACCOUNT"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "GLACCOUNTINCHARTOFACCOUNTSTEXT"
+                    }
+                  },
+                  "Property": "EN"
+                }
+              },
+              "queryRef": "GLACCOUNTINCHARTOFACCOUNTSTEXT.EN",
+              "nativeQueryRef": "GL Account Name",
+              "displayName": "GL Account Name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "GLACCOUNTLINEITEMRAWDATA"
+                    }
+                  },
+                  "Property": "COMPANYCODECURRENCY"
+                }
+              },
+              "queryRef": "GLACCOUNTLINEITEMRAWDATA.COMPANYCODECURRENCY",
+              "nativeQueryRef": "COMPANYCODECURRENCY"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "GLACCOUNTLINEITEMRAWDATA"
+                        }
+                      },
+                      "Property": "AMOUNTINCOMPANYCODECURRENCY"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(GLACCOUNTLINEITEMRAWDATA.AMOUNTINCOMPANYCODECURRENCY)",
+              "nativeQueryRef": "Sum of AMOUNTINCOMPANYCODECURRENCY"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "GLACCOUNTLINEITEMRAWDATA"
+                    }
+                  },
+                  "Property": "TRANSACTIONCURRENCY"
+                }
+              },
+              "queryRef": "GLACCOUNTLINEITEMRAWDATA.TRANSACTIONCURRENCY",
+              "nativeQueryRef": "TRANSACTIONCURRENCY"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "GLACCOUNTLINEITEMRAWDATA"
+                        }
+                      },
+                      "Property": "AMOUNTINTRANSACTIONCURRENCY"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(GLACCOUNTLINEITEMRAWDATA.AMOUNTINTRANSACTIONCURRENCY)",
+              "nativeQueryRef": "Sum of AMOUNTINTRANSACTIONCURRENCY"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "GLACCOUNTLINEITEMRAWDATA"
+                    }
+                  },
+                  "Property": "GLOBALCURRENCY"
+                }
+              },
+              "queryRef": "GLACCOUNTLINEITEMRAWDATA.GLOBALCURRENCY",
+              "nativeQueryRef": "GLOBALCURRENCY"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "GLACCOUNTLINEITEMRAWDATA"
+                        }
+                      },
+                      "Property": "AMOUNTINGLOBALCURRENCY"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(GLACCOUNTLINEITEMRAWDATA.AMOUNTINGLOBALCURRENCY)",
+              "nativeQueryRef": "Sum of AMOUNTINGLOBALCURRENCY"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "GLACCOUNTLINEITEMRAWDATA"
+                        }
+                      },
+                      "Property": "QUANTITY"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(GLACCOUNTLINEITEMRAWDATA.QUANTITY)",
+              "nativeQueryRef": "Sum of QUANTITY"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "GLACCOUNTINCHARTOFACCOUNTS"
+                    }
+                  },
+                  "Property": "PARTNERCOMPANY"
+                }
+              },
+              "queryRef": "GLACCOUNTINCHARTOFACCOUNTS.PARTNERCOMPANY",
+              "nativeQueryRef": "PARTNERCOMPANY"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "GLACCOUNTLINEITEMRAWDATA"
+                    }
+                  },
+                  "Property": "PRODUCT"
+                }
+              },
+              "queryRef": "GLACCOUNTLINEITEMRAWDATA.PRODUCT",
+              "nativeQueryRef": "PRODUCT"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "GLACCOUNTLINEITEMRAWDATA"
+                    }
+                  },
+                  "Property": "DOCUMENTITEMTEXT"
+                }
+              },
+              "queryRef": "GLACCOUNTLINEITEMRAWDATA.DOCUMENTITEMTEXT",
+              "nativeQueryRef": "DOCUMENTITEMTEXT"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "COSTCENTER"
+                    }
+                  },
+                  "Property": "PLANT"
+                }
+              },
+              "queryRef": "COSTCENTER.PLANT",
+              "nativeQueryRef": "PLANT"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "PROFITCENTER"
+                    }
+                  },
+                  "Property": "PROFITCENTER"
+                }
+              },
+              "queryRef": "PROFITCENTER.PROFITCENTER",
+              "nativeQueryRef": "Profit Center",
+              "displayName": "Profit Center"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SEGMENTTEXT"
+                    }
+                  },
+                  "Property": "SEGMENT"
+                }
+              },
+              "queryRef": "SEGMENTTEXT.SEGMENT",
+              "nativeQueryRef": "Segment",
+              "displayName": "Segment"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "COSTCENTER"
+                    }
+                  },
+                  "Property": "COSTCENTER"
+                }
+              },
+              "queryRef": "COSTCENTER.COSTCENTER",
+              "nativeQueryRef": "Cost Center",
+              "displayName": "Cost Center"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "GLACCOUNTLINEITEMRAWDATA"
+                    }
+                  },
+                  "Property": "TAXCODE"
+                }
+              },
+              "queryRef": "GLACCOUNTLINEITEMRAWDATA.TAXCODE",
+              "nativeQueryRef": "Tax Code",
+              "displayName": "Tax Code"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "GLACCOUNTLINEITEMRAWDATA"
+                    }
+                  },
+                  "Property": "TAXCOUNTRY"
+                }
+              },
+              "queryRef": "GLACCOUNTLINEITEMRAWDATA.TAXCOUNTRY",
+              "nativeQueryRef": "Tax Country",
+              "displayName": "Tax Country"
+            }
+          ],
+          "fieldParameters": [
+            {
+              "parameterExpr": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_DEBITCREDITCODETEXT"
+                    }
+                  },
+                  "Property": "FIELD_PARAM_DEBITCREDITCODETEXT"
+                }
+              },
+              "index": 2,
+              "length": 1
+            },
+            {
+              "parameterExpr": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_GLACCOUNTINCHARTOFACCOUNTSTEXT"
+                    }
+                  },
+                  "Property": "FIELD_PARAM_GLACCOUNTINCHARTOFACCOUNTSTEXT"
+                }
+              },
+              "index": 4,
+              "length": 1
+            },
+            {
+              "parameterExpr": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_FIELD_PARAM_LINE_ITEM_FIELDS"
+                    }
+                  },
+                  "Property": "FIELD_PARAM_LINE_ITEM_FIELDS"
+                }
+              },
+              "index": 16,
+              "length": 5
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "outlineWeight": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            },
+            "gridHorizontal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "gridHorizontalWeight": {
+              "expr": {
+                "Literal": {
+                  "Value": "5D"
+                }
+              }
+            },
+            "gridHorizontalColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "rowPadding": {
+              "expr": {
+                "Literal": {
+                  "Value": "6D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Accounting Documents'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10.5D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "b4d77679e0d8cc0ee059",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "GLACCOUNTLINEITEMRAWDATA"
+              }
+            },
+            "Property": "LEDGERGLLINEITEM"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "9af005f790cc44305674",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "GLACCOUNTLINEITEMRAWDATA"
+              }
+            },
+            "Property": "POSTINGKEY"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "c62781203d33786ecc10",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DEBITCREDITCODETEXT"
+              }
+            },
+            "Property": "EN"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "155975ed61be3c773da2",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "GLACCOUNTINCHARTOFACCOUNTS"
+              }
+            },
+            "Property": "GLACCOUNT"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "1686544a943d6074b426",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "GLACCOUNTINCHARTOFACCOUNTSTEXT"
+              }
+            },
+            "Property": "EN"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "56f87ec7d3e0d1049403",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "GLACCOUNTLINEITEMRAWDATA"
+              }
+            },
+            "Property": "COMPANYCODECURRENCY"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "6ccae537ca57dabca7be",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "GLACCOUNTLINEITEMRAWDATA"
+                  }
+                },
+                "Property": "AMOUNTINCOMPANYCODECURRENCY"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "6310d61207bea079471d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "GLACCOUNTLINEITEMRAWDATA"
+              }
+            },
+            "Property": "TRANSACTIONCURRENCY"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "0588e62979d4aa2eeb2e",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "GLACCOUNTLINEITEMRAWDATA"
+                  }
+                },
+                "Property": "AMOUNTINTRANSACTIONCURRENCY"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "698d680581b4aa400618",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "GLACCOUNTLINEITEMRAWDATA"
+              }
+            },
+            "Property": "GLOBALCURRENCY"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "6a32f2bb403a6d3a5c03",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "GLACCOUNTLINEITEMRAWDATA"
+                  }
+                },
+                "Property": "AMOUNTINGLOBALCURRENCY"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "484032c8ca9473206ea6",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "GLACCOUNTLINEITEMRAWDATA"
+                  }
+                },
+                "Property": "QUANTITY"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "6923e44deb3acc4e8ec5",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "GLACCOUNTINCHARTOFACCOUNTS"
+              }
+            },
+            "Property": "PARTNERCOMPANY"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "e0c919b86e875c21349a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "GLACCOUNTLINEITEMRAWDATA"
+              }
+            },
+            "Property": "PRODUCT"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "aec9333e80ea74860070",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "GLACCOUNTLINEITEMRAWDATA"
+              }
+            },
+            "Property": "DOCUMENTITEMTEXT"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "920f12a1347a65d48dd1",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "COSTCENTER"
+              }
+            },
+            "Property": "PLANT"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "5d7b0acb0eb2ed4e2514",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "PROFITCENTER"
+              }
+            },
+            "Property": "PROFITCENTER"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "2f2ea3b0b48874012d41",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "SEGMENTTEXT"
+              }
+            },
+            "Property": "SEGMENT"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "d3cabb407316b057e865",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "COSTCENTER"
+              }
+            },
+            "Property": "COSTCENTER"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "a822ae504087dc8b9052",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "GLACCOUNTLINEITEMRAWDATA"
+              }
+            },
+            "Property": "TAXCODE"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "e768037a391a01646c67",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "GLACCOUNTLINEITEMRAWDATA"
+              }
+            },
+            "Property": "TAXCOUNTRY"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

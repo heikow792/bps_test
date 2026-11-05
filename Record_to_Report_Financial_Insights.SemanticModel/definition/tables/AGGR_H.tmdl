@@ -1,0 +1,259 @@
+table AGGR_H
+	alternateSourcePrecedence: 10
+	lineageTag: 48524162-dcc1-4980-8fa2-c0ae91dc2b94
+
+	column _key_IDEBITCREDITCODE
+		dataType: int64
+		isHidden
+		formatString: 0
+		isAvailableInMdx: false
+		lineageTag: ef26624a-b195-44a5-abd6-936ae394fcf4
+		summarizeBy: none
+		sourceColumn: _key_IDEBITCREDITCODE
+
+		annotation SummarizationSetBy = Automatic
+
+	column _key_ICOMPANYCODE
+		dataType: int64
+		isHidden
+		formatString: 0
+		isAvailableInMdx: false
+		lineageTag: 9d72e32d-7b78-4ec5-a3a0-dbd4e4a93f5f
+		summarizeBy: none
+		sourceColumn: _key_ICOMPANYCODE
+
+		annotation SummarizationSetBy = Automatic
+
+	column COMPANYCODECURRENCY
+		dataType: string
+		lineageTag: 59b020a2-b03b-4b52-96be-b7420f17150f
+		summarizeBy: none
+		sourceColumn: COMPANYCODECURRENCY
+
+		alternateOf
+			baseColumn: GLACCOUNTLINEITEMRAWDATA.COMPANYCODECURRENCY
+
+		annotation SummarizationSetBy = Automatic
+
+	column GLOBALCURRENCY
+		dataType: string
+		lineageTag: aeac6cd5-3f6d-4bc6-b94c-6807af01ad73
+		summarizeBy: none
+		sourceColumn: GLOBALCURRENCY
+
+		alternateOf
+			baseColumn: GLACCOUNTLINEITEMRAWDATA.GLOBALCURRENCY
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRANSACTIONCURRENCY
+		dataType: string
+		lineageTag: 8cecf5d4-5acd-4704-9c43-b58e5ecc1ac1
+		summarizeBy: none
+		sourceColumn: TRANSACTIONCURRENCY
+
+		alternateOf
+			baseColumn: GLACCOUNTLINEITEMRAWDATA.TRANSACTIONCURRENCY
+
+		annotation SummarizationSetBy = Automatic
+
+	column _key_ILEDGER
+		dataType: int64
+		isHidden
+		formatString: 0
+		isAvailableInMdx: false
+		lineageTag: 21fa74e8-9938-4485-bfc3-f42bfbfd8ac7
+		summarizeBy: none
+		sourceColumn: _key_ILEDGER
+
+		annotation SummarizationSetBy = Automatic
+
+	column _key_IPROFITCENTER
+		dataType: int64
+		isHidden
+		formatString: 0
+		isAvailableInMdx: false
+		lineageTag: 6ed075ec-8b98-403e-9cf4-9d3d8feb88e0
+		summarizeBy: none
+		sourceColumn: _key_IPROFITCENTER
+
+		annotation SummarizationSetBy = Automatic
+
+	column _key_ICHARTOFACCOUNTS
+		dataType: int64
+		isHidden
+		formatString: 0
+		isAvailableInMdx: false
+		lineageTag: 43e6f1ae-5e5f-4217-9800-e544c4ede8a0
+		summarizeBy: none
+		sourceColumn: _key_ICHARTOFACCOUNTS
+
+		annotation SummarizationSetBy = Automatic
+
+	column _key_ISEGMENT
+		dataType: int64
+		isHidden
+		formatString: 0
+		isAvailableInMdx: false
+		lineageTag: 877e4130-4cb4-4172-91c4-292f4e0bc382
+		summarizeBy: none
+		sourceColumn: _key_ISEGMENT
+
+		annotation SummarizationSetBy = Automatic
+
+	column FISCALYEAR
+		dataType: int64
+		formatString: 0
+		lineageTag: b21e3b36-01e2-4994-9702-b46882c76fc4
+		summarizeBy: none
+		sourceColumn: FISCALYEAR
+
+		alternateOf
+			baseColumn: GLACCOUNTLINEITEMRAWDATA.FISCALYEAR
+
+		annotation SummarizationSetBy = User
+
+	column FISCALPERIOD
+		dataType: int64
+		formatString: 0
+		lineageTag: 784922ec-d735-44dc-9f63-48eeaa68b27c
+		summarizeBy: none
+		sourceColumn: FISCALPERIOD
+
+		alternateOf
+			baseColumn: GLACCOUNTLINEITEMRAWDATA.FISCALPERIOD
+
+		annotation SummarizationSetBy = User
+
+	column AMOUNTINCOMPANYCODECURRENCY
+		dataType: decimal
+		lineageTag: b464227f-5f2e-434d-a996-3784c64a3a40
+		summarizeBy: none
+		sourceColumn: AMOUNTINCOMPANYCODECURRENCY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column AMOUNTINGLOBALCURRENCY
+		dataType: decimal
+		lineageTag: 2ef119d0-739e-4059-a6c1-106d64267cad
+		summarizeBy: none
+		sourceColumn: AMOUNTINGLOBALCURRENCY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column AMOUNTINTRANSACTIONCURRENCY
+		dataType: decimal
+		lineageTag: 58290742-83d6-4dfa-81e6-5af46e20747e
+		summarizeBy: none
+		sourceColumn: AMOUNTINTRANSACTIONCURRENCY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column _key_IGLACCOUNTINCHARTOFACCOUNTS
+		dataType: int64
+		isHidden
+		formatString: 0
+		isAvailableInMdx: false
+		lineageTag: caff0f9c-6530-4f3d-804f-279eb8368425
+		summarizeBy: none
+		sourceColumn: _key_IGLACCOUNTINCHARTOFACCOUNTS
+
+		annotation SummarizationSetBy = Automatic
+
+	column _key_IPRODUCTGROUP2
+		dataType: int64
+		isHidden
+		formatString: 0
+		isAvailableInMdx: false
+		lineageTag: 04dfcbc3-8804-44e9-9cff-acec0475fded
+		summarizeBy: none
+		sourceColumn: _key_IPRODUCTGROUP2
+
+		annotation SummarizationSetBy = Automatic
+
+	column _key_IPRODUCT
+		dataType: int64
+		isHidden
+		formatString: 0
+		isAvailableInMdx: false
+		lineageTag: ed9f58a7-a412-484d-9d54-c8d7513fae06
+		summarizeBy: none
+		sourceColumn: _key_IPRODUCT
+
+		annotation SummarizationSetBy = Automatic
+
+	column _key_ICUSTOMER
+		dataType: int64
+		isHidden
+		formatString: 0
+		isAvailableInMdx: false
+		lineageTag: 8be44c66-9c01-4496-a99a-3ed955ea956e
+		summarizeBy: none
+		sourceColumn: _key_ICUSTOMER
+
+		annotation SummarizationSetBy = Automatic
+
+	column PARTNERCOMPANYCODE
+		dataType: string
+		lineageTag: 9e81b23c-d59d-4527-bdba-ca3a2e3ccc6e
+		summarizeBy: none
+		sourceColumn: PARTNERCOMPANYCODE
+
+		annotation SummarizationSetBy = Automatic
+
+	column TAXCODE
+		dataType: string
+		lineageTag: 48c7e254-2251-42ec-b7fe-8844a64d7eb4
+		summarizeBy: none
+		sourceColumn: TAXCODE
+
+		annotation SummarizationSetBy = Automatic
+
+	column TAXCOUNTRY
+		dataType: string
+		lineageTag: 22b891be-fce4-4aa6-b773-8ca8309b8c30
+		summarizeBy: none
+		sourceColumn: TAXCOUNTRY
+
+		annotation SummarizationSetBy = Automatic
+
+	column _key_ICOSTCENTER
+		dataType: int64
+		isHidden
+		formatString: 0
+		isAvailableInMdx: false
+		lineageTag: d1115224-8eef-4cf3-a50a-7446b63d4447
+		summarizeBy: none
+		sourceColumn: _key_ICOSTCENTER
+
+		annotation SummarizationSetBy = Automatic
+
+	column _key_IFISCALPERIODFORVARIANT
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: e9ae5813-0e57-4d72-acd8-049e433d29ff
+		summarizeBy: none
+		sourceColumn: _key_IFISCALPERIODFORVARIANT
+
+		annotation SummarizationSetBy = Automatic
+
+	partition AGGR_H-bc5ecb7e-3e0e-43d9-b993-8916c01ed7f0 = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database(Server, Database),
+				    dmgold_vGLACCOUNTLINEITEMRAWDATA_AGGR = Source{[Schema=Schema_Name,Item="vGLACCOUNTLINEITEMRAWDATA_AGGR"]}[Data]
+				in
+				    dmgold_vGLACCOUNTLINEITEMRAWDATA_AGGR
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

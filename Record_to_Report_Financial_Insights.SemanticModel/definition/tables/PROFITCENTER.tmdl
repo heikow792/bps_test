@@ -1,0 +1,112 @@
+/// Profit center dimension for cost allocation and profitability analysis
+table PROFITCENTER
+	lineageTag: fc59bdc7-3e98-47a8-a659-313c38d44b79
+
+	column Key
+		dataType: int64
+		isHidden
+		isKey
+		formatString: 0
+		isAvailableInMdx: false
+		sourceProviderType: int
+		lineageTag: 5899ab0c-3cf3-4395-abbe-bf7d565fd571
+		summarizeBy: none
+		sourceColumn: Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column _UpdateTimeStamp
+		dataType: dateTime
+		isHidden
+		formatString: m/d/yyyy
+		sourceProviderType: datetime2
+		lineageTag: 7ff613bf-eec2-4b64-8bd2-d8d903a8ff7e
+		summarizeBy: none
+		sourceColumn: _UpdateTimeStamp
+
+		annotation SummarizationSetBy = Automatic
+
+	column _SystemName
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: 44774cbb-2e9b-4e76-b2f4-5d9bc045fd07
+		summarizeBy: none
+		sourceColumn: _SystemName
+
+		annotation SummarizationSetBy = Automatic
+
+	column CONTROLLINGAREA
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: a311d3b2-7eda-40db-97b5-65607c257822
+		summarizeBy: none
+		sourceColumn: CONTROLLINGAREA
+
+		annotation SummarizationSetBy = Automatic
+
+	column LANGUAGE
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 25206c60-207f-4609-923c-0009127401df
+		summarizeBy: none
+		sourceColumn: LANGUAGE
+
+		annotation SummarizationSetBy = Automatic
+
+	column PROFITCENTER
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 76784359-4116-4fc7-9a45-71751973da04
+		summarizeBy: none
+		sourceColumn: PROFITCENTER
+
+		annotation SummarizationSetBy = Automatic
+
+	column PROFITCENTERSTANDARDHIERARCHY
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 0b52aee7-18d6-4370-a389-d8dbb259d239
+		summarizeBy: none
+		sourceColumn: PROFITCENTERSTANDARDHIERARCHY
+
+		annotation SummarizationSetBy = Automatic
+
+	column VALIDITYSTARTDATE
+		dataType: dateTime
+		formatString: m/d/yyyy
+		sourceProviderType: date
+		lineageTag: 24cb9d50-e0bf-4db0-8c42-c0b5fbb9a4ba
+		summarizeBy: none
+		sourceColumn: VALIDITYSTARTDATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column VALIDITYENDDATE
+		dataType: dateTime
+		formatString: m/d/yyyy
+		sourceProviderType: date
+		lineageTag: e4871bfb-3c19-49c1-b8c2-dc42f59c7926
+		summarizeBy: none
+		sourceColumn: VALIDITYENDDATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition PROFITCENTER = m
+		mode: dual
+		source =
+				let
+				    Source = Sql.Database(Server, Database),
+				    dbo_vPROFITCENTER = Source{[Schema=Schema_Name,Item="vPROFITCENTER"]}[Data],
+				  #"Choose columns" = Table.SelectColumns(dbo_vPROFITCENTER, {"Key", "_UpdateTimeStamp", "_SystemName", "CONTROLLINGAREA", "LANGUAGE", "PROFITCENTER", "PROFITCENTERSTANDARDHIERARCHY", "VALIDITYSTARTDATE", "VALIDITYENDDATE"})
+				in
+				    #"Choose columns"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

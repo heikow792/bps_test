@@ -1,0 +1,50 @@
+table _FIELD_PARAM_CURRENT_PERIOD
+	lineageTag: 0ec48064-b68e-4762-a56c-4e4fa6a08c51
+
+	column FIELD_PARAM_CURRENT_PERIOD
+		lineageTag: 7b93dbc2-c52a-4db1-82d6-14fc9a5792cc
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'FIELD_PARAM_CURRENT_PERIOD Order'
+
+		relatedColumnDetails
+			groupByColumn: 'FIELD_PARAM_CURRENT_PERIOD Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FIELD_PARAM_CURRENT_PERIOD Fields'
+		isHidden
+		lineageTag: e1e85fc6-4497-4e3c-bed4-ce480b8c32c0
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'FIELD_PARAM_CURRENT_PERIOD Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "kind": 2,
+				  "version": 3
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FIELD_PARAM_CURRENT_PERIOD Order'
+		isHidden
+		isKey
+		formatString: 0
+		lineageTag: 2fb6f3b0-8c42-459c-80b7-5ec961d163bb
+		summarizeBy: none
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _FIELD_PARAM_CURRENT_PERIOD-48c741ce-f5a9-4f76-a82e-0ce4197c3285 = calculated
+		mode: import
+		source =
+				{
+				    ("Current Period", NAMEOF('__MEASURES_OTHER'[COMPANYCODE_CURRENT_PERIOD]), 0),
+				    ("Current Period", NAMEOF('__MEASURES_OTHER'[GLOBAL_CURRENT_PERIOD]), 1),
+				    ("Current Period", NAMEOF('__MEASURES_OTHER'[TRANSACTION_CURRENT_PERIOD]), 2)
+				}
+
+	annotation PBI_Id = 49d99b38299540e2b834140dc0c1eed3
+

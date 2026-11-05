@@ -1,0 +1,348 @@
+/// Text descriptions for chart of accounts entries
+table CHARTOFACCOUNTSTEXT
+	lineageTag: 1ac820c4-851f-4acb-b626-0a39501ebecd
+
+	column Key
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: ec96f4f7-2ca1-44cc-aa6e-ae8ae347609e
+		summarizeBy: none
+		sourceColumn: Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column _SystemName
+		dataType: string
+		isHidden
+		lineageTag: 4d335978-055f-4227-b1bc-fa1f7e6275cb
+		summarizeBy: none
+		sourceColumn: _SystemName
+
+		annotation SummarizationSetBy = Automatic
+
+	column CHARTOFACCOUNTS
+		dataType: string
+		lineageTag: 39180898-19cd-4925-aada-a5c6b1ab0450
+		summarizeBy: none
+		sourceColumn: CHARTOFACCOUNTS
+
+		annotation SummarizationSetBy = Automatic
+
+	column ZH
+		dataType: string
+		lineageTag: bd4f6fe4-40b5-4964-9926-bbc933644ffb
+		summarizeBy: none
+		sourceColumn: ZH
+
+		annotation SummarizationSetBy = Automatic
+
+	column TH
+		dataType: string
+		lineageTag: bf8c5573-0fef-4f7a-b477-7e8752836693
+		summarizeBy: none
+		sourceColumn: TH
+
+		annotation SummarizationSetBy = Automatic
+
+	column KO
+		dataType: string
+		lineageTag: ba3219d8-5e51-49eb-9807-8a62c6aecf4b
+		summarizeBy: none
+		sourceColumn: KO
+
+		annotation SummarizationSetBy = Automatic
+
+	column RO
+		dataType: string
+		lineageTag: b39cea10-70f3-4e6f-a546-3817ae62d172
+		summarizeBy: none
+		sourceColumn: RO
+
+		annotation SummarizationSetBy = Automatic
+
+	column SL
+		dataType: string
+		lineageTag: 86b0a92d-725c-45cf-b708-aa35a1f6f410
+		summarizeBy: none
+		sourceColumn: SL
+
+		annotation SummarizationSetBy = Automatic
+
+	column HR
+		dataType: string
+		lineageTag: 6cc92002-fd41-4f57-a6d6-d39b08fa5366
+		summarizeBy: none
+		sourceColumn: HR
+
+		annotation SummarizationSetBy = Automatic
+
+	column UK
+		dataType: string
+		lineageTag: 9f33d473-7910-42c5-bd85-e81b35ed73ea
+		summarizeBy: none
+		sourceColumn: UK
+
+		annotation SummarizationSetBy = Automatic
+
+	column ET
+		dataType: string
+		lineageTag: 400e22e5-ac6d-4b20-a0bd-e7688a2608f9
+		summarizeBy: none
+		sourceColumn: ET
+
+		annotation SummarizationSetBy = Automatic
+
+	column AR
+		dataType: string
+		lineageTag: 024c4080-8352-4534-ac5d-1ac49cc32797
+		summarizeBy: none
+		sourceColumn: AR
+
+		annotation SummarizationSetBy = Automatic
+
+	column HE
+		dataType: string
+		lineageTag: 37bb1edb-b219-48c8-8cea-3ac9244d3378
+		summarizeBy: none
+		sourceColumn: HE
+
+		annotation SummarizationSetBy = Automatic
+
+	column CA
+		dataType: string
+		lineageTag: 07a83fdf-9e04-47d7-b24c-dee93fd4f7d6
+		summarizeBy: none
+		sourceColumn: CA
+
+		annotation SummarizationSetBy = Automatic
+
+	column CS
+		dataType: string
+		lineageTag: 8ba9f99f-fe95-4062-b709-e9352b295611
+		summarizeBy: none
+		sourceColumn: CS
+
+		annotation SummarizationSetBy = Automatic
+
+	column DE
+		dataType: string
+		lineageTag: 4fda824e-caf6-41ac-9cfc-a9ed9ff9a6de
+		summarizeBy: none
+		sourceColumn: DE
+
+		annotation SummarizationSetBy = Automatic
+
+	column SH
+		dataType: string
+		lineageTag: c734b16f-3b1a-4b9e-8039-65c2397828d1
+		summarizeBy: none
+		sourceColumn: SH
+
+		annotation SummarizationSetBy = Automatic
+
+	column EN
+		dataType: string
+		lineageTag: c41e3885-90a3-44b0-85b6-b91d60aa4b58
+		summarizeBy: none
+		sourceColumn: EN
+
+		annotation SummarizationSetBy = Automatic
+
+	column FR
+		dataType: string
+		lineageTag: 4475ddf5-9fca-413b-8bee-5206f9851d1a
+		summarizeBy: none
+		sourceColumn: FR
+
+		annotation SummarizationSetBy = Automatic
+
+	column EL
+		dataType: string
+		lineageTag: 661b5afe-6312-483e-9794-6b686e4701c3
+		summarizeBy: none
+		sourceColumn: EL
+
+		annotation SummarizationSetBy = Automatic
+
+	column HU
+		dataType: string
+		lineageTag: f5f3a628-891d-4459-8012-6df870896c0e
+		summarizeBy: none
+		sourceColumn: HU
+
+		annotation SummarizationSetBy = Automatic
+
+	column IT
+		dataType: string
+		lineageTag: 691a11ab-b1dc-4afc-873e-2d2851faaf31
+		summarizeBy: none
+		sourceColumn: IT
+
+		annotation SummarizationSetBy = Automatic
+
+	column JA
+		dataType: string
+		lineageTag: 6b94f5bb-b4dc-4dc3-af81-611e379d7d99
+		summarizeBy: none
+		sourceColumn: JA
+
+		annotation SummarizationSetBy = Automatic
+
+	column DA
+		dataType: string
+		lineageTag: 9fe36491-6ccc-46be-936c-4ecff0c493e2
+		summarizeBy: none
+		sourceColumn: DA
+
+		annotation SummarizationSetBy = Automatic
+
+	column PL
+		dataType: string
+		lineageTag: 845a559e-667f-44db-9521-4b663f0c6524
+		summarizeBy: none
+		sourceColumn: PL
+
+		annotation SummarizationSetBy = Automatic
+
+	column ZF
+		dataType: string
+		lineageTag: 1b00c1c0-5f91-4092-b6aa-090f498e2b8d
+		summarizeBy: none
+		sourceColumn: ZF
+
+		annotation SummarizationSetBy = Automatic
+
+	column NL
+		dataType: string
+		lineageTag: 1bda31fa-e03f-4ffd-b634-f39899982a41
+		summarizeBy: none
+		sourceColumn: NL
+
+		annotation SummarizationSetBy = Automatic
+
+	column NO
+		dataType: string
+		lineageTag: 2841a9ae-ea13-4321-b9da-70efa7a091e6
+		summarizeBy: none
+		sourceColumn: NO
+
+		annotation SummarizationSetBy = Automatic
+
+	column PT
+		dataType: string
+		lineageTag: f2f96101-089d-4776-b747-06367203f645
+		summarizeBy: none
+		sourceColumn: PT
+
+		annotation SummarizationSetBy = Automatic
+
+	column SK
+		dataType: string
+		lineageTag: 7d7bacdf-8e7d-4b3d-92f2-f88ea9ff8755
+		summarizeBy: none
+		sourceColumn: SK
+
+		annotation SummarizationSetBy = Automatic
+
+	column RU
+		dataType: string
+		lineageTag: 7ac33a1b-6411-4d21-830f-701941ca7e2e
+		summarizeBy: none
+		sourceColumn: RU
+
+		annotation SummarizationSetBy = Automatic
+
+	column ES
+		dataType: string
+		lineageTag: 36e606e5-cf0e-4084-8bf3-c0b0e9e50533
+		summarizeBy: none
+		sourceColumn: ES
+
+		annotation SummarizationSetBy = Automatic
+
+	column TR
+		dataType: string
+		lineageTag: 03489105-93eb-4f7f-9f73-3a4f33556ce5
+		summarizeBy: none
+		sourceColumn: TR
+
+		annotation SummarizationSetBy = Automatic
+
+	column FI
+		dataType: string
+		lineageTag: dc64f1c3-6d4b-457e-a2c9-2739d5c3229e
+		summarizeBy: none
+		sourceColumn: FI
+
+		annotation SummarizationSetBy = Automatic
+
+	column SV
+		dataType: string
+		lineageTag: 0ab6460c-18c4-4c88-994f-20532163fe6e
+		summarizeBy: none
+		sourceColumn: SV
+
+		annotation SummarizationSetBy = Automatic
+
+	column BG
+		dataType: string
+		lineageTag: 4ec01485-d481-4c3b-a229-0490473c43d9
+		summarizeBy: none
+		sourceColumn: BG
+
+		annotation SummarizationSetBy = Automatic
+
+	column LT
+		dataType: string
+		lineageTag: b8345930-dedf-49c9-8329-a22ba94837b3
+		summarizeBy: none
+		sourceColumn: LT
+
+		annotation SummarizationSetBy = Automatic
+
+	column LV
+		dataType: string
+		lineageTag: abcf0a47-bbc9-4639-a5e4-0b43eb86dc95
+		summarizeBy: none
+		sourceColumn: LV
+
+		annotation SummarizationSetBy = Automatic
+
+	column HI
+		dataType: string
+		lineageTag: ddf14412-5eae-41c5-8331-48f2d683a70e
+		summarizeBy: none
+		sourceColumn: HI
+
+		annotation SummarizationSetBy = Automatic
+
+	column KK
+		dataType: string
+		lineageTag: 509e8aa8-b27f-4f31-aea9-6a3994829d3d
+		summarizeBy: none
+		sourceColumn: KK
+
+		annotation SummarizationSetBy = Automatic
+
+	column VI
+		dataType: string
+		lineageTag: 4fdb34d7-f36a-4c2c-b441-f759f6bbe56a
+		summarizeBy: none
+		sourceColumn: VI
+
+		annotation SummarizationSetBy = Automatic
+
+	partition CHARTOFACCOUNTSTEXT = m
+		mode: dual
+		source =
+				let
+				    Source = Sql.Database(Server, Database),
+				    dmgold_vwCHARTOFACCOUNTSTEXT = Source{[Schema=Schema_Name,Item="vtCHARTOFACCOUNTSTEXT"]}[Data]
+				in
+				    dmgold_vwCHARTOFACCOUNTSTEXT
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

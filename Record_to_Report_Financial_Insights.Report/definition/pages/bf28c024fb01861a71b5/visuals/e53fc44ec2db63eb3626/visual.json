@@ -1,0 +1,1036 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "e53fc44ec2db63eb3626",
+  "position": {
+    "x": 238,
+    "y": 112,
+    "z": 9000,
+    "height": 756,
+    "width": 1014,
+    "tabOrder": 7000
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "query": {
+      "queryState": {
+        "Columns": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "AGGR_H"
+                    }
+                  },
+                  "Property": "COMPANYCODECURRENCY"
+                }
+              },
+              "queryRef": "AGGR_H.COMPANYCODECURRENCY",
+              "nativeQueryRef": "Company Code Currency",
+              "active": true,
+              "displayName": "Company Code Currency"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DEBITCREDITCODETEXT"
+                    }
+                  },
+                  "Property": "EN"
+                }
+              },
+              "queryRef": "DEBITCREDITCODETEXT.EN",
+              "nativeQueryRef": "Debit/Credit",
+              "active": false,
+              "displayName": "Debit/Credit"
+            }
+          ],
+          "fieldParameters": [
+            {
+              "parameterExpr": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_DEBITCREDITCODETEXT"
+                    }
+                  },
+                  "Property": "FIELD_PARAM_DEBITCREDITCODETEXT"
+                }
+              },
+              "index": 1,
+              "length": 1
+            },
+            {
+              "parameterExpr": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_FIELD_PARAM_AGGR_CURRENCY"
+                    }
+                  },
+                  "Property": "_FIELD_PARAM_AGGR_CURRENCY"
+                }
+              },
+              "index": 0,
+              "length": 1
+            }
+          ]
+        },
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "GLACCOUNTHIERARCHYWTEXT"
+                    }
+                  },
+                  "Property": "GLACCOUNT_HIER_LEVEL1_TEXT"
+                }
+              },
+              "queryRef": "GLACCOUNTHIERARCHYWTEXT.GLACCOUNT_HIER_LEVEL1_TEXT",
+              "nativeQueryRef": "GLACCOUNT_HIER_LEVEL1_TEXT",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "GLACCOUNTHIERARCHYWTEXT"
+                    }
+                  },
+                  "Property": "GLACCOUNT_HIER_LEVEL2_TEXT"
+                }
+              },
+              "queryRef": "GLACCOUNTHIERARCHYWTEXT.GLACCOUNT_HIER_LEVEL2_TEXT",
+              "nativeQueryRef": "GLACCOUNT_HIER_LEVEL2_TEXT",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "GLACCOUNTHIERARCHYWTEXT"
+                    }
+                  },
+                  "Property": "GLACCOUNT_HIER_LEVEL3_TEXT"
+                }
+              },
+              "queryRef": "GLACCOUNTHIERARCHYWTEXT.GLACCOUNT_HIER_LEVEL3_TEXT",
+              "nativeQueryRef": "GLACCOUNT_HIER_LEVEL3_TEXT",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "GLACCOUNTHIERARCHYWTEXT"
+                    }
+                  },
+                  "Property": "GLACCOUNT_HIER_LEVEL4_TEXT"
+                }
+              },
+              "queryRef": "GLACCOUNTHIERARCHYWTEXT.GLACCOUNT_HIER_LEVEL4_TEXT",
+              "nativeQueryRef": "GLACCOUNT_HIER_LEVEL4_TEXT",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "GLACCOUNTHIERARCHYWTEXT"
+                    }
+                  },
+                  "Property": "GLACCOUNT_HIER_LEVEL5_TEXT"
+                }
+              },
+              "queryRef": "GLACCOUNTHIERARCHYWTEXT.GLACCOUNT_HIER_LEVEL5_TEXT",
+              "nativeQueryRef": "GLACCOUNT_HIER_LEVEL5_TEXT",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "GLACCOUNTHIERARCHYWTEXT"
+                    }
+                  },
+                  "Property": "GLACCOUNT_HIER_LEVEL6_TEXT"
+                }
+              },
+              "queryRef": "GLACCOUNTHIERARCHYWTEXT.GLACCOUNT_HIER_LEVEL6_TEXT",
+              "nativeQueryRef": "GLACCOUNT_HIER_LEVEL6_TEXT",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "GLACCOUNTHIERARCHYWTEXT"
+                    }
+                  },
+                  "Property": "GLACCOUNT_HIER_LEVEL7_TEXT"
+                }
+              },
+              "queryRef": "GLACCOUNTHIERARCHYWTEXT.GLACCOUNT_HIER_LEVEL7_TEXT",
+              "nativeQueryRef": "GLACCOUNT_HIER_LEVEL7_TEXT",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "GLACCOUNTHIERARCHYWTEXT"
+                    }
+                  },
+                  "Property": "GLACCOUNT_HIER_LEVEL8_TEXT"
+                }
+              },
+              "queryRef": "GLACCOUNTHIERARCHYWTEXT.GLACCOUNT_HIER_LEVEL8_TEXT",
+              "nativeQueryRef": "GLACCOUNT_HIER_LEVEL8_TEXT",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "GLACCOUNTHIERARCHYWTEXT"
+                    }
+                  },
+                  "Property": "GLACCOUNT_HIER_LEVEL9_TEXT"
+                }
+              },
+              "queryRef": "GLACCOUNTHIERARCHYWTEXT.GLACCOUNT_HIER_LEVEL9_TEXT",
+              "nativeQueryRef": "GLACCOUNT_HIER_LEVEL9_TEXT",
+              "active": false
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "__MEASURES_AGGR_HRCHY"
+                    }
+                  },
+                  "Property": "AGGR_HRCHY_COMPANYCODE_OPENING_BALANCE"
+                }
+              },
+              "queryRef": "__MEASURES_AGGR_HRCHY.AGGR_HRCHY_COMPANYCODE_OPENING_BALANCE",
+              "nativeQueryRef": "Opening Balance",
+              "displayName": "Opening Balance"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "__MEASURES_AGGR_HRCHY"
+                    }
+                  },
+                  "Property": "AGGR_HRCHY_COMPANYCODE_CURRENT_PERIOD"
+                }
+              },
+              "queryRef": "__MEASURES_AGGR_HRCHY.AGGR_HRCHY_COMPANYCODE_CURRENT_PERIOD",
+              "nativeQueryRef": "Current Period",
+              "displayName": "Current Period"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "__MEASURES_AGGR_HRCHY"
+                    }
+                  },
+                  "Property": "AGGR_HRCHY_COMPANYCODE_CLOSING_BALANCE"
+                }
+              },
+              "queryRef": "__MEASURES_AGGR_HRCHY.AGGR_HRCHY_COMPANYCODE_CLOSING_BALANCE",
+              "nativeQueryRef": "Closing Balance",
+              "displayName": "Closing Balance"
+            }
+          ],
+          "fieldParameters": [
+            {
+              "parameterExpr": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_FIELD_PARAM_AGGR_HRCHY_CLOSING_BALANCE"
+                    }
+                  },
+                  "Property": "FIELD_PARAM_AGGR_HRCHY_CLOSING_BALANCE"
+                }
+              },
+              "index": 2,
+              "length": 1
+            },
+            {
+              "parameterExpr": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_FIELD_PARAM_AGGR_HRCHY_CURRENT_PERIOD"
+                    }
+                  },
+                  "Property": "FIELD_PARAM_AGGR_HRCHY_CURRENT_PERIOD"
+                }
+              },
+              "index": 1,
+              "length": 1
+            },
+            {
+              "parameterExpr": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_FIELD_PARAM_AGGR_HRCHY_OPENING_BALANCE"
+                    }
+                  },
+                  "Property": "FIELD_PARAM_AGGR_HRCHY_OPENING_BALANCE"
+                }
+              },
+              "index": 0,
+              "length": 1
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "GLACCOUNTHIERARCHYWTEXT"
+                  }
+                },
+                "Property": "GLACCOUNT_HIER_LEVEL1_TEXT"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
+      }
+    },
+    "expansionStates": [
+      {
+        "roles": [
+          "Rows"
+        ],
+        "levels": [
+          {
+            "queryRefs": [
+              "GLACCOUNTHIERARCHYWTEXT.GLACCOUNT_HIER_LEVEL1_TEXT"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "GLACCOUNTHIERARCHYWTEXT"
+                    }
+                  },
+                  "Property": "GLACCOUNT_HIER_LEVEL1_TEXT"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "GLACCOUNTHIERARCHYWTEXT.GLACCOUNT_HIER_LEVEL2_TEXT"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "GLACCOUNTHIERARCHYWTEXT"
+                    }
+                  },
+                  "Property": "GLACCOUNT_HIER_LEVEL2_TEXT"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "GLACCOUNTHIERARCHYWTEXT.GLACCOUNT_HIER_LEVEL3_TEXT"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "GLACCOUNTHIERARCHYWTEXT"
+                    }
+                  },
+                  "Property": "GLACCOUNT_HIER_LEVEL3_TEXT"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "GLACCOUNTHIERARCHYWTEXT.GLACCOUNT_HIER_LEVEL4_TEXT"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "GLACCOUNTHIERARCHYWTEXT"
+                    }
+                  },
+                  "Property": "GLACCOUNT_HIER_LEVEL4_TEXT"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "GLACCOUNTHIERARCHYWTEXT.GLACCOUNT_HIER_LEVEL5_TEXT"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "GLACCOUNTHIERARCHYWTEXT"
+                    }
+                  },
+                  "Property": "GLACCOUNT_HIER_LEVEL5_TEXT"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "GLACCOUNTHIERARCHYWTEXT.GLACCOUNT_HIER_LEVEL6_TEXT"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "GLACCOUNTHIERARCHYWTEXT"
+                    }
+                  },
+                  "Property": "GLACCOUNT_HIER_LEVEL6_TEXT"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "GLACCOUNTHIERARCHYWTEXT.GLACCOUNT_HIER_LEVEL7_TEXT"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "GLACCOUNTHIERARCHYWTEXT"
+                    }
+                  },
+                  "Property": "GLACCOUNT_HIER_LEVEL7_TEXT"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "GLACCOUNTHIERARCHYWTEXT.GLACCOUNT_HIER_LEVEL8_TEXT"
+            ],
+            "isCollapsed": true,
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "GLACCOUNTHIERARCHYWTEXT.GLACCOUNT_HIER_LEVEL9_TEXT"
+            ],
+            "isCollapsed": true
+          }
+        ],
+        "root": {
+          "children": [
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'0YPS1 Project Profitability FSV: Net Margin'"
+                  }
+                }
+              ],
+              "isToggled": true,
+              "children": [
+                {
+                  "identityValues": [
+                    {
+                      "Literal": {
+                        "Value": "'020 Net Margin'"
+                      }
+                    }
+                  ],
+                  "isToggled": true,
+                  "children": [
+                    {
+                      "identityValues": [
+                        {
+                          "Literal": {
+                            "Value": "'08 Net Revenue'"
+                          }
+                        }
+                      ],
+                      "isToggled": true
+                    },
+                    {
+                      "identityValues": [
+                        {
+                          "Literal": {
+                            "Value": "'09 Costs'"
+                          }
+                        }
+                      ],
+                      "isToggled": true
+                    }
+                  ]
+                },
+                {
+                  "identityValues": [
+                    {
+                      "Literal": {
+                        "Value": "'00NOTASSGND'"
+                      }
+                    }
+                  ],
+                  "isToggled": true
+                }
+              ]
+            },
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'0YPA1 SAP Best Practices Contribution Margin Report'"
+                  }
+                }
+              ],
+              "isToggled": true,
+              "children": [
+                {
+                  "identityValues": [
+                    {
+                      "Literal": {
+                        "Value": "'00NOTASSGND'"
+                      }
+                    }
+                  ],
+                  "children": [
+                    {
+                      "identityValues": [
+                        {
+                          "Literal": {
+                            "Value": "'10016000000 Land & Ld Improvemts'"
+                          }
+                        }
+                      ],
+                      "isToggled": true
+                    },
+                    {
+                      "identityValues": [
+                        {
+                          "Literal": {
+                            "Value": "'10010010000 Petty Cash'"
+                          }
+                        }
+                      ],
+                      "isToggled": true
+                    }
+                  ]
+                },
+                {
+                  "identityValues": [
+                    {
+                      "Literal": {
+                        "Value": "'08 Contribution Margin Report'"
+                      }
+                    }
+                  ],
+                  "isToggled": true,
+                  "children": [
+                    {
+                      "identityValues": [
+                        {
+                          "Literal": {
+                            "Value": "'09 P&L before Tax'"
+                          }
+                        }
+                      ],
+                      "isToggled": true,
+                      "children": [
+                        {
+                          "identityValues": [
+                            {
+                              "Literal": {
+                                "Value": "'010 CM III'"
+                              }
+                            }
+                          ],
+                          "isToggled": true,
+                          "children": [
+                            {
+                              "identityValues": [
+                                {
+                                  "Literal": {
+                                    "Value": "'012 CM II'"
+                                  }
+                                }
+                              ],
+                              "isToggled": true,
+                              "children": [
+                                {
+                                  "identityValues": [
+                                    {
+                                      "Literal": {
+                                        "Value": "'015 CM I'"
+                                      }
+                                    }
+                                  ],
+                                  "isToggled": true,
+                                  "children": [
+                                    {
+                                      "identityValues": [
+                                        {
+                                          "Literal": {
+                                            "Value": "'020 Net Sales'"
+                                          }
+                                        }
+                                      ],
+                                      "isToggled": true
+                                    }
+                                  ]
+                                },
+                                {
+                                  "identityValues": [
+                                    {
+                                      "Literal": {
+                                        "Value": "'022 Variances'"
+                                      }
+                                    }
+                                  ],
+                                  "isToggled": true
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "identityValues": [
+                            {
+                              "Literal": {
+                                "Value": "'014 Non Operationg Expenses'"
+                              }
+                            }
+                          ],
+                          "isToggled": true,
+                          "children": [
+                            {
+                              "identityValues": [
+                                {
+                                  "Literal": {
+                                    "Value": "'10094226000 COPA assessments-Non'"
+                                  }
+                                }
+                              ],
+                              "isToggled": true
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "outlineWeight": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            },
+            "gridHorizontal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "gridHorizontalWeight": {
+              "expr": {
+                "Literal": {
+                  "Value": "5D"
+                }
+              }
+            },
+            "gridHorizontalColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "rowPadding": {
+              "expr": {
+                "Literal": {
+                  "Value": "6D"
+                }
+              }
+            },
+            "gridVertical": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTotals": [
+        {
+          "properties": {
+            "perColumnLevel": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "columnSubtotals": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Accounting Documents'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10.5D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "03d7f8200b5a06a26553",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "AGGR_H"
+              }
+            },
+            "Property": "COMPANYCODECURRENCY"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "918cb3ff8e9ca2432302",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DEBITCREDITCODETEXT"
+              }
+            },
+            "Property": "EN"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "65e57dc365723ea3c1a2",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "GLACCOUNTHIERARCHYWTEXT"
+              }
+            },
+            "Property": "GLACCOUNT_HIER_LEVEL1_TEXT"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "20904e825c625734a525",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "GLACCOUNTHIERARCHYWTEXT"
+              }
+            },
+            "Property": "GLACCOUNT_HIER_LEVEL2_TEXT"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "c075e2ed00c743193cac",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "GLACCOUNTHIERARCHYWTEXT"
+              }
+            },
+            "Property": "GLACCOUNT_HIER_LEVEL3_TEXT"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "32cb28069479ec0dcc12",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "GLACCOUNTHIERARCHYWTEXT"
+              }
+            },
+            "Property": "GLACCOUNT_HIER_LEVEL4_TEXT"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "58ec6c3b3a81542d3be0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "GLACCOUNTHIERARCHYWTEXT"
+              }
+            },
+            "Property": "GLACCOUNT_HIER_LEVEL5_TEXT"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "801a3d0fd1571ce6116e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "GLACCOUNTHIERARCHYWTEXT"
+              }
+            },
+            "Property": "GLACCOUNT_HIER_LEVEL6_TEXT"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "cfc7cb1660b7e8eb6147",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "GLACCOUNTHIERARCHYWTEXT"
+              }
+            },
+            "Property": "GLACCOUNT_HIER_LEVEL7_TEXT"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "8711e960ea54bee01701",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "GLACCOUNTHIERARCHYWTEXT"
+              }
+            },
+            "Property": "GLACCOUNT_HIER_LEVEL8_TEXT"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "c1bd193f9a1121168c34",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "GLACCOUNTHIERARCHYWTEXT"
+              }
+            },
+            "Property": "GLACCOUNT_HIER_LEVEL9_TEXT"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "b93b8ea63c0e65558a34",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "__MEASURES_AGGR_HRCHY"
+              }
+            },
+            "Property": "AGGR_HRCHY_COMPANYCODE_OPENING_BALANCE"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "a83a6e174967d5190399",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "__MEASURES_AGGR_HRCHY"
+              }
+            },
+            "Property": "AGGR_HRCHY_COMPANYCODE_CURRENT_PERIOD"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "3c01de88dc6da4e9238d",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "__MEASURES_AGGR_HRCHY"
+              }
+            },
+            "Property": "AGGR_HRCHY_COMPANYCODE_CLOSING_BALANCE"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

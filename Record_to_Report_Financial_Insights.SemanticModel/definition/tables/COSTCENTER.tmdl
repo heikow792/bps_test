@@ -1,0 +1,147 @@
+/// Cost center dimension for expense tracking and control
+table COSTCENTER
+	lineageTag: 01871556-d93d-4ffa-9f9d-b1561962d86a
+
+	column Key
+		dataType: int64
+		isHidden
+		isKey
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: bc913b8a-f889-43d0-b3d1-c00adbb0577d
+		summarizeBy: none
+		sourceColumn: Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column _UpdateTimeStamp
+		dataType: dateTime
+		isHidden
+		formatString: m/d/yyyy
+		sourceProviderType: datetime2
+		lineageTag: 071250db-a616-4356-a74c-a8c085802764
+		summarizeBy: none
+		sourceColumn: _UpdateTimeStamp
+
+		annotation SummarizationSetBy = Automatic
+
+	column _SystemName
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: 83072f22-31d2-4d2c-b5c8-d2b0f072a0dd
+		summarizeBy: none
+		sourceColumn: _SystemName
+
+		annotation SummarizationSetBy = Automatic
+
+	column COMPANYCODE
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 1492bb73-7993-44db-8181-b5e7e779793d
+		summarizeBy: none
+		sourceColumn: COMPANYCODE
+
+		annotation SummarizationSetBy = Automatic
+
+	column CONTROLLINGAREA
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 8fed5a44-0a32-45ff-920c-63c6f4d6a26e
+		summarizeBy: none
+		sourceColumn: CONTROLLINGAREA
+
+		annotation SummarizationSetBy = Automatic
+
+	column COSTCENTER
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 331aedf1-7d01-4037-ab95-f9bdce1e8d82
+		summarizeBy: none
+		sourceColumn: COSTCENTER
+
+		annotation SummarizationSetBy = Automatic
+
+	column COSTCENTERCATEGORY
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 35716bd4-7973-40c3-b850-c2504c2418fe
+		summarizeBy: none
+		sourceColumn: COSTCENTERCATEGORY
+
+		annotation SummarizationSetBy = Automatic
+
+	column COSTCENTERCURRENCY
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 2520b5f8-75c9-4b5f-bd3b-b658defc91cb
+		summarizeBy: none
+		sourceColumn: COSTCENTERCURRENCY
+
+		annotation SummarizationSetBy = Automatic
+
+	column COSTCENTERSTANDARDHIERAREA
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: b5045cf4-87a0-446e-9120-421bb643401d
+		summarizeBy: none
+		sourceColumn: COSTCENTERSTANDARDHIERAREA
+
+		annotation SummarizationSetBy = Automatic
+
+	column LANGUAGE
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 0b2411f7-fbed-4df5-b6a2-db955d1d85b4
+		summarizeBy: none
+		sourceColumn: LANGUAGE
+
+		annotation SummarizationSetBy = Automatic
+
+	column PLANT
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: e564f312-8f45-4a94-bf84-9de926b5caf8
+		summarizeBy: none
+		sourceColumn: PLANT
+
+		annotation SummarizationSetBy = Automatic
+
+	column VALIDITYENDDATE
+		dataType: dateTime
+		formatString: m/d/yyyy
+		sourceProviderType: date
+		lineageTag: f3fa572b-2385-437d-80e9-6d2090e44caf
+		summarizeBy: none
+		sourceColumn: VALIDITYENDDATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column VALIDITYSTARTDATE
+		dataType: dateTime
+		formatString: m/d/yyyy
+		sourceProviderType: date
+		lineageTag: 9499b250-2bc9-4f5b-a405-32b883ae73f0
+		summarizeBy: none
+		sourceColumn: VALIDITYSTARTDATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition COSTCENTER = m
+		mode: dual
+		source =
+				let
+				    Source = Sql.Database(Server, Database),
+				    dbo_vCOSTCENTER = Source{[Schema=Schema_Name,Item="vCOSTCENTER"]}[Data],
+				  #"Choose columns" = Table.SelectColumns(dbo_vCOSTCENTER, {"Key", "_UpdateTimeStamp", "_SystemName", "COMPANYCODE", "CONTROLLINGAREA", "COSTCENTER", "COSTCENTERCATEGORY", "COSTCENTERCURRENCY", "COSTCENTERSTANDARDHIERAREA", "LANGUAGE", "PLANT", "VALIDITYENDDATE", "VALIDITYSTARTDATE"})
+				in
+				    #"Choose columns"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

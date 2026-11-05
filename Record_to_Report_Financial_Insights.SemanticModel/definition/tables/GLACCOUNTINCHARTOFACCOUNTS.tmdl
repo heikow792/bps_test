@@ -1,0 +1,253 @@
+/// Mapping table linking GL accounts to chart of accounts
+table GLACCOUNTINCHARTOFACCOUNTS
+	lineageTag: 83eec84b-c79e-432d-9fdd-5a4e0315b533
+
+	/// Primary Key for the table.
+	column Key
+		dataType: int64
+		isHidden
+		isKey
+		formatString: 0
+		isAvailableInMdx: false
+		lineageTag: 7ff5341c-eac1-40d6-abc7-ec3d2b6331d0
+		summarizeBy: none
+		sourceColumn: Key
+
+		annotation SummarizationSetBy = User
+
+	/// Timestamp indicating last update time in silver lakehouse.
+	column _UpdateTimeStamp
+		dataType: dateTime
+		isHidden
+		formatString: m/d/yyyy
+		lineageTag: 96d997ad-7be2-4338-9bbc-58f3a70805b3
+		summarizeBy: none
+		sourceColumn: _UpdateTimeStamp
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Name of the source system.
+	column _SystemName
+		dataType: string
+		isHidden
+		lineageTag: 115cde0b-7446-45c0-828b-c4e86a540d54
+		summarizeBy: none
+		sourceColumn: _SystemName
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Indicator: Account Is Blocked for Creation ?.
+	column ACCOUNTISBLOCKEDFORCREATION
+		dataType: string
+		lineageTag: 6db3f1a3-1319-4be1-bd2a-12c3cbe8b557
+		summarizeBy: none
+		sourceColumn: ACCOUNTISBLOCKEDFORCREATION
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Indicator: Account Blocked for Planning ?.
+	column ACCOUNTISBLOCKEDFORPLANNING
+		dataType: string
+		lineageTag: fa240d2f-f211-4af2-a951-15bce5fd7f95
+		summarizeBy: none
+		sourceColumn: ACCOUNTISBLOCKEDFORPLANNING
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Indicator: Is Account Blocked for Posting?.
+	column ACCOUNTISBLOCKEDFORPOSTING
+		dataType: string
+		lineageTag: 52bbdf96-92e3-4aad-a2eb-1ad9a8be1479
+		summarizeBy: none
+		sourceColumn: ACCOUNTISBLOCKEDFORPOSTING
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Indicator: Account Marked for Deletion?.
+	column ACCOUNTISMARKEDFORDELETION
+		dataType: string
+		lineageTag: cbfa5d5f-1adb-41de-9f86-c40258a7a51a
+		summarizeBy: none
+		sourceColumn: ACCOUNTISMARKEDFORDELETION
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Bank Reconciliation Account.
+	column BANKRECONCILIATIONACCOUNT
+		dataType: string
+		lineageTag: f8ccff23-995f-42f2-89ab-5bef42a2de9a
+		summarizeBy: none
+		sourceColumn: BANKRECONCILIATIONACCOUNT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Chart of Accounts.
+	column CHARTOFACCOUNTS
+		dataType: string
+		lineageTag: b5c14f96-bb02-46b9-a7e4-7afae0b25a64
+		summarizeBy: none
+		sourceColumn: CHARTOFACCOUNTS
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Group Account Number.
+	column CORPORATEGROUPACCOUNT
+		dataType: string
+		lineageTag: 35892f29-a745-463d-b111-7437133f6404
+		summarizeBy: none
+		sourceColumn: CORPORATEGROUPACCOUNT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Group Chart of Accts.
+	column CORPORATEGROUPCHARTOFACCOUNTS
+		dataType: string
+		lineageTag: 32d400d9-e9dc-4717-9d65-cfbd285d2b13
+		summarizeBy: none
+		sourceColumn: CORPORATEGROUPCHARTOFACCOUNTS
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Name of Person who Created the Object.
+	column CREATEDBYUSER
+		dataType: string
+		lineageTag: a1f67a7e-e1f6-44c7-b4de-81ac73d586c3
+		summarizeBy: none
+		sourceColumn: CREATEDBYUSER
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Record Created On.
+	column CREATIONDATE
+		dataType: dateTime
+		formatString: m/d/yyyy
+		lineageTag: 9d7be9bd-9e5f-4674-ae74-9c19f6d7ffe2
+		summarizeBy: none
+		sourceColumn: CREATIONDATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	/// Functional Area.
+	column FUNCTIONALAREA
+		dataType: string
+		lineageTag: 428ffb9a-40a3-42c5-be86-c195136f133b
+		summarizeBy: none
+		sourceColumn: FUNCTIONALAREA
+
+		annotation SummarizationSetBy = Automatic
+
+	/// G/L Account Number.
+	column GLACCOUNT
+		dataType: string
+		lineageTag: e9ec3c0e-2320-4f1f-be9a-338a15101b9d
+		summarizeBy: none
+		sourceColumn: GLACCOUNT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// G/L Account Number.
+	column GLACCOUNTEXTERNAL
+		dataType: string
+		lineageTag: c01ae3a9-fbb8-4aab-b2b0-fbafeb53596a
+		summarizeBy: none
+		sourceColumn: GLACCOUNTEXTERNAL
+
+		annotation SummarizationSetBy = Automatic
+
+	/// G/L Account Group.
+	column GLACCOUNTGROUP
+		dataType: string
+		lineageTag: 7d6d9004-b6b5-4183-b0d4-dc1b39501f56
+		summarizeBy: none
+		sourceColumn: GLACCOUNTGROUP
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Subtype of a GL Account.
+	column GLACCOUNTSUBTYPE
+		dataType: string
+		lineageTag: 89edc0fa-3771-4c9a-9bbb-17f3bb196370
+		summarizeBy: none
+		sourceColumn: GLACCOUNTSUBTYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Type of a General Ledger Account.
+	column GLACCOUNTTYPE
+		dataType: string
+		lineageTag: 59a450e2-c4fa-400b-9458-d9c7292d2085
+		summarizeBy: none
+		sourceColumn: GLACCOUNTTYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Indicator: Account is a balance sheet account?.
+	column ISBALANCESHEETACCOUNT
+		dataType: string
+		lineageTag: 06d58249-3075-4793-ba8a-2821307cbafa
+		summarizeBy: none
+		sourceColumn: ISBALANCESHEETACCOUNT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Indicator: Account is a balance sheet account?.
+	column ISPROFITLOSSACCOUNT
+		dataType: string
+		lineageTag: 690c6817-0320-4f59-a6a9-bcf604ed9730
+		summarizeBy: none
+		sourceColumn: ISPROFITLOSSACCOUNT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// UTC Time Stamp in Short Form (YYYYMMDDhhmmss).
+	column LASTCHANGEDATETIME
+		dataType: double
+		sourceProviderType: decimal(15, 0)
+		lineageTag: c7f1baba-7d52-46e5-af07-601fac318661
+		summarizeBy: none
+		sourceColumn: LASTCHANGEDATETIME
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Company ID of Trading Partner.
+	column PARTNERCOMPANY
+		dataType: string
+		lineageTag: 40b70121-e9af-413f-9259-d351ecff6515
+		summarizeBy: none
+		sourceColumn: PARTNERCOMPANY
+
+		annotation SummarizationSetBy = Automatic
+
+	/// P&L statement account type.
+	column PROFITLOSSACCOUNTTYPE
+		dataType: string
+		lineageTag: 5d6303d6-be77-455e-b507-8626ef2a9665
+		summarizeBy: none
+		sourceColumn: PROFITLOSSACCOUNTTYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Number of the Sample Account.
+	column SAMPLEGLACCOUNT
+		dataType: string
+		lineageTag: c17e24ab-aeb9-4cfd-b7cb-1c164c22350b
+		summarizeBy: none
+		sourceColumn: SAMPLEGLACCOUNT
+
+		annotation SummarizationSetBy = Automatic
+
+	partition GLACCOUNTINCHARTOFACCOUNTS-59ea94a8-ffa9-431d-a173-692e0b0dd494 = m
+		mode: dual
+		source =
+				let
+				    Source = Sql.Database(Server, Database),
+				    dmgold_I_GLACCOUNTINCHARTOFACCOUNTS = Source{[Schema=Schema_Name,Item="I_GLACCOUNTINCHARTOFACCOUNTS"]}[Data]
+				in
+				    dmgold_I_GLACCOUNTINCHARTOFACCOUNTS
+
+	annotation PBI_ResultType = Table
+

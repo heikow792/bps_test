@@ -1,0 +1,4534 @@
+/// Main fact table containing raw GL account line item transactions with amounts, dates, and dimensional attributes
+table GLACCOUNTLINEITEMRAWDATA
+	lineageTag: f21b59e0-09a3-402e-973a-5edc76b84fed
+
+	column _key_ICONTROLLINGAREA
+		dataType: int64
+		isHidden
+		formatString: 0
+		isAvailableInMdx: false
+		sourceProviderType: int
+		lineageTag: 6ce1f3d2-7a8b-4e7d-92dc-974e06574b25
+		summarizeBy: none
+		sourceColumn: _key_ICONTROLLINGAREA
+
+		annotation SummarizationSetBy = User
+
+	column _key_ICUSTOMER
+		dataType: int64
+		isHidden
+		formatString: 0
+		isAvailableInMdx: false
+		sourceProviderType: int
+		lineageTag: 144433a2-71e6-4bc2-abd3-259977c402b6
+		summarizeBy: none
+		sourceColumn: _key_ICUSTOMER
+
+		annotation SummarizationSetBy = User
+
+	column _key_IPRODUCTGROUP2
+		dataType: int64
+		isHidden
+		formatString: 0
+		isAvailableInMdx: false
+		sourceProviderType: int
+		lineageTag: a57265a4-ebb8-4968-a4d6-6bb723969e59
+		summarizeBy: none
+		sourceColumn: _key_IPRODUCTGROUP2
+
+		annotation SummarizationSetBy = User
+
+	column _key_ISUPPLIER
+		dataType: int64
+		isHidden
+		formatString: 0
+		isAvailableInMdx: false
+		sourceProviderType: int
+		lineageTag: 247cbf49-3074-46bf-a7ea-5e2cdb1e265d
+		summarizeBy: none
+		sourceColumn: _key_ISUPPLIER
+
+		annotation SummarizationSetBy = User
+
+	column _key_IPRODUCT
+		dataType: int64
+		isHidden
+		formatString: 0
+		isAvailableInMdx: false
+		sourceProviderType: int
+		lineageTag: d866a5a3-a3f2-43f9-9a0d-49540096f01c
+		summarizeBy: none
+		sourceColumn: _key_IPRODUCT
+
+		annotation SummarizationSetBy = User
+
+	column _key_IPLANT
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: d6ae61cf-f243-420f-9c7f-4efc87788f55
+		summarizeBy: none
+		sourceColumn: _key_IPLANT
+
+		annotation SummarizationSetBy = User
+
+	column _key_IBUSINESSAREA
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 72af2548-707f-4122-a712-ccaa664e34c1
+		summarizeBy: none
+		sourceColumn: _key_IBUSINESSAREA
+
+		annotation SummarizationSetBy = User
+
+	column _key_ICHARTOFACCOUNTS
+		dataType: int64
+		isHidden
+		formatString: 0
+		isAvailableInMdx: false
+		sourceProviderType: int
+		lineageTag: 828519f7-a1a9-46af-b049-77339d891c85
+		summarizeBy: none
+		sourceColumn: _key_ICHARTOFACCOUNTS
+
+		annotation SummarizationSetBy = User
+
+	column _key_IEQUIPMENT
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 4f4a7272-7543-451e-a047-d7819fc24348
+		summarizeBy: none
+		sourceColumn: _key_IEQUIPMENT
+
+		annotation SummarizationSetBy = User
+
+	column _key_IASSETCLASS
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: adfb8d35-e7e7-4739-a43c-44f1949eb132
+		summarizeBy: none
+		sourceColumn: _key_IASSETCLASS
+
+		annotation SummarizationSetBy = User
+
+	column _key_ILEDGER
+		dataType: int64
+		isHidden
+		formatString: 0
+		isAvailableInMdx: false
+		sourceProviderType: int
+		lineageTag: fffa94c6-68cc-48b9-9674-9fc1f63f2473
+		summarizeBy: none
+		sourceColumn: _key_ILEDGER
+
+		annotation SummarizationSetBy = User
+
+	column _key_IASSETTRANSACTIONTYPE
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 713b1be3-7f71-48c1-9535-015c826337ef
+		summarizeBy: none
+		sourceColumn: _key_IASSETTRANSACTIONTYPE
+
+		annotation SummarizationSetBy = User
+
+	column _key_IFISCALYEARVARIANT
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 4fe5d863-8eb8-4299-98e2-7d7bcd160fb0
+		summarizeBy: none
+		sourceColumn: _key_IFISCALYEARVARIANT
+
+		annotation SummarizationSetBy = User
+
+	column _key_IFISCALYEARFORCOMPANYCODE
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: b9b7c6b4-6f2e-433b-85a9-4b258f0299dc
+		summarizeBy: none
+		sourceColumn: _key_IFISCALYEARFORCOMPANYCODE
+
+		annotation SummarizationSetBy = User
+
+	column _key_IGLOBALCOMPANYCompany
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 38b4bae1-49e1-4762-963f-fed5386d955a
+		summarizeBy: none
+		sourceColumn: _key_IGLOBALCOMPANYCompany
+
+		annotation SummarizationSetBy = User
+
+	column _key_IGLOBALCOMPANYPartnerCompany
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 1b9c89ec-1bd6-42fe-9071-5e7a8c60efb6
+		summarizeBy: none
+		sourceColumn: _key_IGLOBALCOMPANYPartnerCompany
+
+		annotation SummarizationSetBy = User
+
+	column _key_IACCOUNTINGDOCUMENTTYPE
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: f2330a2f-534d-41e4-a21f-253577a2598d
+		summarizeBy: none
+		sourceColumn: _key_IACCOUNTINGDOCUMENTTYPE
+
+		annotation SummarizationSetBy = User
+
+	column _key_IFUNCTIONALAREA
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: f7c9795d-1b3e-40fd-b9a3-373f95fd38d8
+		summarizeBy: none
+		sourceColumn: _key_IFUNCTIONALAREA
+
+		annotation SummarizationSetBy = User
+
+	column _key_ISEGMENT
+		dataType: int64
+		isHidden
+		formatString: 0
+		isAvailableInMdx: false
+		sourceProviderType: int
+		lineageTag: 5a929506-b585-40a5-8d91-4c5c6d29af04
+		summarizeBy: none
+		sourceColumn: _key_ISEGMENT
+
+		annotation SummarizationSetBy = User
+
+	column _key_ICOMPANYCODE
+		dataType: int64
+		isHidden
+		formatString: 0
+		isAvailableInMdx: false
+		sourceProviderType: int
+		lineageTag: 4c363b9b-609b-420e-be9e-ee66b8e18499
+		summarizeBy: none
+		sourceColumn: _key_ICOMPANYCODE
+
+		annotation SummarizationSetBy = User
+
+	column _key_IGLACCOUNTINCHARTOFACCOUNTS
+		dataType: int64
+		isHidden
+		formatString: 0
+		isAvailableInMdx: false
+		sourceProviderType: int
+		lineageTag: 7fa00df6-f304-4d0f-aeee-61ac00db2d94
+		summarizeBy: none
+		sourceColumn: _key_IGLACCOUNTINCHARTOFACCOUNTS
+
+		annotation SummarizationSetBy = User
+
+	column _key_IDEBITCREDITCODE
+		dataType: int64
+		isHidden
+		formatString: 0
+		isAvailableInMdx: false
+		sourceProviderType: int
+		lineageTag: 535e1c82-f7cb-4454-aed6-47dc20d4fa70
+		summarizeBy: none
+		sourceColumn: _key_IDEBITCREDITCODE
+
+		annotation SummarizationSetBy = User
+
+	column _key_IPROFITCENTER
+		dataType: int64
+		isHidden
+		formatString: 0
+		isAvailableInMdx: false
+		sourceProviderType: int
+		lineageTag: 2926d7c7-49b8-498c-b19d-70aaed87a4de
+		summarizeBy: none
+		sourceColumn: _key_IPROFITCENTER
+
+		annotation SummarizationSetBy = User
+
+	column _key_ICOSTCENTER
+		dataType: int64
+		isHidden
+		formatString: 0
+		isAvailableInMdx: false
+		sourceProviderType: int
+		lineageTag: 6d2909fa-b0da-4869-b6e1-49338257c35d
+		summarizeBy: none
+		sourceColumn: _key_ICOSTCENTER
+
+		annotation SummarizationSetBy = User
+
+	column _key_IFUNCTIONALLOCATION
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 321c07fc-740b-428d-827c-9f5143240ff5
+		summarizeBy: none
+		sourceColumn: _key_IFUNCTIONALLOCATION
+
+		annotation SummarizationSetBy = User
+
+	/// Name of the source system.
+	column _SystemName
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(100)
+		lineageTag: ccb133fe-41cb-4584-a6fe-19dbf6e1f45a
+		summarizeBy: none
+		sourceColumn: _SystemName
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Journal Entry.
+	column ACCOUNTINGDOCUMENT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 718ee42c-3dbc-4b4e-8895-5eb3f6120fe7
+		summarizeBy: none
+		sourceColumn: ACCOUNTINGDOCUMENT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Company Code.
+	column COMPANYCODE
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 380fe042-f52d-4006-bc84-e3439b19b1ca
+		summarizeBy: none
+		sourceColumn: COMPANYCODE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Fiscal Year.
+	column FISCALYEAR
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 743c1d76-7339-43ee-b46e-c707316ddd6c
+		summarizeBy: none
+		sourceColumn: FISCALYEAR
+
+		annotation SummarizationSetBy = User
+
+	/// Fiscal Year Variant.
+	column FISCALYEARVARIANT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 86cb6b10-c012-4584-98f6-f1dba673f0ae
+		summarizeBy: none
+		sourceColumn: FISCALYEARVARIANT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// General Ledger Journal Entry Line Item.
+	column LEDGERGLLINEITEM
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: c36c099c-2ea6-48e7-bd3e-f755922c6165
+		summarizeBy: none
+		sourceColumn: LEDGERGLLINEITEM
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Source Ledger.
+	column SOURCELEDGER
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: da6c9e26-4569-4947-b742-a50c630e0a55
+		summarizeBy: none
+		sourceColumn: SOURCELEDGER
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Debit/Credit Code.
+	column DEBITCREDITCODE
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: f75de43c-558b-4236-a7e4-fab155ce0b92
+		summarizeBy: none
+		sourceColumn: DEBITCREDITCODE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Chart of Accounts.
+	column CHARTOFACCOUNTS
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 88dfc4f6-1149-424a-953a-a0991cf097b4
+		summarizeBy: none
+		sourceColumn: CHARTOFACCOUNTS
+
+		annotation SummarizationSetBy = Automatic
+
+	/// G/L Account.
+	column GLACCOUNT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: c117551c-2ff5-4e7d-b470-707ca5c671ae
+		summarizeBy: none
+		sourceColumn: GLACCOUNT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Company.
+	column COMPANY
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: ac525f24-e46c-4050-8640-cc00e5111ab2
+		summarizeBy: none
+		sourceColumn: COMPANY
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Segment for Segmental Reporting.
+	column SEGMENT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 0b93d866-2884-44b4-b96c-24b46b0a2e06
+		summarizeBy: none
+		sourceColumn: SEGMENT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Functional Area.
+	column FUNCTIONALAREA
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 1d9c2ee0-39a1-46a8-b8cc-584e93827f81
+		summarizeBy: none
+		sourceColumn: FUNCTIONALAREA
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Journal Entry Type.
+	column ACCOUNTINGDOCUMENTTYPE
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: c358a063-6495-4d4c-bcc7-9bc97d92d1db
+		summarizeBy: none
+		sourceColumn: ACCOUNTINGDOCUMENTTYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// WBS Element Internal ID.
+	column WBSELEMENTINTERNALID
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 8f0e4803-3f1f-4f49-a14d-c542c7de1acb
+		summarizeBy: none
+		sourceColumn: WBSELEMENTINTERNALID
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Fixed Asset.
+	column MASTERFIXEDASSET
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 5eb39d0a-501f-4522-95df-54e70b009791
+		summarizeBy: none
+		sourceColumn: MASTERFIXEDASSET
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Asset Transaction Type.
+	column ASSETTRANSACTIONTYPE
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 83f2b045-0bcd-4c37-bf40-b92b0bf58a2a
+		summarizeBy: none
+		sourceColumn: ASSETTRANSACTIONTYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Asset Subnumber.
+	column FIXEDASSET
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: a4ab5882-67ab-47fe-b843-070f252a055e
+		summarizeBy: none
+		sourceColumn: FIXEDASSET
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Asset Class.
+	column ASSETCLASS
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: ecb57e58-409b-404f-8c5f-a4015a3d5235
+		summarizeBy: none
+		sourceColumn: ASSETCLASS
+
+		annotation SummarizationSetBy = Automatic
+
+	/// WBS Element.
+	column WBSELEMENT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: e4b7f09d-d9b7-4626-8ec6-2595b14da720
+		summarizeBy: none
+		sourceColumn: WBSELEMENT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Equipment Number.
+	column EQUIPMENT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 3253c32e-1c03-4d17-b460-8f6651c07a96
+		summarizeBy: none
+		sourceColumn: EQUIPMENT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Functional Location.
+	column FUNCTIONALLOCATION
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 76671d78-1187-489e-b642-65ea477eba7a
+		summarizeBy: none
+		sourceColumn: FUNCTIONALLOCATION
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Business Area.
+	column BUSINESSAREA
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: f596571c-b9e8-4130-8664-16b234ba259f
+		summarizeBy: none
+		sourceColumn: BUSINESSAREA
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Plant.
+	column PLANT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 4498b14a-8f01-4112-8792-c69d3920a7cc
+		summarizeBy: none
+		sourceColumn: PLANT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Product Number.
+	column PRODUCT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: f953572a-c3c4-4b75-b3f4-bf73ca948774
+		summarizeBy: none
+		sourceColumn: PRODUCT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Supplier.
+	column SUPPLIER
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 3038c8f0-3795-46e6-8494-f3dc66cc1ff0
+		summarizeBy: none
+		sourceColumn: SUPPLIER
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Product Group.
+	column PRODUCTGROUP
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 32d5f6ad-397b-4a4e-ab9b-bf65b4f17636
+		summarizeBy: none
+		sourceColumn: PRODUCTGROUP
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Customer Number.
+	column CUSTOMER
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 169c0a96-d2df-42d4-89c2-f2d2b3110861
+		summarizeBy: none
+		sourceColumn: CUSTOMER
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Controlling Area.
+	column CONTROLLINGAREA
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 0d859619-ac51-450d-8e0a-7ae9a1bd9606
+		summarizeBy: none
+		sourceColumn: CONTROLLINGAREA
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Base Unit of Measure.
+	column BASEUNIT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 2754877d-43f5-4c39-9dbc-d992f0a594e8
+		summarizeBy: none
+		sourceColumn: BASEUNIT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Balance Transaction Currency.
+	column BALANCETRANSACTIONCURRENCY
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 74adecfc-7e6c-4bd9-9942-d67c1fa25507
+		summarizeBy: none
+		sourceColumn: BALANCETRANSACTIONCURRENCY
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Transaction Currency.
+	column TRANSACTIONCURRENCY
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 4f96e0f5-cbb5-4598-b5b4-61a77c7c2b7b
+		summarizeBy: none
+		sourceColumn: TRANSACTIONCURRENCY
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Company Code Currency.
+	column COMPANYCODECURRENCY
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: a389b055-304c-43cc-95b9-7a4fbddaa637
+		summarizeBy: none
+		sourceColumn: COMPANYCODECURRENCY
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Global Currency.
+	column GLOBALCURRENCY
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 8b42f0fa-cc0f-4acb-af85-6c5038329bd0
+		summarizeBy: none
+		sourceColumn: GLOBALCURRENCY
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Functional Currency.
+	column FUNCTIONALCURRENCY
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 1982df2a-bb57-463e-bfe4-39421dd11a78
+		summarizeBy: none
+		sourceColumn: FUNCTIONALCURRENCY
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Freely Defined Currency 1.
+	column FREEDEFINEDCURRENCY1
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 3c957a63-01bc-429b-999c-0d1c26b019eb
+		summarizeBy: none
+		sourceColumn: FREEDEFINEDCURRENCY1
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Freely Defined Currency 2.
+	column FREEDEFINEDCURRENCY2
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: d55a1d78-8f86-40f0-862c-92f8a6fa68ff
+		summarizeBy: none
+		sourceColumn: FREEDEFINEDCURRENCY2
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Freely Defined Currency 3.
+	column FREEDEFINEDCURRENCY3
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: c8e5655c-bc42-4878-9af4-36fa43c188b4
+		summarizeBy: none
+		sourceColumn: FREEDEFINEDCURRENCY3
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Freely Defined Currency 4.
+	column FREEDEFINEDCURRENCY4
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 3cc4c949-b6e1-4f7e-a0cd-2f0cda52687f
+		summarizeBy: none
+		sourceColumn: FREEDEFINEDCURRENCY4
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Freely Defined Currency 5.
+	column FREEDEFINEDCURRENCY5
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: cf2e8d41-a875-4462-ae9a-34a344fb3383
+		summarizeBy: none
+		sourceColumn: FREEDEFINEDCURRENCY5
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Freely Defined Currency 6.
+	column FREEDEFINEDCURRENCY6
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 0f5688fa-bc59-4fea-92eb-692de236c819
+		summarizeBy: none
+		sourceColumn: FREEDEFINEDCURRENCY6
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Freely Defined Currency 7.
+	column FREEDEFINEDCURRENCY7
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: bbf729ec-367f-455b-aaf8-4983f52d0f75
+		summarizeBy: none
+		sourceColumn: FREEDEFINEDCURRENCY7
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Freely Defined Currency 8.
+	column FREEDEFINEDCURRENCY8
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 912b5632-1e1c-41db-a0c3-cc8b7778c68f
+		summarizeBy: none
+		sourceColumn: FREEDEFINEDCURRENCY8
+
+		annotation SummarizationSetBy = Automatic
+
+	/// CO Object Currency.
+	column CONTROLLINGOBJECTCURRENCY
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 07aede15-2402-4bd5-b907-0e1c225cfd9e
+		summarizeBy: none
+		sourceColumn: CONTROLLINGOBJECTCURRENCY
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Grant currency.
+	column GRANTCURRENCY
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 5a7e0679-f871-48ef-8b64-91270af906dd
+		summarizeBy: none
+		sourceColumn: GRANTCURRENCY
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Foreign key reference to the fiscal period for the fiscal year variant.
+	column _key_IFISCALPERIODFORVARIANT
+		dataType: int64
+		isHidden
+		formatString: 0
+		isAvailableInMdx: false
+		sourceProviderType: int
+		lineageTag: fe17f929-dada-4396-bcee-c2b38bf5766f
+		summarizeBy: none
+		sourceColumn: _key_IFISCALPERIODFORVARIANT
+
+		annotation SummarizationSetBy = User
+
+	/// Fiscal Year of Ledger.
+	column LEDGERFISCALYEAR
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 1c11e230-2a40-4f02-8600-975a24a90244
+		summarizeBy: none
+		sourceColumn: LEDGERFISCALYEAR
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Record Type.
+	column GLRECORDTYPE
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: f62a6a9d-cb54-4e3b-b6bc-f3deaf9c876c
+		summarizeBy: none
+		sourceColumn: GLRECORDTYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Shifted Fiscal Year Consecutive ID.
+	column JRNLENTRALTVFYCONSECUTIVEID
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 5d175b68-bec7-40d8-b359-86eddcefe9fb
+		summarizeBy: none
+		sourceColumn: JRNLENTRALTVFYCONSECUTIVEID
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Financial Transaction Type.
+	column FINANCIALTRANSACTIONTYPE
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 947b0690-0e34-4626-81f2-c6c7a857c394
+		summarizeBy: none
+		sourceColumn: FINANCIALTRANSACTIONTYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Transaction Type for General Ledger.
+	column GLBUSINESSTRANSACTIONTYPE
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 3ea8ebb5-9c90-4f5f-969a-8fa4ec416c21
+		summarizeBy: none
+		sourceColumn: GLBUSINESSTRANSACTIONTYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Business Transaction Category.
+	column BUSINESSTRANSACTIONCATEGORY
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: c7efe4f8-89b5-40ed-b32d-5479f85becaf
+		summarizeBy: none
+		sourceColumn: BUSINESSTRANSACTIONCATEGORY
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Business Transaction Type.
+	column BUSINESSTRANSACTIONTYPE
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 8486dcc9-86db-48f5-89f5-36367e0afdf9
+		summarizeBy: none
+		sourceColumn: BUSINESSTRANSACTIONTYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Financial Closing Step.
+	column FINANCIALCLOSINGSTEP
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 7a48db82-fbd5-4054-990a-37b4d9213e4b
+		summarizeBy: none
+		sourceColumn: FINANCIALCLOSINGSTEP
+
+		annotation SummarizationSetBy = Automatic
+
+	/// CO Business Transaction.
+	column CONTROLLINGBUSTRANSACTYPE
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 03081ecc-d259-40fd-85cd-b428c0216fcd
+		summarizeBy: none
+		sourceColumn: CONTROLLINGBUSTRANSACTYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Reference Document Type.
+	column REFERENCEDOCUMENTTYPE
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: a7ef6c79-75c2-4d48-bde4-5f6c83a9e159
+		summarizeBy: none
+		sourceColumn: REFERENCEDOCUMENTTYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Logical System.
+	column LOGICALSYSTEM
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 97b2442f-f145-4827-9538-4f499575ac68
+		summarizeBy: none
+		sourceColumn: LOGICALSYSTEM
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Reference Document Context.
+	column REFERENCEDOCUMENTCONTEXT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 934ef07d-207b-49df-b2a5-57c822edae33
+		summarizeBy: none
+		sourceColumn: REFERENCEDOCUMENTCONTEXT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Reference Doc. Number.
+	column REFERENCEDOCUMENT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 91f0358c-75af-4b37-afdd-2b1c801ed6f1
+		summarizeBy: none
+		sourceColumn: REFERENCEDOCUMENT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Reference Document Item.
+	column REFERENCEDOCUMENTITEM
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 70f3a235-b0d2-452f-93f4-0c5287de21d3
+		summarizeBy: none
+		sourceColumn: REFERENCEDOCUMENTITEM
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Reference Document Item Group.
+	column REFERENCEDOCUMENTITEMGROUP
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 4e387e63-157a-4eef-a9bb-d5aefcac7b4c
+		summarizeBy: none
+		sourceColumn: REFERENCEDOCUMENTITEMGROUP
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Partial Document to be balanced to zero.
+	column TRANSACTIONSUBITEM
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 0e8965f5-cd9d-4206-b704-5b61291665fa
+		summarizeBy: none
+		sourceColumn: TRANSACTIONSUBITEM
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Indicator: Item is Reversing Another Item.
+	column ISREVERSAL
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: c882fdd4-7084-4992-95c6-8f0b9c960bc1
+		summarizeBy: none
+		sourceColumn: ISREVERSAL
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Indicator: Item is Reversed.
+	column ISREVERSED
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 5476d95f-699b-465f-96f9-180d878cffd6
+		summarizeBy: none
+		sourceColumn: ISREVERSED
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Reversal Reference Document Context.
+	column REVERSALREFERENCEDOCUMENTCNTXT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 40e70e78-383e-4fb1-ade5-29a61f1dba26
+		summarizeBy: none
+		sourceColumn: REVERSALREFERENCEDOCUMENTCNTXT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Reversal Reference Document.
+	column REVERSALREFERENCEDOCUMENT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: c99b9aac-0de1-409d-9720-7d566d082d23
+		summarizeBy: none
+		sourceColumn: REVERSALREFERENCEDOCUMENT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Reversal Transaction Sub Item.
+	column REVERSALTRANSACTIONSUBITEM
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: bb621532-a0e4-4dd1-a2db-d4551479611e
+		summarizeBy: none
+		sourceColumn: REVERSALTRANSACTIONSUBITEM
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Indicator: Item is Settling or Transferring Another Item.
+	column ISSETTLEMENT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: b59e0317-068f-41c3-a53a-709a3422a5fe
+		summarizeBy: none
+		sourceColumn: ISSETTLEMENT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Indicator: Line Item is Settled or Transferred.
+	column ISSETTLED
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: f17057f4-7aeb-4335-a378-510197ca73fa
+		summarizeBy: none
+		sourceColumn: ISSETTLED
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Predecessor Reference Document Type.
+	column PREDECESSORREFERENCEDOCTYPE
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: b4ac4c08-a69f-4df7-9256-f7ce8e1508fc
+		summarizeBy: none
+		sourceColumn: PREDECESSORREFERENCEDOCTYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Predecessor Reference Document Context.
+	column PREDECESSORREFERENCEDOCCNTXT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 09e453dc-04e1-4470-9182-f66d156b5291
+		summarizeBy: none
+		sourceColumn: PREDECESSORREFERENCEDOCCNTXT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Predecessor Reference Document.
+	column PREDECESSORREFERENCEDOCUMENT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 8f6d9ab6-f1d0-4671-8ee1-f81a0efe73b1
+		summarizeBy: none
+		sourceColumn: PREDECESSORREFERENCEDOCUMENT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Predecessor Reference Document Item.
+	column PREDECESSORREFERENCEDOCITEM
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 81eaa48c-accd-46ec-9e41-1b50e6697304
+		summarizeBy: none
+		sourceColumn: PREDECESSORREFERENCEDOCITEM
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Preceding Journal Entry Company Code.
+	column PRDCSSRJOURNALENTRYCOMPANYCODE
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: b2dd5d5c-dd25-4b9d-acc9-1786e9406b04
+		summarizeBy: none
+		sourceColumn: PRDCSSRJOURNALENTRYCOMPANYCODE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Preceding Journal Entry Fiscal Year.
+	column PRDCSSRJOURNALENTRYFISCALYEAR
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: ca94266c-a7ba-4888-ab29-d83c1cceb6ad
+		summarizeBy: none
+		sourceColumn: PRDCSSRJOURNALENTRYFISCALYEAR
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Preceding Journal Entry Document Number.
+	column PREDECESSORJOURNALENTRY
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 4ac7f454-8d52-4d5c-a610-0f4dd456ca33
+		summarizeBy: none
+		sourceColumn: PREDECESSORJOURNALENTRY
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Preceding Journal Entry Line Item.
+	column PREDECESSORJOURNALENTRYITEM
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: e7260ec5-0fc7-48f8-a705-cbf0450a7144
+		summarizeBy: none
+		sourceColumn: PREDECESSORJOURNALENTRYITEM
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Source Reference Document Type.
+	column SOURCEREFERENCEDOCUMENTTYPE
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 33a37deb-37ff-4329-9358-7f205be4ac88
+		summarizeBy: none
+		sourceColumn: SOURCEREFERENCEDOCUMENTTYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Source Logical System.
+	column SOURCELOGICALSYSTEM
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 8fd7a4cb-c211-4ea9-9c07-2c4d73abb363
+		summarizeBy: none
+		sourceColumn: SOURCELOGICALSYSTEM
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Source Reference Document Context.
+	column SOURCEREFERENCEDOCUMENTCNTXT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 8f404e39-bff0-4ec7-9206-11a4ea780bcb
+		summarizeBy: none
+		sourceColumn: SOURCEREFERENCEDOCUMENTCNTXT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Source Reference Document.
+	column SOURCEREFERENCEDOCUMENT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: fc7ecd9c-a678-4f1c-a784-0e162e9eb312
+		summarizeBy: none
+		sourceColumn: SOURCEREFERENCEDOCUMENT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Source Reference Document Item.
+	column SOURCEREFERENCEDOCUMENTITEM
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 4f61ac07-9f06-4da8-90d4-5b677af286ce
+		summarizeBy: none
+		sourceColumn: SOURCEREFERENCEDOCUMENTITEM
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Source Reference Document Subitem.
+	column SOURCEREFERENCEDOCSUBITEM
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: abd41c1d-42b8-4f29-815e-f0c9ba3e21ab
+		summarizeBy: none
+		sourceColumn: SOURCEREFERENCEDOCSUBITEM
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Indicator: Is Commitment.
+	column ISCOMMITMENT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: b21db0b8-f495-46c1-bc56-d48462d7237b
+		summarizeBy: none
+		sourceColumn: ISCOMMITMENT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Journal Entry Item Obsolete Reason.
+	column JRNLENTRYITEMOBSOLETEREASON
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 54466f6b-3142-4fe9-9981-2c21416231b1
+		summarizeBy: none
+		sourceColumn: JRNLENTRYITEMOBSOLETEREASON
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Journal Entry Is Secondary Entry.
+	column JOURNALENTRYISSECONDARYENTRY
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 5875f47c-26d0-4c26-94e3-32f3c53408e7
+		summarizeBy: none
+		sourceColumn: JOURNALENTRYISSECONDARYENTRY
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Orgl Change.
+	column ORGANIZATIONALCHANGE
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: b30b4a5e-184c-493b-af0f-aff1849e877e
+		summarizeBy: none
+		sourceColumn: ORGANIZATIONALCHANGE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Cost Center.
+	column COSTCENTER
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 4e0d471d-f588-4543-a12a-add7b20641e9
+		summarizeBy: none
+		sourceColumn: COSTCENTER
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Profit Center.
+	column PROFITCENTER
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 192be9b2-b0e8-4c0e-baa4-196ee28d5990
+		summarizeBy: none
+		sourceColumn: PROFITCENTER
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Partner Cost Center.
+	column PARTNERCOSTCENTER
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: dd9a9a5f-648c-4d32-8cf4-8916c14a3939
+		summarizeBy: none
+		sourceColumn: PARTNERCOSTCENTER
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Partner Profit Center.
+	column PARTNERPROFITCENTER
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 2b47f63c-c993-4596-a4d5-ecfb1ece92a0
+		summarizeBy: none
+		sourceColumn: PARTNERPROFITCENTER
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Partner Functional Area.
+	column PARTNERFUNCTIONALAREA
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: c6eab8e8-560c-48e6-ae35-d2464d2386d9
+		summarizeBy: none
+		sourceColumn: PARTNERFUNCTIONALAREA
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Partner Business Area.
+	column PARTNERBUSINESSAREA
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 5d65ea8e-3b1e-41eb-a7ef-a717b3d68ad6
+		summarizeBy: none
+		sourceColumn: PARTNERBUSINESSAREA
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Company ID of Trading Partner.
+	column PARTNERCOMPANY
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 3e830e3a-717f-4d74-a577-0fda3dd10c0d
+		summarizeBy: none
+		sourceColumn: PARTNERCOMPANY
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Partner Segment for Segmental Reporting.
+	column PARTNERSEGMENT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: ce09a6f8-0233-4684-a414-7aa03e484a7f
+		summarizeBy: none
+		sourceColumn: PARTNERSEGMENT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Amount in Balance Transaction Currency.
+	column AMOUNTINBALANCETRANSACCRCY
+		dataType: decimal
+		sourceProviderType: decimal(23, 2)
+		lineageTag: 36b53d7f-f86b-4e0c-97a6-a511d1420e67
+		summarizeBy: none
+		sourceColumn: AMOUNTINBALANCETRANSACCRCY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Amount in Transaction Currency.
+	column AMOUNTINTRANSACTIONCURRENCY
+		dataType: decimal
+		sourceProviderType: decimal(23, 2)
+		lineageTag: 1b3fb154-d8f4-490d-bbaa-03bfe2dac6b5
+		summarizeBy: none
+		sourceColumn: AMOUNTINTRANSACTIONCURRENCY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Amount in Company Code Currency.
+	column AMOUNTINCOMPANYCODECURRENCY
+		dataType: decimal
+		sourceProviderType: decimal(23, 2)
+		lineageTag: dd365790-d1d6-44e5-a798-8467abba2d49
+		summarizeBy: none
+		sourceColumn: AMOUNTINCOMPANYCODECURRENCY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Amount in Global Currency.
+	column AMOUNTINGLOBALCURRENCY
+		dataType: decimal
+		sourceProviderType: decimal(23, 2)
+		lineageTag: b99db0ae-298a-4939-880e-e58bcb5a12cf
+		summarizeBy: none
+		sourceColumn: AMOUNTINGLOBALCURRENCY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Amount in Functional Currency.
+	column AMOUNTINFUNCTIONALCURRENCY
+		dataType: decimal
+		sourceProviderType: decimal(23, 2)
+		lineageTag: b2333fc7-2b03-4707-87fc-24d49eae81ea
+		summarizeBy: none
+		sourceColumn: AMOUNTINFUNCTIONALCURRENCY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Amount in Freely Defined Currency 1.
+	column AMOUNTINFREEDEFINEDCURRENCY1
+		dataType: decimal
+		sourceProviderType: decimal(23, 2)
+		lineageTag: db99fedc-6fed-44ed-8abd-cfedd307a900
+		summarizeBy: none
+		sourceColumn: AMOUNTINFREEDEFINEDCURRENCY1
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Amount in Freely Defined Currency 2.
+	column AMOUNTINFREEDEFINEDCURRENCY2
+		dataType: decimal
+		sourceProviderType: decimal(23, 2)
+		lineageTag: 01a2a923-ba7a-47e9-872e-6f72e06c6254
+		summarizeBy: none
+		sourceColumn: AMOUNTINFREEDEFINEDCURRENCY2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Amount in Freely Defined Currency 3.
+	column AMOUNTINFREEDEFINEDCURRENCY3
+		dataType: decimal
+		sourceProviderType: decimal(23, 2)
+		lineageTag: 6d2c1339-1acb-490a-99b3-ee5d1ffcd4aa
+		summarizeBy: none
+		sourceColumn: AMOUNTINFREEDEFINEDCURRENCY3
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Amount in Freely Defined Currency 4.
+	column AMOUNTINFREEDEFINEDCURRENCY4
+		dataType: decimal
+		sourceProviderType: decimal(23, 2)
+		lineageTag: 73521d90-b759-4973-89a2-7d1d010ad523
+		summarizeBy: none
+		sourceColumn: AMOUNTINFREEDEFINEDCURRENCY4
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Amount in Freely Defined Currency 5.
+	column AMOUNTINFREEDEFINEDCURRENCY5
+		dataType: decimal
+		sourceProviderType: decimal(23, 2)
+		lineageTag: b1831d6f-ee33-428d-a837-fc98a3bfba4e
+		summarizeBy: none
+		sourceColumn: AMOUNTINFREEDEFINEDCURRENCY5
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Amount in Freely Defined Currency 6.
+	column AMOUNTINFREEDEFINEDCURRENCY6
+		dataType: decimal
+		sourceProviderType: decimal(23, 2)
+		lineageTag: de36a59f-a369-40c4-870c-2145d67a8ef5
+		summarizeBy: none
+		sourceColumn: AMOUNTINFREEDEFINEDCURRENCY6
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Amount in Freely Defined Currency 7.
+	column AMOUNTINFREEDEFINEDCURRENCY7
+		dataType: decimal
+		sourceProviderType: decimal(23, 2)
+		lineageTag: 5863ce64-1b94-497d-acba-884ad8203101
+		summarizeBy: none
+		sourceColumn: AMOUNTINFREEDEFINEDCURRENCY7
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Amount in Freely Defined Currency 8.
+	column AMOUNTINFREEDEFINEDCURRENCY8
+		dataType: decimal
+		sourceProviderType: decimal(23, 2)
+		lineageTag: eb1e4066-8e5a-4579-a2bf-8c9d91ccdd0a
+		summarizeBy: none
+		sourceColumn: AMOUNTINFREEDEFINEDCURRENCY8
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Fixed Amount in Global Currency.
+	column FIXEDAMOUNTINGLOBALCRCY
+		dataType: decimal
+		sourceProviderType: decimal(23, 2)
+		lineageTag: 08a05616-30ee-4b28-97f0-76f1963358d1
+		summarizeBy: none
+		sourceColumn: FIXEDAMOUNTINGLOBALCRCY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Group Valuation Fixed Amount in Global Currency.
+	column GRPVALNFIXEDAMTINGLOBCRCY
+		dataType: decimal
+		sourceProviderType: decimal(23, 2)
+		lineageTag: 39d25757-6565-49c3-900c-68271c4c0947
+		summarizeBy: none
+		sourceColumn: GRPVALNFIXEDAMTINGLOBCRCY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Profit Center Valuation Fixed Amount in Global Currency.
+	column PRFTCTRVALNFXDAMTINGLOBCRCY
+		dataType: decimal
+		sourceProviderType: decimal(23, 2)
+		lineageTag: bae75b54-6c2b-4141-bc3c-539c737ef712
+		summarizeBy: none
+		sourceColumn: PRFTCTRVALNFXDAMTINGLOBCRCY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Fixed Amount in Company Currency.
+	column FIXEDAMOUNTINCOCODECRCY
+		dataType: decimal
+		sourceProviderType: decimal(23, 2)
+		lineageTag: e54c0217-1c3b-4223-9472-c8c676fd6898
+		summarizeBy: none
+		sourceColumn: FIXEDAMOUNTINCOCODECRCY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Fixed Amount in Transaction Currency.
+	column FIXEDAMOUNTINTRANSCRCY
+		dataType: decimal
+		sourceProviderType: decimal(23, 2)
+		lineageTag: 84a65579-882b-4121-8309-61ba45b981c9
+		summarizeBy: none
+		sourceColumn: FIXEDAMOUNTINTRANSCRCY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Total Price Variance in Global Currency.
+	column TOTALPRICEVARCINGLOBALCRCY
+		dataType: decimal
+		sourceProviderType: decimal(23, 2)
+		lineageTag: b5d05742-6e1f-4779-aa91-7ca7626148bb
+		summarizeBy: none
+		sourceColumn: TOTALPRICEVARCINGLOBALCRCY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Group Valuation Total Price Variance in Global Currency.
+	column GRPVALNTOTPRCVARCINGLOBCRCY
+		dataType: decimal
+		sourceProviderType: decimal(23, 2)
+		lineageTag: b8811eaf-8bb7-4662-9f3c-4dc5db41a20f
+		summarizeBy: none
+		sourceColumn: GRPVALNTOTPRCVARCINGLOBCRCY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Profit Center Valuation Total Price Variance in Global Cur..
+	column PRFTCTRVALNTOTPRCVARCINGLBCRCY
+		dataType: decimal
+		sourceProviderType: decimal(23, 2)
+		lineageTag: e6e753e1-a697-45a3-9cff-f27b67771bee
+		summarizeBy: none
+		sourceColumn: PRFTCTRVALNTOTPRCVARCINGLBCRCY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Fixed Price Variance in Global Currency.
+	column FIXEDPRICEVARCINGLOBALCRCY
+		dataType: decimal
+		sourceProviderType: decimal(23, 2)
+		lineageTag: b9370d72-9688-431c-8672-86ded60a3a66
+		summarizeBy: none
+		sourceColumn: FIXEDPRICEVARCINGLOBALCRCY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Group Valuation Fixed Price Variance in Global Currency.
+	column GRPVALNFIXEDPRCVARCINGLOBCRCY
+		dataType: decimal
+		sourceProviderType: decimal(23, 2)
+		lineageTag: 56d899c1-415d-40bf-aa12-ee1b2b530389
+		summarizeBy: none
+		sourceColumn: GRPVALNFIXEDPRCVARCINGLOBCRCY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Profit Center Valuation Fixed Price Variance in Global Cur..
+	column PRFTCTRVALNFXDPRCVARCINGLBCRCY
+		dataType: decimal
+		sourceProviderType: decimal(23, 2)
+		lineageTag: ad1f940e-526d-4a1e-a463-f718af7b2809
+		summarizeBy: none
+		sourceColumn: PRFTCTRVALNFXDPRCVARCINGLBCRCY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Amount in Object Currency.
+	column AMOUNTINOBJECTCURRENCY
+		dataType: decimal
+		sourceProviderType: decimal(23, 2)
+		lineageTag: dbf6b5d2-60c7-41da-9fff-8090bce46574
+		summarizeBy: none
+		sourceColumn: AMOUNTINOBJECTCURRENCY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Grant Amount in Grant Currency.
+	column AMOUNTINGRANTCURRENCY
+		dataType: decimal
+		sourceProviderType: decimal(23, 2)
+		lineageTag: 42c877af-75bf-4407-bfdf-6975314b5c53
+		summarizeBy: none
+		sourceColumn: AMOUNTINGRANTCURRENCY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Quantity.
+	column QUANTITY
+		dataType: decimal
+		sourceProviderType: decimal(23, 3)
+		lineageTag: cb45d348-a2f9-4a1b-9937-ac55531d0b8c
+		summarizeBy: none
+		sourceColumn: QUANTITY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Fixed Quantity.
+	column FIXEDQUANTITY
+		dataType: decimal
+		sourceProviderType: decimal(23, 3)
+		lineageTag: 01c2d4a3-7de7-4130-8e8f-0e7cf58803ba
+		summarizeBy: none
+		sourceColumn: FIXEDQUANTITY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Cost Source Unit.
+	column COSTSOURCEUNIT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: e6097518-cf3d-4041-8ac9-836d8c45b3a7
+		summarizeBy: none
+		sourceColumn: COSTSOURCEUNIT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Valuation Quantity.
+	column VALUATIONQUANTITY
+		dataType: decimal
+		sourceProviderType: decimal(23, 3)
+		lineageTag: 15e39122-c3c5-4a60-9da5-76eaf16ecc36
+		summarizeBy: none
+		sourceColumn: VALUATIONQUANTITY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Valuation Fixed Quantity.
+	column VALUATIONFIXEDQUANTITY
+		dataType: decimal
+		sourceProviderType: decimal(23, 3)
+		lineageTag: f5e0445c-a8b0-45d1-ba7e-25ad2541699c
+		summarizeBy: none
+		sourceColumn: VALUATIONFIXEDQUANTITY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Unit of Measure for Reference Quantity.
+	column REFERENCEQUANTITYUNIT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: e95f5e99-1d12-4c64-8760-c6fdfce2f2b9
+		summarizeBy: none
+		sourceColumn: REFERENCEQUANTITYUNIT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Reference quantity.
+	column REFERENCEQUANTITY
+		dataType: decimal
+		sourceProviderType: decimal(23, 3)
+		lineageTag: d1134f42-38e2-434b-9118-d8396c5b538d
+		summarizeBy: none
+		sourceColumn: REFERENCEQUANTITY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Additional Quantity 1 Unit.
+	column ADDITIONALQUANTITY1UNIT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 6a8adfb8-e158-44dd-a5ef-3562681dd420
+		summarizeBy: none
+		sourceColumn: ADDITIONALQUANTITY1UNIT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Additional Quantity 1.
+	column ADDITIONALQUANTITY1
+		dataType: decimal
+		sourceProviderType: decimal(23, 3)
+		lineageTag: 78e5c93d-96f0-4e5c-9be9-0b32bf5c09ec
+		summarizeBy: none
+		sourceColumn: ADDITIONALQUANTITY1
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Additional Quantity 2 Unit.
+	column ADDITIONALQUANTITY2UNIT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 0bffddd2-c872-4a09-84db-4ee8a1311514
+		summarizeBy: none
+		sourceColumn: ADDITIONALQUANTITY2UNIT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Additional Quantity 2.
+	column ADDITIONALQUANTITY2
+		dataType: decimal
+		sourceProviderType: decimal(23, 3)
+		lineageTag: 8d784d19-d50d-4263-835d-9f0cfecbc655
+		summarizeBy: none
+		sourceColumn: ADDITIONALQUANTITY2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Additional Quantity 3 Unit.
+	column ADDITIONALQUANTITY3UNIT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 23a45425-b278-4e28-a2bb-fae9a07b3c2a
+		summarizeBy: none
+		sourceColumn: ADDITIONALQUANTITY3UNIT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Additional Quantity 3.
+	column ADDITIONALQUANTITY3
+		dataType: decimal
+		sourceProviderType: decimal(23, 3)
+		lineageTag: 4ffa03ed-148c-4644-8301-b351379f3beb
+		summarizeBy: none
+		sourceColumn: ADDITIONALQUANTITY3
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Fiscal Period.
+	column FISCALPERIOD
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: cf830406-73c7-4b56-8db1-d8e144fa272d
+		summarizeBy: none
+		sourceColumn: FISCALPERIOD
+
+		annotation SummarizationSetBy = User
+
+	/// Fiscal Year Period.
+	column FISCALYEARPERIOD
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 11cb2e5d-a6bb-4b69-855b-ab4cf743c63c
+		summarizeBy: none
+		sourceColumn: FISCALYEARPERIOD
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Posting Date.
+	column POSTINGDATE
+		dataType: dateTime
+		formatString: mm/dd/yyyy
+		sourceProviderType: date
+		lineageTag: 67158235-b91d-44e9-8845-ce722e9660c9
+		summarizeBy: none
+		sourceColumn: POSTINGDATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	/// Journal Entry Date.
+	column DOCUMENTDATE
+		dataType: dateTime
+		formatString: mm/dd/yyyy
+		sourceProviderType: date
+		lineageTag: b6f4688f-ecc8-4398-a946-911133b83cb3
+		summarizeBy: none
+		sourceColumn: DOCUMENTDATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	/// Journal Entry Posting View Item.
+	column ACCOUNTINGDOCUMENTITEM
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: cdb8c944-e0af-41a9-801b-26494458d366
+		summarizeBy: none
+		sourceColumn: ACCOUNTINGDOCUMENTITEM
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Assignment Reference.
+	column ASSIGNMENTREFERENCE
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 75fdcf44-ac69-474f-932a-9473da58a510
+		summarizeBy: none
+		sourceColumn: ASSIGNMENTREFERENCE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Journal Entry Category.
+	column ACCOUNTINGDOCUMENTCATEGORY
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: fea616ef-72df-4be0-b38a-da9c47925cf9
+		summarizeBy: none
+		sourceColumn: ACCOUNTINGDOCUMENTCATEGORY
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Posting Key.
+	column POSTINGKEY
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: c5c23f6d-eeb6-4657-855a-f1e91dca0e30
+		summarizeBy: none
+		sourceColumn: POSTINGKEY
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Transaction Key.
+	column TRANSACTIONTYPEDETERMINATION
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 2d4e58bb-69f3-4ccf-b8ff-c22ac4890c43
+		summarizeBy: none
+		sourceColumn: TRANSACTIONTYPEDETERMINATION
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Subledger-Specific Line Item Type.
+	column SUBLEDGERACCTLINEITEMTYPE
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 800872c8-84a1-489b-84a1-fad21ae11204
+		summarizeBy: none
+		sourceColumn: SUBLEDGERACCTLINEITEMTYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// User that created the journal entry.
+	column ACCOUNTINGDOCCREATEDBYUSER
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 956fed5e-9883-4b69-abfb-331312b0dced
+		summarizeBy: none
+		sourceColumn: ACCOUNTINGDOCCREATEDBYUSER
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Last Change Date Time.
+	column LASTCHANGEDATETIME
+		dataType: double
+		sourceProviderType: decimal(15, 0)
+		lineageTag: 78089567-bb68-42be-8c32-3a27d4128c49
+		summarizeBy: none
+		sourceColumn: LASTCHANGEDATETIME
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Creation Date Time.
+	column CREATIONDATETIME
+		dataType: double
+		sourceProviderType: decimal(15, 0)
+		lineageTag: 7405490e-eef1-46da-8549-8f69e2808267
+		summarizeBy: none
+		sourceColumn: CREATIONDATETIME
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Creation Date.
+	column CREATIONDATE
+		dataType: dateTime
+		formatString: mm/dd/yyyy
+		sourceProviderType: date
+		lineageTag: ec10fc26-73f8-4d06-9d41-b7c2c27a298a
+		summarizeBy: none
+		sourceColumn: CREATIONDATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	/// Elimination Profit Center.
+	column ELIMINATIONPROFITCENTER
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: c92e6f79-b6f5-48b0-8a22-02ad5c1423bf
+		summarizeBy: none
+		sourceColumn: ELIMINATIONPROFITCENTER
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Type of Origin Object.
+	column ORIGINOBJECTTYPE
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: cbc9b662-5474-4f74-a2dc-7ef795a8603f
+		summarizeBy: none
+		sourceColumn: ORIGINOBJECTTYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Type of a General Ledger Account.
+	column GLACCOUNTTYPE
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: ab20d9ee-235b-413a-b6cb-8e55ef970079
+		summarizeBy: none
+		sourceColumn: GLACCOUNTTYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Alternative G/L Account Number In Company Code.
+	column ALTERNATIVEGLACCOUNT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 1aa77f2e-5e16-4abe-942d-f119aa40a348
+		summarizeBy: none
+		sourceColumn: ALTERNATIVEGLACCOUNT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Alternative Chart of Accounts for Country/Region.
+	column COUNTRYCHARTOFACCOUNTS
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: aeac26d5-e7d4-4511-aa0c-fd424a306f82
+		summarizeBy: none
+		sourceColumn: COUNTRYCHARTOFACCOUNTS
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Item changed by document splitting.
+	column ITEMISSPLIT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 5c4f4da7-9cb5-4f12-8498-5ab2d480be8b
+		summarizeBy: none
+		sourceColumn: ITEMISSPLIT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Consolidation Unit.
+	column CONSOLIDATIONUNIT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: e419bbf2-f3b7-4bb6-8ced-448328e2900d
+		summarizeBy: none
+		sourceColumn: CONSOLIDATIONUNIT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Partner Consolidation Unit.
+	column PARTNERCONSOLIDATIONUNIT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: cdb82cd9-a09a-4fda-97c2-dfb6b3bd0faf
+		summarizeBy: none
+		sourceColumn: PARTNERCONSOLIDATIONUNIT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Consolidation Chart of Accounts.
+	column CONSOLIDATIONCHARTOFACCOUNTS
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 4a04d623-433d-48f9-bacd-9b47e02ce608
+		summarizeBy: none
+		sourceColumn: CONSOLIDATIONCHARTOFACCOUNTS
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Consolidation Financial Statement Item.
+	column CNSLDTNFINANCIALSTATEMENTITEM
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: f1893d64-f6c4-4fcd-bac1-25ec5ba0a34d
+		summarizeBy: none
+		sourceColumn: CNSLDTNFINANCIALSTATEMENTITEM
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Consolidation Subitem Category.
+	column CNSLDTNSUBITEMCATEGORY
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: d11ed958-177d-411c-9512-69093c4c7055
+		summarizeBy: none
+		sourceColumn: CNSLDTNSUBITEMCATEGORY
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Consolidation Subitem.
+	column CNSLDTNSUBITEM
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 0ce3a460-794d-4379-ab9e-d096f23cf751
+		summarizeBy: none
+		sourceColumn: CNSLDTNSUBITEM
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Invoice Reference.
+	column INVOICEREFERENCE
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: c0d45538-2dd0-42c7-83cc-2049a7235dcf
+		summarizeBy: none
+		sourceColumn: INVOICEREFERENCE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Invoice Reference Fiscal Year.
+	column INVOICEREFERENCEFISCALYEAR
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: fd1d7d99-ffc0-4946-af67-7303bd6085b6
+		summarizeBy: none
+		sourceColumn: INVOICEREFERENCEFISCALYEAR
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Follow-On Document Type.
+	column FOLLOWONDOCUMENTTYPE
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: f2f7f044-7800-4308-81e1-80cb6e58e427
+		summarizeBy: none
+		sourceColumn: FOLLOWONDOCUMENTTYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Invoice Item Reference.
+	column INVOICEITEMREFERENCE
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: e65f37e9-e0ca-48b1-854d-4eda4080f7c5
+		summarizeBy: none
+		sourceColumn: INVOICEITEMREFERENCE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Category of Reference Purchase Order.
+	column REFERENCEPURCHASEORDERCATEGORY
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 1a04a8ba-1596-4145-ac23-1def09db1b91
+		summarizeBy: none
+		sourceColumn: REFERENCEPURCHASEORDERCATEGORY
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Purchasing Document.
+	column PURCHASINGDOCUMENT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 1f81094b-8870-4f96-a250-757ce648e2de
+		summarizeBy: none
+		sourceColumn: PURCHASINGDOCUMENT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Purchasing Document Item.
+	column PURCHASINGDOCUMENTITEM
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: a3501124-536d-439d-bce4-6f2f44b02fba
+		summarizeBy: none
+		sourceColumn: PURCHASINGDOCUMENTITEM
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Account Assignment Number.
+	column ACCOUNTASSIGNMENTNUMBER
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: dc911025-32a7-4c5b-99b9-747724f1f88d
+		summarizeBy: none
+		sourceColumn: ACCOUNTASSIGNMENTNUMBER
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Item Text.
+	column DOCUMENTITEMTEXT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 3fb1cd9f-c795-42fd-92ed-470bab612421
+		summarizeBy: none
+		sourceColumn: DOCUMENTITEMTEXT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Sales Document.
+	column SALESDOCUMENT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: c165d450-ae06-4a8b-b671-63633bc5307c
+		summarizeBy: none
+		sourceColumn: SALESDOCUMENT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Sales Document Item.
+	column SALESDOCUMENTITEM
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: a37a43c0-be4f-46bd-bbb0-562c2c824ce0
+		summarizeBy: none
+		sourceColumn: SALESDOCUMENTITEM
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Date on which services are rendered.
+	column SERVICESRENDEREDDATE
+		dataType: dateTime
+		formatString: m/d/yyyy
+		sourceProviderType: date
+		lineageTag: 8c890b4d-e149-4430-b6b0-ed9c80d22911
+		summarizeBy: none
+		sourceColumn: SERVICESRENDEREDDATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	/// Billing Period of Performance Start Date.
+	column PERFORMANCEPERIODSTARTDATE
+		dataType: dateTime
+		formatString: m/d/yyyy
+		sourceProviderType: date
+		lineageTag: af92ac5c-3836-4c4e-be96-3c7bc27b6f56
+		summarizeBy: none
+		sourceColumn: PERFORMANCEPERIODSTARTDATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	/// Billing Period of Performance End Date.
+	column PERFORMANCEPERIODENDDATE
+		dataType: dateTime
+		formatString: m/d/yyyy
+		sourceProviderType: date
+		lineageTag: d6d2dd6c-39dd-428b-bd4c-45728a77bf9d
+		summarizeBy: none
+		sourceColumn: PERFORMANCEPERIODENDDATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	/// Condition Contract.
+	column CONDITIONCONTRACT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 160087e4-e46a-4d2b-b379-8d1543739897
+		summarizeBy: none
+		sourceColumn: CONDITIONCONTRACT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Translation Date.
+	column EXCHANGERATEDATE
+		dataType: dateTime
+		formatString: m/d/yyyy
+		sourceProviderType: date
+		lineageTag: efd34c9a-8faf-45f1-9ab4-f54220243976
+		summarizeBy: none
+		sourceColumn: EXCHANGERATEDATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	/// Account Type.
+	column FINANCIALACCOUNTTYPE
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: e90daf53-3f6c-4419-bbd6-ffc0eea9e778
+		summarizeBy: none
+		sourceColumn: FINANCIALACCOUNTTYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Special G/L Indicator.
+	column SPECIALGLCODE
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 788fc33f-5891-449b-9a77-4835ce6f6c0d
+		summarizeBy: none
+		sourceColumn: SPECIALGLCODE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Tax on Sales/Purchases Code.
+	column TAXCODE
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: a4e89987-542e-4380-ba90-03e008ff245d
+		summarizeBy: none
+		sourceColumn: TAXCODE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Tax Reporting Country/Region.
+	column TAXCOUNTRY
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: db396a7a-6ad5-4f1b-a136-f5605ce8413f
+		summarizeBy: none
+		sourceColumn: TAXCOUNTRY
+
+		annotation SummarizationSetBy = Automatic
+
+	/// House Bank Key.
+	column HOUSEBANK
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 627fdd38-97d3-40dc-b302-dae2ac3cf09d
+		summarizeBy: none
+		sourceColumn: HOUSEBANK
+
+		annotation SummarizationSetBy = Automatic
+
+	/// House Bank Account.
+	column HOUSEBANKACCOUNT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 95a4859b-e4e4-42dd-a33f-ced7fc4b512e
+		summarizeBy: none
+		sourceColumn: HOUSEBANKACCOUNT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Managed on an Open Item Basis.
+	column ISOPENITEMMANAGED
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 422772ab-5121-489c-9369-52dfaa590ef3
+		summarizeBy: none
+		sourceColumn: ISOPENITEMMANAGED
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Clearing Date.
+	column CLEARINGDATE
+		dataType: dateTime
+		formatString: m/d/yyyy
+		sourceProviderType: date
+		lineageTag: 02dc7e97-0f75-4420-b067-f99ac831103b
+		summarizeBy: none
+		sourceColumn: CLEARINGDATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	/// Fiscal Year of Clearing Journal Entry (Deprecated).
+	column CLEARINGDOCFISCALYEAR
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: bcb42e77-98f2-4f54-b7ab-5aaa33067f46
+		summarizeBy: none
+		sourceColumn: CLEARINGDOCFISCALYEAR
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Clearing Journal Entry (Deprecated).
+	column CLEARINGACCOUNTINGDOCUMENT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: d6183ae6-1d3e-40b8-bcbd-2afad5630f72
+		summarizeBy: none
+		sourceColumn: CLEARINGACCOUNTINGDOCUMENT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Fiscal Year of Clearing Journal Entry.
+	column CLEARINGJOURNALENTRYFISCALYEAR
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: befe9653-2212-420f-bf58-cdec55d727c9
+		summarizeBy: none
+		sourceColumn: CLEARINGJOURNALENTRYFISCALYEAR
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Clearing Journal Entry.
+	column CLEARINGJOURNALENTRY
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: c9db7c76-4b95-4e32-8f95-2474693a663b
+		summarizeBy: none
+		sourceColumn: CLEARINGJOURNALENTRY
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Value Date.
+	column VALUEDATE
+		dataType: dateTime
+		formatString: m/d/yyyy
+		sourceProviderType: date
+		lineageTag: 6f1b0c24-fd7c-4e5c-97aa-cd94c153c4ff
+		summarizeBy: none
+		sourceColumn: VALUEDATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	/// General Ledger Aging Scope.
+	column GENERALLEDGERAGINGSCOPE
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: c248efe5-14f0-48cc-8d62-1918cb26cc3a
+		summarizeBy: none
+		sourceColumn: GENERALLEDGERAGINGSCOPE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// General Ledger Aging Increment.
+	column GENERALLEDGERAGINGINCREMENT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: a8436d13-271e-4937-a250-3a768fb26928
+		summarizeBy: none
+		sourceColumn: GENERALLEDGERAGINGINCREMENT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Asset Depreciation Area (Real or Derived).
+	column ASSETDEPRECIATIONAREA
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 6ecbad34-9189-427f-8482-16c8dd8d28f2
+		summarizeBy: none
+		sourceColumn: ASSETDEPRECIATIONAREA
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Asset Value Date.
+	column ASSETVALUEDATE
+		dataType: dateTime
+		formatString: m/d/yyyy
+		sourceProviderType: date
+		lineageTag: bb122054-a864-4ed4-856e-134846a76fc2
+		summarizeBy: none
+		sourceColumn: ASSETVALUEDATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	/// Transaction Type Category.
+	column ASSETACCTTRANSCLASSFCTN
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: ebf0796a-456b-49c5-8d6f-3c913650847e
+		summarizeBy: none
+		sourceColumn: ASSETACCTTRANSCLASSFCTN
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Fiscal Period of Depreciation.
+	column DEPRECIATIONFISCALPERIOD
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: e069fe8b-c3a5-4022-805a-636ffd83ac78
+		summarizeBy: none
+		sourceColumn: DEPRECIATIONFISCALPERIOD
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Group Asset.
+	column GROUPMASTERFIXEDASSET
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: e37908aa-ec52-4448-a62f-f563ab8939d2
+		summarizeBy: none
+		sourceColumn: GROUPMASTERFIXEDASSET
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Group Asset Subnumber.
+	column GROUPFIXEDASSET
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 4da4a096-b546-48e5-94c5-4bf2b19a457d
+		summarizeBy: none
+		sourceColumn: GROUPFIXEDASSET
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Partner Master Fixed Asset.
+	column PARTNERMASTERFIXEDASSET
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: f883203b-3200-4ffa-a883-ef2bcfa58f3d
+		summarizeBy: none
+		sourceColumn: PARTNERMASTERFIXEDASSET
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Partner Fixed Asset.
+	column PARTNERFIXEDASSET
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 34dddecf-93e6-4ab1-b513-7168dbe78889
+		summarizeBy: none
+		sourceColumn: PARTNERFIXEDASSET
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Cost Estimate.
+	column COSTESTIMATE
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: ba0dba9a-982e-4877-bae3-6f3f475ca15d
+		summarizeBy: none
+		sourceColumn: COSTESTIMATE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Inventory Special Stock Valuation Type.
+	column INVENTORYSPECIALSTOCKVALNTYPE
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: ddda3237-d6f7-433f-9e2b-773e45a8af54
+		summarizeBy: none
+		sourceColumn: INVENTORYSPECIALSTOCKVALNTYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Is Supplier Stock Valuation.
+	column ISSUPPLIERSTOCKVALUATION
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 9433cec1-e9ad-4ef5-89b9-fedd38003818
+		summarizeBy: none
+		sourceColumn: ISSUPPLIERSTOCKVALUATION
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Inventory Special Stock Type.
+	column INVENTORYSPECIALSTOCKTYPE
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 52b89f7c-7568-47ec-bb0a-b5c1d7ad4099
+		summarizeBy: none
+		sourceColumn: INVENTORYSPECIALSTOCKTYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Inventory Special Stock Sales Document.
+	column INVENTORYSPCLSTKSALESDOCUMENT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 718d4c70-a59d-4511-a7bc-4e08b3ccfc69
+		summarizeBy: none
+		sourceColumn: INVENTORYSPCLSTKSALESDOCUMENT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Inventory Special Stock Sales Document Item.
+	column INVENTORYSPCLSTKSALESDOCITM
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: f80a8647-3bc8-4649-a73d-e17caa9e370f
+		summarizeBy: none
+		sourceColumn: INVENTORYSPCLSTKSALESDOCITM
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Inventory Special Stock WBS Element Internal ID.
+	column INVTRYSPCLSTOCKWBSELMNTINTID
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 4123af5a-877a-4fd2-bf8c-2f59b6c72ec0
+		summarizeBy: none
+		sourceColumn: INVTRYSPCLSTOCKWBSELMNTINTID
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Inventory Special Stock WBS Element.
+	column INVENTORYSPCLSTOCKWBSELEMENT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 097ef8ff-63d4-4714-9d26-52ae2cec8e7a
+		summarizeBy: none
+		sourceColumn: INVENTORYSPCLSTOCKWBSELEMENT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Supplier of Inventory Special Stock.
+	column INVENTORYSPECIALSTOCKSUPPLIER
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 56175873-013e-4fda-967e-f2fa555f44cb
+		summarizeBy: none
+		sourceColumn: INVENTORYSPECIALSTOCKSUPPLIER
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Inventory Valuation Type.
+	column INVENTORYVALUATIONTYPE
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: a3d29e82-c38e-4a68-a43e-56dbba440256
+		summarizeBy: none
+		sourceColumn: INVENTORYVALUATIONTYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Valuation Area.
+	column VALUATIONAREA
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: c5d72088-9677-4580-8612-37920ada59b9
+		summarizeBy: none
+		sourceColumn: VALUATIONAREA
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Material Ledger Process Type (Procurement/Consumption).
+	column MATERIALLEDGERPROCESSTYPE
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: aef4e810-b423-49c2-966c-f50d0279e224
+		summarizeBy: none
+		sourceColumn: MATERIALLEDGERPROCESSTYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Category in Material Ledger Update Structure.
+	column MATERIALLEDGERCATEGORY
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 82c1ba83-302e-4523-83f6-b20914e79d87
+		summarizeBy: none
+		sourceColumn: MATERIALLEDGERCATEGORY
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Sales Price Amount in Company Code Currency.
+	column SLSPRICEAMOUNTINCOCODECRCY
+		dataType: decimal
+		sourceProviderType: decimal(23, 2)
+		lineageTag: 1e53ff85-142a-4e8d-ae51-1f460a2282c8
+		summarizeBy: none
+		sourceColumn: SLSPRICEAMOUNTINCOCODECRCY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Product Price Control Indicator.
+	column PRODUCTPRICECONTROL
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 94efa90b-8077-4c5c-8cb9-b7eabacb8ce1
+		summarizeBy: none
+		sourceColumn: PRODUCTPRICECONTROL
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Company Code in Sender System.
+	column SENDERCOMPANYCODE
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: bb03c31d-3cf6-4628-a6c4-c6fe2a326069
+		summarizeBy: none
+		sourceColumn: SENDERCOMPANYCODE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Sender G/L Account.
+	column SENDERGLACCOUNT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 0ecd970f-4abb-46a5-8d06-46eaf9f1ec29
+		summarizeBy: none
+		sourceColumn: SENDERGLACCOUNT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Sender Account Assignment.
+	column SENDERACCOUNTASSIGNMENT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: b0606a2d-1b2b-4dd4-abfe-6988011d0b13
+		summarizeBy: none
+		sourceColumn: SENDERACCOUNTASSIGNMENT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Account Assignment Type in Sender System.
+	column SENDERACCOUNTASSIGNMENTTYPE
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: b8bcf2b6-e24b-4895-a8c5-8f22328292fc
+		summarizeBy: none
+		sourceColumn: SENDERACCOUNTASSIGNMENTTYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Controlling Object.
+	column CONTROLLINGOBJECT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: c2aa4121-23a7-4c31-8fe7-cd81b21fcb64
+		summarizeBy: none
+		sourceColumn: CONTROLLINGOBJECT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Origin Group as Subdivision of Cost Element.
+	column COSTORIGINGROUP
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 5c5b18ff-e30b-49b4-bd51-ccd9964110e0
+		summarizeBy: none
+		sourceColumn: COSTORIGINGROUP
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Origin Sender Object.
+	column ORIGINSENDEROBJECT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 326d988f-4582-4c03-a944-3f5644f83c82
+		summarizeBy: none
+		sourceColumn: ORIGINSENDEROBJECT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Controlling Debit Credit Code.
+	column CONTROLLINGDEBITCREDITCODE
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: ea13a441-bcf4-4df6-8d80-5547b70371bc
+		summarizeBy: none
+		sourceColumn: CONTROLLINGDEBITCREDITCODE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Debit/Credit Indicator (Origin).
+	column ORIGINCTRLGDEBITCREDITCODE
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 4cc502ad-32d1-4f8e-9cba-962c07862c2e
+		summarizeBy: none
+		sourceColumn: ORIGINCTRLGDEBITCREDITCODE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Controlling Object Debit Type.
+	column CONTROLLINGOBJECTDEBITTYPE
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 397add30-ac2d-4a6f-ba25-f2553aec00ca
+		summarizeBy: none
+		sourceColumn: CONTROLLINGOBJECTDEBITTYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Indicator: Quantity Is Incomplete.
+	column QUANTITYISINCOMPLETE
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: d857fcfa-2a2a-4949-b730-3401d82f2dc0
+		summarizeBy: none
+		sourceColumn: QUANTITYISINCOMPLETE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Offsetting Account.
+	column OFFSETTINGACCOUNT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: a6a1b796-62f4-408d-b293-b56ab3a4bff2
+		summarizeBy: none
+		sourceColumn: OFFSETTINGACCOUNT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Offsetting Account Type.
+	column OFFSETTINGACCOUNTTYPE
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 5b98a5b0-0f28-48fe-8fd7-5119b83f46db
+		summarizeBy: none
+		sourceColumn: OFFSETTINGACCOUNTTYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Offsetting Chart of Accounts.
+	column OFFSETTINGCHARTOFACCOUNTS
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 44ca9bd6-a742-4bc8-8293-49c0eacef7e5
+		summarizeBy: none
+		sourceColumn: OFFSETTINGCHARTOFACCOUNTS
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Indicator: Line Item is Completed.
+	column LINEITEMISCOMPLETED
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: d9e771e5-fd1a-40b7-a46e-9f27573b7a3c
+		summarizeBy: none
+		sourceColumn: LINEITEMISCOMPLETED
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Personnel Number.
+	column PERSONNELNUMBER
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: d9c0ddd3-a9c0-4139-86ed-fcee8493d37e
+		summarizeBy: none
+		sourceColumn: PERSONNELNUMBER
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Controlling Object Class.
+	column CONTROLLINGOBJECTCLASS
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: b29be3ef-c082-4c30-9fb5-9f04924a5dc6
+		summarizeBy: none
+		sourceColumn: CONTROLLINGOBJECTCLASS
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Partner Company Code.
+	column PARTNERCOMPANYCODE
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: af81ac34-ff1d-47ef-8150-819681a90b45
+		summarizeBy: none
+		sourceColumn: PARTNERCOMPANYCODE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Partner Controlling Object Class.
+	column PARTNERCONTROLLINGOBJECTCLASS
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 93b11b44-2057-460c-9b72-8213896f4ecf
+		summarizeBy: none
+		sourceColumn: PARTNERCONTROLLINGOBJECTCLASS
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Origin Profit Center.
+	column ORIGINPROFITCENTER
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 13d62ed8-2e8b-460c-81e5-f37472b45047
+		summarizeBy: none
+		sourceColumn: ORIGINPROFITCENTER
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Origin Order.
+	column ORIGINORDER
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 3cf0e471-0311-4b85-af4b-0420c9452777
+		summarizeBy: none
+		sourceColumn: ORIGINORDER
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Origin Cost Center Activity Type.
+	column ORIGINCOSTCTRACTIVITYTYPE
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 45f21057-4c2c-4945-af94-db83d8f16918
+		summarizeBy: none
+		sourceColumn: ORIGINCOSTCTRACTIVITYTYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Origin Cost Center.
+	column ORIGINCOSTCENTER
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 969671d8-6fd9-4018-9c0d-e7f7f299860c
+		summarizeBy: none
+		sourceColumn: ORIGINCOSTCENTER
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Origin Product.
+	column ORIGINPRODUCT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 98ec68f8-bf14-49c4-bf63-b5ed3ad93b10
+		summarizeBy: none
+		sourceColumn: ORIGINPRODUCT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Origin G/L Account of a Variance.
+	column VARIANCEORIGINGLACCOUNT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 2209df8c-25e7-44f0-9e2d-f7fdc09da3b6
+		summarizeBy: none
+		sourceColumn: VARIANCEORIGINGLACCOUNT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Account Assignment.
+	column ACCOUNTASSIGNMENT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 578e69d9-7108-4cab-96bd-c2df443d2200
+		summarizeBy: none
+		sourceColumn: ACCOUNTASSIGNMENT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Account Assignment Type.
+	column ACCOUNTASSIGNMENTTYPE
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: fddb2192-37a6-4daf-9b4e-611fba05b6c7
+		summarizeBy: none
+		sourceColumn: ACCOUNTASSIGNMENTTYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Activity Type.
+	column COSTCTRACTIVITYTYPE
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 43c73a57-5ca2-4708-a759-a3e68592e6eb
+		summarizeBy: none
+		sourceColumn: COSTCTRACTIVITYTYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Order ID.
+	column ORDERID
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: b6c1acb5-36c9-403e-8f9e-e4c0a9fedb01
+		summarizeBy: none
+		sourceColumn: ORDERID
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Order Category.
+	column ORDERCATEGORY
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 4555727d-0dc8-482a-82e6-088e8e1d6bdb
+		summarizeBy: none
+		sourceColumn: ORDERCATEGORY
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Partner WBS Element Internal ID.
+	column PARTNERWBSELEMENTINTERNALID
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 8755a75d-36d6-4e70-aa5c-64af7d26adde
+		summarizeBy: none
+		sourceColumn: PARTNERWBSELEMENTINTERNALID
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Partner WBS Element.
+	column PARTNERWBSELEMENT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: d66b13a4-ad7d-49ee-a480-a0b6e5100653
+		summarizeBy: none
+		sourceColumn: PARTNERWBSELEMENT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Project Internal ID.
+	column PROJECTINTERNALID
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: f54365ca-e408-4118-93c8-fcf49590ecff
+		summarizeBy: none
+		sourceColumn: PROJECTINTERNALID
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Project.
+	column PROJECT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 2a204acd-0b6d-46fb-9194-a5bb39b37897
+		summarizeBy: none
+		sourceColumn: PROJECT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Partner Project Internal ID.
+	column PARTNERPROJECTINTERNALID
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 6ba08684-5481-4716-85f9-25c1d489145d
+		summarizeBy: none
+		sourceColumn: PARTNERPROJECTINTERNALID
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Partner Project.
+	column PARTNERPROJECT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: c3a7b8f7-73a4-4372-a72a-c9fc8d9af0e5
+		summarizeBy: none
+		sourceColumn: PARTNERPROJECT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Operating Concern.
+	column OPERATINGCONCERN
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: ce6c4a77-4773-430c-8e0d-f044d65ffaea
+		summarizeBy: none
+		sourceColumn: OPERATINGCONCERN
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Network Number for Account Assignment.
+	column PROJECTNETWORK
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: e9d9280b-7d05-4c8b-a44f-2687611347de
+		summarizeBy: none
+		sourceColumn: PROJECTNETWORK
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Related Network Activity.
+	column RELATEDNETWORKACTIVITY
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 58a8bdfc-40f7-4130-abde-f9321f2ac8c2
+		summarizeBy: none
+		sourceColumn: RELATEDNETWORKACTIVITY
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Business Process.
+	column BUSINESSPROCESS
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 70b22df3-5825-4fc5-927a-290307d5c1ae
+		summarizeBy: none
+		sourceColumn: BUSINESSPROCESS
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Cost Object.
+	column COSTOBJECT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: a9f49de9-0cac-447f-a039-51e902fcdc53
+		summarizeBy: none
+		sourceColumn: COSTOBJECT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Billable Control.
+	column BILLABLECONTROL
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: b1624ba7-748d-44e0-8ee9-b6a7ac5d9d7d
+		summarizeBy: none
+		sourceColumn: BILLABLECONTROL
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Cost Analysis Resource.
+	column COSTANALYSISRESOURCE
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 63f765d5-7df2-469f-b0eb-7af6a0a43c48
+		summarizeBy: none
+		sourceColumn: COSTANALYSISRESOURCE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Customer Service Notification.
+	column CUSTOMERSERVICENOTIFICATION
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 4313ab01-e22b-4012-85b9-cb17fbf29444
+		summarizeBy: none
+		sourceColumn: CUSTOMERSERVICENOTIFICATION
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Service Document Type.
+	column SERVICEDOCUMENTTYPE
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: d3510723-cfa2-4772-96d5-157f561d06c5
+		summarizeBy: none
+		sourceColumn: SERVICEDOCUMENTTYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Service Document ID.
+	column SERVICEDOCUMENT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 19be49cf-3d7e-4a29-9b68-dab29239f170
+		summarizeBy: none
+		sourceColumn: SERVICEDOCUMENT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Service Document Item ID.
+	column SERVICEDOCUMENTITEM
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: bd4793ec-d35d-460c-83bd-cf2341d7a54b
+		summarizeBy: none
+		sourceColumn: SERVICEDOCUMENTITEM
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Partner Service Document Type.
+	column PARTNERSERVICEDOCUMENTTYPE
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 8bcccdeb-ac0a-42a3-8280-3c25319b0a05
+		summarizeBy: none
+		sourceColumn: PARTNERSERVICEDOCUMENTTYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Partner Service Document.
+	column PARTNERSERVICEDOCUMENT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 586a1b58-fef7-4092-a9a7-2da37c44c3c2
+		summarizeBy: none
+		sourceColumn: PARTNERSERVICEDOCUMENT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Partner Service Document Item.
+	column PARTNERSERVICEDOCUMENTITEM
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: a826a005-1023-407d-90d9-3264dd2106d0
+		summarizeBy: none
+		sourceColumn: PARTNERSERVICEDOCUMENTITEM
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Service Contract Type.
+	column SERVICECONTRACTTYPE
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: b0a9e04e-5ca3-47ba-baec-59db19e2ce94
+		summarizeBy: none
+		sourceColumn: SERVICECONTRACTTYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Service Contract ID.
+	column SERVICECONTRACT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 8ad320a4-c209-434a-aec0-1ca92f1b0756
+		summarizeBy: none
+		sourceColumn: SERVICECONTRACT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Service Contract Item ID.
+	column SERVICECONTRACTITEM
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: c42abad5-0905-4319-a8aa-f6f5e7c35a58
+		summarizeBy: none
+		sourceColumn: SERVICECONTRACTITEM
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Solution Order.
+	column BUSINESSSOLUTIONORDER
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 74dbc54f-8734-4be4-9c04-358173f13651
+		summarizeBy: none
+		sourceColumn: BUSINESSSOLUTIONORDER
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Solution Order Item.
+	column BUSINESSSOLUTIONORDERITEM
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: e9ddac33-19f7-4769-98e9-5703929cc3c6
+		summarizeBy: none
+		sourceColumn: BUSINESSSOLUTIONORDERITEM
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Provider Contract.
+	column PROVIDERCONTRACT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 7fad7bb4-bc78-4389-8601-5dc15af2eac2
+		summarizeBy: none
+		sourceColumn: PROVIDERCONTRACT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Provider Contract Item.
+	column PROVIDERCONTRACTITEM
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 81c1095a-b017-419a-b7e8-50f15806ac4e
+		summarizeBy: none
+		sourceColumn: PROVIDERCONTRACTITEM
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Revenue Accounting Contract.
+	column REVENUEACCOUNTINGCONTRACT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 4f586c71-f095-465c-b333-855418e764d9
+		summarizeBy: none
+		sourceColumn: REVENUEACCOUNTINGCONTRACT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Performance Obligation.
+	column PERFORMANCEOBLIGATION
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 12da9531-7210-4a7d-a9a4-0d173ab009cb
+		summarizeBy: none
+		sourceColumn: PERFORMANCEOBLIGATION
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Overtime Category.
+	column TIMESHEETOVERTIMECATEGORY
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 48597ec8-23b2-49d0-b9ef-669db682c654
+		summarizeBy: none
+		sourceColumn: TIMESHEETOVERTIMECATEGORY
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Partner Account Assignment.
+	column PARTNERACCOUNTASSIGNMENT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: ead4ecc6-96aa-4ffe-bf07-bbf3ee5bb0de
+		summarizeBy: none
+		sourceColumn: PARTNERACCOUNTASSIGNMENT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Partner Account Assignment Type.
+	column PARTNERACCOUNTASSIGNMENTTYPE
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 3b7cdd87-5410-4dc4-abf9-aa34f1325e55
+		summarizeBy: none
+		sourceColumn: PARTNERACCOUNTASSIGNMENTTYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Plan Item.
+	column WORKPACKAGE
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 5b8c4bec-6744-483d-ac6a-899960bedace
+		summarizeBy: none
+		sourceColumn: WORKPACKAGE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Work Item ID.
+	column WORKITEM
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: b74d4609-7cbb-4d6c-8a8c-9c0a969de2fa
+		summarizeBy: none
+		sourceColumn: WORKITEM
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Partner Cost Center Activity Type.
+	column PARTNERCOSTCTRACTIVITYTYPE
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 4f5336c5-37be-4c04-ab1c-b40138ab346f
+		summarizeBy: none
+		sourceColumn: PARTNERCOSTCTRACTIVITYTYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Partner Order.
+	column PARTNERORDER
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: fa854487-b4d7-4e15-843d-1d410fd2c459
+		summarizeBy: none
+		sourceColumn: PARTNERORDER
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Partner Order Category.
+	column PARTNERORDERCATEGORY
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 1ad9c82b-9693-4408-a38d-2d228e918a38
+		summarizeBy: none
+		sourceColumn: PARTNERORDERCATEGORY
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Partner Sales Document.
+	column PARTNERSALESDOCUMENT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: b41cc9a6-cdce-4507-b716-db9895c2b3fa
+		summarizeBy: none
+		sourceColumn: PARTNERSALESDOCUMENT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Partner Sales Document Item.
+	column PARTNERSALESDOCUMENTITEM
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 5630b2ed-e4f2-493e-bd1b-9b3fa5ff2c85
+		summarizeBy: none
+		sourceColumn: PARTNERSALESDOCUMENTITEM
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Partner Project Network.
+	column PARTNERPROJECTNETWORK
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 0d7798da-4b0b-4c6b-ad7c-eaaca940ac2b
+		summarizeBy: none
+		sourceColumn: PARTNERPROJECTNETWORK
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Partner Project Network Activity.
+	column PARTNERPROJECTNETWORKACTIVITY
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: e9a5be12-b226-4264-b3a5-f85366c44130
+		summarizeBy: none
+		sourceColumn: PARTNERPROJECTNETWORKACTIVITY
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Partner Business Process.
+	column PARTNERBUSINESSPROCESS
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 9982cdf6-cd0d-41bc-91b6-dc3b99f4c180
+		summarizeBy: none
+		sourceColumn: PARTNERBUSINESSPROCESS
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Partner Cost Object.
+	column PARTNERCOSTOBJECT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 8dbfaf88-9b39-445e-9774-e201d837a4db
+		summarizeBy: none
+		sourceColumn: PARTNERCOSTOBJECT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Controlling Document Item.
+	column CONTROLLINGDOCUMENTITEM
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 250ccb51-b2e1-4239-a73d-b59f6a7bcfa2
+		summarizeBy: none
+		sourceColumn: CONTROLLINGDOCUMENTITEM
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Variance Origin Group.
+	column VARIANCEORIGINGROUP
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 933a570e-66e8-4039-a0bc-15fd1b0f9b18
+		summarizeBy: none
+		sourceColumn: VARIANCEORIGINGROUP
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Billing Type.
+	column BILLINGDOCUMENTTYPE
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: fa51d2cd-31e6-4a49-a43f-9afc96ca5754
+		summarizeBy: none
+		sourceColumn: BILLINGDOCUMENTTYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Sales Organization.
+	column SALESORGANIZATION
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 2b6118b4-6975-4583-b12d-b1540a4b7d01
+		summarizeBy: none
+		sourceColumn: SALESORGANIZATION
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Distribution Channel.
+	column DISTRIBUTIONCHANNEL
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: bbda9f6b-78ce-45ce-83d3-51adbcfce9ef
+		summarizeBy: none
+		sourceColumn: DISTRIBUTIONCHANNEL
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Division.
+	column ORGANIZATIONDIVISION
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 4e03d4d9-2330-47af-ae42-98384a9ed64c
+		summarizeBy: none
+		sourceColumn: ORGANIZATIONDIVISION
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Product Sold.
+	column SOLDPRODUCT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 54daf11a-09fe-4457-9d4a-5ec23904b812
+		summarizeBy: none
+		sourceColumn: SOLDPRODUCT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Product Sold Group.
+	column SOLDPRODUCTGROUP
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: b2026874-0634-479e-8c88-f90ea53dd6dc
+		summarizeBy: none
+		sourceColumn: SOLDPRODUCTGROUP
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Customer Group.
+	column CUSTOMERGROUP
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: c3fb8513-4e4b-4ef3-b3fb-7611998efb08
+		summarizeBy: none
+		sourceColumn: CUSTOMERGROUP
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Customer or Supplier Country/Region.
+	column CUSTOMERSUPPLIERCOUNTRY
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 2ade40bd-ebb2-4e18-9dfb-e0555b451bb6
+		summarizeBy: none
+		sourceColumn: CUSTOMERSUPPLIERCOUNTRY
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Customer Supplier Industry.
+	column CUSTOMERSUPPLIERINDUSTRY
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 2c4870a4-6780-48ad-a503-7a0c889a8f44
+		summarizeBy: none
+		sourceColumn: CUSTOMERSUPPLIERINDUSTRY
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Sales District.
+	column SALESDISTRICT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 8639875b-9a90-4934-885b-b8e990736ba9
+		summarizeBy: none
+		sourceColumn: SALESDISTRICT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Bill-to Party.
+	column BILLTOPARTY
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 1396ed81-3dbd-4a62-86d7-0bef18b1d05a
+		summarizeBy: none
+		sourceColumn: BILLTOPARTY
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Ship-to Party.
+	column SHIPTOPARTY
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 17561da0-38e3-47eb-8f3c-8ee90d80c144
+		summarizeBy: none
+		sourceColumn: SHIPTOPARTY
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Customer Supplier Corporate Group.
+	column CUSTOMERSUPPLIERCORPORATEGROUP
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 7ae07ea9-0dee-4ee1-afe2-7fb6726c1462
+		summarizeBy: none
+		sourceColumn: CUSTOMERSUPPLIERCORPORATEGROUP
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Cash Origin Company Code.
+	column CASHLEDGERCOMPANYCODE
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 96fdd0b6-bc27-45eb-93e0-295d2a156164
+		summarizeBy: none
+		sourceColumn: CASHLEDGERCOMPANYCODE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Cash Origin Account.
+	column CASHLEDGERACCOUNT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 55cf38ed-d7f4-496e-b383-156130e0852a
+		summarizeBy: none
+		sourceColumn: CASHLEDGERACCOUNT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Financial Management Area.
+	column FINANCIALMANAGEMENTAREA
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 2a4d946d-9f7a-469c-ab14-4c0534d621eb
+		summarizeBy: none
+		sourceColumn: FINANCIALMANAGEMENTAREA
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Funds Management Center.
+	column FUNDSCENTER
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 3f541593-785b-4d81-adf5-d7eba917d576
+		summarizeBy: none
+		sourceColumn: FUNDSCENTER
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Funded Program.
+	column FUNDEDPROGRAM
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: d87be640-45c4-430e-a01f-5f49f0ab309f
+		summarizeBy: none
+		sourceColumn: FUNDEDPROGRAM
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Fund.
+	column FUND
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 794e2fb1-80a2-41c0-b81a-2293c2ca14b2
+		summarizeBy: none
+		sourceColumn: FUND
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Grant.
+	column GRANTID
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 2077f822-a11a-4f28-ab9e-d2252dbdad40
+		summarizeBy: none
+		sourceColumn: GRANTID
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Budget Period.
+	column BUDGETPERIOD
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: b034e5b5-37e2-4399-964c-ad222b72f472
+		summarizeBy: none
+		sourceColumn: BUDGETPERIOD
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Partner Fund.
+	column PARTNERFUND
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 0f9f0d49-1c9c-4a4b-8e00-4fe398c07289
+		summarizeBy: none
+		sourceColumn: PARTNERFUND
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Partner Grant.
+	column PARTNERGRANT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: f41d3bb4-d930-49ef-bd38-504df3ebdd80
+		summarizeBy: none
+		sourceColumn: PARTNERGRANT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// FM: Partner Budget Period.
+	column PARTNERBUDGETPERIOD
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: d9bda92c-161e-4ac8-aac1-925235cc96d7
+		summarizeBy: none
+		sourceColumn: PARTNERBUDGETPERIOD
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Budget Account.
+	column PUBSECBUDGETACCOUNT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: e9592033-373b-49b0-a0aa-3e50c9126a1c
+		summarizeBy: none
+		sourceColumn: PUBSECBUDGETACCOUNT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Budget Account Company Code.
+	column PUBSECBUDGETACCOUNTCOCODE
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 98242888-5652-40c6-981d-77dba8bd72ff
+		summarizeBy: none
+		sourceColumn: PUBSECBUDGETACCOUNTCOCODE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Budget Consumption Date.
+	column PUBSECBUDGETCNSMPNDATE
+		dataType: dateTime
+		formatString: m/d/yyyy
+		sourceProviderType: date
+		lineageTag: a377fe00-95bc-47d9-9549-de0fd77b6ffc
+		summarizeBy: none
+		sourceColumn: PUBSECBUDGETCNSMPNDATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	/// CC Fiscal Period for Budget Consumption Date.
+	column PUBSECBUDGETCNSMPNFSCLPERIOD
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: a4366402-4eb0-4d6d-941c-79cce7a37a27
+		summarizeBy: none
+		sourceColumn: PUBSECBUDGETCNSMPNFSCLPERIOD
+
+		annotation SummarizationSetBy = Automatic
+
+	/// CC Fiscal Year for Budget Consumption Date.
+	column PUBSECBUDGETCNSMPNFSCLYEAR
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 82afd690-1b80-43e1-a02a-c3fba21f21c0
+		summarizeBy: none
+		sourceColumn: PUBSECBUDGETCNSMPNFSCLYEAR
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Budget-Relevant Indicator.
+	column PUBSECBUDGETISRELEVANT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 5bad9f31-cc0a-43eb-a0c9-a450175819e7
+		summarizeBy: none
+		sourceColumn: PUBSECBUDGETISRELEVANT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Budget Consumption Type.
+	column PUBSECBUDGETCNSMPNTYPE
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 7c67aab5-87aa-4edb-b515-f2c168dd9c93
+		summarizeBy: none
+		sourceColumn: PUBSECBUDGETCNSMPNTYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Budget Consumption Amount Type.
+	column PUBSECBUDGETCNSMPNAMTTYPE
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 5729a16b-80dd-42e9-83a0-d0ab15dd4ca3
+		summarizeBy: none
+		sourceColumn: PUBSECBUDGETCNSMPNAMTTYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Sponsored Program.
+	column SPONSOREDPROGRAM
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: d8d6b0ec-e40b-4ace-a7ae-26a005770b70
+		summarizeBy: none
+		sourceColumn: SPONSOREDPROGRAM
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Sponsored Class.
+	column SPONSOREDCLASS
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: d703570c-76ea-4e17-ac57-55388c95b618
+		summarizeBy: none
+		sourceColumn: SPONSOREDCLASS
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Budget Validity Number.
+	column GTEEMBUDGETVALIDITYNUMBER
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: e180b2c9-9024-48aa-8c7e-1b208958ffcc
+		summarizeBy: none
+		sourceColumn: GTEEMBUDGETVALIDITYNUMBER
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Joint Venture.
+	column JOINTVENTURE
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 5ce3f6f0-31c5-44ed-a138-cbf212e85fbb
+		summarizeBy: none
+		sourceColumn: JOINTVENTURE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Joint Venture Equity Group.
+	column JOINTVENTUREEQUITYGROUP
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 817fc719-93df-4170-beb3-4ace00893486
+		summarizeBy: none
+		sourceColumn: JOINTVENTUREEQUITYGROUP
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Joint Venture Cost Recovery Code.
+	column JOINTVENTURECOSTRECOVERYCODE
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 5b352e4b-ed7f-405e-8306-c328ed69d162
+		summarizeBy: none
+		sourceColumn: JOINTVENTURECOSTRECOVERYCODE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Joint Venture Partner.
+	column JOINTVENTUREPARTNER
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 4ef0f356-1756-4a82-915a-3a6be99b74d9
+		summarizeBy: none
+		sourceColumn: JOINTVENTUREPARTNER
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Joint Venture Billing Type.
+	column JOINTVENTUREBILLINGTYPE
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 5571a478-11f0-4738-a1f2-178ec2b4b6cc
+		summarizeBy: none
+		sourceColumn: JOINTVENTUREBILLINGTYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Joint Venture Equity Type.
+	column JOINTVENTUREEQUITYTYPE
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 715db39c-d7b5-41c9-a979-e84ec0b5ccfd
+		summarizeBy: none
+		sourceColumn: JOINTVENTUREEQUITYTYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Joint Venture Production Date.
+	column JOINTVENTUREPRODUCTIONDATE
+		dataType: dateTime
+		formatString: m/d/yyyy
+		sourceProviderType: date
+		lineageTag: bfd226bc-c68c-45f4-a3ff-e1f8d778f7cf
+		summarizeBy: none
+		sourceColumn: JOINTVENTUREPRODUCTIONDATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	/// Joint Venture Billing Date.
+	column JOINTVENTUREBILLINGDATE
+		dataType: dateTime
+		formatString: m/d/yyyy
+		sourceProviderType: date
+		lineageTag: 437af76e-27d6-4696-a249-ffe0b2d7f7be
+		summarizeBy: none
+		sourceColumn: JOINTVENTUREBILLINGDATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	/// Joint Venture Operational Date.
+	column JOINTVENTUREOPERATIONALDATE
+		dataType: dateTime
+		formatString: m/d/yyyy
+		sourceProviderType: date
+		lineageTag: 6a3e5f76-374b-4856-96f4-2101f191d410
+		summarizeBy: none
+		sourceColumn: JOINTVENTUREOPERATIONALDATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	/// Cutback Run.
+	column CUTBACKRUN
+		dataType: decimal
+		sourceProviderType: decimal(21, 7)
+		lineageTag: 33b41f74-58e8-43fe-91f4-7c5517fb352d
+		summarizeBy: none
+		sourceColumn: CUTBACKRUN
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Joint Venture Accounting Activity.
+	column JOINTVENTUREACCOUNTINGACTIVITY
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 69f0e84a-e337-4f48-82e7-85d39760f297
+		summarizeBy: none
+		sourceColumn: JOINTVENTUREACCOUNTINGACTIVITY
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Partner Venture.
+	column PARTNERVENTURE
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 6eba0922-3b48-4a1d-9a07-3fd63e13a9b5
+		summarizeBy: none
+		sourceColumn: PARTNERVENTURE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Partner Equity Group.
+	column PARTNEREQUITYGROUP
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 39b11456-a475-49d6-b078-264a15c0b846
+		summarizeBy: none
+		sourceColumn: PARTNEREQUITYGROUP
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Sender Cost Recovery Code.
+	column SENDERCOSTRECOVERYCODE
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 89baf839-6dbd-4d21-9324-e59627158c92
+		summarizeBy: none
+		sourceColumn: SENDERCOSTRECOVERYCODE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Cutback Account.
+	column CUTBACKACCOUNT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: ca5fea29-8d78-48ff-8253-aee57fd2f14c
+		summarizeBy: none
+		sourceColumn: CUTBACKACCOUNT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Cutback Cost Object.
+	column CUTBACKCOSTOBJECT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: f1317407-43ea-43f5-b22e-efd8e0a587ed
+		summarizeBy: none
+		sourceColumn: CUTBACKCOSTOBJECT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// RE Business Entity.
+	column REBUSINESSENTITY
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 7ebd64dc-8002-408a-b642-1cc6c1962e8e
+		summarizeBy: none
+		sourceColumn: REBUSINESSENTITY
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Real Estate Building.
+	column REALESTATEBUILDING
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 4a5d3ff0-b6ca-4f84-b6ba-2efda3dc1428
+		summarizeBy: none
+		sourceColumn: REALESTATEBUILDING
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Real Estate Property.
+	column REALESTATEPROPERTY
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 672be216-f9eb-438c-8045-1bc69cd81ca6
+		summarizeBy: none
+		sourceColumn: REALESTATEPROPERTY
+
+		annotation SummarizationSetBy = Automatic
+
+	/// RE Rental Object.
+	column RERENTALOBJECT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 2314d55a-e25b-4657-865d-d0c643f9f252
+		summarizeBy: none
+		sourceColumn: RERENTALOBJECT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Real Estate Contract.
+	column REALESTATECONTRACT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: c5e6dfa1-5584-43d3-8866-843fea77befe
+		summarizeBy: none
+		sourceColumn: REALESTATECONTRACT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// RE Service Charge Key.
+	column RESERVICECHARGEKEY
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 6bf56c50-8820-4e99-b83b-1d83210916c6
+		summarizeBy: none
+		sourceColumn: RESERVICECHARGEKEY
+
+		annotation SummarizationSetBy = Automatic
+
+	/// RE Settlement Unit.
+	column RESETTLEMENTUNITID
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 17253f7b-31dc-4402-a2f1-dd7b94b4e1d2
+		summarizeBy: none
+		sourceColumn: RESETTLEMENTUNITID
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Settlement Reference Date.
+	column SETTLEMENTREFERENCEDATE
+		dataType: dateTime
+		formatString: m/d/yyyy
+		sourceProviderType: date
+		lineageTag: f51ed34d-806c-40fb-b1e1-26af37d2aaf3
+		summarizeBy: none
+		sourceColumn: SETTLEMENTREFERENCEDATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	/// RE Partner Business Entity.
+	column REPARTNERBUSINESSENTITY
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 43051f00-83ed-4620-8e01-4ad5dfabefe4
+		summarizeBy: none
+		sourceColumn: REPARTNERBUSINESSENTITY
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Real Estate Partner Building.
+	column REALESTATEPARTNERBUILDING
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 01f9081d-a557-40c5-9989-c78d94510a67
+		summarizeBy: none
+		sourceColumn: REALESTATEPARTNERBUILDING
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Real Estate Partner Property.
+	column REALESTATEPARTNERPROPERTY
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 5108ee3e-5cc1-4faf-9119-cdcc575ac69f
+		summarizeBy: none
+		sourceColumn: REALESTATEPARTNERPROPERTY
+
+		annotation SummarizationSetBy = Automatic
+
+	/// RE Partner Rental Object.
+	column REPARTNERRENTALOBJECT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: c63efd06-4b80-4ba7-936f-27aa9c8dcd12
+		summarizeBy: none
+		sourceColumn: REPARTNERRENTALOBJECT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Real Estate Partner Contract.
+	column REALESTATEPARTNERCONTRACT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 67113166-0b89-4fd0-bd88-eef8e3e651b6
+		summarizeBy: none
+		sourceColumn: REALESTATEPARTNERCONTRACT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// RE Partner Service Charge Key.
+	column REPARTNERSERVICECHARGEKEY
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 262ac088-a4e1-44f1-aeed-c6e586b38462
+		summarizeBy: none
+		sourceColumn: REPARTNERSERVICECHARGEKEY
+
+		annotation SummarizationSetBy = Automatic
+
+	/// RE Partner Settlement Unit.
+	column REPARTNERSETTLEMENTUNITID
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: e69cac2b-f3d4-4472-9978-2015a950e1f5
+		summarizeBy: none
+		sourceColumn: REPARTNERSETTLEMENTUNITID
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Partner Reference Date for Settlement.
+	column PARTNERSETTLEMENTREFERENCEDATE
+		dataType: dateTime
+		formatString: m/d/yyyy
+		sourceProviderType: date
+		lineageTag: d331f0b4-15a6-442b-bb59-85da4ccf815b
+		summarizeBy: none
+		sourceColumn: PARTNERSETTLEMENTREFERENCEDATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	/// Type of the Accrual Object.
+	column ACCRUALOBJECTTYPE
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 1c511bf5-8725-4efb-9e28-af4b27929a25
+		summarizeBy: none
+		sourceColumn: ACCRUALOBJECTTYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Logical System of the Accrual Object.
+	column ACCRUALOBJECTLOGICALSYSTEM
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 331176cb-5d08-4395-858f-ca113988935b
+		summarizeBy: none
+		sourceColumn: ACCRUALOBJECTLOGICALSYSTEM
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Identifier of the Accrual Object.
+	column ACCRUALOBJECT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: c6973caa-fa9c-419a-a485-8dcfc1b6813e
+		summarizeBy: none
+		sourceColumn: ACCRUALOBJECT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Identifier of the Accrual Subobject.
+	column ACCRUALSUBOBJECT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 1fb491d6-9e9c-4850-8998-bad452edcca1
+		summarizeBy: none
+		sourceColumn: ACCRUALSUBOBJECT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Type of the Item of the Accrual Subobject.
+	column ACCRUALITEMTYPE
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: dd7eafdd-452a-4721-a9eb-32c39bbba955
+		summarizeBy: none
+		sourceColumn: ACCRUALITEMTYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Accrual Reference Object.
+	column ACCRUALREFERENCEOBJECT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 0c337c34-2d15-4adc-90ea-77a54f54c224
+		summarizeBy: none
+		sourceColumn: ACCRUALREFERENCEOBJECT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Accrual Value Date.
+	column ACCRUALVALUEDATE
+		dataType: dateTime
+		formatString: m/d/yyyy
+		sourceProviderType: date
+		lineageTag: 93202dd4-0c31-46b6-b722-df733ad3d66d
+		summarizeBy: none
+		sourceColumn: ACCRUALVALUEDATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	/// Financial Valuation Object Type.
+	column FINANCIALVALUATIONOBJECTTYPE
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: d05baec5-aad9-441c-8b3e-04d42ae96a31
+		summarizeBy: none
+		sourceColumn: FINANCIALVALUATIONOBJECTTYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Financial Valuation Object.
+	column FINANCIALVALUATIONOBJECT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 56c8d78c-f280-4a9c-9256-d7e26b081085
+		summarizeBy: none
+		sourceColumn: FINANCIALVALUATIONOBJECT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Financial Valuation Subobject.
+	column FINANCIALVALUATIONSUBOBJECT
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 6a0fbd7a-81e7-4ebb-bd38-fcfd24510e3f
+		summarizeBy: none
+		sourceColumn: FINANCIALVALUATIONSUBOBJECT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Net Due Date.
+	column NETDUEDATE
+		dataType: dateTime
+		formatString: m/d/yyyy
+		sourceProviderType: date
+		lineageTag: f688fba8-fde4-4b7a-b003-29f3cf973744
+		summarizeBy: none
+		sourceColumn: NETDUEDATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	/// Credit Risk Class.
+	column CREDITRISKCLASS
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 0e2f4a27-998f-4e02-aa76-62916ed3f605
+		summarizeBy: none
+		sourceColumn: CREDITRISKCLASS
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Object ID of the resource.
+	column WORKCENTERINTERNALID
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: e3e97928-feb5-4ea7-a4ed-12bca046da0c
+		summarizeBy: none
+		sourceColumn: WORKCENTERINTERNALID
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Order Operation.
+	column ORDEROPERATION
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 1d2ddae0-e642-4966-8a04-deb0038c6c53
+		summarizeBy: none
+		sourceColumn: ORDEROPERATION
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Number of Order Item.
+	column ORDERITEM
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 1d72687c-451d-4ea4-8606-3f44b8e93d14
+		summarizeBy: none
+		sourceColumn: ORDERITEM
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Partner Order Item Number.
+	column PARTNERORDERITEM
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 228db036-89b2-40ae-beb4-9c6437151921
+		summarizeBy: none
+		sourceColumn: PARTNERORDERITEM
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Order Suboperation.
+	column ORDERSUBOPERATION
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 0ee435ec-2b42-4afb-be68-41a0cf47f9de
+		summarizeBy: none
+		sourceColumn: ORDERSUBOPERATION
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Assembly.
+	column ASSEMBLY
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: f0cb19f0-9422-4054-8cde-9ead74a8d0b1
+		summarizeBy: none
+		sourceColumn: ASSEMBLY
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Maintenance activity type.
+	column MAINTENANCEACTIVITYTYPE
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: fa693c63-3f0f-45d0-9003-d5da3941e2fa
+		summarizeBy: none
+		sourceColumn: MAINTENANCEACTIVITYTYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Maintenance order planning indicator.
+	column MAINTENANCEORDERPLANNINGCODE
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 52d03fc4-7379-4786-b9f2-3e086f7d44e9
+		summarizeBy: none
+		sourceColumn: MAINTENANCEORDERPLANNINGCODE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Priority Type.
+	column MAINTPRIORITYTYPE
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 94ed32ed-e1f5-494f-a65a-cc3506d67cd6
+		summarizeBy: none
+		sourceColumn: MAINTPRIORITYTYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Priority.
+	column MAINTPRIORITY
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 441e62c0-46a6-4a99-a63d-c8cfa3561b07
+		summarizeBy: none
+		sourceColumn: MAINTPRIORITY
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Number of Superior Order.
+	column SUPERIORORDER
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 8703f359-8ce1-4ebc-824e-29e04cbc4eda
+		summarizeBy: none
+		sourceColumn: SUPERIORORDER
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Planned Parts/Work.
+	column MAINTENANCEORDERISPLANNED
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: 1ff88811-2328-4d3b-b4ee-f3cc631fe855
+		summarizeBy: none
+		sourceColumn: MAINTENANCEORDERISPLANNED
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Origin Order Operation.
+	column ORIGINORDEROPERATION
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: a22071bd-bfa0-4e09-b18d-f6625099f672
+		summarizeBy: none
+		sourceColumn: ORIGINORDEROPERATION
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Journal Entry Item Migration Source.
+	column JRNLENTRYITEMMIGRATIONSOURCE
+		dataType: string
+		sourceProviderType: nvarchar(100)
+		lineageTag: ce2eade6-ecd2-4d17-b3cc-c3da9219de4f
+		summarizeBy: none
+		sourceColumn: JRNLENTRYITEMMIGRATIONSOURCE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Timestamp of the most recent source or ETL update.
+	column _UpdateTimeStamp
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: 347afd82-7b34-4924-881e-a1706d5ba879
+		summarizeBy: none
+		sourceColumn: _UpdateTimeStamp
+
+		annotation SummarizationSetBy = Automatic
+
+	column _key_IWBSELEMENTDATA_2
+		dataType: int64
+		isHidden
+		formatString: 0
+		isAvailableInMdx: false
+		sourceProviderType: int
+		lineageTag: bb8d3ce1-4ce6-4ed7-8170-3f9152354bb9
+		summarizeBy: none
+		sourceColumn: _key_IWBSELEMENTDATA_2
+
+		annotation SummarizationSetBy = Automatic
+
+	column _key_ICOSTCTRACTIVITYTYPE
+		dataType: int64
+		isHidden
+		formatString: 0
+		isAvailableInMdx: false
+		sourceProviderType: int
+		lineageTag: 4a7bbc29-3ddc-4920-9100-969620af6ba8
+		summarizeBy: none
+		sourceColumn: _key_ICOSTCTRACTIVITYTYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column _key_ICUSTOMERGROUP
+		dataType: int64
+		isHidden
+		formatString: 0
+		isAvailableInMdx: false
+		sourceProviderType: int
+		lineageTag: 8937d0e9-bf8b-4cbd-9c20-01b1abe18012
+		summarizeBy: none
+		sourceColumn: _key_ICUSTOMERGROUP
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Reversal Reference Document Type.
+	column REVERSALREFERENCEDOCUMENTTYPE
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 07da1365-c0f0-4895-8860-a8272103a8d2
+		summarizeBy: none
+		sourceColumn: REVERSALREFERENCEDOCUMENTTYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Incomplete Summable Valuation Quantity Unit.
+	column INCMPLTSUMMABLEVALNQTYUNT
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 5735c0a8-be34-4b09-a2dc-1c7b5150a216
+		summarizeBy: none
+		sourceColumn: INCMPLTSUMMABLEVALNQTYUNT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Incomplete Summable Valuation Quantity.
+	column INCMPLTSUMMABLEVALNQTY
+		dataType: decimal
+		sourceProviderType: decimal(23, 3)
+		lineageTag: 400d5be6-a6d6-4852-bee5-a0c97e263a1c
+		summarizeBy: none
+		sourceColumn: INCMPLTSUMMABLEVALNQTY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Incomplete Summable Valuation Fix Quantity.
+	column INCMPLTSUMMABLEVALNFXDQTY
+		dataType: decimal
+		sourceProviderType: decimal(23, 3)
+		lineageTag: 874d3e13-e999-4196-a9ed-03af9d89c017
+		summarizeBy: none
+		sourceColumn: INCMPLTSUMMABLEVALNFXDQTY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Journal Entry Item Category.
+	column JOURNALENTRYITEMCATEGORY
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: fe27c2ec-8f81-418a-a131-e44bf0bee255
+		summarizeBy: none
+		sourceColumn: JOURNALENTRYITEMCATEGORY
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Statistical Account Assignment Type 1.
+	column STSTCLACCOUNTASSIGNMENTTYPE1
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 0d7fef20-0226-4455-ba36-bba4ad757d42
+		summarizeBy: none
+		sourceColumn: STSTCLACCOUNTASSIGNMENTTYPE1
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Statistical Account Assignment Type 2.
+	column STSTCLACCOUNTASSIGNMENTTYPE2
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 5e8b008c-6b4d-4d94-870c-08ef1e2d8ce4
+		summarizeBy: none
+		sourceColumn: STSTCLACCOUNTASSIGNMENTTYPE2
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Statistical Account Assignment Type 3.
+	column STSTCLACCOUNTASSIGNMENTTYPE3
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 9dfd4f2d-7257-47a5-bd3a-049af2803d9a
+		summarizeBy: none
+		sourceColumn: STSTCLACCOUNTASSIGNMENTTYPE3
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Commitment Item.
+	column COMMITMENTITEM
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 7e8d3d87-51e0-4483-af95-4b35c09831b1
+		summarizeBy: none
+		sourceColumn: COMMITMENTITEM
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Earmarked Funds Document.
+	column EARMARKEDFUNDSDOCUMENT
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 0c94f29d-fbc8-4941-945d-97f2a631e962
+		summarizeBy: none
+		sourceColumn: EARMARKEDFUNDSDOCUMENT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Earmarked Funds Document Item.
+	column EARMARKEDFUNDSDOCUMENTITEM
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 8ad55c22-7058-497d-ae12-861e3dbefd13
+		summarizeBy: none
+		sourceColumn: EARMARKEDFUNDSDOCUMENTITEM
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Financial Services Product Group.
+	column FINANCIALSERVICESPRODUCTGROUP
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: b9237b63-99a4-4502-a676-55d8a24d9da9
+		summarizeBy: none
+		sourceColumn: FINANCIALSERVICESPRODUCTGROUP
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Financial Services Branch.
+	column FINANCIALSERVICESBRANCH
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: ee6b5b5e-c170-4ac7-9af9-a734d0129202
+		summarizeBy: none
+		sourceColumn: FINANCIALSERVICESBRANCH
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Financial Data Source.
+	column FINANCIALDATASOURCE
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 1c06115c-86c2-4062-8785-1d1df8272ca8
+		summarizeBy: none
+		sourceColumn: FINANCIALDATASOURCE
+
+		annotation SummarizationSetBy = Automatic
+
+	column ACCOUNTINGNOTIFICATIONUUID
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 4bc45b91-bdc3-4e2b-9f31-0d6f33e1d5af
+		summarizeBy: none
+		sourceColumn: ACCOUNTINGNOTIFICATIONUUID
+
+		annotation SummarizationSetBy = Automatic
+
+	column JRNLPERIODENDCLOSINGRUNLOGUUID
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: e2d22920-ed41-49cf-a0b8-2292258ca622
+		summarizeBy: none
+		sourceColumn: JRNLPERIODENDCLOSINGRUNLOGUUID
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Deletion indicator used by ETL or data processing logic.
+	column _DELETE
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: 7016000f-115a-4fad-8d88-44e2005be61e
+		summarizeBy: none
+		sourceColumn: _DELETE
+
+		annotation SummarizationSetBy = Automatic
+
+	partition GLACCOUNTLINEITEMRAWDATA-3273179a-ff41-4971-b56e-213d0ceda9ef = m
+		mode: directQuery
+		source =
+				let
+				    Source = Sql.Database(Server, Database),
+				    dmgold_I_GLACCOUNTLINEITEMRAWDATA = Source{[Schema=Schema_Name,Item="I_GLACCOUNTLINEITEMRAWDATA"]}[Data]
+				in
+				    dmgold_I_GLACCOUNTLINEITEMRAWDATA
+
+	annotation PBI_ResultType = Table
+

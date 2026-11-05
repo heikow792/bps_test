@@ -1,0 +1,167 @@
+/// Fiscal period variant mapping for different accounting calendars
+table FISCALPERIODFORVARIANT
+	lineageTag: d79073e7-e534-4a48-8efe-aa1268e82d7c
+
+	column FISCALYEARVARIANT
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 6839e31b-c9c8-436c-8e55-8edfa52dbf81
+		summarizeBy: none
+		sourceColumn: FISCALYEARVARIANT
+
+		annotation SummarizationSetBy = Automatic
+
+	column FISCALYEAR
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 89c81ded-76a7-480d-8008-415f631b027a
+		summarizeBy: none
+		sourceColumn: FISCALYEAR
+
+		annotation SummarizationSetBy = Automatic
+
+	column FISCALPERIOD
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: ff627fc9-5847-4de5-83d3-0feaf9adc80e
+		summarizeBy: none
+		sourceColumn: FISCALPERIOD
+
+		annotation SummarizationSetBy = Automatic
+
+	column FISCALPERIODSTARTDATE
+		dataType: dateTime
+		formatString: Long Date
+		sourceProviderType: date
+		lineageTag: e7a308c1-f118-4468-bc22-5db1d2ee17de
+		summarizeBy: none
+		sourceColumn: FISCALPERIODSTARTDATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column FISCALPERIODENDDATE
+		dataType: dateTime
+		formatString: Long Date
+		sourceProviderType: date
+		lineageTag: de13ccbd-33d2-430c-8754-b327453653e2
+		summarizeBy: none
+		sourceColumn: FISCALPERIODENDDATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column ISSPECIALPERIOD
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 11087ee2-c81f-43e2-9adf-47a731ccf5dc
+		summarizeBy: none
+		sourceColumn: ISSPECIALPERIOD
+
+		annotation SummarizationSetBy = Automatic
+
+	column FISCALYEARSTARTDATE
+		dataType: dateTime
+		formatString: Long Date
+		sourceProviderType: date
+		lineageTag: 3cb37fd9-c29a-495e-ae82-d819f2b0a725
+		summarizeBy: none
+		sourceColumn: FISCALYEARSTARTDATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column FISCALYEARENDDATE
+		dataType: dateTime
+		formatString: Long Date
+		sourceProviderType: date
+		lineageTag: 5c6e8459-1100-4554-9cc7-85a21bc0cc94
+		summarizeBy: none
+		sourceColumn: FISCALYEARENDDATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column FISCALYEARPERIOD
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 7d2c44e9-53db-4ffe-9358-5bac3433e862
+		summarizeBy: none
+		sourceColumn: FISCALYEARPERIOD
+
+		annotation SummarizationSetBy = Automatic
+
+	column NEXTFISCALPERIOD
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 7bec7336-961f-435a-a2f3-9ba035e75428
+		summarizeBy: none
+		sourceColumn: NEXTFISCALPERIOD
+
+		annotation SummarizationSetBy = Automatic
+
+	column NEXTFISCALPERIODFISCALYEAR
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 07b38c9e-6bb8-49c0-b41d-4a0d5d7dc9c5
+		summarizeBy: none
+		sourceColumn: NEXTFISCALPERIODFISCALYEAR
+
+		annotation SummarizationSetBy = Automatic
+
+	column _UpdateTimeStamp
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: dc154500-9182-46e9-b98e-b70d4f681c57
+		summarizeBy: none
+		sourceColumn: _UpdateTimeStamp
+
+		annotation SummarizationSetBy = Automatic
+
+	column _SystemName
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: c689aacc-38a8-43e4-acd2-38f042347407
+		summarizeBy: none
+		sourceColumn: _SystemName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Key
+		dataType: int64
+		isHidden
+		isKey
+		formatString: 0
+		isAvailableInMdx: false
+		sourceProviderType: int
+		lineageTag: 7621809e-ec94-487d-a753-54f9b8dedbdf
+		summarizeBy: none
+		sourceColumn: Key
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FISCALPERIODFORVARIANT = m
+		mode: dual
+		source =
+				let
+				    Source = Sql.Database(Server, Database),
+				    dbo_vCOSTCENTER = Source{[Schema=Schema_Name,Item="I_FISCALPERIODFORVARIANT"]}[Data]
+				in
+				    dbo_vCOSTCENTER
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,49 @@
+table _FIELD_PARAM_OPENING_BALANCE
+	lineageTag: d438bd8a-1739-4d74-8574-ae20d86834d7
+
+	column FIELD_PARAM_OPENING_BALANCE
+		lineageTag: 48ed4fd1-b959-4cf3-a6de-1803a5b66dee
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'FIELD_PARAM_OPENING_BALANCE Order'
+
+		relatedColumnDetails
+			groupByColumn: 'FIELD_PARAM_OPENING_BALANCE Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FIELD_PARAM_OPENING_BALANCE Fields'
+		isHidden
+		lineageTag: f113afdf-e3bd-4a3b-ad35-595af38646b1
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'FIELD_PARAM_OPENING_BALANCE Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "kind": 2,
+				  "version": 3
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FIELD_PARAM_OPENING_BALANCE Order'
+		isHidden
+		formatString: 0
+		lineageTag: cf54f721-6ddf-4ad7-a967-9cc5007a1730
+		summarizeBy: none
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _FIELD_PARAM_OPENING_BALANCE-649688a7-d5ad-4dad-8e69-4d883ee34857 = calculated
+		mode: import
+		source =
+				{
+				    ("Opening Balance", NAMEOF('__MEASURES_OTHER'[COMPANYCODE_OPENING_BALANCE]), 0),
+				    ("Opening Balance", NAMEOF('__MEASURES_OTHER'[GLOBAL_OPENING_BALANCE]), 1),
+				    ("Opening Balance", NAMEOF('__MEASURES_OTHER'[TRANSACTION_OPENING_BALANCE]), 2)
+				}
+
+	annotation PBI_Id = 323add678ba04bb48be581ea03bf28ec
+

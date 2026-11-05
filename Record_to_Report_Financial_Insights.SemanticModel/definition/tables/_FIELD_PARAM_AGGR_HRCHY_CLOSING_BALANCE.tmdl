@@ -1,0 +1,50 @@
+table _FIELD_PARAM_AGGR_HRCHY_CLOSING_BALANCE
+	lineageTag: 74695b6b-798f-4feb-8a91-95f3a03f8ceb
+
+	column FIELD_PARAM_AGGR_HRCHY_CLOSING_BALANCE
+		lineageTag: 1a380712-deff-4179-996f-2607a2207ca0
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'FIELD_PARAM_AGGR_HRCHY_CLOSING_BALANCE Order'
+
+		relatedColumnDetails
+			groupByColumn: 'FIELD_PARAM_AGGR_HRCHY_CLOSING_BALANCE Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FIELD_PARAM_AGGR_HRCHY_CLOSING_BALANCE Fields'
+		isHidden
+		lineageTag: 9b5c5be6-ed72-4686-9be8-fac06dc7e9ab
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'FIELD_PARAM_AGGR_HRCHY_CLOSING_BALANCE Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "kind": 2,
+				  "version": 3
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FIELD_PARAM_AGGR_HRCHY_CLOSING_BALANCE Order'
+		isHidden
+		isKey
+		formatString: 0
+		lineageTag: 95663ccb-eedc-41d8-899a-2722bcc401ab
+		summarizeBy: none
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _FIELD_PARAM_AGGR_HRCHY_CLOSING_BALANCE-1fd65a89-4c7c-4d9d-988e-cd2af47b8a65 = calculated
+		mode: import
+		source =
+				{
+				    ("Closing Balance", NAMEOF('__MEASURES_AGGR_HRCHY'[AGGR_HRCHY_COMPANYCODE_CLOSING_BALANCE]), 0),
+				    ("Closing Balance", NAMEOF('__MEASURES_AGGR_HRCHY'[AGGR_HRCHY_GLOBAL_CLOSING_BALANCE]), 1),
+				    ("Closing Balance", NAMEOF('__MEASURES_AGGR_HRCHY'[AGGR_HRCHY_TRANSACTION_CLOSING_BALANCE]), 2)
+				}
+
+	annotation PBI_Id = a5e5ba11469346a3a64da19b0fdbf739
+

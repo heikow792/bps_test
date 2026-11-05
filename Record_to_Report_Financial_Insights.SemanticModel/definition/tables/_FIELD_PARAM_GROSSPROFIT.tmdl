@@ -1,0 +1,48 @@
+table _FIELD_PARAM_GROSSPROFIT
+	lineageTag: 814f986b-032b-4410-a132-e34746634f70
+
+	column FIELD_PARAM_GROSSPROFIT
+		lineageTag: 7dcae060-46cb-4ba9-9d1f-49fda1dcba81
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'FIELD_PARAM_GROSSPROFIT Order'
+
+		relatedColumnDetails
+			groupByColumn: 'FIELD_PARAM_GROSSPROFIT Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FIELD_PARAM_GROSSPROFIT Fields'
+		isHidden
+		lineageTag: cb09957c-b1a5-4a2d-88bb-adce9891b57f
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'FIELD_PARAM_GROSSPROFIT Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "kind": 2,
+				  "version": 3
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FIELD_PARAM_GROSSPROFIT Order'
+		isHidden
+		formatString: 0
+		lineageTag: edf42e7f-8c2f-4b15-80c8-5e794661531b
+		summarizeBy: none
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _FIELD_PARAM_GROSSPROFIT = calculated
+		mode: import
+		source =
+				{
+				    ("Gross Profit", NAMEOF([COMPANYCODE_GROSSPROFIT]), 0),
+				    ("Gross Profit", NAMEOF([GLOBAL_GROSSPROFIT]), 1)
+				}
+
+	annotation PBI_Id = 2d99dc3fc30b4dcdb1b06ec35ebd74a3
+

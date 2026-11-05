@@ -1,0 +1,57 @@
+table _GLACCOUNTINCHARTOFACCOUNTSTEXT
+	lineageTag: 67b4a9af-39ae-4d4f-8ffc-26d8e8409b6b
+
+	column FIELD_PARAM_GLACCOUNTINCHARTOFACCOUNTSTEXT
+		lineageTag: 58541dfc-10ae-47bd-85d6-5cdf2b103baf
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'FIELD_PARAM_GLACCOUNTINCHARTOFACCOUNTSTEXT Order'
+
+		relatedColumnDetails
+			groupByColumn: 'FIELD_PARAM_GLACCOUNTINCHARTOFACCOUNTSTEXT Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FIELD_PARAM_GLACCOUNTINCHARTOFACCOUNTSTEXT Fields'
+		isHidden
+		lineageTag: 6c8de4bb-8e67-414f-9cbf-13c8924cd3b1
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'FIELD_PARAM_GLACCOUNTINCHARTOFACCOUNTSTEXT Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "kind": 2,
+				  "version": 3
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FIELD_PARAM_GLACCOUNTINCHARTOFACCOUNTSTEXT Order'
+		isHidden
+		formatString: 0
+		lineageTag: 41c87599-9028-4d42-a53f-04d589631ce5
+		summarizeBy: none
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	column _ISOLanguage = MID(_GLACCOUNTINCHARTOFACCOUNTSTEXT[FIELD_PARAM_GLACCOUNTINCHARTOFACCOUNTSTEXT Fields], SEARCH("[", _GLACCOUNTINCHARTOFACCOUNTSTEXT[FIELD_PARAM_GLACCOUNTINCHARTOFACCOUNTSTEXT Fields])+1, 2)
+		isHidden
+		lineageTag: 7c9079e9-cd0d-43ef-be00-4f9a7b95a519
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _GLACCOUNTINCHARTOFACCOUNTSTEXT = calculated
+		mode: import
+		source =
+				{
+				    ("GL Account Name", NAMEOF('GLACCOUNTINCHARTOFACCOUNTSTEXT'[DE]), 0),
+				    ("GL Account Name", NAMEOF('GLACCOUNTINCHARTOFACCOUNTSTEXT'[EN]), 1),
+				    ("GL Account Name", NAMEOF('GLACCOUNTINCHARTOFACCOUNTSTEXT'[ES]), 2),
+				    ("GL Account Name", NAMEOF('GLACCOUNTINCHARTOFACCOUNTSTEXT'[FR]), 3)
+				}
+
+	annotation PBI_Id = c81e247a1d484d969763d88d38dbb260
+

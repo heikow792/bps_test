@@ -1,0 +1,51 @@
+table _FIELD_PARAM_LINE_ITEM_FIELDS
+	lineageTag: d81a40cf-e42f-4bc8-9b39-d93bf95e1c8f
+
+	column FIELD_PARAM_LINE_ITEM_FIELDS
+		lineageTag: 7ad4be23-d158-4983-905e-5d0f03e4790d
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'FIELD_PARAM_LINE_ITEM_FIELDS Order'
+
+		relatedColumnDetails
+			groupByColumn: 'FIELD_PARAM_LINE_ITEM_FIELDS Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FIELD_PARAM_LINE_ITEM_FIELDS Fields'
+		isHidden
+		lineageTag: 681d66a3-5478-4e06-8454-188a65b8ba65
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'FIELD_PARAM_LINE_ITEM_FIELDS Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "kind": 2,
+				  "version": 3
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FIELD_PARAM_LINE_ITEM_FIELDS Order'
+		isHidden
+		formatString: 0
+		lineageTag: 6669175d-2812-43ce-94ba-0a0028b1e655
+		summarizeBy: none
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _FIELD_PARAM_LINE_ITEM_FIELDS = calculated
+		mode: import
+		source =
+				{
+				    ("Profit Center", NAMEOF('PROFITCENTER'[PROFITCENTER]), 0),
+				    ("Segment", NAMEOF(SEGMENTTEXT[SEGMENT]), 1),
+				    ("Cost Center", NAMEOF('COSTCENTER'[COSTCENTER]), 2),
+				    ("Tax Code", NAMEOF('GLACCOUNTLINEITEMRAWDATA'[TAXCODE]), 3),
+				    ("Tax Country", NAMEOF('GLACCOUNTLINEITEMRAWDATA'[TAXCOUNTRY]), 4)
+				}
+
+	annotation PBI_Id = d6dcded2cf0c41a6b6f7c78b112f8b89
+

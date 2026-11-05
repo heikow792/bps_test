@@ -1,0 +1,17 @@
+table _FISCALPERIODTABLE
+	lineageTag: a4286efc-9029-4797-8559-0b28b578e35c
+
+	column FISCALPERIOD
+		formatString: 0
+		lineageTag: b918d38c-1861-4b97-a09a-d3104e81bde0
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		annotation SummarizationSetBy = User
+
+	partition _FISCALPERIODTABLE-aa87d8b7-80ec-415d-8c12-c670b39cfbd9 = calculated
+		mode: import
+		source = GENERATESERIES(0, 16, 1)
+
+	annotation PBI_Id = 5825e87c5ba84d1aa088796b2ff159ca
+

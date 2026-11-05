@@ -1,0 +1,156 @@
+table _MEASURES_AGGR_H
+	lineageTag: 46fef6af-79c5-46fa-b0d1-52820548c57f
+
+	measure AGGR_GLOBAL_CLOSING_BALANCE = ```
+			
+			VAR CurrentSelectedFiscalPeriod = [SELECTEDFISCALPERIOD]
+			VAR CLOSING_BALANCE = 
+			CALCULATE(
+			    SUM(AGGR_H[AMOUNTINGLOBALCURRENCY]),
+			    REMOVEFILTERS(FISCALPERIODFORVARIANT[FISCALPERIOD]),
+			    FISCALPERIODFORVARIANT[FISCALPERIOD] <= CurrentSelectedFiscalPeriod
+			)
+			
+			RETURN CLOSING_BALANCE
+			```
+		displayFolder: GLOBAL_CURRENCY
+		lineageTag: 463d67f2-0ab0-4eda-9094-ef42f7bb2fdc
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure AGGR_GLOBAL_CURRENT_PERIOD =
+			
+			VAR CurrentFP = [SELECTEDFISCALPERIOD]
+			RETURN
+			CALCULATE(
+			    SUM(AGGR_H[AMOUNTINGLOBALCURRENCY]),
+			    AGGR_H[FISCALPERIOD] = CurrentFP
+			)
+		displayFolder: GLOBAL_CURRENCY
+		lineageTag: 8f47901f-990d-4c59-bc0c-67198e28c138
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure AGGR_GLOBAL_OPENING_BALANCE = ```
+			
+			VAR CurrentSelectedFiscalPeriod = [SELECTEDFISCALPERIOD]
+			VAR OPENING_BALANCE = 
+			CALCULATE(
+			    SUM(AGGR_H[AMOUNTINGLOBALCURRENCY]),
+			    REMOVEFILTERS(FISCALPERIODFORVARIANT[FISCALPERIOD]),
+			    FISCALPERIODFORVARIANT[FISCALPERIOD] < CurrentSelectedFiscalPeriod
+			)
+			RETURN OPENING_BALANCE
+			```
+		displayFolder: GLOBAL_CURRENCY
+		lineageTag: a8ec2749-66d4-4717-886f-26eec15e30d2
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure AGGR_TRANSACTION_CLOSING_BALANCE = ```
+			
+			VAR CurrentSelectedFiscalPeriod = [SELECTEDFISCALPERIOD]
+			VAR CLOSING_BALANCE = 
+			CALCULATE(
+			    SUM(AGGR_H[AMOUNTINTRANSACTIONCURRENCY]),
+			    REMOVEFILTERS(FISCALPERIODFORVARIANT[FISCALPERIOD]),
+			    FISCALPERIODFORVARIANT[FISCALPERIOD] <= CurrentSelectedFiscalPeriod
+			)
+			
+			RETURN CLOSING_BALANCE
+			```
+		displayFolder: TRANSACTION_CURRENCY
+		lineageTag: 684c8696-3f6d-4171-ac9b-7860b667532d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure AGGR_TRANSACTION_CURRENT_PERIOD =
+			
+			VAR CurrentFP = [SELECTEDFISCALPERIOD]
+			RETURN
+			CALCULATE(
+			    SUM(AGGR_H[AMOUNTINTRANSACTIONCURRENCY]),
+			    AGGR_H[FISCALPERIOD] = CurrentFP
+			)
+		displayFolder: TRANSACTION_CURRENCY
+		lineageTag: 384018de-54d1-447e-a79b-6c1643cf73c7
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure AGGR_TRANSACTION_OPENING_BALANCE = ```
+			
+			VAR CurrentSelectedFiscalPeriod = [SELECTEDFISCALPERIOD]
+			VAR OPENING_BALANCE = 
+			CALCULATE(
+			    SUM(AGGR_H[AMOUNTINTRANSACTIONCURRENCY]),
+			    REMOVEFILTERS(FISCALPERIODFORVARIANT[FISCALPERIOD]),
+			    FISCALPERIODFORVARIANT[FISCALPERIOD] < CurrentSelectedFiscalPeriod
+			)
+			RETURN OPENING_BALANCE
+			```
+		displayFolder: TRANSACTION_CURRENCY
+		lineageTag: 0b04d4b6-2097-4130-8c83-b88c6a6c76f4
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure AGGR_COMPANY_CODE_CLOSING_BALANCE = ```
+			
+			
+			VAR CurrentSelectedFiscalPeriod = [SELECTEDFISCALPERIOD]
+			VAR CLOSING_BALANCE = 
+			CALCULATE(
+			    SUM(AGGR_H[AMOUNTINCOMPANYCODECURRENCY]),
+			    REMOVEFILTERS(FISCALPERIODFORVARIANT[FISCALPERIOD]),
+			    FISCALPERIODFORVARIANT[FISCALPERIOD] <= CurrentSelectedFiscalPeriod
+			)
+			
+			RETURN CLOSING_BALANCE
+			```
+		formatString: #,0.00
+		displayFolder: COMPANY_CODE_CURRENCY
+		lineageTag: ef8b3e06-6257-400f-a5be-61edc20df19b
+
+	measure AGGR_COMPANY_CODE_OPENING_BALANCE = ```
+			
+			
+			VAR CurrentSelectedFiscalPeriod = [SELECTEDFISCALPERIOD]
+			VAR OPENING_BALANCE = 
+			CALCULATE(
+			    SUM(AGGR_H[AMOUNTINCOMPANYCODECURRENCY]),
+			    REMOVEFILTERS(FISCALPERIODFORVARIANT[FISCALPERIOD]),
+			    FISCALPERIODFORVARIANT[FISCALPERIOD] < CurrentSelectedFiscalPeriod
+			)
+			
+			RETURN OPENING_BALANCE
+			```
+		formatString: #,0
+		displayFolder: COMPANY_CODE_CURRENCY
+		lineageTag: bbbb93b9-cf0d-4ea5-9e68-cc03777d13eb
+
+	measure AGGR_COMPANY_CODE_CURRENT_PERIOD =
+			
+			VAR CurrentFP = [SELECTEDFISCALPERIOD]
+			RETURN
+			CALCULATE(
+			    SUM(AGGR_H[AMOUNTINCOMPANYCODECURRENCY]),
+			    AGGR_H[FISCALPERIOD] = CurrentFP
+			)
+		displayFolder: COMPANY_CODE_CURRENCY
+		lineageTag: 01d042d5-286d-425a-8d84-5d5da9fcbdf2
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition _MEASURES_AGGR_H = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+
