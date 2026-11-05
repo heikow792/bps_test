@@ -1,0 +1,68 @@
+/// Master table defining the chart of accounts structure
+table CHARTOFACCOUNTS
+	lineageTag: 49390dbd-4d37-45a6-b704-85c43d56a435
+
+	/// Primary Key for the table.
+	column Key
+		dataType: int64
+		isHidden
+		isKey
+		formatString: 0
+		isAvailableInMdx: false
+		lineageTag: c423cdb5-6bf1-4424-86ac-a2f317e2a032
+		summarizeBy: none
+		sourceColumn: Key
+
+		annotation SummarizationSetBy = User
+
+	/// Timestamp indicating last update time in silver lakehouse.
+	column _UpdateTimeStamp
+		dataType: dateTime
+		isHidden
+		formatString: m/d/yyyy
+		lineageTag: d7e1e830-12bf-43bd-a357-ae61edc18cb1
+		summarizeBy: none
+		sourceColumn: _UpdateTimeStamp
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Name of the source system.
+	column _SystemName
+		dataType: string
+		isHidden
+		lineageTag: cd221d06-137c-4d55-bec9-c92d91e136ba
+		summarizeBy: none
+		sourceColumn: _SystemName
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Chart of Accounts.
+	column CHARTOFACCOUNTS
+		dataType: string
+		lineageTag: 2ec23e8b-08a4-406a-bdc4-774e6dc54d3b
+		summarizeBy: none
+		sourceColumn: CHARTOFACCOUNTS
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Maintenance Language for the Chart of Accounts.
+	column MAINTENANCELANGUAGE
+		dataType: string
+		lineageTag: e54d2d17-7f81-4078-ba9e-2b19af2ca48e
+		summarizeBy: none
+		sourceColumn: MAINTENANCELANGUAGE
+
+		annotation SummarizationSetBy = Automatic
+
+	partition CHARTOFACCOUNTS-d5d0986b-18cf-46a1-a4fb-eb88d5e7d9ce = m
+		mode: dual
+		source =
+				let
+				    Source = Sql.Database(Server, Database),
+				    dmgold_I_CHARTOFACCOUNTS = Source{[Schema=Schema_Name,Item="I_CHARTOFACCOUNTS"]}[Data],
+				  #"Choose columns" = Table.SelectColumns(dmgold_I_CHARTOFACCOUNTS, {"CHARTOFACCOUNTS", "MAINTENANCELANGUAGE", "_UpdateTimeStamp", "_SystemName", "Key"})
+				in
+				    #"Choose columns"
+
+	annotation PBI_ResultType = Table
+

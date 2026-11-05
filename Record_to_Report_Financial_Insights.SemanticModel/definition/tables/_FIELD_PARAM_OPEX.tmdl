@@ -1,0 +1,48 @@
+table _FIELD_PARAM_OPEX
+	lineageTag: 52bcef8a-f836-48ba-b4de-497bebcc8bca
+
+	column FIELD_PARAM_OPEX
+		lineageTag: 7e245b0c-69f2-48f0-ab04-4d6c3398521c
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'FIELD_PARAM_OPEX Order'
+
+		relatedColumnDetails
+			groupByColumn: 'FIELD_PARAM_OPEX Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FIELD_PARAM_OPEX Fields'
+		isHidden
+		lineageTag: d040a2a9-0ad8-4fd3-9941-31fe6f59079b
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'FIELD_PARAM_OPEX Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "kind": 2,
+				  "version": 3
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FIELD_PARAM_OPEX Order'
+		isHidden
+		formatString: 0
+		lineageTag: 924489c5-4918-422a-8033-95b7c865c6d5
+		summarizeBy: none
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _FIELD_PARAM_OPEX = calculated
+		mode: import
+		source =
+				{
+				    ("OPEX", NAMEOF([COMPANYCODE_OPEX]), 0),
+				    ("OPEX", NAMEOF([GLOBAL_OPEX]), 1)
+				}
+
+	annotation PBI_Id = 644b8522b2b24e9cba57bc057625cfb4
+

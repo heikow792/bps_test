@@ -1,0 +1,57 @@
+table _SEGMENTTEXT
+	lineageTag: deafddc2-f569-4eee-b6e9-5916019270cc
+
+	column FIELD_PARAM_SEGMENTTEXT
+		lineageTag: dcd50ebd-488a-42f6-a9ff-decf85793b01
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'FIELD_PARAM_SEGMENTTEXT Order'
+
+		relatedColumnDetails
+			groupByColumn: 'FIELD_PARAM_SEGMENTTEXT Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FIELD_PARAM_SEGMENTTEXT Fields'
+		isHidden
+		lineageTag: 37b09eb2-ca69-4925-9b24-5655458a09ea
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'FIELD_PARAM_SEGMENTTEXT Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "kind": 2,
+				  "version": 3
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FIELD_PARAM_SEGMENTTEXT Order'
+		isHidden
+		formatString: 0
+		lineageTag: 04225cd1-55ff-4180-ad5e-deb265836466
+		summarizeBy: none
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	column _ISOLanguage = MID(_SEGMENTTEXT[FIELD_PARAM_SEGMENTTEXT Fields], SEARCH("[", _SEGMENTTEXT[FIELD_PARAM_SEGMENTTEXT Fields])+1, 2)
+		isHidden
+		lineageTag: 8dabc012-7b64-453a-a571-bdf69c7efb81
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _SEGMENTTEXT = calculated
+		mode: import
+		source =
+				{
+				    ("SegmentText", NAMEOF('SEGMENTTEXT'[DE]), 0),
+				    ("SegmentText", NAMEOF('SEGMENTTEXT'[EN]), 1),
+				    ("SegmentText", NAMEOF('SEGMENTTEXT'[ES]), 2),
+				    ("SegmentText", NAMEOF('SEGMENTTEXT'[FR]), 3)
+				}
+
+	annotation PBI_Id = 8d6e879ea3d7470988cb4f54d5fb927a
+

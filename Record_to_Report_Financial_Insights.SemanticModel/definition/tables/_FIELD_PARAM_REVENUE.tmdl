@@ -1,0 +1,50 @@
+table _FIELD_PARAM_REVENUE
+	lineageTag: 691c66f4-3a84-4537-9fac-4a30fd735531
+
+	column FIELD_PARAM_INCOMESTATEMENT
+		lineageTag: 5d65515b-91b5-4d2a-adce-ad082ea539b9
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'FIELD_PARAM_INCOMESTATEMENT Order'
+
+		relatedColumnDetails
+			groupByColumn: 'FIELD_PARAM_INCOMESTATEMENT Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FIELD_PARAM_INCOMESTATEMENT Fields'
+		isHidden
+		lineageTag: 2252b1e7-58b2-4ea4-a7f1-371bab17214a
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'FIELD_PARAM_INCOMESTATEMENT Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "kind": 2,
+				  "version": 3
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FIELD_PARAM_INCOMESTATEMENT Order'
+		isHidden
+		isKey
+		formatString: 0
+		lineageTag: 908515a3-c79d-4c56-bbda-5ab47a9318c0
+		summarizeBy: none
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _FIELD_PARAM_REVENUE = calculated
+		mode: import
+		source =
+				{
+				    ("Revenue", NAMEOF([COMPANYCODE_REVENUE]), 0),
+				    ("Revenue", NAMEOF([GLOBAL_REVENUE]), 1),
+				    ("Revenue", NAMEOF([TRANSACTION_REVENUE]), 2)
+				}
+
+	annotation PBI_Id = b654a1260c454e0094bfbe0803a60fa6
+

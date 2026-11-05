@@ -1,0 +1,58 @@
+table _DEBITCREDITCODETEXT
+	lineageTag: 590204a4-f9c7-4dad-a245-dfba014a8702
+
+	column FIELD_PARAM_DEBITCREDITCODETEXT
+		lineageTag: 79c4b25f-b4a5-4c02-8bca-8774cbea26bc
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'FIELD_PARAM_DEBITCREDITCODETEXT Order'
+
+		relatedColumnDetails
+			groupByColumn: 'FIELD_PARAM_DEBITCREDITCODETEXT Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FIELD_PARAM_DEBITCREDITCODETEXT Fields'
+		isHidden
+		lineageTag: 2a59f51b-4a96-457a-aea7-5d7febfced33
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'FIELD_PARAM_DEBITCREDITCODETEXT Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "kind": 2,
+				  "version": 3
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FIELD_PARAM_DEBITCREDITCODETEXT Order'
+		isHidden
+		formatString: 0
+		lineageTag: bfc9aade-f91f-41af-a3f7-ef56d47aebe2
+		summarizeBy: none
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	column _ISOLanguage = MID(_DEBITCREDITCODETEXT[FIELD_PARAM_DEBITCREDITCODETEXT Fields], SEARCH("[", _DEBITCREDITCODETEXT[FIELD_PARAM_DEBITCREDITCODETEXT Fields])+1, 2)
+		isHidden
+		isAvailableInMdx: false
+		lineageTag: 6b6b8618-f5cc-4678-b728-2a72f574127f
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _DEBITCREDITCODETEXT = calculated
+		mode: import
+		source =
+				{
+				    ("Debit/Credit", NAMEOF('DEBITCREDITCODETEXT'[DE]), 0),
+				    ("Debit/Credit", NAMEOF('DEBITCREDITCODETEXT'[EN]), 1),
+				    ("Debit/Credit", NAMEOF('DEBITCREDITCODETEXT'[ES]), 2),
+				    ("Debit/Credit", NAMEOF('DEBITCREDITCODETEXT'[FR]), 3)
+				}
+
+	annotation PBI_Id = 4d9d2f5a35f84a2f81891026fd2b4792
+

@@ -1,0 +1,86 @@
+/// Text descriptions for cost center entries
+table COSTCENTERTEXT
+	lineageTag: cf0c0110-0941-4cde-823f-3f14f4299819
+
+	column Key
+		dataType: int64
+		isHidden
+		isKey
+		formatString: 0
+		lineageTag: 42353fe8-d543-4336-b74a-2d8416d1612d
+		summarizeBy: none
+		sourceColumn: Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column _SystemName
+		dataType: string
+		isHidden
+		lineageTag: 4135e118-d31e-446d-8a5f-8bff437dbddf
+		summarizeBy: none
+		sourceColumn: _SystemName
+
+		annotation SummarizationSetBy = Automatic
+
+	column CONTROLLINGAREA
+		dataType: string
+		lineageTag: edc2c3db-e1c3-40c1-a06a-ec3179edb860
+		summarizeBy: none
+		sourceColumn: CONTROLLINGAREA
+
+		annotation SummarizationSetBy = Automatic
+
+	column COSTCENTER
+		dataType: string
+		lineageTag: d56daeb1-d9eb-4e83-a4ae-a3633007c67f
+		summarizeBy: none
+		sourceColumn: COSTCENTER
+
+		annotation SummarizationSetBy = Automatic
+
+	column DE
+		dataType: string
+		lineageTag: cf7dda98-39b8-4bd2-8880-d9a7d8eacc14
+		summarizeBy: none
+		sourceColumn: DE
+
+		annotation SummarizationSetBy = Automatic
+
+	column EN
+		dataType: string
+		lineageTag: 1b7ec703-1b3d-4ba3-b2ce-2043ecdb9bbb
+		summarizeBy: none
+		sourceColumn: EN
+
+		annotation SummarizationSetBy = Automatic
+
+	column FR
+		dataType: string
+		lineageTag: 2f39d0c7-dfb5-4b40-af78-e3ffa0773b63
+		summarizeBy: none
+		sourceColumn: FR
+
+		annotation SummarizationSetBy = Automatic
+
+	column ES
+		dataType: string
+		lineageTag: 07283576-24b2-4f6c-b8df-890d977e26b3
+		summarizeBy: none
+		sourceColumn: ES
+
+		annotation SummarizationSetBy = Automatic
+
+	partition COSTCENTERTEXT = m
+		mode: dual
+		source =
+				let
+				    Source = Sql.Database(Server, Database),
+				    dmgold_vwCOSTCENTERTEXT = Source{[Schema=Schema_Name,Item="vtCOSTCENTERTEXT"]}[Data],
+				    #"Columns removed by Measure Killer"= Table.RemoveColumns(dmgold_vwCOSTCENTERTEXT,{"RU","ZH","RO","LV","PL","KK","LT","SV","ET","AR","HU","NL","TH","HI","DA","HR","JA","TR","NO","PT","EL","KO","ZF","IT","BG","CS","VI","HE","SL","UK","SK","FI","SH","CA"})
+				in
+				    #"Columns removed by Measure Killer"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

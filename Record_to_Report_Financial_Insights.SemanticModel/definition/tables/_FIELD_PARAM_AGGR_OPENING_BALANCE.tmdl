@@ -1,0 +1,49 @@
+table _FIELD_PARAM_AGGR_OPENING_BALANCE
+	lineageTag: 0b085a22-184d-4005-9835-9e65d89b199d
+
+	column _FIELD_PARAM_AGGR_OPENING_BALANCE
+		lineageTag: 067093ee-8d41-494c-954d-381871a5d2bb
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: '_FIELD_PARAM_AGGR_OPENING_BALANCE Order'
+
+		relatedColumnDetails
+			groupByColumn: '_FIELD_PARAM_AGGR_OPENING_BALANCE Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column '_FIELD_PARAM_AGGR_OPENING_BALANCE Fields'
+		isHidden
+		lineageTag: 309f41b4-6a0a-4134-8574-e739af96d671
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: '_FIELD_PARAM_AGGR_OPENING_BALANCE Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "kind": 2,
+				  "version": 3
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column '_FIELD_PARAM_AGGR_OPENING_BALANCE Order'
+		isHidden
+		formatString: 0
+		lineageTag: c881b241-29c6-4bee-93e4-b5b2abaddc1a
+		summarizeBy: none
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _FIELD_PARAM_AGGR_OPENING_BALANCE = calculated
+		mode: import
+		source =
+				{
+				    ("Opening Balance", NAMEOF('_MEASURES_AGGR_H'[AGGR_COMPANY_CODE_OPENING_BALANCE]), 0),
+				    ("Opening Balance", NAMEOF('_MEASURES_AGGR_H'[AGGR_GLOBAL_OPENING_BALANCE]), 1),
+				    ("Opening Balance", NAMEOF('_MEASURES_AGGR_H'[AGGR_TRANSACTION_OPENING_BALANCE]), 2)
+				}
+
+	annotation PBI_Id = 1d6f9188e14a4689aa253112f026c0ea
+

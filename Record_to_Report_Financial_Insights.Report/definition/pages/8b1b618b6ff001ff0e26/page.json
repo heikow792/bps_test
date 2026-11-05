@@ -1,0 +1,49 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "8b1b618b6ff001ff0e26",
+  "displayName": "Line Item Details",
+  "displayOption": "FitToWidth",
+  "height": 900,
+  "width": 1280,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "74be4368f7b7ac7d4b64",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "GLACCOUNTLINEITEMRAWDATA"
+              }
+            },
+            "Property": "ACCOUNTINGDOCUMENT"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "Drillthrough"
+      }
+    ]
+  },
+  "pageBinding": {
+    "name": "ce37519a6c1d1ff51ce4",
+    "type": "Drillthrough",
+    "parameters": [
+      {
+        "name": "59f664c22586757b152b",
+        "boundFilter": "74be4368f7b7ac7d4b64",
+        "asAggregation": false,
+        "qnaSingleSelectRequired": false,
+        "fieldExpr": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "GLACCOUNTLINEITEMRAWDATA"
+              }
+            },
+            "Property": "ACCOUNTINGDOCUMENT"
+          }
+        }
+      }
+    ]
+  }
+}

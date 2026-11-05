@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Record_to_Report_Financial_Insights",
+    "description": "Semantic model created from template 'Record_to_Report_Financial_Insights'"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "a1acc0f7-3514-b784-480f-d4a1edb8009f"
+  }
+}

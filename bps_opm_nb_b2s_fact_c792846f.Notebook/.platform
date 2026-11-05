@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Notebook",
+    "displayName": "bps_opm_nb_b2s_fact_c792846f"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "f3356016-56c3-931d-4769-fb2970b8f120"
+  }
+}

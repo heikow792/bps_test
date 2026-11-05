@@ -1,0 +1,48 @@
+table _FIELD_PARAM_OPERATINGPROFIT
+	lineageTag: dab9e36c-c21f-463d-a8f7-d9438322c3e8
+
+	column FIELD_PARAM_OPERATINGPROFIT
+		lineageTag: d71f04f9-4f18-4b85-a18f-6d5cc7776d5e
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'FIELD_PARAM_OPERATINGPROFIT Order'
+
+		relatedColumnDetails
+			groupByColumn: 'FIELD_PARAM_OPERATINGPROFIT Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FIELD_PARAM_OPERATINGPROFIT Fields'
+		isHidden
+		lineageTag: 57163696-57d7-4c9f-aee0-4239cbce1346
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'FIELD_PARAM_OPERATINGPROFIT Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "kind": 2,
+				  "version": 3
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FIELD_PARAM_OPERATINGPROFIT Order'
+		isHidden
+		formatString: 0
+		lineageTag: 84ed28fe-e662-409b-9a66-6b453848cd1f
+		summarizeBy: none
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _FIELD_PARAM_OPERATINGPROFIT = calculated
+		mode: import
+		source =
+				{
+				    ("Operating Profit", NAMEOF([COMPANYCODE_OPERATINGPROFIT]), 0),
+				    ("Operating Profit", NAMEOF([GLOBAL_OPERATINGPROFIT]), 1)
+				}
+
+	annotation PBI_Id = 9000307b8350481694c6f16320184c06
+

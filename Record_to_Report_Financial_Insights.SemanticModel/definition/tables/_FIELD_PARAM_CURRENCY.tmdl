@@ -1,0 +1,50 @@
+table _FIELD_PARAM_CURRENCY
+	lineageTag: 6ac547c6-1926-4a0e-9480-4ed8a61d32ea
+
+	column FIELD_PARAM_CURRENCY
+		lineageTag: b730dc67-f796-4b46-85a6-d1ebce9d765c
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'FIELD_PARAM_CURRENCY Order'
+
+		relatedColumnDetails
+			groupByColumn: 'FIELD_PARAM_CURRENCY Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FIELD_PARAM_CURRENCY Fields'
+		isHidden
+		lineageTag: 88f06f7a-3be5-42c1-b899-731c6d9ecc2f
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'FIELD_PARAM_CURRENCY Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "kind": 2,
+				  "version": 3
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FIELD_PARAM_CURRENCY Order'
+		isHidden
+		isKey
+		formatString: 0
+		lineageTag: 46f36c53-1920-42ca-81d4-0541d9aa6ef9
+		summarizeBy: none
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _FIELD_PARAM_CURRENCY-e31f8fbb-e46e-49e6-b582-7f920aa679d4 = calculated
+		mode: import
+		source =
+				{
+				    ("Company Code Currency", NAMEOF('GLACCOUNTLINEITEMRAWDATA'[COMPANYCODECURRENCY]), 0),
+				    ("Global Currency", NAMEOF('GLACCOUNTLINEITEMRAWDATA'[GLOBALCURRENCY]), 1),
+				    ("Transaction Currency", NAMEOF('GLACCOUNTLINEITEMRAWDATA'[TRANSACTIONCURRENCY]), 2)
+				}
+
+	annotation PBI_Id = ece5e5f1feb8471cb76775d8b40f359b
+

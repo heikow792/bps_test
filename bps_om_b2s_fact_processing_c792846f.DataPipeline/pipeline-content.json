@@ -1,0 +1,216 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "Lookup",
+        "typeProperties": {
+          "source": {
+            "type": "FabricSqlDatabaseSource",
+            "sqlReaderQuery": {
+              "value": "@concat('select DISTINCT CDSViewName, REGEXP_REPLACE(ODPName, ''\\$[EFPT]'', '''') AS ODPName, KeyFields from extractionMetadata em join systemDetails sd on em.SystemName = sd.SystemName where em.Type = ''FACT'' and em.inScope = 1 and sd.SourceType = ''SAP'' and sd.ConnectionType = ''OpenMirroring'' and sd.SystemType = ''S4HANA'' and em.SystemName = ''', pipeline().parameters.System_Name, ''' and (''',pipeline().parameters.CdsViewNames, ''' = '''' OR CDSViewName IN (SELECT LTRIM(RTRIM(value)) FROM STRING_SPLIT(''', pipeline().parameters.CdsViewNames, ''', '','')))')",
+              "type": "Expression"
+            },
+            "partitionOption": "None",
+            "queryTimeout": "02:00:00"
+          },
+          "datasetSettings": {
+            "type": "FabricSqlDatabaseTable",
+            "schema": [],
+            "connectionSettings": {
+              "name": "ei_metadata_database",
+              "properties": {
+                "type": "FabricSqlDatabase",
+                "typeProperties": {
+                  "artifactId": "c9571a1c-c878-be58-4a11-51b4a1b72d02",
+                  "workspaceId": "00000000-0000-0000-0000-000000000000"
+                },
+                "externalReferences": {
+                  "connection": "7fd468ec-8a28-4a44-b5ee-1a0b9017a135"
+                },
+                "annotations": []
+              }
+            },
+            "annotations": []
+          },
+          "firstRowOnly": false
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Get Fact Tables",
+        "dependsOn": []
+      },
+      {
+        "type": "ForEach",
+        "typeProperties": {
+          "isSequential": false,
+          "batchCount": 3,
+          "items": {
+            "value": "@activity('Get Fact Tables').output.value",
+            "type": "Expression"
+          },
+          "activities": [
+            {
+              "type": "TridentNotebook",
+              "typeProperties": {
+                "notebookId": "f3356016-56c3-931d-4769-fb2970b8f120",
+                "workspaceId": "00000000-0000-0000-0000-000000000000",
+                "parameters": {
+                  "p_ODPName": {
+                    "value": {
+                      "value": "@item().ODPName",
+                      "type": "Expression"
+                    },
+                    "type": "string"
+                  },
+                  "p_CDSViewName": {
+                    "value": {
+                      "value": "@item().CDSViewName",
+                      "type": "Expression"
+                    },
+                    "type": "string"
+                  },
+                  "p_silver_lakehouse_name": {
+                    "value": {
+                      "value": "@pipeline().parameters.Silver_Lakehouse_Name",
+                      "type": "Expression"
+                    },
+                    "type": "string"
+                  },
+                  "p_guid": {
+                    "value": {
+                      "value": "@variables('v_guid')",
+                      "type": "Expression"
+                    },
+                    "type": "string"
+                  },
+                  "p_keyFields": {
+                    "value": {
+                      "value": "@item().KeyFields",
+                      "type": "Expression"
+                    },
+                    "type": "string"
+                  },
+                  "p_source_type": {
+                    "value": "open-mirroring",
+                    "type": "string"
+                  },
+                  "p_mirror_db_name": {
+                    "value": {
+                      "value": "@pipeline().parameters.Mirror_Database_Name",
+                      "type": "Expression"
+                    },
+                    "type": "string"
+                  },
+                  "p_schema_name": {
+                    "value": {
+                      "value": "@pipeline().parameters.Schema_Name",
+                      "type": "Expression"
+                    },
+                    "type": "string"
+                  },
+                  "p_system_name": {
+                    "value": {
+                      "value": "@pipeline().parameters.System_Name",
+                      "type": "Expression"
+                    },
+                    "type": "string"
+                  },
+                  "p_mirror_db_workspace_id": {
+                    "value": {
+                      "value": "@pipeline().DataFactory",
+                      "type": "Expression"
+                    },
+                    "type": "string"
+                  },
+                  "p_schema_table_name": {
+                    "value": {
+                      "value": "@pipeline().parameters.Schema_Table_Name",
+                      "type": "Expression"
+                    },
+                    "type": "string"
+                  }
+                },
+                "sessionTag": {
+                  "value": "@concat('High_Concurrency_Session_Fact_', substring(variables('v_guid'), 0, 8))",
+                  "type": "Expression"
+                }
+              },
+              "policy": {
+                "timeout": "0.12:00:00",
+                "retry": 0,
+                "retryIntervalInSeconds": 30,
+                "secureInput": false,
+                "secureOutput": false
+              },
+              "name": "Run Fact B2S Processing",
+              "dependsOn": []
+            }
+          ]
+        },
+        "name": "For Each Fact Table",
+        "dependsOn": [
+          {
+            "activity": "Get Fact Tables",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          },
+          {
+            "activity": "GUID",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "SetVariable",
+        "typeProperties": {
+          "variableName": "v_guid",
+          "value": {
+            "value": "@guid()",
+            "type": "Expression"
+          }
+        },
+        "policy": {
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "GUID",
+        "dependsOn": []
+      }
+    ],
+    "parameters": {
+      "Silver_Lakehouse_Name": {
+        "type": "string",
+        "defaultValue": "bps_silver_c792846f"
+      },
+      "Mirror_Database_Name": {
+        "type": "string"
+      },
+      "System_Name": {
+        "type": "string"
+      },
+      "CdsViewNames": {
+        "type": "string",
+        "defaultValue": " "
+      },
+      "Schema_Table_Name": {
+        "type": "string"
+      },
+      "Schema_Name": {
+        "type": "string"
+      }
+    },
+    "variables": {
+      "v_guid": {
+        "type": "String"
+      }
+    }
+  }
+}

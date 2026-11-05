@@ -1,0 +1,130 @@
+/// Ledger dimension containing financial ledger information
+table LEDGER
+	lineageTag: 8beb916c-c88c-40bc-b209-55f902768fe0
+
+	/// Primary Key for the table.
+	column Key
+		dataType: int64
+		isHidden
+		isKey
+		formatString: 0
+		isAvailableInMdx: false
+		lineageTag: 1f387166-da14-4984-8af6-bee60562ccfa
+		summarizeBy: none
+		sourceColumn: Key
+
+		annotation SummarizationSetBy = User
+
+	/// Timestamp indicating last update time in silver lakehouse.
+	column _UpdateTimeStamp
+		dataType: dateTime
+		isHidden
+		formatString: m/d/yyyy
+		lineageTag: 43ca6476-c8c0-452d-b56d-a992c77ad22d
+		summarizeBy: none
+		sourceColumn: _UpdateTimeStamp
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Name of the source system.
+	column _SystemName
+		dataType: string
+		isHidden
+		lineageTag: 32d5aa50-8800-4370-bc55-87eb84fea7c8
+		summarizeBy: none
+		sourceColumn: _SystemName
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Valuation View.
+	column ACCOUNTINGVALUATIONVIEW
+		dataType: string
+		lineageTag: b95b70d2-0e4b-469f-aa99-a5d5d6fa3339
+		summarizeBy: none
+		sourceColumn: ACCOUNTINGVALUATIONVIEW
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Extension Ledger Type.
+	column EXTENSIONLEDGERTYPE
+		dataType: string
+		lineageTag: d608b40b-ee85-4e63-8c82-b40c43c122db
+		summarizeBy: none
+		sourceColumn: EXTENSIONLEDGERTYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Indicator: Leading Ledger.
+	column ISLEADINGLEDGER
+		dataType: string
+		lineageTag: ec1f5f27-7419-43e1-bb01-f15fdc41b4ff
+		summarizeBy: none
+		sourceColumn: ISLEADINGLEDGER
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Ledger in General Ledger Accounting.
+	column LEDGER
+		dataType: string
+		lineageTag: c9b9c3e3-5606-4d7a-a70b-92336aaca031
+		summarizeBy: none
+		sourceColumn: LEDGER
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Owner application.
+	column LEDGERAPPLICATION
+		dataType: string
+		lineageTag: 0a80fc37-8b9f-4f12-9125-48c1d6c0d197
+		summarizeBy: none
+		sourceColumn: LEDGERAPPLICATION
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Subapplication.
+	column LEDGERSUBAPPLICATION
+		dataType: string
+		lineageTag: 79a4ded8-2d00-48d9-99f8-b6c226760314
+		summarizeBy: none
+		sourceColumn: LEDGERSUBAPPLICATION
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Ledger Type.
+	column LEDGERTYPE
+		dataType: string
+		lineageTag: fdd26d55-8c27-4a00-98e8-bd8c8fcacf01
+		summarizeBy: none
+		sourceColumn: LEDGERTYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Fallback Ledger.
+	column REFERENCELEDGER
+		dataType: string
+		lineageTag: 52065c9f-16a6-40ce-afae-99bd6b877712
+		summarizeBy: none
+		sourceColumn: REFERENCELEDGER
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Technical ledger.
+	column TECHNICALLEDGER
+		dataType: string
+		lineageTag: 3ab98963-75a9-463a-a820-8ab014641b0e
+		summarizeBy: none
+		sourceColumn: TECHNICALLEDGER
+
+		annotation SummarizationSetBy = Automatic
+
+	partition LEDGER-4cb6c72e-e1d9-47c9-bb24-2ff54313a83d = m
+		mode: dual
+		source =
+				let
+				    Source = Sql.Database(Server, Database),
+				    dmgold_I_LEDGER = Source{[Schema=Schema_Name,Item="I_LEDGER"]}[Data]
+				in
+				    dmgold_I_LEDGER
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "DataPipeline",
+    "displayName": "bps_s2g_full_processing_pipeline_c792846f"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "f7bf5bad-d0b9-9c28-456f-2b414cffaf43"
+  }
+}

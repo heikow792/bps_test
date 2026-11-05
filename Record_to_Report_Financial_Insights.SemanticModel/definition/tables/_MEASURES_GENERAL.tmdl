@@ -1,0 +1,25 @@
+table _MEASURES_GENERAL
+	lineageTag: e06d4289-76c6-4160-b542-cbdeb8d11a90
+
+	measure SELECTEDFISCALPERIOD = SELECTEDVALUE(FISCALPERIODFORVARIANT[FISCALPERIOD])
+		formatString: 0
+		lineageTag: 05ca39f8-2b36-4195-8dfc-f5c743821308
+
+	measure SELECTEDFISCALYEAR = SELECTEDVALUE(FISCALPERIODFORVARIANT[FISCALYEAR])
+		formatString: 0
+		lineageTag: 7314d141-3f46-4e75-995f-ffcb7ff98845
+
+	partition _MEASURES_GENERAL = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

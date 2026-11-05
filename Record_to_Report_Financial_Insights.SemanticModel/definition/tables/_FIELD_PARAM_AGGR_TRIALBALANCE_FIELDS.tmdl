@@ -1,0 +1,53 @@
+table _FIELD_PARAM_AGGR_TRIALBALANCE_FIELDS
+	lineageTag: cf4dd2f8-8ab2-4506-999c-f0f347011b6f
+
+	column _FIELD_PARAM_AGGR_TRIALBALANCE_FIELDS
+		lineageTag: 7bd57111-af0e-421d-a425-185bb4ac6b11
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: '_FIELD_PARAM_AGGR_TRIALBALANCE_FIELDS Order'
+
+		relatedColumnDetails
+			groupByColumn: '_FIELD_PARAM_AGGR_TRIALBALANCE_FIELDS Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column '_FIELD_PARAM_AGGR_TRIALBALANCE_FIELDS Fields'
+		isHidden
+		lineageTag: a1570b84-6766-4fe3-a245-f3d2e954db44
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: '_FIELD_PARAM_AGGR_TRIALBALANCE_FIELDS Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "kind": 2,
+				  "version": 3
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column '_FIELD_PARAM_AGGR_TRIALBALANCE_FIELDS Order'
+		isHidden
+		formatString: 0
+		lineageTag: 9dae4086-1d52-471e-8c29-7d8a0c5b0d00
+		summarizeBy: none
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _FIELD_PARAM_AGGR_TRIALBALANCE_FIELDS = calculated
+		mode: import
+		source =
+				{
+				    ("GLACCOUNTGROUP", NAMEOF('GLACCOUNTINCHARTOFACCOUNTS'[GLACCOUNTGROUP]), 0),
+				    ("PROFITCENTER", NAMEOF('PROFITCENTER'[PROFITCENTER]), 1),
+				    ("COSTCENTER", NAMEOF('COSTCENTER'[COSTCENTER]), 2),
+				    ("COMPANYCODE", NAMEOF('COMPANYCODE'[COMPANYCODE]), 3),
+				    ("PARTNERCOMPANYCODE", NAMEOF('AGGR_H'[PARTNERCOMPANYCODE]), 4),
+				    ("TAXCODE", NAMEOF('AGGR_H'[TAXCODE]), 5),
+				    ("TAXCOUNTRY", NAMEOF('AGGR_H'[TAXCOUNTRY]), 6)
+				}
+
+	annotation PBI_Id = c675d82ad84c43d293a25f420b1215ec
+

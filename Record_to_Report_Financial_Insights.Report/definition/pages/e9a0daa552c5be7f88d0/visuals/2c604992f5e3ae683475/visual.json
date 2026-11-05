@@ -1,0 +1,1080 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "2c604992f5e3ae683475",
+  "position": {
+    "x": 237.5,
+    "y": 146.25,
+    "z": 10000,
+    "height": 723.75,
+    "width": 1005,
+    "tabOrder": 9000
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "query": {
+      "queryState": {
+        "Columns": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "AGGR_H"
+                    }
+                  },
+                  "Property": "TRANSACTIONCURRENCY"
+                }
+              },
+              "queryRef": "AGGR_H.TRANSACTIONCURRENCY",
+              "nativeQueryRef": "Transaction Currency",
+              "active": true,
+              "displayName": "Transaction Currency"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DEBITCREDITCODETEXT"
+                    }
+                  },
+                  "Property": "EN"
+                }
+              },
+              "queryRef": "DEBITCREDITCODETEXT.EN",
+              "nativeQueryRef": "Debit/Credit",
+              "active": false,
+              "displayName": "Debit/Credit"
+            }
+          ],
+          "fieldParameters": [
+            {
+              "parameterExpr": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_DEBITCREDITCODETEXT"
+                    }
+                  },
+                  "Property": "FIELD_PARAM_DEBITCREDITCODETEXT"
+                }
+              },
+              "index": 1,
+              "length": 1
+            },
+            {
+              "parameterExpr": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_FIELD_PARAM_AGGR_CURRENCY"
+                    }
+                  },
+                  "Property": "_FIELD_PARAM_AGGR_CURRENCY"
+                }
+              },
+              "index": 0,
+              "length": 1
+            }
+          ]
+        },
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "GLACCOUNTINCHARTOFACCOUNTS"
+                    }
+                  },
+                  "Property": "GLACCOUNT"
+                }
+              },
+              "queryRef": "GLACCOUNTINCHARTOFACCOUNTS.GLACCOUNT",
+              "nativeQueryRef": "GLACCOUNT",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "GLACCOUNTINCHARTOFACCOUNTSTEXT"
+                    }
+                  },
+                  "Property": "EN"
+                }
+              },
+              "queryRef": "GLACCOUNTINCHARTOFACCOUNTSTEXT.EN",
+              "nativeQueryRef": "GL Account Name",
+              "active": true,
+              "displayName": "GL Account Name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "GLACCOUNTINCHARTOFACCOUNTS"
+                    }
+                  },
+                  "Property": "GLACCOUNTGROUP"
+                }
+              },
+              "queryRef": "GLACCOUNTINCHARTOFACCOUNTS.GLACCOUNTGROUP",
+              "nativeQueryRef": "GLACCOUNTGROUP",
+              "active": true,
+              "displayName": "GLACCOUNTGROUP"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "PROFITCENTER"
+                    }
+                  },
+                  "Property": "PROFITCENTER"
+                }
+              },
+              "queryRef": "PROFITCENTER.PROFITCENTER",
+              "nativeQueryRef": "PROFITCENTER",
+              "active": true,
+              "displayName": "PROFITCENTER"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "COSTCENTER"
+                    }
+                  },
+                  "Property": "COSTCENTER"
+                }
+              },
+              "queryRef": "COSTCENTER.COSTCENTER",
+              "nativeQueryRef": "COSTCENTER",
+              "active": false,
+              "displayName": "COSTCENTER"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "COMPANYCODE"
+                    }
+                  },
+                  "Property": "COMPANYCODE"
+                }
+              },
+              "queryRef": "COMPANYCODE.COMPANYCODE",
+              "nativeQueryRef": "COMPANYCODE",
+              "active": false,
+              "displayName": "COMPANYCODE"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "AGGR_H"
+                    }
+                  },
+                  "Property": "PARTNERCOMPANYCODE"
+                }
+              },
+              "queryRef": "AGGR_H.PARTNERCOMPANYCODE",
+              "nativeQueryRef": "PARTNERCOMPANYCODE",
+              "active": false,
+              "displayName": "PARTNERCOMPANYCODE"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "AGGR_H"
+                    }
+                  },
+                  "Property": "TAXCODE"
+                }
+              },
+              "queryRef": "AGGR_H.TAXCODE",
+              "nativeQueryRef": "TAXCODE",
+              "active": false,
+              "displayName": "TAXCODE"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "AGGR_H"
+                    }
+                  },
+                  "Property": "TAXCOUNTRY"
+                }
+              },
+              "queryRef": "AGGR_H.TAXCOUNTRY",
+              "nativeQueryRef": "TAXCOUNTRY",
+              "active": false,
+              "displayName": "TAXCOUNTRY"
+            }
+          ],
+          "fieldParameters": [
+            {
+              "parameterExpr": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_GLACCOUNTINCHARTOFACCOUNTSTEXT"
+                    }
+                  },
+                  "Property": "FIELD_PARAM_GLACCOUNTINCHARTOFACCOUNTSTEXT"
+                }
+              },
+              "index": 1,
+              "length": 1
+            },
+            {
+              "parameterExpr": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_FIELD_PARAM_AGGR_TRIALBALANCE_FIELDS"
+                    }
+                  },
+                  "Property": "_FIELD_PARAM_AGGR_TRIALBALANCE_FIELDS"
+                }
+              },
+              "index": 2,
+              "length": 7
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_MEASURES_AGGR_H"
+                    }
+                  },
+                  "Property": "AGGR_TRANSACTION_CURRENT_PERIOD"
+                }
+              },
+              "queryRef": "_MEASURES_AGGR_H.AGGR_TRANSACTION_CURRENT_PERIOD",
+              "nativeQueryRef": "Current Period",
+              "displayName": "Current Period"
+            }
+          ],
+          "fieldParameters": [
+            {
+              "parameterExpr": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_FIELD_PARAM_AGGR_CURRENT_PERIOD"
+                    }
+                  },
+                  "Property": "_FIELD_PARAM_AGGR_CURRENT_PERIOD"
+                }
+              },
+              "index": 0,
+              "length": 1
+            }
+          ]
+        }
+      }
+    },
+    "expansionStates": [
+      {
+        "roles": [
+          "Rows"
+        ],
+        "levels": [
+          {
+            "queryRefs": [
+              "GLACCOUNTINCHARTOFACCOUNTS.GLACCOUNT"
+            ],
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "GLACCOUNTINCHARTOFACCOUNTS"
+                    }
+                  },
+                  "Property": "GLACCOUNT"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "GLACCOUNTINCHARTOFACCOUNTSTEXT.EN"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "GLACCOUNTINCHARTOFACCOUNTSTEXT"
+                    }
+                  },
+                  "Property": "EN"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "GLACCOUNTINCHARTOFACCOUNTS.GLACCOUNTGROUP"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "GLACCOUNTINCHARTOFACCOUNTS"
+                    }
+                  },
+                  "Property": "GLACCOUNTGROUP"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "PROFITCENTER.PROFITCENTER"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "PROFITCENTER"
+                    }
+                  },
+                  "Property": "PROFITCENTER"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "COSTCENTER.COSTCENTER"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "COSTCENTER"
+                    }
+                  },
+                  "Property": "COSTCENTER"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "COMPANYCODE.COMPANYCODE"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "COMPANYCODE"
+                    }
+                  },
+                  "Property": "COMPANYCODE"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "AGGR_H.PARTNERCOMPANYCODE"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "AGGR_H"
+                    }
+                  },
+                  "Property": "PARTNERCOMPANYCODE"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "AGGR_H.TAXCODE"
+            ],
+            "isCollapsed": true,
+            "identityKeys": [
+              {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "AGGR_H"
+                    }
+                  },
+                  "Property": "TAXCODE"
+                }
+              }
+            ],
+            "isPinned": true
+          },
+          {
+            "queryRefs": [
+              "AGGR_H.TAXCOUNTRY"
+            ],
+            "isCollapsed": true,
+            "isPinned": true
+          }
+        ],
+        "root": {
+          "children": [
+            {
+              "identityValues": [
+                {
+                  "Literal": {
+                    "Value": "'0011001000'"
+                  }
+                }
+              ],
+              "children": [
+                {
+                  "identityValues": [
+                    {
+                      "Literal": {
+                        "Value": "'Bank1 Main Account'"
+                      }
+                    }
+                  ],
+                  "isToggled": true,
+                  "children": [
+                    {
+                      "identityValues": [
+                        {
+                          "Literal": {
+                            "Value": "'FIN.'"
+                          }
+                        }
+                      ],
+                      "isToggled": true
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ],
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
+                }
+              }
+            },
+            "wordWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "outlineStyle": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "outlineWeight": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            },
+            "gridHorizontal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "gridHorizontalWeight": {
+              "expr": {
+                "Literal": {
+                  "Value": "5D"
+                }
+              }
+            },
+            "gridHorizontalColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "rowPadding": {
+              "expr": {
+                "Literal": {
+                  "Value": "6D"
+                }
+              }
+            },
+            "gridVertical": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "outlineStyle": {
+              "expr": {
+                "Literal": {
+                  "Value": "4D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "layout": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Outline'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "wordWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "outlineStyle": {
+              "expr": {
+                "Literal": {
+                  "Value": "12D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTotals": [
+        {
+          "properties": {
+            "perColumnLevel": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "perRowLevel": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "columnSubtotals": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "rowSubtotals": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "rowSubtotalsPosition": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Top'"
+                }
+              }
+            }
+          }
+        },
+        {
+          "properties": {
+            "levelSubtotalEnabled": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "GLACCOUNTINCHARTOFACCOUNTS.GLACCOUNT"
+          }
+        },
+        {
+          "properties": {
+            "levelSubtotalEnabled": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "GLACCOUNTLINEITEMRAWDATA.COMPANYCODECURRENCY"
+          }
+        }
+      ],
+      "rowHeaders": [
+        {
+          "properties": {
+            "showExpandCollapseButtons": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "79.7810899389317D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "AGGR_H"
+                          }
+                        },
+                        "Property": "TRANSACTIONCURRENCY"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'EUR'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "95.04830364281592D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "AGGR_H"
+                          }
+                        },
+                        "Property": "TRANSACTIONCURRENCY"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'AUD'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "103.85671641791045D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "GLACCOUNTINCHARTOFACCOUNTSTEXT.EN"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "83.84776119402986D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "GLACCOUNTINCHARTOFACCOUNTS.GLACCOUNTGROUP"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "155.16364463676976D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "PROFITCENTER.PROFITCENTER"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "52.9044776119403D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "AGGR_H.TAXCOUNTRY"
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Accounting Documents'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10.5D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "dfecd523a906078b5016",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "GLACCOUNTINCHARTOFACCOUNTS"
+              }
+            },
+            "Property": "GLACCOUNT"
+          }
+        },
+        "type": "Categorical",
+        "objects": {
+          "general": [
+            {
+              "properties": {
+                "isInvertedSelectionMode": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "name": "cdde8ce05a4d659d65ee",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "AGGR_H"
+              }
+            },
+            "Property": "TRANSACTIONCURRENCY"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "ec0ad040d670ee350d13",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "DEBITCREDITCODETEXT"
+              }
+            },
+            "Property": "EN"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "a6fbb1b5cecb974522c6",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "GLACCOUNTINCHARTOFACCOUNTSTEXT"
+              }
+            },
+            "Property": "EN"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "aa02afb537a0a2cdca96",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "GLACCOUNTINCHARTOFACCOUNTS"
+              }
+            },
+            "Property": "GLACCOUNTGROUP"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "fb74b8a9b26036aa127c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "PROFITCENTER"
+              }
+            },
+            "Property": "PROFITCENTER"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "f0a647ab0075b00c02eb",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "COSTCENTER"
+              }
+            },
+            "Property": "COSTCENTER"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "f9848b8ad8327631a6b0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "COMPANYCODE"
+              }
+            },
+            "Property": "COMPANYCODE"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "448491307c7ae1a931c2",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "AGGR_H"
+              }
+            },
+            "Property": "PARTNERCOMPANYCODE"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "10ab352e6710610c6e15",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "AGGR_H"
+              }
+            },
+            "Property": "TAXCODE"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "0cd4bc4950289a3c088a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "AGGR_H"
+              }
+            },
+            "Property": "TAXCOUNTRY"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "1b6cb2f6b550d8da46bd",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_MEASURES_AGGR_H"
+              }
+            },
+            "Property": "AGGR_TRANSACTION_CURRENT_PERIOD"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

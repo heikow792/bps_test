@@ -1,0 +1,48 @@
+table _FIELD_PARAM_COGS
+	lineageTag: 6128ab99-9e72-4f4c-93ac-3be3db044482
+
+	column FIELD_PARAM_COGS
+		lineageTag: b3515c94-d9e3-43f7-8490-e5895ad2f666
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'FIELD_PARAM_COGS Order'
+
+		relatedColumnDetails
+			groupByColumn: 'FIELD_PARAM_COGS Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FIELD_PARAM_COGS Fields'
+		isHidden
+		lineageTag: 42ee0376-a539-4cfb-90d1-1fdaa8ffda6a
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'FIELD_PARAM_COGS Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "kind": 2,
+				  "version": 3
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FIELD_PARAM_COGS Order'
+		isHidden
+		formatString: 0
+		lineageTag: a097dfd9-09a6-41da-bc3b-2a2a82fa693a
+		summarizeBy: none
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _FIELD_PARAM_COGS = calculated
+		mode: import
+		source =
+				{
+				    ("COGS", NAMEOF([COMPANYCODE_COGS]), 0),
+				    ("COGS", NAMEOF([GLOBAL_COGS]), 1)
+				}
+
+	annotation PBI_Id = eab06d4132dc4e2ea954c885c9bab2ff
+

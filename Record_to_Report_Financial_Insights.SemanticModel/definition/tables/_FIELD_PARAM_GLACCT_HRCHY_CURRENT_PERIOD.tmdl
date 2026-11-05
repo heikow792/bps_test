@@ -1,0 +1,50 @@
+table _FIELD_PARAM_GLACCT_HRCHY_CURRENT_PERIOD
+	lineageTag: 21a55a04-79af-4a28-aaaf-e33b3fa6cbbd
+
+	column FIELD_PARAM_GLACCT_HRCHY_CURRENT_PERIOD
+		lineageTag: 993659cf-beee-4421-b419-2e09fc26dfc4
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'FIELD_PARAM_GLACCT_HRCHY_CURRENT_PERIOD Order'
+
+		relatedColumnDetails
+			groupByColumn: 'FIELD_PARAM_GLACCT_HRCHY_CURRENT_PERIOD Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FIELD_PARAM_GLACCT_HRCHY_CURRENT_PERIOD Fields'
+		isHidden
+		lineageTag: 56a8d2e5-2266-4ea5-bae5-dd1b5118ac4a
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'FIELD_PARAM_GLACCT_HRCHY_CURRENT_PERIOD Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "kind": 2,
+				  "version": 3
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FIELD_PARAM_GLACCT_HRCHY_CURRENT_PERIOD Order'
+		isHidden
+		isKey
+		formatString: 0
+		lineageTag: 61f729a4-b0a1-437e-9502-d9ad5d0790ec
+		summarizeBy: none
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _FIELD_PARAM_GLACCT_HRCHY_CURRENT_PERIOD-2efeb96e-32e0-4d06-944d-c4daf6d08705 = calculated
+		mode: import
+		source =
+				{
+				    ("Current Period", NAMEOF('__MEASURES_GLACCOUNTHIERARCHY'[GLACCT_HRCHY_COMPANYCODE_CURRENT_PERIOD]), 0),
+				    ("Current Period", NAMEOF('__MEASURES_GLACCOUNTHIERARCHY'[GLACCT_HRCHY_GLOBAL_CURRENT_PERIOD]), 1),
+				    ("Current Period", NAMEOF('__MEASURES_GLACCOUNTHIERARCHY'[GLACCT_HRCHY_TRANSACTION_CURRENT_PERIOD]), 2)
+				}
+
+	annotation PBI_Id = 7176bdb19e4c4afca2a4ef8c357695ce
+

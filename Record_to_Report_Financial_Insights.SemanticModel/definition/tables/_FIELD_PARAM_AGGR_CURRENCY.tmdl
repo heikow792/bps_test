@@ -1,0 +1,49 @@
+table _FIELD_PARAM_AGGR_CURRENCY
+	lineageTag: 58cfd255-60ac-4009-9ca7-e4ab1c87e3f8
+
+	column _FIELD_PARAM_AGGR_CURRENCY
+		lineageTag: e4a69568-bc01-427a-8fd6-c7e499641dd4
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: '_FIELD_PARAM_AGGR_CURRENCY Order'
+
+		relatedColumnDetails
+			groupByColumn: '_FIELD_PARAM_AGGR_CURRENCY Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column '_FIELD_PARAM_AGGR_CURRENCY Fields'
+		isHidden
+		lineageTag: 545ccaf8-4024-41cc-a26b-7e61e8c76e1a
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: '_FIELD_PARAM_AGGR_CURRENCY Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "kind": 2,
+				  "version": 3
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column '_FIELD_PARAM_AGGR_CURRENCY Order'
+		isHidden
+		formatString: 0
+		lineageTag: e00759f5-2d67-4192-84a3-ebd48912b83f
+		summarizeBy: none
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _FIELD_PARAM_AGGR_CURRENCY = calculated
+		mode: import
+		source =
+				{
+				    ("Company Code Currency", NAMEOF('AGGR_H'[COMPANYCODECURRENCY]), 0),
+				    ("Global Currency", NAMEOF('AGGR_H'[GLOBALCURRENCY]), 1),
+				    ("Transaction Currency", NAMEOF('AGGR_H'[TRANSACTIONCURRENCY]), 2)
+				}
+
+	annotation PBI_Id = 85d18a4144534a7abdad45fe0a9d649a
+

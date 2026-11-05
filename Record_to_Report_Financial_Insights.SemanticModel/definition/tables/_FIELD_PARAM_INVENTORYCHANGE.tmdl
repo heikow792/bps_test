@@ -1,0 +1,48 @@
+table _FIELD_PARAM_INVENTORYCHANGE
+	lineageTag: b2a85393-297d-4e1b-a63d-947f07d02d59
+
+	column FIELD_PARAM_INVENTORYCHANGE
+		lineageTag: 86845700-8944-4b18-b4db-65a2a56cb927
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'FIELD_PARAM_INVENTORYCHANGE Order'
+
+		relatedColumnDetails
+			groupByColumn: 'FIELD_PARAM_INVENTORYCHANGE Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FIELD_PARAM_INVENTORYCHANGE Fields'
+		isHidden
+		lineageTag: 35993a16-d939-4132-9214-66f84d71311c
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'FIELD_PARAM_INVENTORYCHANGE Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "kind": 2,
+				  "version": 3
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FIELD_PARAM_INVENTORYCHANGE Order'
+		isHidden
+		formatString: 0
+		lineageTag: 5ac6c030-21dd-4d91-b049-4fa3dcfc44b6
+		summarizeBy: none
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _FIELD_PARAM_INVENTORYCHANGE = calculated
+		mode: import
+		source =
+				{
+				    ("Inventory Change", NAMEOF([COMPANYCODE_INVENTORYCHANGE]), 0),
+				    ("Inventory Change", NAMEOF([GLOBAL_INVENTORYCHANGE]), 1)
+				}
+
+	annotation PBI_Id = b1fafac971324e30b9849c02be56e735
+

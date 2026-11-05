@@ -1,0 +1,49 @@
+table _FIELD_PARAM_OTHEREXPENSES
+	lineageTag: d997fb18-9468-473f-93f6-fd698663d041
+
+	column FIELD_PARAM_OTHEREXPENSES
+		lineageTag: 163091c2-ff3d-4a0a-a4db-4a77e37e90dd
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'FIELD_PARAM_OTHEREXPENSES Order'
+
+		relatedColumnDetails
+			groupByColumn: 'FIELD_PARAM_OTHEREXPENSES Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FIELD_PARAM_OTHEREXPENSES Fields'
+		isHidden
+		lineageTag: f6437d96-a6c0-485a-866c-75009e15a665
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'FIELD_PARAM_OTHEREXPENSES Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "kind": 2,
+				  "version": 3
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FIELD_PARAM_OTHEREXPENSES Order'
+		isHidden
+		isKey
+		formatString: 0
+		lineageTag: b1b98905-e6ec-453a-b3c1-f93ebd19c864
+		summarizeBy: none
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _FIELD_PARAM_OTHEREXPENSES = calculated
+		mode: import
+		source =
+				{
+				    ("Other Expenses", NAMEOF([COMPANYCODE_OTHEREXPENSES]), 0),
+				    ("Other Expenses", NAMEOF([GLOBAL_OTHEREXPENSES]), 1)
+				}
+
+	annotation PBI_Id = 50c9b4e4bc3d4bf588faef014bfe9840
+

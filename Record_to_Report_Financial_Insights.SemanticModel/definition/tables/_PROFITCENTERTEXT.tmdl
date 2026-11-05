@@ -1,0 +1,57 @@
+table _PROFITCENTERTEXT
+	lineageTag: 52d34bb3-0981-440a-92da-1754afcc13ff
+
+	column FIELD_PARAM_PROFITCENTERTEXT
+		lineageTag: cbc6d436-46f0-438d-8777-0587ec2fb9de
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'FIELD_PARAM_PROFITCENTERTEXT Order'
+
+		relatedColumnDetails
+			groupByColumn: 'FIELD_PARAM_PROFITCENTERTEXT Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FIELD_PARAM_PROFITCENTERTEXT Fields'
+		isHidden
+		lineageTag: 3c419c8d-4bcb-4c2a-8bd6-13577a547846
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'FIELD_PARAM_PROFITCENTERTEXT Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "kind": 2,
+				  "version": 3
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FIELD_PARAM_PROFITCENTERTEXT Order'
+		isHidden
+		formatString: 0
+		lineageTag: 375bf9d2-1261-4ebb-b2bb-8f7009637ccb
+		summarizeBy: none
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	column _ISOLanguage = MID(_PROFITCENTERTEXT[FIELD_PARAM_PROFITCENTERTEXT Fields], SEARCH("[", _PROFITCENTERTEXT[FIELD_PARAM_PROFITCENTERTEXT Fields])+1, 2)
+		isHidden
+		lineageTag: 26578c71-602c-4110-b821-d2c6449d5d46
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _PROFITCENTERTEXT = calculated
+		mode: import
+		source =
+				{
+				    ("ProfitCenterText", NAMEOF('PROFITCENTERTEXT'[DE]), 0),
+				    ("ProfitCenterText", NAMEOF('PROFITCENTERTEXT'[EN]), 1),
+				    ("ProfitCenterText", NAMEOF('PROFITCENTERTEXT'[ES]), 2),
+				    ("ProfitCenterText", NAMEOF('PROFITCENTERTEXT'[FR]), 3)
+				}
+
+	annotation PBI_Id = 946521c0f26b491689c4b37fe0c97ce4
+

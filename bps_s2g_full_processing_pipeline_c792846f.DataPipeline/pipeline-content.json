@@ -1,0 +1,217 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "Lookup",
+        "typeProperties": {
+          "source": {
+            "type": "FabricSqlDatabaseSource",
+            "sqlReaderQuery": "SELECT SystemName FROM systemdetails WHERE SourceType = 'SAP'",
+            "partitionOption": "None",
+            "queryTimeout": "02:00:00"
+          },
+          "datasetSettings": {
+            "type": "FabricSqlDatabaseTable",
+            "schema": [],
+            "connectionSettings": {
+              "name": "bps_metadata_db",
+              "properties": {
+                "type": "FabricSqlDatabase",
+                "typeProperties": {
+                  "artifactId": "c9571a1c-c878-be58-4a11-51b4a1b72d02",
+                  "workspaceId": "00000000-0000-0000-0000-000000000000"
+                },
+                "externalReferences": {
+                  "connection": "7fd468ec-8a28-4a44-b5ee-1a0b9017a135"
+                },
+                "annotations": []
+              }
+            },
+            "annotations": []
+          },
+          "firstRowOnly": false
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Get System Details",
+        "description": "This gets all the system names which are onboarded.",
+        "dependsOn": [
+          {
+            "activity": "Set GUID",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "ForEach",
+        "typeProperties": {
+          "isSequential": true,
+          "items": {
+            "value": "@activity('Get System Details').output.value",
+            "type": "Expression"
+          },
+          "activities": [
+            {
+              "type": "ExecutePipeline",
+              "typeProperties": {
+                "pipeline": {
+                  "referenceName": "c8a02dee-fee7-aea2-46dc-735ee7c30922",
+                  "type": "PipelineReference"
+                },
+                "parameters": {
+                  "CdsViewNames": {
+                    "value": "@pipeline().parameters.CDSViewNames",
+                    "type": "Expression"
+                  },
+                  "p_system_name": {
+                    "value": "@item().SystemName",
+                    "type": "Expression"
+                  },
+                  "p_guid": {
+                    "value": "@variables('v_guid')",
+                    "type": "Expression"
+                  },
+                  "p_gold_lakehouse_name": {
+                    "value": "@pipeline().parameters.p_gold_lakehouse_name",
+                    "type": "Expression"
+                  },
+                  "p_silver_lakehouse_name": {
+                    "value": "@pipeline().parameters.p_silver_lakehouse_name",
+                    "type": "Expression"
+                  }
+                },
+                "waitOnCompletion": true
+              },
+              "policy": {
+                "secureInput": false
+              },
+              "name": "Run Dimension Processing",
+              "description": "This invokes the dimension processing pipeline for the current system.",
+              "dependsOn": []
+            },
+            {
+              "type": "ExecutePipeline",
+              "typeProperties": {
+                "pipeline": {
+                  "referenceName": "2dc14a76-ba1f-bd9a-4a1c-00478acfc89f",
+                  "type": "PipelineReference"
+                },
+                "parameters": {
+                  "CdsViewNames": {
+                    "value": "@pipeline().parameters.CDSViewNames",
+                    "type": "Expression"
+                  },
+                  "p_system_name": {
+                    "value": "@item().SystemName",
+                    "type": "Expression"
+                  },
+                  "p_guid": {
+                    "value": "@variables('v_guid')",
+                    "type": "Expression"
+                  },
+                  "p_gold_lakehouse_name": {
+                    "value": "@pipeline().parameters.p_gold_lakehouse_name",
+                    "type": "Expression"
+                  },
+                  "p_silver_lakehouse_name": {
+                    "value": "@pipeline().parameters.p_silver_lakehouse_name",
+                    "type": "Expression"
+                  }
+                },
+                "waitOnCompletion": true
+              },
+              "policy": {
+                "secureInput": false
+              },
+              "name": "Run Fact Processing",
+              "description": "This invokes the fact processing pipeline for the current system.",
+              "dependsOn": [
+                {
+                  "activity": "Run Dimension Processing",
+                  "dependencyConditions": [
+                    "Succeeded"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "name": "For each source system",
+        "description": "For each source system, we run dimension and fact processing pipelines.",
+        "dependsOn": [
+          {
+            "activity": "Get System Details",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      },
+      {
+        "type": "SetVariable",
+        "typeProperties": {
+          "variableName": "v_guid",
+          "value": {
+            "value": "@guid()",
+            "type": "Expression"
+          }
+        },
+        "policy": {
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Set GUID",
+        "dependsOn": []
+      },
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "76906f68-2544-9fe7-4e1d-c12d3163b79b",
+          "workspaceId": "00000000-0000-0000-0000-000000000000"
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Create Views in Gold Lakehouse",
+        "dependsOn": [
+          {
+            "activity": "For each source system",
+            "dependencyConditions": [
+              "Succeeded"
+            ]
+          }
+        ]
+      }
+    ],
+    "parameters": {
+      "p_gold_lakehouse_name": {
+        "type": "string",
+        "defaultValue": "bps_gold_c792846f"
+      },
+      "p_silver_lakehouse_name": {
+        "type": "string",
+        "defaultValue": "bps_silver_c792846f"
+      },
+      "CDSViewNames": {
+        "type": "string",
+        "defaultValue": " "
+      }
+    },
+    "variables": {
+      "v_guid": {
+        "type": "String"
+      }
+    }
+  }
+}

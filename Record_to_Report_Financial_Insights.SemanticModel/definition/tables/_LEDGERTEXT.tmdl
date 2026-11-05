@@ -1,0 +1,57 @@
+table _LEDGERTEXT
+	lineageTag: 6c09578f-679d-45e2-a56c-6da7568c2db3
+
+	column FIELD_PARAM_LEDGERTEXT
+		lineageTag: 4812238b-2941-4c13-8f7d-c38f7a759d74
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'FIELD_PARAM_LEDGERTEXT Order'
+
+		relatedColumnDetails
+			groupByColumn: 'FIELD_PARAM_LEDGERTEXT Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FIELD_PARAM_LEDGERTEXT Fields'
+		lineageTag: 8afbe0d3-6fa5-47f3-8740-061c97f5e788
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'FIELD_PARAM_LEDGERTEXT Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "kind": 2,
+				  "version": 3
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FIELD_PARAM_LEDGERTEXT Order'
+		isHidden
+		formatString: 0
+		lineageTag: 94429ec1-9f35-4352-9d8c-d037f44749b4
+		summarizeBy: none
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	column _ISOLanguage = MID(_LEDGERTEXT[FIELD_PARAM_LEDGERTEXT Fields], SEARCH("[", _LEDGERTEXT[FIELD_PARAM_LEDGERTEXT Fields])+1, 2)
+		isHidden
+		isAvailableInMdx: false
+		lineageTag: 3e6694cf-75f9-4ad5-8014-118a7d8a4186
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _LEDGERTEXT = calculated
+		mode: import
+		source =
+				{
+				    ("LedgerText", NAMEOF('LEDGERTEXT'[DE]), 0),
+				    ("LedgerText", NAMEOF('LEDGERTEXT'[EN]), 1),
+				    ("LedgerText", NAMEOF('LEDGERTEXT'[ES]), 2),
+				    ("LedgerText", NAMEOF('LEDGERTEXT'[FR]), 3)
+				}
+
+	annotation PBI_Id = 33b1e78c1cbf4793874b54c5699e1a6a
+

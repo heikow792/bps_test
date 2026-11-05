@@ -1,0 +1,1137 @@
+cultureInfo en-US
+
+	linguisticMetadata =
+			{
+			  "Entities": {
+			    "aggr_h.companycodecurrency": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "AGGR_H",
+			          "ConceptualProperty": "COMPANYCODECURRENCY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Company Code Currency": {
+			            "Source": {
+			              "Agent": "PowerBI.VisualColumnRename",
+			              "Type": "External"
+			            },
+			            "State": "Suggested",
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "aggr_h.partnercompanycode": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "AGGR_H",
+			          "ConceptualProperty": "PARTNERCOMPANYCODE"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "PARTNERCOMPANYCODE": {
+			            "Source": {
+			              "Agent": "PowerBI.VisualColumnRename",
+			              "Type": "External"
+			            },
+			            "State": "Suggested",
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "aggr_h.taxcode": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "AGGR_H",
+			          "ConceptualProperty": "TAXCODE"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "TAXCODE": {
+			            "Source": {
+			              "Agent": "PowerBI.VisualColumnRename",
+			              "Type": "External"
+			            },
+			            "State": "Suggested",
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "aggr_h.taxcountry": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "AGGR_H",
+			          "ConceptualProperty": "TAXCOUNTRY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "TAXCOUNTRY": {
+			            "Source": {
+			              "Agent": "PowerBI.VisualColumnRename",
+			              "Type": "External"
+			            },
+			            "State": "Suggested",
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "aggr_h.transactioncurrency": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "AGGR_H",
+			          "ConceptualProperty": "TRANSACTIONCURRENCY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Transaction Currency": {
+			            "Source": {
+			              "Agent": "PowerBI.VisualColumnRename",
+			              "Type": "External"
+			            },
+			            "State": "Suggested",
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "c_salesdocumentitemdex_1.profit_center_hier_net_amount": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "C_SALESDOCUMENTITEMDEX_1",
+			          "ConceptualProperty": "Profit Center Hier Net Amount"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "companycode.companycode": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "COMPANYCODE",
+			          "ConceptualProperty": "COMPANYCODE"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Company Code": {
+			            "Source": {
+			              "Agent": "PowerBI.VisualColumnRename",
+			              "Type": "External"
+			            },
+			            "State": "Suggested",
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "COMPANYCODE": {
+			            "Source": {
+			              "Agent": "PowerBI.VisualColumnRename",
+			              "Type": "External"
+			            },
+			            "State": "Suggested",
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "costcenter.costcenter": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "COSTCENTER",
+			          "ConceptualProperty": "COSTCENTER"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Cost Center": {
+			            "Source": {
+			              "Agent": "PowerBI.VisualColumnRename",
+			              "Type": "External"
+			            },
+			            "State": "Suggested",
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "COSTCENTER": {
+			            "Source": {
+			              "Agent": "PowerBI.VisualColumnRename",
+			              "Type": "External"
+			            },
+			            "State": "Suggested",
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "costcenter.plant": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "COSTCENTER",
+			          "ConceptualProperty": "PLANT"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "debitcreditcodetext.en": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DEBITCREDITCODETEXT",
+			          "ConceptualProperty": "EN"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Debit/Credit": {
+			            "Source": {
+			              "Agent": "PowerBI.VisualColumnRename",
+			              "Type": "External"
+			            },
+			            "State": "Suggested",
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "glaccountinchartofaccounts.glaccount": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "GLACCOUNTINCHARTOFACCOUNTS",
+			          "ConceptualProperty": "GLACCOUNT"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "glaccountinchartofaccounts.glaccountgroup": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "GLACCOUNTINCHARTOFACCOUNTS",
+			          "ConceptualProperty": "GLACCOUNTGROUP"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "GL Account Group": {
+			            "Source": {
+			              "Agent": "PowerBI.VisualColumnRename",
+			              "Type": "External"
+			            },
+			            "State": "Suggested",
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "GLACCOUNTGROUP": {
+			            "Source": {
+			              "Agent": "PowerBI.VisualColumnRename",
+			              "Type": "External"
+			            },
+			            "State": "Suggested",
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "glaccountinchartofaccounts.partnercompany": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "GLACCOUNTINCHARTOFACCOUNTS",
+			          "ConceptualProperty": "PARTNERCOMPANY"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "glaccountinchartofaccountstext.en": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "GLACCOUNTINCHARTOFACCOUNTSTEXT",
+			          "ConceptualProperty": "EN"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "GL Account Name": {
+			            "Source": {
+			              "Agent": "PowerBI.VisualColumnRename",
+			              "Type": "External"
+			            },
+			            "State": "Suggested",
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "glaccountlineitemrawdata.accountingdocument": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "GLACCOUNTLINEITEMRAWDATA",
+			          "ConceptualProperty": "ACCOUNTINGDOCUMENT"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "glaccountlineitemrawdata.accountingdocumenttype": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "GLACCOUNTLINEITEMRAWDATA",
+			          "ConceptualProperty": "ACCOUNTINGDOCUMENTTYPE"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "glaccountlineitemrawdata.companycodecurrency": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "GLACCOUNTLINEITEMRAWDATA",
+			          "ConceptualProperty": "COMPANYCODECURRENCY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Company Code Currency": {
+			            "Source": {
+			              "Agent": "PowerBI.VisualColumnRename",
+			              "Type": "External"
+			            },
+			            "State": "Suggested",
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "glaccountlineitemrawdata.creationdate": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "GLACCOUNTLINEITEMRAWDATA",
+			          "ConceptualProperty": "CREATIONDATE"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "glaccountlineitemrawdata.documentdate": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "GLACCOUNTLINEITEMRAWDATA",
+			          "ConceptualProperty": "DOCUMENTDATE"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "glaccountlineitemrawdata.documentitemtext": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "GLACCOUNTLINEITEMRAWDATA",
+			          "ConceptualProperty": "DOCUMENTITEMTEXT"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "glaccountlineitemrawdata.globalcurrency": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "GLACCOUNTLINEITEMRAWDATA",
+			          "ConceptualProperty": "GLOBALCURRENCY"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "glaccountlineitemrawdata.ledgergllineitem": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "GLACCOUNTLINEITEMRAWDATA",
+			          "ConceptualProperty": "LEDGERGLLINEITEM"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "glaccountlineitemrawdata.partnercompanycode": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "GLACCOUNTLINEITEMRAWDATA",
+			          "ConceptualProperty": "PARTNERCOMPANYCODE"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Partner Company Code": {
+			            "Source": {
+			              "Agent": "PowerBI.VisualColumnRename",
+			              "Type": "External"
+			            },
+			            "State": "Suggested",
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "glaccountlineitemrawdata.postingdate": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "GLACCOUNTLINEITEMRAWDATA",
+			          "ConceptualProperty": "POSTINGDATE"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "glaccountlineitemrawdata.postingkey": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "GLACCOUNTLINEITEMRAWDATA",
+			          "ConceptualProperty": "POSTINGKEY"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "glaccountlineitemrawdata.product": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "GLACCOUNTLINEITEMRAWDATA",
+			          "ConceptualProperty": "PRODUCT"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "glaccountlineitemrawdata.taxcode": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "GLACCOUNTLINEITEMRAWDATA",
+			          "ConceptualProperty": "TAXCODE"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Tax Code": {
+			            "Source": {
+			              "Agent": "PowerBI.VisualColumnRename",
+			              "Type": "External"
+			            },
+			            "State": "Suggested",
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "glaccountlineitemrawdata.taxcountry": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "GLACCOUNTLINEITEMRAWDATA",
+			          "ConceptualProperty": "TAXCOUNTRY"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Tax Country": {
+			            "Source": {
+			              "Agent": "PowerBI.VisualColumnRename",
+			              "Type": "External"
+			            },
+			            "State": "Suggested",
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "glaccountlineitemrawdata.transactioncurrency": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "GLACCOUNTLINEITEMRAWDATA",
+			          "ConceptualProperty": "TRANSACTIONCURRENCY"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "ledgertext.en": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "LEDGERTEXT",
+			          "ConceptualProperty": "EN"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "LedgerText": {
+			            "Source": {
+			              "Agent": "PowerBI.VisualColumnRename",
+			              "Type": "External"
+			            },
+			            "State": "Suggested",
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "productgroup2text.en": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "PRODUCTGROUP2TEXT",
+			          "ConceptualProperty": "EN"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Product Group 2": {
+			            "Source": {
+			              "Agent": "PowerBI.VisualColumnRename",
+			              "Type": "External"
+			            },
+			            "State": "Suggested",
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "profitcenter.profitcenter": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "PROFITCENTER",
+			          "ConceptualProperty": "PROFITCENTER"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Profit Center": {
+			            "Source": {
+			              "Agent": "PowerBI.VisualColumnRename",
+			              "Type": "External"
+			            },
+			            "State": "Suggested",
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "PROFITCENTER": {
+			            "Source": {
+			              "Agent": "PowerBI.VisualColumnRename",
+			              "Type": "External"
+			            },
+			            "State": "Suggested",
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "profitcentertext.en": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "PROFITCENTERTEXT",
+			          "ConceptualProperty": "EN"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "ProfitCenterText": {
+			            "Source": {
+			              "Agent": "PowerBI.VisualColumnRename",
+			              "Type": "External"
+			            },
+			            "State": "Suggested",
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "segmenttext.en": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "SEGMENTTEXT",
+			          "ConceptualProperty": "EN"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "SegmentText": {
+			            "Source": {
+			              "Agent": "PowerBI.VisualColumnRename",
+			              "Type": "External"
+			            },
+			            "State": "Suggested",
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "segmenttext.segment": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "SEGMENTTEXT",
+			          "ConceptualProperty": "SEGMENT"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Segment": {
+			            "Source": {
+			              "Agent": "PowerBI.VisualColumnRename",
+			              "Type": "External"
+			            },
+			            "State": "Suggested",
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table__measures_aggr_hrchy.aggr_hrchy_companycode_closing_balance": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "__MEASURES_AGGR_HRCHY",
+			          "ConceptualProperty": "AGGR_HRCHY_COMPANYCODE_CLOSING_BALANCE"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Closing Balance": {
+			            "Source": {
+			              "Agent": "PowerBI.VisualColumnRename",
+			              "Type": "External"
+			            },
+			            "State": "Suggested",
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table__measures_aggr_hrchy.aggr_hrchy_companycode_current_period": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "__MEASURES_AGGR_HRCHY",
+			          "ConceptualProperty": "AGGR_HRCHY_COMPANYCODE_CURRENT_PERIOD"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Current Period": {
+			            "Source": {
+			              "Agent": "PowerBI.VisualColumnRename",
+			              "Type": "External"
+			            },
+			            "State": "Suggested",
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table__measures_aggr_hrchy.aggr_hrchy_companycode_opening_balance": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "__MEASURES_AGGR_HRCHY",
+			          "ConceptualProperty": "AGGR_HRCHY_COMPANYCODE_OPENING_BALANCE"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Opening Balance": {
+			            "Source": {
+			              "Agent": "PowerBI.VisualColumnRename",
+			              "Type": "External"
+			            },
+			            "State": "Suggested",
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table__measures_glaccounthierarchy.glacct_hrchy_transaction_closing_balance": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "__MEASURES_GLACCOUNTHIERARCHY",
+			          "ConceptualProperty": "GLACCT_HRCHY_TRANSACTION_CLOSING_BALANCE"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "table__measures_glaccounthierarchy.glacct_hrchy_transaction_current_period": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "__MEASURES_GLACCOUNTHIERARCHY",
+			          "ConceptualProperty": "GLACCT_HRCHY_TRANSACTION_CURRENT_PERIOD"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "table__measures_glaccounthierarchy.glacct_hrchy_transaction_opening_balance": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "__MEASURES_GLACCOUNTHIERARCHY",
+			          "ConceptualProperty": "GLACCT_HRCHY_TRANSACTION_OPENING_BALANCE"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "table__measures_other.transaction_closing_balance": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "__MEASURES_OTHER",
+			          "ConceptualProperty": "TRANSACTION_CLOSING_BALANCE"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "table__measures_other.transaction_current_period": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "__MEASURES_OTHER",
+			          "ConceptualProperty": "TRANSACTION_CURRENT_PERIOD"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "table__measures_other.transaction_opening_balance": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "__MEASURES_OTHER",
+			          "ConceptualProperty": "TRANSACTION_OPENING_BALANCE"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "table__measures_profitability.companycode_cogs": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "__MEASURES_PROFITABILITY",
+			          "ConceptualProperty": "COMPANYCODE_COGS"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "COGS": {
+			            "Source": {
+			              "Agent": "PowerBI.VisualColumnRename",
+			              "Type": "External"
+			            },
+			            "State": "Suggested",
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table__measures_profitability.companycode_grossprofit": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "__MEASURES_PROFITABILITY",
+			          "ConceptualProperty": "COMPANYCODE_GROSSPROFIT"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Gross Profit": {
+			            "Source": {
+			              "Agent": "PowerBI.VisualColumnRename",
+			              "Type": "External"
+			            },
+			            "State": "Suggested",
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table__measures_profitability.companycode_inventorychange": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "__MEASURES_PROFITABILITY",
+			          "ConceptualProperty": "COMPANYCODE_INVENTORYCHANGE"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Inventory Change": {
+			            "Source": {
+			              "Agent": "PowerBI.VisualColumnRename",
+			              "Type": "External"
+			            },
+			            "State": "Suggested",
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table__measures_profitability.companycode_netprofit": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "__MEASURES_PROFITABILITY",
+			          "ConceptualProperty": "COMPANYCODE_NETPROFIT"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Net Profit": {
+			            "Source": {
+			              "Agent": "PowerBI.VisualColumnRename",
+			              "Type": "External"
+			            },
+			            "State": "Suggested",
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table__measures_profitability.companycode_operatingprofit": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "__MEASURES_PROFITABILITY",
+			          "ConceptualProperty": "COMPANYCODE_OPERATINGPROFIT"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Operating Profit": {
+			            "Source": {
+			              "Agent": "PowerBI.VisualColumnRename",
+			              "Type": "External"
+			            },
+			            "State": "Suggested",
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table__measures_profitability.companycode_opex": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "__MEASURES_PROFITABILITY",
+			          "ConceptualProperty": "COMPANYCODE_OPEX"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "OPEX": {
+			            "Source": {
+			              "Agent": "PowerBI.VisualColumnRename",
+			              "Type": "External"
+			            },
+			            "State": "Suggested",
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table__measures_profitability.companycode_otherexpenses": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "__MEASURES_PROFITABILITY",
+			          "ConceptualProperty": "COMPANYCODE_OTHEREXPENSES"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Other Expenses": {
+			            "Source": {
+			              "Agent": "PowerBI.VisualColumnRename",
+			              "Type": "External"
+			            },
+			            "State": "Suggested",
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table__measures_profitability.companycode_revenue": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "__MEASURES_PROFITABILITY",
+			          "ConceptualProperty": "COMPANYCODE_REVENUE"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Revenue": {
+			            "Source": {
+			              "Agent": "PowerBI.VisualColumnRename",
+			              "Type": "External"
+			            },
+			            "State": "Suggested",
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table__measures_profitability.companycode_taxes": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "__MEASURES_PROFITABILITY",
+			          "ConceptualProperty": "COMPANYCODE_TAXES"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Taxes": {
+			            "Source": {
+			              "Agent": "PowerBI.VisualColumnRename",
+			              "Type": "External"
+			            },
+			            "State": "Suggested",
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table__measures_profitability.transaction_revenue": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "__MEASURES_PROFITABILITY",
+			          "ConceptualProperty": "TRANSACTION_REVENUE"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "table_amounts.amountincompanycodecurrency_closingbalance": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "__MEASURES_OTHER",
+			          "ConceptualProperty": "COMPANYCODE_CLOSING_BALANCE"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Closing Balance": {
+			            "Source": {
+			              "Agent": "PowerBI.VisualColumnRename",
+			              "Type": "External"
+			            },
+			            "State": "Suggested",
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table_amounts.amountincompanycodecurrency_currentperiod": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "__MEASURES_OTHER",
+			          "ConceptualProperty": "COMPANYCODE_CURRENT_PERIOD"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Current Period": {
+			            "Source": {
+			              "Agent": "PowerBI.VisualColumnRename",
+			              "Type": "External"
+			            },
+			            "State": "Suggested",
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table_amounts.amountincompanycodecurrency_openingbalance": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "__MEASURES_OTHER",
+			          "ConceptualProperty": "COMPANYCODE_OPENING_BALANCE"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Opening Balance": {
+			            "Source": {
+			              "Agent": "PowerBI.VisualColumnRename",
+			              "Type": "External"
+			            },
+			            "State": "Suggested",
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table_glaccounthierarchy_amounts.amountincompanycodecurrency_h_closingbalance": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "__MEASURES_GLACCOUNTHIERARCHY",
+			          "ConceptualProperty": "GLACCT_HRCHY_COMPANYCODE_CLOSING_BALANCE"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Closing Balance": {
+			            "Source": {
+			              "Agent": "PowerBI.VisualColumnRename",
+			              "Type": "External"
+			            },
+			            "State": "Suggested",
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table_glaccounthierarchy_amounts.amountincompanycodecurrency_h_currentperiod": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "__MEASURES_GLACCOUNTHIERARCHY",
+			          "ConceptualProperty": "GLACCT_HRCHY_COMPANYCODE_CURRENT_PERIOD"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Current Period": {
+			            "Source": {
+			              "Agent": "PowerBI.VisualColumnRename",
+			              "Type": "External"
+			            },
+			            "State": "Suggested",
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table_glaccounthierarchy_amounts.amountincompanycodecurrency_h_openingbalance": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "__MEASURES_GLACCOUNTHIERARCHY",
+			          "ConceptualProperty": "GLACCT_HRCHY_COMPANYCODE_OPENING_BALANCE"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Opening Balance": {
+			            "Source": {
+			              "Agent": "PowerBI.VisualColumnRename",
+			              "Type": "External"
+			            },
+			            "State": "Suggested",
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table_measures_aggr_h.aggr_company_code_closing_balance": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_MEASURES_AGGR_H",
+			          "ConceptualProperty": "AGGR_COMPANY_CODE_CLOSING_BALANCE"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "table_measures_aggr_h.aggr_company_code_current_period": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_MEASURES_AGGR_H",
+			          "ConceptualProperty": "AGGR_COMPANY_CODE_CURRENT_PERIOD"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "table_measures_aggr_h.aggr_company_code_opening_balance": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_MEASURES_AGGR_H",
+			          "ConceptualProperty": "AGGR_COMPANY_CODE_OPENING_BALANCE"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "table_measures_aggr_h.aggr_transaction_closing_balance": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_MEASURES_AGGR_H",
+			          "ConceptualProperty": "AGGR_TRANSACTION_CLOSING_BALANCE"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Closing Balance": {
+			            "Source": {
+			              "Agent": "PowerBI.VisualColumnRename",
+			              "Type": "External"
+			            },
+			            "State": "Suggested",
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table_measures_aggr_h.aggr_transaction_current_period": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_MEASURES_AGGR_H",
+			          "ConceptualProperty": "AGGR_TRANSACTION_CURRENT_PERIOD"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Current Period": {
+			            "Source": {
+			              "Agent": "PowerBI.VisualColumnRename",
+			              "Type": "External"
+			            },
+			            "State": "Suggested",
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "table_measures_aggr_h.aggr_transaction_opening_balance": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_MEASURES_AGGR_H",
+			          "ConceptualProperty": "AGGR_TRANSACTION_OPENING_BALANCE"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Opening Balance": {
+			            "Source": {
+			              "Agent": "PowerBI.VisualColumnRename",
+			              "Type": "External"
+			            },
+			            "State": "Suggested",
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    }
+			  },
+			  "Language": "en-US",
+			  "Version": "2.0.0"
+			}
+		contentType: json
+

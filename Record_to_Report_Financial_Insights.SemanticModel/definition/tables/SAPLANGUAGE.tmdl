@@ -1,0 +1,59 @@
+table SAPLANGUAGE
+	lineageTag: 698b4fd2-92c4-4dd0-afda-4aa16d1f0945
+
+	column LANGUAGE
+		dataType: string
+		lineageTag: 3c9fe715-b2fc-4ac6-b99e-01b60e61404b
+		summarizeBy: none
+		sourceColumn: LANGUAGE
+
+		annotation SummarizationSetBy = Automatic
+
+	column _ISOLanguage
+		dataType: string
+		isHidden
+		isKey
+		isAvailableInMdx: false
+		lineageTag: 9517bd1d-6de6-4d7e-9226-f28ff493892c
+		summarizeBy: none
+		sourceColumn: _ISOLanguage
+
+		annotation SummarizationSetBy = Automatic
+
+	column LANGUAGENAME
+		dataType: string
+		lineageTag: ddb9ae8a-980e-4e9f-9823-81a3b17caea9
+		summarizeBy: none
+		sourceColumn: LANGUAGENAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column LANGUAGECODE
+		dataType: string
+		lineageTag: e7b093c9-2920-4016-85d0-ea7c8770bf23
+		summarizeBy: none
+		sourceColumn: LANGUAGECODE
+
+		annotation SummarizationSetBy = Automatic
+
+	column _SystemName
+		dataType: string
+		isHidden
+		lineageTag: cc1a82bc-4bc6-4989-a794-622c663f186a
+		summarizeBy: none
+		sourceColumn: _SystemName
+
+		annotation SummarizationSetBy = Automatic
+
+	partition SAPLANGUAGE = m
+		mode: dual
+		source =
+				let
+				    Source = Sql.Database(Server, Database),
+				    dmgold_vwSAPLANGUAGE = Source{[Schema=Schema_Name,Item="SAPLANGUAGE"]}[Data],
+				    #"Filtered Rows" = Table.SelectRows(dmgold_vwSAPLANGUAGE, each ([_ISOLanguage] = "DE" or [_ISOLanguage] = "EN" or [_ISOLanguage] = "ES" or [_ISOLanguage] = "FR"))
+				in
+				    #"Filtered Rows"
+
+	annotation PBI_ResultType = Table
+

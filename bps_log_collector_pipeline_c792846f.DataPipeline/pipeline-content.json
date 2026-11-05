@@ -1,0 +1,32 @@
+{
+  "properties": {
+    "activities": [
+      {
+        "type": "TridentNotebook",
+        "typeProperties": {
+          "notebookId": "12300806-ddc8-aab2-448a-e0dfdcb2d5e9",
+          "workspaceId": "00000000-0000-0000-0000-000000000000",
+          "parameters": {
+            "p_silver_lakehouse_name": {
+              "value": "bps_silver_c792846f",
+              "type": "string"
+            },
+            "p_metadata_database_name": {
+              "value": "bps_metadata_db_c792846f",
+              "type": "string"
+            }
+          }
+        },
+        "policy": {
+          "timeout": "0.12:00:00",
+          "retry": 0,
+          "retryIntervalInSeconds": 30,
+          "secureInput": false,
+          "secureOutput": false
+        },
+        "name": "Log Collector Notebook",
+        "dependsOn": []
+      }
+    ]
+  }
+}

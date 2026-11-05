@@ -1,0 +1,49 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.0.0/schema.json",
+  "name": "e6299790245906d72cee",
+  "displayName": "Accounting Documents",
+  "displayOption": "FitToWidth",
+  "height": 900,
+  "width": 1280,
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "5a2bde042c5925403e68",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "GLACCOUNTINCHARTOFACCOUNTS"
+              }
+            },
+            "Property": "GLACCOUNT"
+          }
+        },
+        "type": "Categorical",
+        "howCreated": "Drillthrough"
+      }
+    ]
+  },
+  "pageBinding": {
+    "name": "57e1b01d716c884ba598",
+    "type": "Drillthrough",
+    "parameters": [
+      {
+        "name": "80696ae606d6969ee348",
+        "boundFilter": "5a2bde042c5925403e68",
+        "asAggregation": false,
+        "qnaSingleSelectRequired": false,
+        "fieldExpr": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "GLACCOUNTINCHARTOFACCOUNTS"
+              }
+            },
+            "Property": "GLACCOUNT"
+          }
+        }
+      }
+    ]
+  }
+}

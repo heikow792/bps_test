@@ -1,0 +1,1510 @@
+/// Product dimension with product details, categories, and hierarchies
+table PRODUCT
+	lineageTag: 043a140f-4723-4203-afdc-d222454c839d
+
+	/// Timestamp indicating last update time in silver lakehouse.
+	column _UpdateTimeStamp
+		dataType: dateTime
+		isHidden
+		formatString: m/d/yyyy
+		sourceProviderType: datetime2
+		lineageTag: f1816bff-b1d5-443f-8cf1-3b606d455536
+		summarizeBy: none
+		sourceColumn: _UpdateTimeStamp
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Name of the source system.
+	column _SystemName
+		dataType: string
+		isHidden
+		sourceProviderType: nvarchar(4000)
+		lineageTag: d2a70fd4-446b-4578-95a9-e4646a7e5215
+		summarizeBy: none
+		sourceColumn: _SystemName
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Product Category.
+	column ARTICLECATEGORY
+		dataType: string
+		sourceProviderType: nvarchar(2)
+		lineageTag: ed17dfb1-2607-4b97-966f-e44459c47a25
+		summarizeBy: none
+		sourceColumn: ARTICLECATEGORY
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Assortment List Type.
+	column ASSORTMENTLISTTYPE
+		dataType: string
+		sourceProviderType: nvarchar(1)
+		lineageTag: 1e8850cb-5d19-493b-a1cc-ed5eac89f727
+		summarizeBy: none
+		sourceColumn: ASSORTMENTLISTTYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Base Unit of Measure.
+	column BASEUNIT
+		dataType: string
+		sourceProviderType: nvarchar(3)
+		lineageTag: 545c0ca6-e3f1-479a-80cd-ec6794b6768b
+		summarizeBy: none
+		sourceColumn: BASEUNIT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Comparison price unit.
+	column COMPARISONPRICEQUANTITY
+		dataType: decimal
+		sourceProviderType: decimal(5, 0)
+		lineageTag: f4a77092-ccda-4cdc-8d6f-7e9523cdec78
+		summarizeBy: none
+		sourceColumn: COMPARISONPRICEQUANTITY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Competitor.
+	column COMPETITORID
+		dataType: string
+		sourceProviderType: nvarchar(10)
+		lineageTag: e1b0ee67-0067-41b8-9155-d8e76cb7766f
+		summarizeBy: none
+		sourceColumn: COMPETITORID
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Country/Region of Origin of Material (Non-Preferential Ori.).
+	column COUNTRYOFORIGIN
+		dataType: string
+		sourceProviderType: nvarchar(3)
+		lineageTag: 994d0913-873a-4255-afaf-e6b31e689612
+		summarizeBy: none
+		sourceColumn: COUNTRYOFORIGIN
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Cross-Plant Configurable Product.
+	column CROSSPLANTCONFIGURABLEPRODUCT
+		dataType: string
+		sourceProviderType: nvarchar(40)
+		lineageTag: c6aa42bb-cc07-4e48-8980-ff719777f23f
+		summarizeBy: none
+		sourceColumn: CROSSPLANTCONFIGURABLEPRODUCT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Cross-Plant Product Status.
+	column CROSSPLANTSTATUS
+		dataType: string
+		sourceProviderType: nvarchar(2)
+		lineageTag: 2a9d0403-af36-4ea8-b92a-98c43a3b96a1
+		summarizeBy: none
+		sourceColumn: CROSSPLANTSTATUS
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Date from which the cross-plant material status is valid.
+	column CROSSPLANTSTATUSVALIDITYDATE
+		dataType: dateTime
+		formatString: m/d/yyyy
+		sourceProviderType: date
+		lineageTag: 24a77167-8bde-45da-98aa-df77b7b85533
+		summarizeBy: none
+		sourceColumn: CROSSPLANTSTATUSVALIDITYDATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	/// Dangerous Goods Indicator Profile.
+	column DANGEROUSGOODSINDPROFILE
+		dataType: string
+		sourceProviderType: nvarchar(3)
+		lineageTag: b416c826-b940-48dd-a29f-686c3eae0406
+		summarizeBy: none
+		sourceColumn: DANGEROUSGOODSINDPROFILE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Division.
+	column DIVISION
+		dataType: string
+		sourceProviderType: nvarchar(2)
+		lineageTag: 93f27283-aade-43cc-b601-d8c7a1c097e2
+		summarizeBy: none
+		sourceColumn: DIVISION
+
+		annotation SummarizationSetBy = Automatic
+
+	/// External Product Group.
+	column EXTERNALPRODUCTGROUP
+		dataType: string
+		sourceProviderType: nvarchar(18)
+		lineageTag: 9dcb0e20-44ba-4341-8481-152bc26b263e
+		summarizeBy: none
+		sourceColumn: EXTERNALPRODUCTGROUP
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Gross contents.
+	column GROSSCONTENT
+		dataType: decimal
+		sourceProviderType: decimal(17, 3)
+		lineageTag: 0d0ffd05-be1e-4dc3-a038-74b7dce1dff0
+		summarizeBy: none
+		sourceColumn: GROSSCONTENT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Gross Weight.
+	column GROSSWEIGHT
+		dataType: decimal
+		sourceProviderType: decimal(17, 3)
+		lineageTag: 161d0b45-c587-492c-8b89-9a3043f7c1b1
+		summarizeBy: none
+		sourceColumn: GROSSWEIGHT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Empties Bill of Material.
+	column HASEMPTIESBOM
+		dataType: string
+		sourceProviderType: nvarchar(1)
+		lineageTag: fe38746a-7fce-42c1-9905-5fbc19714b35
+		summarizeBy: none
+		sourceColumn: HASEMPTIESBOM
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Indicator: Contains Non-Textile Parts of Animal Origin.
+	column HASTEXTILEPARTSWTHANIMALORIGIN
+		dataType: string
+		sourceProviderType: nvarchar(1)
+		lineageTag: adbf773d-6bcc-4483-ae78-cf001d569e04
+		summarizeBy: none
+		sourceColumn: HASTEXTILEPARTSWTHANIMALORIGIN
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Industry.
+	column INDUSTRYSECTOR
+		dataType: string
+		sourceProviderType: nvarchar(1)
+		lineageTag: 46cbf397-00bc-4d38-bd3e-7b0f4a8d91bb
+		summarizeBy: none
+		sourceColumn: INDUSTRYSECTOR
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Industry Standard Description (such as ANSI or ISO).
+	column INDUSTRYSTANDARDNAME
+		dataType: string
+		sourceProviderType: nvarchar(18)
+		lineageTag: c0347d9f-9747-4b88-9ba7-b8e690fff919
+		summarizeBy: none
+		sourceColumn: INDUSTRYSTANDARDNAME
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Draft - Indicator - Is active document.
+	column ISACTIVEENTITY
+		dataType: string
+		sourceProviderType: nvarchar(1)
+		lineageTag: b7cfabcf-0e75-48b9-8ca5-e84db35005d4
+		summarizeBy: none
+		sourceColumn: ISACTIVEENTITY
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Approved Batch Record Required.
+	column ISAPPROVEDBATCHRECORDREQD
+		dataType: string
+		sourceProviderType: nvarchar(1)
+		lineageTag: 8de154c4-a758-41b5-9300-2feea4b56e65
+		summarizeBy: none
+		sourceColumn: ISAPPROVEDBATCHRECORDREQD
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Batch Management Requirement Indicator.
+	column ISBATCHMANAGEMENTREQUIRED
+		dataType: string
+		sourceProviderType: nvarchar(1)
+		lineageTag: cdf1ebd8-9bf9-47b3-ba09-887e9b6a87fe
+		summarizeBy: none
+		sourceColumn: ISBATCHMANAGEMENTREQUIRED
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Chemical Compliance Relevance Indicator.
+	column ISCHEMICALCOMPLIANCERELEVANT
+		dataType: string
+		sourceProviderType: nvarchar(1)
+		lineageTag: f55bca6a-cc71-4be3-acbf-d272b9e13ada
+		summarizeBy: none
+		sourceColumn: ISCHEMICALCOMPLIANCERELEVANT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Deletion Indicator.
+	column ISMARKEDFORDELETION
+		dataType: string
+		sourceProviderType: nvarchar(1)
+		lineageTag: 6ae47bac-d190-49de-88f7-c825bab499c6
+		summarizeBy: none
+		sourceColumn: ISMARKEDFORDELETION
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Pilferable.
+	column ISPILFERABLE
+		dataType: string
+		sourceProviderType: nvarchar(1)
+		lineageTag: 36ebc08f-8012-47b1-bd03-1a140f9938fa
+		summarizeBy: none
+		sourceColumn: ISPILFERABLE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Relevant for Hazardous Substances.
+	column ISRELEVANTFORHZDSSUBSTANCES
+		dataType: string
+		sourceProviderType: nvarchar(1)
+		lineageTag: 34c60140-8fee-4531-821c-189e8fc4188b
+		summarizeBy: none
+		sourceColumn: ISRELEVANTFORHZDSSUBSTANCES
+
+		annotation SummarizationSetBy = Automatic
+
+	/// General item category group.
+	column ITEMCATEGORYGROUP
+		dataType: string
+		sourceProviderType: nvarchar(4)
+		lineageTag: df437117-1f5b-417e-bb91-0262e7cea0bb
+		summarizeBy: none
+		sourceColumn: ITEMCATEGORYGROUP
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Low-Level Code.
+	column LOWLEVELCODE
+		dataType: string
+		sourceProviderType: nvarchar(3)
+		lineageTag: 8bbcddd9-cabb-4f3a-bba3-74d93633b40c
+		summarizeBy: none
+		sourceColumn: LOWLEVELCODE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Volume.
+	column MATERIALVOLUME
+		dataType: decimal
+		sourceProviderType: decimal(17, 3)
+		lineageTag: 425285d0-8689-4649-9e3b-8243b5c2afef
+		summarizeBy: none
+		sourceColumn: MATERIALVOLUME
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Net Weight.
+	column NETWEIGHT
+		dataType: decimal
+		sourceProviderType: decimal(17, 3)
+		lineageTag: 19cca395-269f-4719-ac2f-60bec32c3eda
+		summarizeBy: none
+		sourceColumn: NETWEIGHT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	/// Material Group: Packaging Materials.
+	column PACKAGINGMATERIALGROUP
+		dataType: string
+		sourceProviderType: nvarchar(4)
+		lineageTag: 7d10096f-b4e4-4eae-aae3-d2a2927e01f8
+		summarizeBy: none
+		sourceColumn: PACKAGINGMATERIALGROUP
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Preferred Alternative UoM for Warehouse Operations.
+	column PREFERREDUNITOFMEASURE
+		dataType: string
+		sourceProviderType: nvarchar(3)
+		lineageTag: 32c8b86e-4de9-4836-a0ec-9b3fef392554
+		summarizeBy: none
+		sourceColumn: PREFERREDUNITOFMEASURE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Procurement rule.
+	column PROCUREMENTRULE
+		dataType: string
+		sourceProviderType: nvarchar(1)
+		lineageTag: ba13796a-6d09-4044-b796-0aad85a057e4
+		summarizeBy: none
+		sourceColumn: PROCUREMENTRULE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Environmentally Relevant.
+	column PRODISENVIRONMENTALLYRELEVANT
+		dataType: string
+		sourceProviderType: nvarchar(1)
+		lineageTag: 795219e4-9ab3-4441-a534-36968db4928b
+		summarizeBy: none
+		sourceColumn: PRODISENVIRONMENTALLYRELEVANT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Product Number.
+	column PRODUCT
+		dataType: string
+		sourceProviderType: nvarchar(40)
+		lineageTag: cbd7cb26-0afd-4662-a47d-dc92ffc20643
+		summarizeBy: none
+		sourceColumn: PRODUCT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Product Category.
+	column PRODUCTCATEGORY
+		dataType: string
+		sourceProviderType: nvarchar(2)
+		lineageTag: d5c45f45-378d-4e0d-b9aa-7afc127f0b60
+		summarizeBy: none
+		sourceColumn: PRODUCTCATEGORY
+
+		annotation SummarizationSetBy = Automatic
+
+	/// External Representation of Material Number.
+	column PRODUCTEXTERNALID
+		dataType: string
+		sourceProviderType: nvarchar(40)
+		lineageTag: ae7c0495-f337-443d-a2cf-74e25779de75
+		summarizeBy: none
+		sourceColumn: PRODUCTEXTERNALID
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Product Group.
+	column PRODUCTGROUP
+		dataType: string
+		sourceProviderType: nvarchar(9)
+		lineageTag: 64d81f74-5e02-419c-b550-c98df7afa281
+		summarizeBy: none
+		sourceColumn: PRODUCTGROUP
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Product Hierarchy.
+	column PRODUCTHIERARCHY
+		dataType: string
+		sourceProviderType: nvarchar(18)
+		lineageTag: 00d1459a-507d-41fa-b6c5-71a79fed9275
+		summarizeBy: none
+		sourceColumn: PRODUCTHIERARCHY
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Product is Configurable.
+	column PRODUCTISCONFIGURABLE
+		dataType: string
+		sourceProviderType: nvarchar(1)
+		lineageTag: fe4e520f-f584-4858-b9f3-286c7cdb8b07
+		summarizeBy: none
+		sourceColumn: PRODUCTISCONFIGURABLE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Indicator: Highly Viscous.
+	column PRODUCTISHIGHLYVISCOUS
+		dataType: string
+		sourceProviderType: nvarchar(1)
+		lineageTag: bc5935df-627b-4a10-9057-f2d48ffd8827
+		summarizeBy: none
+		sourceColumn: PRODUCTISHIGHLYVISCOUS
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Unit of Dimension for Length/Width/Height.
+	column PRODUCTMEASUREMENTUNIT
+		dataType: string
+		sourceProviderType: nvarchar(3)
+		lineageTag: fc696ee4-adff-4474-9e53-9f1638091b58
+		summarizeBy: none
+		sourceColumn: PRODUCTMEASUREMENTUNIT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Indicator: Use of Season.
+	column PRODUCTSEASONUSAGECATEGORY
+		dataType: string
+		sourceProviderType: nvarchar(1)
+		lineageTag: 4627a34d-fc6e-4169-9e6a-f0aeab660bcd
+		summarizeBy: none
+		sourceColumn: PRODUCTSEASONUSAGECATEGORY
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Global Trade Item Number (EAN/UPC/GTIN).
+	column PRODUCTSTANDARDID
+		dataType: string
+		sourceProviderType: nvarchar(18)
+		lineageTag: 7de032b4-c2d2-4fd9-b14b-7b21ccd2041e
+		summarizeBy: none
+		sourceColumn: PRODUCTSTANDARDID
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Product Type.
+	column PRODUCTTYPE
+		dataType: string
+		sourceProviderType: nvarchar(4)
+		lineageTag: a3844fc2-a34c-48b3-9d9d-e625483fa6b0
+		summarizeBy: none
+		sourceColumn: PRODUCTTYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Deletion date.
+	column PRODUCTVALIDENDDATE
+		dataType: dateTime
+		formatString: m/d/yyyy
+		sourceProviderType: date
+		lineageTag: a8b8d385-0df2-4f3c-99f4-ccee33340bad
+		summarizeBy: none
+		sourceColumn: PRODUCTVALIDENDDATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	/// Valid-From Date.
+	column PRODUCTVALIDSTARTDATE
+		dataType: dateTime
+		formatString: m/d/yyyy
+		sourceProviderType: date
+		lineageTag: 112fc685-f2b4-41ad-bc71-e642cbe37ba3
+		summarizeBy: none
+		sourceColumn: PRODUCTVALIDSTARTDATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	/// Purchase Order Unit of Measure.
+	column PURCHASEORDERQUANTITYUNIT
+		dataType: string
+		sourceProviderType: nvarchar(3)
+		lineageTag: 995cd637-b249-434b-b576-9e61a0571f14
+		summarizeBy: none
+		sourceColumn: PURCHASEORDERQUANTITYUNIT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Material Number of a Sales Material.
+	column SALESPRODUCT
+		dataType: string
+		sourceProviderType: nvarchar(40)
+		lineageTag: b4b22a46-043e-432c-80a1-05a03950e7da
+		summarizeBy: none
+		sourceColumn: SALESPRODUCT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Cross-Distribution-Chain Material Status.
+	column SALESSTATUS
+		dataType: string
+		sourceProviderType: nvarchar(2)
+		lineageTag: 8e2eabe5-f879-4f46-b669-4a2f87c21bd3
+		summarizeBy: none
+		sourceColumn: SALESSTATUS
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Date from which the X-distr.-chain material status is valid.
+	column SALESSTATUSVALIDITYDATE
+		dataType: dateTime
+		formatString: m/d/yyyy
+		sourceProviderType: date
+		lineageTag: 686d29f7-5bb1-4c86-8b8a-4081e174aa42
+		summarizeBy: none
+		sourceColumn: SALESSTATUSVALIDITYDATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	/// Serial Number Profile.
+	column SERIALIDENTIFIERASSGMTPROFILE
+		dataType: string
+		sourceProviderType: nvarchar(4)
+		lineageTag: 719c0684-973a-497c-8729-241fe813a558
+		summarizeBy: none
+		sourceColumn: SERIALIDENTIFIERASSGMTPROFILE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Size/dimensions.
+	column SIZEORDIMENSIONTEXT
+		dataType: string
+		sourceProviderType: nvarchar(32)
+		lineageTag: b6fe8760-677b-4a81-835f-dab63b06b8d4
+		summarizeBy: none
+		sourceColumn: SIZEORDIMENSIONTEXT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Valid-From Date.
+	column VALIDITYSTARTDATE
+		dataType: dateTime
+		formatString: m/d/yyyy
+		sourceProviderType: date
+		lineageTag: 0311c62f-a86a-424c-836e-4941b5c6d84b
+		summarizeBy: none
+		sourceColumn: VALIDITYSTARTDATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	/// Volume Unit.
+	column VOLUMEUNIT
+		dataType: string
+		sourceProviderType: nvarchar(3)
+		lineageTag: c87d02db-8be0-42af-b239-9580184ccdc5
+		summarizeBy: none
+		sourceColumn: VOLUMEUNIT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Warehouse Material Group.
+	column WAREHOUSEPRODUCTGROUP
+		dataType: string
+		sourceProviderType: nvarchar(4)
+		lineageTag: 896e709c-8b63-4721-9aeb-73260e9d59a4
+		summarizeBy: none
+		sourceColumn: WAREHOUSEPRODUCTGROUP
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Warehouse Storage Condition.
+	column WAREHOUSESTORAGECONDITION
+		dataType: string
+		sourceProviderType: nvarchar(2)
+		lineageTag: 9c6782c7-7d3c-45f3-ba72-18368b3d9c7c
+		summarizeBy: none
+		sourceColumn: WAREHOUSESTORAGECONDITION
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Unit of Weight.
+	column WEIGHTUNIT
+		dataType: string
+		sourceProviderType: nvarchar(3)
+		lineageTag: 7eb78e18-beae-406b-b8f4-6fd488d6a42c
+		summarizeBy: none
+		sourceColumn: WEIGHTUNIT
+
+		annotation SummarizationSetBy = Automatic
+
+	column Key
+		dataType: int64
+		isHidden
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 592aa985-334c-405e-a504-c9e9d2026c53
+		summarizeBy: none
+		sourceColumn: Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRODUCTOID
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: ca23c3cc-2dad-42e8-8a7a-81d648866f14
+		summarizeBy: none
+		sourceColumn: PRODUCTOID
+
+		annotation SummarizationSetBy = Automatic
+
+	column CREATIONDATE
+		dataType: dateTime
+		formatString: Long Date
+		sourceProviderType: date
+		lineageTag: 4eb65977-65ab-4dda-b6c5-71102d61a788
+		summarizeBy: none
+		sourceColumn: CREATIONDATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column CREATIONTIME
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: c275cf7d-b704-4b76-b81e-2f20db32b9a1
+		summarizeBy: none
+		sourceColumn: CREATIONTIME
+
+		annotation SummarizationSetBy = Automatic
+
+	column CREATIONDATETIME
+		dataType: double
+		sourceProviderType: decimal(21, 7)
+		lineageTag: fbe6480d-cdc0-4220-9317-4c5ebe0eb968
+		summarizeBy: none
+		sourceColumn: CREATIONDATETIME
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CREATEDBYUSER
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: d3e7fa23-df5a-4e28-9636-9128004f4f97
+		summarizeBy: none
+		sourceColumn: CREATEDBYUSER
+
+		annotation SummarizationSetBy = Automatic
+
+	column LASTCHANGEDATE
+		dataType: dateTime
+		formatString: Long Date
+		sourceProviderType: date
+		lineageTag: 6cd208d1-1928-4d47-aa7a-e27ec014de1c
+		summarizeBy: none
+		sourceColumn: LASTCHANGEDATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column LASTCHANGEDBYUSER
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 592fddbc-31f5-483b-9f70-f611eed4cfb2
+		summarizeBy: none
+		sourceColumn: LASTCHANGEDBYUSER
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRODUCTOLDID
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 46654c40-2ba2-45a1-a772-bfdddfa8156f
+		summarizeBy: none
+		sourceColumn: PRODUCTOLDID
+
+		annotation SummarizationSetBy = Automatic
+
+	column SOURCEOFSUPPLY
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: e75e5002-701d-4d02-9538-d28ed41d9718
+		summarizeBy: none
+		sourceColumn: SOURCEOFSUPPLY
+
+		annotation SummarizationSetBy = Automatic
+
+	column VARBLPURORDUNITISACTIVE
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 9517bb79-083d-47c9-bc4c-2a94c731358b
+		summarizeBy: none
+		sourceColumn: VARBLPURORDUNITISACTIVE
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRANSPORTATIONGROUP
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 24bb7b49-380f-492c-9c94-6a47d5c4c97a
+		summarizeBy: none
+		sourceColumn: TRANSPORTATIONGROUP
+
+		annotation SummarizationSetBy = Automatic
+
+	column AUTHORIZATIONGROUP
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 3c845467-c77c-4454-9339-ed9c5bb50717
+		summarizeBy: none
+		sourceColumn: AUTHORIZATIONGROUP
+
+		annotation SummarizationSetBy = Automatic
+
+	column ANPCODE
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 4ca57e0c-f288-4237-a079-4a6e9ae1ea68
+		summarizeBy: none
+		sourceColumn: ANPCODE
+
+		annotation SummarizationSetBy = Automatic
+
+	column BRAND
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 818f4317-c47c-4ab9-8ef5-f40dd491a8ba
+		summarizeBy: none
+		sourceColumn: BRAND
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRODNOINGENPRODINPREPACKPROD
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: f1bb47cb-d8ba-4824-8b31-a47c8d8f0395
+		summarizeBy: none
+		sourceColumn: PRODNOINGENPRODINPREPACKPROD
+
+		annotation SummarizationSetBy = Automatic
+
+	column INTERNATIONALARTICLENUMBERCAT
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 50cfe264-d15f-409d-a605-c53dc755ce3f
+		summarizeBy: none
+		sourceColumn: INTERNATIONALARTICLENUMBERCAT
+
+		annotation SummarizationSetBy = Automatic
+
+	column SERIALNOEXPLICITNESSLEVEL
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 0cc5ec6d-05cd-4dae-8185-adfe14121c08
+		summarizeBy: none
+		sourceColumn: SERIALNOEXPLICITNESSLEVEL
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRODUCTMANUFACTURERNUMBER
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 1bff250c-8d58-4144-bcf2-5b01be68ee80
+		summarizeBy: none
+		sourceColumn: PRODUCTMANUFACTURERNUMBER
+
+		annotation SummarizationSetBy = Automatic
+
+	column MANUFACTURERNUMBER
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 7a6a962a-ab8c-4b66-9fa8-d83920a7210b
+		summarizeBy: none
+		sourceColumn: MANUFACTURERNUMBER
+
+		annotation SummarizationSetBy = Automatic
+
+	column MANUFACTURERPARTPROFILE
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 711426a7-04d0-4b29-9f35-32851c828e19
+		summarizeBy: none
+		sourceColumn: MANUFACTURERPARTPROFILE
+
+		annotation SummarizationSetBy = Automatic
+
+	column QLTYMGMTINPROCMTISACTIVE
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: f2f249f6-bbab-43cb-a296-9588731d769f
+		summarizeBy: none
+		sourceColumn: QLTYMGMTINPROCMTISACTIVE
+
+		annotation SummarizationSetBy = Automatic
+
+	column HANDLINGINDICATOR
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 2751ea17-d154-4f24-b9b9-f24c95a25111
+		summarizeBy: none
+		sourceColumn: HANDLINGINDICATOR
+
+		annotation SummarizationSetBy = Automatic
+
+	column STANDARDHANDLINGUNITTYPE
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: f3062c65-30bc-4d8b-9c23-c45af33bd37b
+		summarizeBy: none
+		sourceColumn: STANDARDHANDLINGUNITTYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column SERIALNUMBERPROFILE
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 4236096a-edd0-43bf-994c-add5d4c55dfc
+		summarizeBy: none
+		sourceColumn: SERIALNUMBERPROFILE
+
+		annotation SummarizationSetBy = Automatic
+
+	column ADJUSTMENTPROFILE
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: b772df2b-b86e-4188-822e-9cb4df9f1457
+		summarizeBy: none
+		sourceColumn: ADJUSTMENTPROFILE
+
+		annotation SummarizationSetBy = Automatic
+
+	column QUARANTINEPERIOD
+		dataType: decimal
+		sourceProviderType: decimal(17, 0)
+		lineageTag: 6cc9dc8a-2549-4019-bece-fbd6c7641f1e
+		summarizeBy: none
+		sourceColumn: QUARANTINEPERIOD
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column TIMEUNITFORQUARANTINEPERIOD
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 133e5fdb-e51a-4c25-a6d2-b9bbed297d82
+		summarizeBy: none
+		sourceColumn: TIMEUNITFORQUARANTINEPERIOD
+
+		annotation SummarizationSetBy = Automatic
+
+	column QUALITYINSPECTIONGROUP
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 57537e77-22b9-4eb6-b4b6-9c84530d0eac
+		summarizeBy: none
+		sourceColumn: QUALITYINSPECTIONGROUP
+
+		annotation SummarizationSetBy = Automatic
+
+	column HANDLINGUNITTYPE
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 741c057c-955f-4029-808b-60011c1511f2
+		summarizeBy: none
+		sourceColumn: HANDLINGUNITTYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column HASVARIABLETAREWEIGHT
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: e983e20d-43cc-4cfa-b6d4-faa65a96eabc
+		summarizeBy: none
+		sourceColumn: HASVARIABLETAREWEIGHT
+
+		annotation SummarizationSetBy = Automatic
+
+	column MAXIMUMPACKAGINGLENGTH
+		dataType: decimal
+		sourceProviderType: decimal(17, 3)
+		lineageTag: 88b4e6c0-870c-4c69-bc30-cfe6f5cf5835
+		summarizeBy: none
+		sourceColumn: MAXIMUMPACKAGINGLENGTH
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MAXIMUMPACKAGINGWIDTH
+		dataType: decimal
+		sourceProviderType: decimal(17, 3)
+		lineageTag: 48c8f0c1-4633-4ad2-bed5-feceeee5f69d
+		summarizeBy: none
+		sourceColumn: MAXIMUMPACKAGINGWIDTH
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MAXIMUMPACKAGINGHEIGHT
+		dataType: decimal
+		sourceProviderType: decimal(17, 3)
+		lineageTag: 7e7122bf-fef6-4211-84fe-29b56a3b21c9
+		summarizeBy: none
+		sourceColumn: MAXIMUMPACKAGINGHEIGHT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MAXIMUMCAPACITY
+		dataType: decimal
+		sourceProviderType: decimal(17, 3)
+		lineageTag: d97382db-5057-4f9e-b1d4-9717028642de
+		summarizeBy: none
+		sourceColumn: MAXIMUMCAPACITY
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column OVERCAPACITYTOLERANCE
+		dataType: decimal
+		sourceProviderType: decimal(17, 1)
+		lineageTag: 0384ef9e-da48-4210-95ce-ea4a3006325a
+		summarizeBy: none
+		sourceColumn: OVERCAPACITYTOLERANCE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column UNITFORMAXPACKAGINGDIMENSIONS
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 7869844d-6d90-4369-b8a6-7d07a4ef5fe2
+		summarizeBy: none
+		sourceColumn: UNITFORMAXPACKAGINGDIMENSIONS
+
+		annotation SummarizationSetBy = Automatic
+
+	column BASEUNITSPECIFICPRODUCTLENGTH
+		dataType: decimal
+		sourceProviderType: decimal(17, 3)
+		lineageTag: 7dac0b52-5fe0-4f3f-a2b2-277e2fc68005
+		summarizeBy: none
+		sourceColumn: BASEUNITSPECIFICPRODUCTLENGTH
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column BASEUNITSPECIFICPRODUCTWIDTH
+		dataType: decimal
+		sourceProviderType: decimal(17, 3)
+		lineageTag: 2430f24c-e32d-45ec-9583-e37996d5d6c3
+		summarizeBy: none
+		sourceColumn: BASEUNITSPECIFICPRODUCTWIDTH
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column BASEUNITSPECIFICPRODUCTHEIGHT
+		dataType: decimal
+		sourceProviderType: decimal(17, 3)
+		lineageTag: 6e337bbb-9671-44cb-ae81-57c485ee2b31
+		summarizeBy: none
+		sourceColumn: BASEUNITSPECIFICPRODUCTHEIGHT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CONTENTUNIT
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: e17f4909-d00d-4243-8be7-592923251224
+		summarizeBy: none
+		sourceColumn: CONTENTUNIT
+
+		annotation SummarizationSetBy = Automatic
+
+	column NETCONTENT
+		dataType: decimal
+		sourceProviderType: decimal(17, 3)
+		lineageTag: 07a2d840-10d4-4693-974b-7182a1ed580e
+		summarizeBy: none
+		sourceColumn: NETCONTENT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CHANGENUMBER
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 3e597ffd-80bf-47e3-af92-b2c2ec038519
+		summarizeBy: none
+		sourceColumn: CHANGENUMBER
+
+		annotation SummarizationSetBy = Automatic
+
+	column MATERIALREVISIONLEVEL
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 33b0b08c-f079-455f-8fa2-3451798f6472
+		summarizeBy: none
+		sourceColumn: MATERIALREVISIONLEVEL
+
+		annotation SummarizationSetBy = Automatic
+
+	column LASTCHANGEDATETIME
+		dataType: double
+		sourceProviderType: decimal(21, 7)
+		lineageTag: 2e68f61e-6701-4b94-801d-21200821a4b9
+		summarizeBy: none
+		sourceColumn: LASTCHANGEDATETIME
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column LASTCHANGETIME
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: d26a2a8c-d76a-4d2f-a404-3ee64b8e37d2
+		summarizeBy: none
+		sourceColumn: LASTCHANGETIME
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRODSUPCHNMGMTUUID22
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 8db2346e-b1bd-4dd2-8429-6b63a213c203
+		summarizeBy: none
+		sourceColumn: PRODSUPCHNMGMTUUID22
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRODUCTDOCUMENTCHANGENUMBER
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: d5ac56b6-cd61-4e87-93a3-84c12f95e6a7
+		summarizeBy: none
+		sourceColumn: PRODUCTDOCUMENTCHANGENUMBER
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRODUCTDOCUMENTPAGECOUNT
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 074b7dd4-9f1d-4c43-859e-49dc47c01f43
+		summarizeBy: none
+		sourceColumn: PRODUCTDOCUMENTPAGECOUNT
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRODUCTDOCUMENTPAGENUMBER
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: db37a798-afef-46cf-9f75-07dd781120ef
+		summarizeBy: none
+		sourceColumn: PRODUCTDOCUMENTPAGENUMBER
+
+		annotation SummarizationSetBy = Automatic
+
+	column OWNINVENTORYMANAGEDPRODUCT
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: a6424b5f-9580-4b94-b4ac-03f1e73b5ffa
+		summarizeBy: none
+		sourceColumn: OWNINVENTORYMANAGEDPRODUCT
+
+		annotation SummarizationSetBy = Automatic
+
+	column DOCUMENTISCREATEDBYCAD
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 042aa1c8-2797-4d15-a70c-e590407f9ca4
+		summarizeBy: none
+		sourceColumn: DOCUMENTISCREATEDBYCAD
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRODUCTIONORINSPECTIONMEMOTXT
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: ebce9df3-d026-4b61-b5ef-aed1da3857f5
+		summarizeBy: none
+		sourceColumn: PRODUCTIONORINSPECTIONMEMOTXT
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRODUCTIONMEMOPAGEFORMAT
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: baa6689e-2562-4d52-8508-4bc8a5315ed4
+		summarizeBy: none
+		sourceColumn: PRODUCTIONMEMOPAGEFORMAT
+
+		annotation SummarizationSetBy = Automatic
+
+	column GLOBALTRADEITEMNUMBERVARIANT
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 4504b1d9-9603-4334-902c-afe64463e3ac
+		summarizeBy: none
+		sourceColumn: GLOBALTRADEITEMNUMBERVARIANT
+
+		annotation SummarizationSetBy = Automatic
+
+	column TRANSPORTISINBULK
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 1c21981d-a4e8-4cd1-8396-729e8ede8807
+		summarizeBy: none
+		sourceColumn: TRANSPORTISINBULK
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRODALLOCDETNPROCEDURE
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 33c98f5f-bcae-45ad-a34a-6defecbe5b3c
+		summarizeBy: none
+		sourceColumn: PRODALLOCDETNPROCEDURE
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRODEFFCTYPARAMVALSAREASSIGNED
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: c1edf5a9-7746-4972-a60b-954e5b506c5b
+		summarizeBy: none
+		sourceColumn: PRODEFFCTYPARAMVALSAREASSIGNED
+
+		annotation SummarizationSetBy = Automatic
+
+	column LABORATORYORDESIGNOFFICE
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: fcc0c90f-a440-4886-a228-fb8f99794ccb
+		summarizeBy: none
+		sourceColumn: LABORATORYORDESIGNOFFICE
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRODUCTISLOCKED
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 20d0eaf5-d7de-418c-ab2e-8ac55b697542
+		summarizeBy: none
+		sourceColumn: PRODUCTISLOCKED
+
+		annotation SummarizationSetBy = Automatic
+
+	column DISCOUNTINKINDELIGIBILITY
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: e30343b4-c855-4cdc-aea7-680db0f3239e
+		summarizeBy: none
+		sourceColumn: DISCOUNTINKINDELIGIBILITY
+
+		annotation SummarizationSetBy = Automatic
+
+	column SMARTFORMNAME
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 6cf022a1-8b47-47f4-bab6-7754d146ffa6
+		summarizeBy: none
+		sourceColumn: SMARTFORMNAME
+
+		annotation SummarizationSetBy = Automatic
+
+	column PACKINGREFERENCEPRODUCT
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 6d61f7fe-3809-439b-a13e-8fdc180fa046
+		summarizeBy: none
+		sourceColumn: PACKINGREFERENCEPRODUCT
+
+		annotation SummarizationSetBy = Automatic
+
+	column BASICMATERIAL
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 8a996ef9-2616-412c-980b-4d4a8c92d371
+		summarizeBy: none
+		sourceColumn: BASICMATERIAL
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRODUCTDOCUMENTNUMBER
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: ebf8ba2c-ff60-4788-b2dc-5ec395e19164
+		summarizeBy: none
+		sourceColumn: PRODUCTDOCUMENTNUMBER
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRODUCTDOCUMENTVERSION
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 5e794e68-2289-4eb2-9f53-f7ff8f51c605
+		summarizeBy: none
+		sourceColumn: PRODUCTDOCUMENTVERSION
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRODUCTDOCUMENTTYPE
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: a7185fda-c181-4052-a0d6-7357dd9c707d
+		summarizeBy: none
+		sourceColumn: PRODUCTDOCUMENTTYPE
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRODUCTDOCUMENTPAGEFORMAT
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 01ecdac8-bb8f-4efb-81c7-37dc8a4893fd
+		summarizeBy: none
+		sourceColumn: PRODUCTDOCUMENTPAGEFORMAT
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRODUCTCONFIGURATION
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 823d6fb6-eb12-41b1-9b8b-0c9f236206b9
+		summarizeBy: none
+		sourceColumn: PRODUCTCONFIGURATION
+
+		annotation SummarizationSetBy = Automatic
+
+	column SEGMENTATIONSTRATEGY
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 2f8b22a2-16d5-4356-8c3a-c8a69a9e30b8
+		summarizeBy: none
+		sourceColumn: SEGMENTATIONSTRATEGY
+
+		annotation SummarizationSetBy = Automatic
+
+	column SEGMENTATIONISRELEVANT
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 5bc7f59d-2872-4266-af08-6681ebae546d
+		summarizeBy: none
+		sourceColumn: SEGMENTATIONISRELEVANT
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRODUCTCOMPOSITIONISRELEVANT
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 0a9c1359-67df-4160-839e-822fa3d6c28f
+		summarizeBy: none
+		sourceColumn: PRODUCTCOMPOSITIONISRELEVANT
+
+		annotation SummarizationSetBy = Automatic
+
+	column MANUFACTURERBOOKPARTNUMBER
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: f84f8b95-3e41-4f8d-b293-91ce1e3a0d36
+		summarizeBy: none
+		sourceColumn: MANUFACTURERBOOKPARTNUMBER
+
+		annotation SummarizationSetBy = Automatic
+
+	column LOGISTICALPRODUCTCATEGORY
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 62b200a6-4165-4596-9969-5b73c380fae9
+		summarizeBy: none
+		sourceColumn: LOGISTICALPRODUCTCATEGORY
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRODCHARC1INTERNALNUMBER
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: a74017bc-a61b-4333-b09e-d27f7572760a
+		summarizeBy: none
+		sourceColumn: PRODCHARC1INTERNALNUMBER
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRODCHARC2INTERNALNUMBER
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: 1f4f0a94-1028-4cd7-8334-2dddbb275de9
+		summarizeBy: none
+		sourceColumn: PRODCHARC2INTERNALNUMBER
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRODCHARC3INTERNALNUMBER
+		dataType: int64
+		formatString: 0
+		sourceProviderType: int
+		lineageTag: bf59a259-59aa-4188-b668-95f7f1d4c245
+		summarizeBy: none
+		sourceColumn: PRODCHARC3INTERNALNUMBER
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRODUCTCHARACTERISTIC1
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: c834e055-2be5-440a-915c-294ecbc27d6b
+		summarizeBy: none
+		sourceColumn: PRODUCTCHARACTERISTIC1
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRODUCTCHARACTERISTIC2
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 5aaa1670-fcff-4311-b9b0-5c6bb86325fa
+		summarizeBy: none
+		sourceColumn: PRODUCTCHARACTERISTIC2
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRODUCTCHARACTERISTIC3
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 5f2ab2c1-4e47-46a1-a16a-832fb765a1fa
+		summarizeBy: none
+		sourceColumn: PRODUCTCHARACTERISTIC3
+
+		annotation SummarizationSetBy = Automatic
+
+	column MAINTENANCESTATUS
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 0d6c8d1c-335d-4df3-9960-0a75b0aeed72
+		summarizeBy: none
+		sourceColumn: MAINTENANCESTATUS
+
+		annotation SummarizationSetBy = Automatic
+
+	column FASHIONPRODINFORMATIONFIELD1
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 8f3e4d6a-0dcb-42d8-8f7d-0bc67ddd3f2b
+		summarizeBy: none
+		sourceColumn: FASHIONPRODINFORMATIONFIELD1
+
+		annotation SummarizationSetBy = Automatic
+
+	column FASHIONPRODINFORMATIONFIELD2
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: a19e79c5-18ef-456e-bf88-f3e8c125d0bb
+		summarizeBy: none
+		sourceColumn: FASHIONPRODINFORMATIONFIELD2
+
+		annotation SummarizationSetBy = Automatic
+
+	column FASHIONPRODINFORMATIONFIELD3
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 3b4ab535-a2ff-4bce-8d23-e8530f848824
+		summarizeBy: none
+		sourceColumn: FASHIONPRODINFORMATIONFIELD3
+
+		annotation SummarizationSetBy = Automatic
+
+	column DFSAMMUNITIONGROUPCODE
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 36b981ae-cc73-4f68-a41b-f549b76ae702
+		summarizeBy: none
+		sourceColumn: DFSAMMUNITIONGROUPCODE
+
+		annotation SummarizationSetBy = Automatic
+
+	column DFSRICIDENTIFIER
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: a161346c-14d4-4179-9943-a9a4cbe77c87
+		summarizeBy: none
+		sourceColumn: DFSRICIDENTIFIER
+
+		annotation SummarizationSetBy = Automatic
+
+	column DFSPRODUCTSENSITIVITY
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 3a2f4e4c-c9ea-4d23-8244-adac8bb1e655
+		summarizeBy: none
+		sourceColumn: DFSPRODUCTSENSITIVITY
+
+		annotation SummarizationSetBy = Automatic
+
+	column DFSMANUFACTURERPARTLONGNUMBER
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 9c4e7d81-b729-4412-813d-91f0f62b5030
+		summarizeBy: none
+		sourceColumn: DFSMANUFACTURERPARTLONGNUMBER
+
+		annotation SummarizationSetBy = Automatic
+
+	column DFSMATLCONDITIONMGMT
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 1edeada3-875d-4300-b50d-c4d51ca84a77
+		summarizeBy: none
+		sourceColumn: DFSMATLCONDITIONMGMT
+
+		annotation SummarizationSetBy = Automatic
+
+	column DFSRETURNDELIVERY
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: fa55dee8-3c07-4f08-b441-1d3accde255a
+		summarizeBy: none
+		sourceColumn: DFSRETURNDELIVERY
+
+		annotation SummarizationSetBy = Automatic
+
+	column DFSLOGISTICSLEVEL
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 1f2413e6-764e-4484-8312-f78eb55f2822
+		summarizeBy: none
+		sourceColumn: DFSLOGISTICSLEVEL
+
+		annotation SummarizationSetBy = Automatic
+
+	column DFSNATIONALITEMIDNNUMBER
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 9d30f350-f079-43b5-964b-f536700b362b
+		summarizeBy: none
+		sourceColumn: DFSNATIONALITEMIDNNUMBER
+
+		annotation SummarizationSetBy = Automatic
+
+	column PRODUCTUUID
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: e18aae0c-6b36-4cbc-96eb-6234378b1d2e
+		summarizeBy: none
+		sourceColumn: PRODUCTUUID
+
+		annotation SummarizationSetBy = Automatic
+
+	partition PRODUCT = m
+		mode: dual
+		source =
+				let
+				    Source = Sql.Database(Server, Database),
+				    dmgold_I_PRODUCT = Source{[Schema=Schema_Name,Item="I_PRODUCT"]}[Data]
+				in
+				    dmgold_I_PRODUCT
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

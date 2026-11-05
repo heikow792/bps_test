@@ -1,0 +1,33 @@
+expression Server = "u4pzoiodxjzude4vhd7ozhvy6q-5j3jmzd4hz6uljzip2hizwx65e.datawarehouse.fabric.microsoft.com" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 5efed780-c7e3-4ff6-bc5a-965153bdd81a
+
+	annotation PBI_ResultType = Text
+
+expression Database = "bps_gold_c792846f" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 0eabf8c0-c04d-487b-98d3-6b77c7ff6f70
+
+	annotation PBI_ResultType = Text
+
+expression 'Report Language' = "EN" meta [IsParameterQuery=true, List={"EN", "DE", "ES", "FR"}, DefaultValue="EN", Type="Text", IsParameterQueryRequired=false]
+	lineageTag: 2a195251-3ef7-4b40-b1cc-0e631c542cb3
+
+	annotation PBI_ResultType = Text
+
+expression _AMOUNTS1 =
+		let
+		    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+		    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+		    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+		in
+		    #"Removed Columns"
+	lineageTag: c2deb781-b9ce-4d1d-a1d1-136bfb617373
+
+	annotation PBI_ResultType = Table
+
+expression Schema_Name = "dbo" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: aeff9e62-aad7-4561-9d57-cb0ab3148bb0
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+

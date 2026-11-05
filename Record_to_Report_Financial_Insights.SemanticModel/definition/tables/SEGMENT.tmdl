@@ -1,0 +1,60 @@
+/// Business segment dimension for financial reporting
+table SEGMENT
+	lineageTag: 3b3ee107-aed2-4f46-8be3-0b26b1d82132
+
+	column SEGMENT
+		dataType: string
+		sourceProviderType: varchar(8000)
+		lineageTag: 04e7531d-b156-4a10-86d2-1370ed854c13
+		summarizeBy: none
+		sourceColumn: SEGMENT
+
+		annotation SummarizationSetBy = Automatic
+
+	column _UpdateTimeStamp
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		sourceProviderType: datetime2
+		lineageTag: 1158da88-ac42-4ded-907d-9f5e76c4d752
+		summarizeBy: none
+		sourceColumn: _UpdateTimeStamp
+
+		annotation SummarizationSetBy = Automatic
+
+	column _SystemName
+		dataType: string
+		isHidden
+		sourceProviderType: varchar(8000)
+		lineageTag: 8cf3b890-1ae2-4178-a3b3-fe0ec47b4262
+		summarizeBy: none
+		sourceColumn: _SystemName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Key
+		dataType: int64
+		isHidden
+		isKey
+		formatString: 0
+		isAvailableInMdx: false
+		sourceProviderType: int
+		lineageTag: 00355ed3-ae42-47bc-b9fd-0b4e35039c11
+		summarizeBy: none
+		sourceColumn: Key
+
+		annotation SummarizationSetBy = Automatic
+
+	partition SEGMENT = m
+		mode: dual
+		source =
+				let
+				    Source = Sql.Database(Server, Database),
+				    dmgold_vwSEGMENTTEXT = Source{[Schema=Schema_Name,Item="I_SEGMENT"]}[Data]
+				in
+				    dmgold_vwSEGMENTTEXT
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,327 @@
+relationship 306767f2-169b-4fcb-8837-be53efc7f233
+	fromColumn: GLACCOUNTLINEITEMRAWDATA._key_ICHARTOFACCOUNTS
+	toColumn: CHARTOFACCOUNTS.Key
+
+relationship 30b51c5e-7a83-4a0f-914d-8086fa7dd70a
+	fromColumn: GLACCOUNTLINEITEMRAWDATA._key_IGLACCOUNTINCHARTOFACCOUNTS
+	toColumn: GLACCOUNTINCHARTOFACCOUNTS.Key
+
+relationship e2f4e1f6-c6fa-41a5-ac4e-ae393e88cd2d
+	fromColumn: GLACCOUNTLINEITEMRAWDATA._key_ILEDGER
+	toColumn: LEDGER.Key
+
+relationship 24aba630-4c83-48f4-bb5a-22a23c0ada2f
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: _FIELD_PARAM_OPENING_BALANCE.'FIELD_PARAM_OPENING_BALANCE Order'
+	toColumn: _FIELD_PARAM_CURRENCY.'FIELD_PARAM_CURRENCY Order'
+
+relationship da486f99-0f0f-40d6-b520-93b38ca3fd13
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: _FIELD_PARAM_CURRENCY.'FIELD_PARAM_CURRENCY Order'
+	toColumn: _FIELD_PARAM_CURRENT_PERIOD.'FIELD_PARAM_CURRENT_PERIOD Order'
+
+relationship 83a931ae-547c-4fb9-bc61-8c3d107ec896
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: _FIELD_PARAM_CURRENCY.'FIELD_PARAM_CURRENCY Order'
+	toColumn: _FIELD_PARAM_CLOSING_BALANCE.'FIELD_PARAM_CLOSING_BALANCE Order'
+
+relationship 0b7a891c-7638-41ed-bb8b-c4877dae3a92
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: _FIELD_PARAM_CURRENCY.'FIELD_PARAM_CURRENCY Order'
+	toColumn: _FIELD_PARAM_GLACCT_HRCHY_OPENING_BALANCE.'FIELD_PARAM_GLACCT_HRCHY_OPENING_BALANCE Order'
+
+relationship 48fef95e-aaf9-45a4-a8ba-84d44d6abec6
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: _FIELD_PARAM_CURRENCY.'FIELD_PARAM_CURRENCY Order'
+	toColumn: _FIELD_PARAM_GLACCT_HRCHY_CURRENT_PERIOD.'FIELD_PARAM_GLACCT_HRCHY_CURRENT_PERIOD Order'
+
+relationship 13011088-0362-4970-8457-238ca09c65b1
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: _FIELD_PARAM_CURRENCY.'FIELD_PARAM_CURRENCY Order'
+	toColumn: _FIELD_PARAM_GLACCT_HRCHY_CLOSING_BALANCE.'FIELD_PARAM_GLACCT_HRCHY_CLOSING_BALANCE Order'
+
+relationship bd188e63-6ac1-4fa0-b9a1-1621f92d48d1
+	fromColumn: GLACCOUNTLINEITEMRAWDATA._key_ICOMPANYCODE
+	toColumn: COMPANYCODE.Key
+
+relationship 2428e9c2-14ff-452c-a914-7957bf90df64
+	fromColumn: AGGR_H._key_ICOMPANYCODE
+	toColumn: COMPANYCODE.Key
+
+relationship 84568371-39c3-45e4-93f2-8225048c9572
+	fromColumn: AGGR_H._key_ICHARTOFACCOUNTS
+	toColumn: CHARTOFACCOUNTS.Key
+
+relationship 025e65e8-e4eb-472d-8c76-54340bda4c70
+	fromColumn: AGGR_H._key_ILEDGER
+	toColumn: LEDGER.Key
+
+relationship 0db6aa6d-9bca-40fd-909b-63456ed119d2
+	fromColumn: AGGR_H._key_IGLACCOUNTINCHARTOFACCOUNTS
+	toColumn: GLACCOUNTINCHARTOFACCOUNTS.Key
+
+relationship a782e259-a2b0-4af7-8fbc-44c0933c52fd
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: CHARTOFACCOUNTSTEXT.Key
+	toColumn: CHARTOFACCOUNTS.Key
+
+relationship 9d88e9bd-1837-44c1-be24-46256a3b70e4
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: _CHARTOFACCOUNTSTEXT._ISOLanguage
+	toColumn: SAPLANGUAGE._ISOLanguage
+
+relationship a8a95c6c-0025-4850-af8d-971a353d8b19
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: _DEBITCREDITCODETEXT._ISOLanguage
+	toColumn: SAPLANGUAGE._ISOLanguage
+
+relationship 1d231f51-351b-47b0-8f2f-f661112f53de
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: LEDGERTEXT.Key
+	toColumn: LEDGER.Key
+
+relationship 7c3cbff1-142b-4d8f-8655-6b46df890fa1
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: SAPLANGUAGE._ISOLanguage
+	toColumn: _LEDGERTEXT._ISOLanguage
+
+relationship 0a5ccfd6-0a16-4cea-9611-122dd92e48f5
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: _SEGMENTTEXT._ISOLanguage
+	toColumn: SAPLANGUAGE._ISOLanguage
+
+relationship e5991b82-37ea-4aab-ac0f-ac4408e9801e
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: _COSTCENTERTEXT._ISOLanguage
+	toColumn: SAPLANGUAGE._ISOLanguage
+
+relationship 64c2dc78-64df-449e-8f2a-b79d38a85c71
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: _PROFITCENTERTEXT._ISOLanguage
+	toColumn: SAPLANGUAGE._ISOLanguage
+
+relationship fb81100d-536a-4bcd-ba15-1181609bacc7
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: GLACCOUNTINCHARTOFACCOUNTSTEXT.Key
+	toColumn: GLACCOUNTINCHARTOFACCOUNTS.Key
+
+relationship 27a46f75-216a-4eb4-9eb6-878dda39b000
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: _GLACCOUNTINCHARTOFACCOUNTSTEXT._ISOLanguage
+	toColumn: SAPLANGUAGE._ISOLanguage
+
+relationship b23b556c-9773-43f2-9cb0-ff5e35982216
+	fromColumn: AGGR_H._key_IDEBITCREDITCODE
+	toColumn: DEBITCREDITCODETEXT.Key
+
+relationship 3968a6d7-5cd4-4a66-a965-ca01f9f4014d
+	fromColumn: AGGR_H._key_ISEGMENT
+	toColumn: SEGMENTTEXT.Key
+
+relationship ab5e3fa8-ca6a-4563-b5b7-fbb832cf0096
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: _FIELD_PARAM_COGS.'FIELD_PARAM_COGS Order'
+	toColumn: _FIELD_PARAM_CURRENCY.'FIELD_PARAM_CURRENCY Order'
+
+relationship cf46a66b-1ad3-463e-b84c-0fac6354167f
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: _FIELD_PARAM_GROSSPROFIT.'FIELD_PARAM_GROSSPROFIT Order'
+	toColumn: _FIELD_PARAM_CURRENCY.'FIELD_PARAM_CURRENCY Order'
+
+relationship 975cfdb5-c92c-4d18-a709-b54f2e2a08f5
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: _FIELD_PARAM_INVENTORYCHANGE.'FIELD_PARAM_INVENTORYCHANGE Order'
+	toColumn: _FIELD_PARAM_CURRENCY.'FIELD_PARAM_CURRENCY Order'
+
+relationship 503b9c98-504f-4746-b9cd-d258fe0331e7
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: _FIELD_PARAM_OPEX.'FIELD_PARAM_OPEX Order'
+	toColumn: _FIELD_PARAM_CURRENCY.'FIELD_PARAM_CURRENCY Order'
+
+relationship fc7c908a-de1c-408d-b3db-6850ca1dfc25
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: _FIELD_PARAM_CURRENCY.'FIELD_PARAM_CURRENCY Order'
+	toColumn: _FIELD_PARAM_OTHEREXPENSES.'FIELD_PARAM_OTHEREXPENSES Order'
+
+relationship aef8e29d-ba17-40a8-8f4b-8102edad4764
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: _FIELD_PARAM_OPERATINGPROFIT.'FIELD_PARAM_OPERATINGPROFIT Order'
+	toColumn: _FIELD_PARAM_CURRENCY.'FIELD_PARAM_CURRENCY Order'
+
+relationship 12acd182-078d-4540-9dba-2a435a9fcfc6
+	fromColumn: GLACCOUNTLINEITEMRAWDATA._key_ICUSTOMER
+	toColumn: CUSTOMER.Key
+
+relationship 545233db-6b6a-4348-b287-fc84c06a3f24
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: _FIELD_PARAM_NETPROFIT.'FIELD_PARAM_NETPROFIT Order'
+	toColumn: _FIELD_PARAM_CURRENCY.'FIELD_PARAM_CURRENCY Order'
+
+relationship 14f8fccb-7e98-4cc6-a520-ed6a244e2fd8
+	fromColumn: GLACCOUNTLINEITEMRAWDATA._key_IPRODUCTGROUP2
+	toColumn: PRODUCTGROUP2TEXT.Key
+
+relationship 6d1de1fa-aecf-4b00-ad71-0f05b071a6ff
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: _PRODUCTTEXT._ISOLanguage
+	toColumn: SAPLANGUAGE._ISOLanguage
+
+relationship 73ec3372-f74f-428e-a48f-7e711d6cd773
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: _PRODUCTGROUP2TEXT._ISOLanguage
+	toColumn: SAPLANGUAGE._ISOLanguage
+
+relationship 93f493fe-800b-46cb-bd3c-ec69c3a503e1
+	fromColumn: AGGR_H._key_IPRODUCTGROUP2
+	toColumn: PRODUCTGROUP2TEXT.Key
+
+relationship 670824f9-26be-45c0-b434-2c674b1fe1a7
+	fromColumn: AGGR_H._key_ICUSTOMER
+	toColumn: CUSTOMER.Key
+
+relationship bd41e66b-7140-4381-8404-0957087990b5
+	fromColumn: GLACCOUNTHIERARCHYWTEXT._ISOLanguage
+	toColumn: SAPLANGUAGE._ISOLanguage
+
+relationship a712766b-93e3-4b86-9dc8-8cc5b2f32aaa
+	crossFilteringBehavior: bothDirections
+	fromColumn: GLACCOUNTHIERARCHYWTEXT.GLACCOUNT_NODE_KEY
+	toColumn: GLACCOUNTINCHARTOFACCOUNTS.Key
+
+relationship ac7674fa-6c13-488a-8ff5-6df5ee53bcad
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: _FIELD_PARAM_CURRENCY.'FIELD_PARAM_CURRENCY Order'
+	toColumn: _FIELD_PARAM_TAXES.'FIELD_PARAM_TAXES Order'
+
+relationship 8ecdb630-f6f2-e47b-0557-ab249f1867b8
+	fromColumn: GLACCOUNTLINEITEMRAWDATA._key_IPROFITCENTER
+	toColumn: PROFITCENTER.Key
+
+relationship e0a02501-944a-4ec8-6d4b-5516d9485c3d
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: PROFITCENTER.Key
+	toColumn: PROFITCENTERTEXT.Key
+
+relationship 97f0b183-a5c0-0fac-1a58-e62ba06f7c55
+	fromColumn: GLACCOUNTLINEITEMRAWDATA._key_ICOSTCENTER
+	toColumn: COSTCENTER.Key
+
+relationship be87cab3-2d43-9359-d40d-e924849f69c1
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: COSTCENTER.Key
+	toColumn: COSTCENTERTEXT.Key
+
+relationship ecb6ecde-5b10-4e82-8055-cd80236303ee
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: _FIELD_PARAM_CURRENCY.'FIELD_PARAM_CURRENCY Order'
+	toColumn: _FIELD_PARAM_REVENUE.'FIELD_PARAM_INCOMESTATEMENT Order'
+
+relationship 45c64ca5-41b7-e88d-7d66-58ecc4feb714
+	fromColumn: GLACCOUNTLINEITEMRAWDATA._key_IFISCALPERIODFORVARIANT
+	toColumn: FISCALPERIODFORVARIANT.Key
+
+relationship 8797cfe1-e404-c59d-9f18-53f377fd2c68
+	fromColumn: GLACCOUNTLINEITEMRAWDATA._key_IPRODUCT
+	toColumn: PRODUCT.Key
+
+relationship 480f73c3-67d9-ae5a-a08b-26010eb61b2f
+	fromColumn: AGGR_H._key_IPRODUCT
+	toColumn: PRODUCT.Key
+
+relationship de4c9776-8601-7cab-a24e-529bd296ff6a
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: SEGMENT.Key
+	toColumn: SEGMENTTEXT.Key
+
+relationship 4f0c8592-475a-757e-5ba4-7fd48eb7fffd
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: DEBITCREDITCODE.Key
+	toColumn: DEBITCREDITCODETEXT.Key
+
+relationship 9ff22770-623f-d896-aa1e-6ac8b9916617
+	fromColumn: GLACCOUNTLINEITEMRAWDATA._key_ISEGMENT
+	toColumn: SEGMENT.Key
+
+relationship b6ab937b-52be-58d0-c5ef-670cd6ff59f2
+	fromColumn: GLACCOUNTLINEITEMRAWDATA._key_IDEBITCREDITCODE
+	toColumn: DEBITCREDITCODE.Key
+
+relationship b6ecf395-88a3-ae9c-fbff-4a8be133ecd3
+	fromColumn: AGGR_H._key_IPROFITCENTER
+	toColumn: PROFITCENTER.Key
+
+relationship 3be2b52e-457b-c9c2-c65c-797ada40e3ba
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: _FIELD_PARAM_AGGR_CURRENCY.'_FIELD_PARAM_AGGR_CURRENCY Order'
+	toColumn: _FIELD_PARAM_AGGR_CURRENT_PERIOD.'_FIELD_PARAM_AGGR_CURRENT_PERIOD Order'
+
+relationship 6d287599-968e-8b23-33e9-463f6afd0769
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: _FIELD_PARAM_AGGR_OPENING_BALANCE.'_FIELD_PARAM_AGGR_OPENING_BALANCE Order'
+	toColumn: _FIELD_PARAM_AGGR_CURRENCY.'_FIELD_PARAM_AGGR_CURRENCY Order'
+
+relationship b078e4ef-0067-87bf-8a6c-682afab4c705
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: _FIELD_PARAM_AGGR_CLOSING_BALANCE.'_FIELD_PARAM_AGGR_CLOSING_BALANCE Order'
+	toColumn: _FIELD_PARAM_AGGR_CURRENCY.'_FIELD_PARAM_AGGR_CURRENCY Order'
+
+relationship f3d63945-571d-f44c-3d18-8941891f1a3d
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: _FIELD_PARAM_AGGR_HRCHY_CLOSING_BALANCE.'FIELD_PARAM_AGGR_HRCHY_CLOSING_BALANCE Order'
+	toColumn: _FIELD_PARAM_AGGR_CURRENCY.'_FIELD_PARAM_AGGR_CURRENCY Order'
+
+relationship 4e3297a3-9d6c-a631-0312-9f8b1dcfa1c6
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: _FIELD_PARAM_AGGR_HRCHY_CURRENT_PERIOD.'FIELD_PARAM_AGGR_HRCHY_CURRENT_PERIOD Order'
+	toColumn: _FIELD_PARAM_AGGR_CURRENCY.'_FIELD_PARAM_AGGR_CURRENCY Order'
+
+relationship 9073059f-a419-2a6e-2548-d534d033117d
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: _FIELD_PARAM_AGGR_HRCHY_OPENING_BALANCE.'FIELD_PARAM_AGGR_HRCHY_OPENING_BALANCE Order'
+	toColumn: _FIELD_PARAM_AGGR_CURRENCY.'_FIELD_PARAM_AGGR_CURRENCY Order'
+
+relationship 766a0705-b6a1-f701-37ab-f3a5290a70fb
+	fromColumn: AGGR_H._key_ICOSTCENTER
+	toColumn: COSTCENTER.Key
+
+relationship c1667456-1a24-7c2b-7c7b-cf875c03dfbe
+	fromColumn: AGGR_H._key_IFISCALPERIODFORVARIANT
+	toColumn: FISCALPERIODFORVARIANT.Key
+

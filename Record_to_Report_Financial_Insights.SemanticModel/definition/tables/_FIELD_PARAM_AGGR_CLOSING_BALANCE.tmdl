@@ -1,0 +1,49 @@
+table _FIELD_PARAM_AGGR_CLOSING_BALANCE
+	lineageTag: b7f2b14c-b424-4cf6-9611-465b5f44cb1d
+
+	column _FIELD_PARAM_AGGR_CLOSING_BALANCE
+		lineageTag: efa3560f-23fe-441d-a9a9-30b6bd82fa00
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: '_FIELD_PARAM_AGGR_CLOSING_BALANCE Order'
+
+		relatedColumnDetails
+			groupByColumn: '_FIELD_PARAM_AGGR_CLOSING_BALANCE Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column '_FIELD_PARAM_AGGR_CLOSING_BALANCE Fields'
+		isHidden
+		lineageTag: 77783472-2c85-4f02-8a76-38edab994813
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: '_FIELD_PARAM_AGGR_CLOSING_BALANCE Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "kind": 2,
+				  "version": 3
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column '_FIELD_PARAM_AGGR_CLOSING_BALANCE Order'
+		isHidden
+		formatString: 0
+		lineageTag: fd644721-d30a-4674-902a-95ab72db64da
+		summarizeBy: none
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _FIELD_PARAM_AGGR_CLOSING_BALANCE = calculated
+		mode: import
+		source =
+				{
+				    ("Closing Balance", NAMEOF('_MEASURES_AGGR_H'[AGGR_COMPANY_CODE_CLOSING_BALANCE]), 0),
+				    ("Closing Balance", NAMEOF('_MEASURES_AGGR_H'[AGGR_GLOBAL_CLOSING_BALANCE]), 1),
+				    ("Closing Balance", NAMEOF('_MEASURES_AGGR_H'[AGGR_TRANSACTION_CLOSING_BALANCE]), 2)
+				}
+
+	annotation PBI_Id = 9904a19a7c2447ad85fcd626e56db5b4
+

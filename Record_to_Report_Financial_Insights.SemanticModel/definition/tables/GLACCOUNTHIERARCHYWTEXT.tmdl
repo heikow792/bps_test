@@ -1,0 +1,373 @@
+/// GL Account hierarchy with text descriptions for drill-down reporting
+table GLACCOUNTHIERARCHYWTEXT
+	lineageTag: d75bc4d1-0632-4082-8973-82d4c783e7bf
+
+	measure _CurrentLevel = ```
+			SWITCH(
+			    TRUE(), 
+			    ISINSCOPE( GLACCOUNTHIERARCHYWTEXT[GLACCOUNT_HIER_LEVEL9_TEXT]), 9,
+			    ISINSCOPE( GLACCOUNTHIERARCHYWTEXT[GLACCOUNT_HIER_LEVEL8_TEXT]), 8, 
+			    ISINSCOPE( GLACCOUNTHIERARCHYWTEXT[GLACCOUNT_HIER_LEVEL7_TEXT]), 7, 
+			    ISINSCOPE( GLACCOUNTHIERARCHYWTEXT[GLACCOUNT_HIER_LEVEL6_TEXT]), 6,
+			    ISINSCOPE( GLACCOUNTHIERARCHYWTEXT[GLACCOUNT_HIER_LEVEL5_TEXT]), 5,
+			    ISINSCOPE( GLACCOUNTHIERARCHYWTEXT[GLACCOUNT_HIER_LEVEL4_TEXT]), 4, 
+			    ISINSCOPE( GLACCOUNTHIERARCHYWTEXT[GLACCOUNT_HIER_LEVEL3_TEXT]), 3, 
+			    ISINSCOPE( GLACCOUNTHIERARCHYWTEXT[GLACCOUNT_HIER_LEVEL2_TEXT]), 2,
+			    ISINSCOPE( GLACCOUNTHIERARCHYWTEXT[GLACCOUNT_HIER_LEVEL1_TEXT]), 1
+			    )
+			```
+		formatString: 0
+		lineageTag: d369b515-6593-4eea-b77b-fe936f3c667f
+
+	measure _Show = IF([_CurrentLevel] <= MIN(GLACCOUNTHIERARCHYWTEXT[MAXHIERARCHYLEVEL]),1)
+		formatString: 0
+		lineageTag: 524405e4-bfb5-4070-a444-0b31c97a8575
+
+	column GLACCOUNTHIERARCHY
+		dataType: string
+		lineageTag: 9d74b756-8c30-4392-aebf-d122ab1d911c
+		summarizeBy: none
+		sourceColumn: GLACCOUNTHIERARCHY
+
+		annotation SummarizationSetBy = Automatic
+
+	column CHARTOFACCOUNTS
+		dataType: string
+		lineageTag: 44e2c468-f27e-4822-88c6-b5d2a45549d6
+		summarizeBy: none
+		sourceColumn: CHARTOFACCOUNTS
+
+		annotation SummarizationSetBy = Automatic
+
+	column HIERARCHYVERSION
+		dataType: int64
+		formatString: 0
+		lineageTag: a32dfb06-481c-4c0a-b251-d012006810cf
+		summarizeBy: none
+		sourceColumn: HIERARCHYVERSION
+
+		annotation SummarizationSetBy = Automatic
+
+	/// ISO 639-1 two-letter language code.
+	column _ISOLanguage
+		dataType: string
+		isHidden
+		isAvailableInMdx: false
+		lineageTag: d6ea4a52-1ca8-41e5-9f83-4b3376170151
+		summarizeBy: none
+		sourceColumn: _ISOLanguage
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Source SAP system name.
+	column _SystemName
+		dataType: string
+		isHidden
+		lineageTag: 28fac799-ccb9-4304-be59-d09cec224da9
+		summarizeBy: none
+		sourceColumn: _SystemName
+
+		annotation SummarizationSetBy = Automatic
+
+	column VALIDITYENDDATE
+		dataType: dateTime
+		formatString: m/d/yyyy
+		lineageTag: 960098ae-83e9-401a-ad9a-7bf9d64c6ac5
+		summarizeBy: none
+		sourceColumn: VALIDITYENDDATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column VALIDITYSTARTDATE
+		dataType: dateTime
+		formatString: m/d/yyyy
+		lineageTag: 79508cab-b4a2-4c01-8959-d1beb03ae434
+		summarizeBy: none
+		sourceColumn: VALIDITYSTARTDATE
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column CHILD
+		dataType: string
+		lineageTag: 6987db1f-7830-4670-ba6c-1cceca98aee2
+		summarizeBy: none
+		sourceColumn: CHILD
+
+		annotation SummarizationSetBy = Automatic
+
+	column PARENT
+		dataType: string
+		lineageTag: ec2ad184-44d3-42d7-a733-a822d6519997
+		summarizeBy: none
+		sourceColumn: PARENT
+
+		annotation SummarizationSetBy = Automatic
+
+	column LEVEL1
+		dataType: string
+		lineageTag: c24874a6-cefa-48e6-8a6d-498e10e51194
+		summarizeBy: none
+		sourceColumn: LEVEL1
+
+		annotation SummarizationSetBy = Automatic
+
+	column LEVEL1_KEY
+		dataType: int64
+		formatString: 0
+		lineageTag: d088f003-b312-4890-88a0-5399390b05e6
+		summarizeBy: none
+		sourceColumn: LEVEL1_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column LEVEL2
+		dataType: string
+		lineageTag: 75fba47f-e540-49af-a009-ecd52d2f0fa2
+		summarizeBy: none
+		sourceColumn: LEVEL2
+
+		annotation SummarizationSetBy = Automatic
+
+	column LEVEL2_KEY
+		dataType: int64
+		formatString: 0
+		lineageTag: ff42025c-b649-408b-ba22-6a098533c1db
+		summarizeBy: none
+		sourceColumn: LEVEL2_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column LEVEL3
+		dataType: string
+		lineageTag: 20cdbc56-a228-401c-b858-964aa4d07da9
+		summarizeBy: none
+		sourceColumn: LEVEL3
+
+		annotation SummarizationSetBy = Automatic
+
+	column LEVEL3_KEY
+		dataType: int64
+		formatString: 0
+		lineageTag: cf6476b3-bd23-4dbd-b388-8f257251dc19
+		summarizeBy: none
+		sourceColumn: LEVEL3_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column LEVEL4
+		dataType: string
+		lineageTag: 77abf2e5-3c3d-446f-814f-a6dc4c87e4e1
+		summarizeBy: none
+		sourceColumn: LEVEL4
+
+		annotation SummarizationSetBy = Automatic
+
+	column LEVEL4_KEY
+		dataType: int64
+		formatString: 0
+		lineageTag: b0d17d44-4e23-4dbb-982a-7e27858ffc88
+		summarizeBy: none
+		sourceColumn: LEVEL4_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column LEVEL5
+		dataType: string
+		lineageTag: 5b52afa6-0d16-4103-8acd-5c1e2f540a57
+		summarizeBy: none
+		sourceColumn: LEVEL5
+
+		annotation SummarizationSetBy = Automatic
+
+	column LEVEL5_KEY
+		dataType: int64
+		formatString: 0
+		lineageTag: f1516487-7149-47dd-b658-7695c20154e7
+		summarizeBy: none
+		sourceColumn: LEVEL5_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column LEVEL6
+		dataType: string
+		lineageTag: c67d62af-91fb-4c64-b688-6a7fa2f529f2
+		summarizeBy: none
+		sourceColumn: LEVEL6
+
+		annotation SummarizationSetBy = Automatic
+
+	column LEVEL6_KEY
+		dataType: int64
+		formatString: 0
+		lineageTag: dc0426fc-b20c-4ee9-a219-90e05d383e08
+		summarizeBy: none
+		sourceColumn: LEVEL6_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column LEVEL7
+		dataType: string
+		lineageTag: aec6e32d-f402-4a6d-b187-a857b17febae
+		summarizeBy: none
+		sourceColumn: LEVEL7
+
+		annotation SummarizationSetBy = Automatic
+
+	column LEVEL7_KEY
+		dataType: int64
+		formatString: 0
+		lineageTag: ac30481e-b1f6-4c35-9e2e-c87df55ff991
+		summarizeBy: none
+		sourceColumn: LEVEL7_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column LEVEL8
+		dataType: string
+		lineageTag: 2ad9ced5-45ca-4fd1-8eee-6751dcbfe9c5
+		summarizeBy: none
+		sourceColumn: LEVEL8
+
+		annotation SummarizationSetBy = Automatic
+
+	column LEVEL8_KEY
+		dataType: int64
+		formatString: 0
+		lineageTag: ff0e0e40-844f-423d-8f72-08d33808a3db
+		summarizeBy: none
+		sourceColumn: LEVEL8_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column LEVEL9
+		dataType: string
+		lineageTag: c590c696-14fa-48c3-9b84-d2d1ade06521
+		summarizeBy: none
+		sourceColumn: LEVEL9
+
+		annotation SummarizationSetBy = Automatic
+
+	column LEVEL9_KEY
+		dataType: int64
+		formatString: 0
+		lineageTag: 1573e1f0-94b0-42bc-99c1-c7197d7bedee
+		summarizeBy: none
+		sourceColumn: LEVEL9_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column HIERARCHYPATH
+		dataType: string
+		lineageTag: 817a984d-33bc-4262-a77d-318fc99a692f
+		summarizeBy: none
+		sourceColumn: HIERARCHYPATH
+
+		annotation SummarizationSetBy = Automatic
+
+	column MAXHIERARCHYLEVEL
+		dataType: int64
+		formatString: 0
+		lineageTag: aafae950-2ac9-40f4-8ca5-63a1e036a277
+		summarizeBy: none
+		sourceColumn: MAXHIERARCHYLEVEL
+
+		annotation SummarizationSetBy = Automatic
+
+	column GLACCOUNT_NODE_KEY
+		dataType: int64
+		isHidden
+		formatString: 0
+		isAvailableInMdx: false
+		lineageTag: e189d96f-3533-4f9e-bc0d-562fac7d6291
+		summarizeBy: none
+		sourceColumn: GLACCOUNT_NODE_KEY
+
+		annotation SummarizationSetBy = Automatic
+
+	column GLACCOUNT_HIER_LEVEL1_TEXT
+		dataType: string
+		lineageTag: 1d2d1faa-5c90-4261-b2dd-cf6353ec377c
+		summarizeBy: none
+		sourceColumn: GLACCOUNT_HIER_LEVEL1_TEXT
+
+		annotation SummarizationSetBy = Automatic
+
+	column GLACCOUNT_HIER_LEVEL2_TEXT
+		dataType: string
+		lineageTag: 89cee4e5-04c1-4936-95c7-2416b9caa739
+		summarizeBy: none
+		sourceColumn: GLACCOUNT_HIER_LEVEL2_TEXT
+
+		annotation SummarizationSetBy = Automatic
+
+	column GLACCOUNT_HIER_LEVEL3_TEXT
+		dataType: string
+		lineageTag: 89cd68b7-0075-41de-ace4-eff0d1d9327f
+		summarizeBy: none
+		sourceColumn: GLACCOUNT_HIER_LEVEL3_TEXT
+
+		annotation SummarizationSetBy = Automatic
+
+	column GLACCOUNT_HIER_LEVEL4_TEXT
+		dataType: string
+		lineageTag: 4b7e9b7e-a163-4fdd-8854-695de5c86287
+		summarizeBy: none
+		sourceColumn: GLACCOUNT_HIER_LEVEL4_TEXT
+
+		annotation SummarizationSetBy = Automatic
+
+	column GLACCOUNT_HIER_LEVEL5_TEXT
+		dataType: string
+		lineageTag: 80b7a4bc-4c10-4faa-b3b2-10792751df97
+		summarizeBy: none
+		sourceColumn: GLACCOUNT_HIER_LEVEL5_TEXT
+
+		annotation SummarizationSetBy = Automatic
+
+	column GLACCOUNT_HIER_LEVEL6_TEXT
+		dataType: string
+		lineageTag: 04f212dd-5b7c-41bf-b227-7dbf1e121ec8
+		summarizeBy: none
+		sourceColumn: GLACCOUNT_HIER_LEVEL6_TEXT
+
+		annotation SummarizationSetBy = Automatic
+
+	column GLACCOUNT_HIER_LEVEL7_TEXT
+		dataType: string
+		lineageTag: fb08e619-1e64-46db-9e36-2e535a788a55
+		summarizeBy: none
+		sourceColumn: GLACCOUNT_HIER_LEVEL7_TEXT
+
+		annotation SummarizationSetBy = Automatic
+
+	column GLACCOUNT_HIER_LEVEL8_TEXT
+		dataType: string
+		lineageTag: 842db90e-3e3a-4b32-84b0-884836df4daa
+		summarizeBy: none
+		sourceColumn: GLACCOUNT_HIER_LEVEL8_TEXT
+
+		annotation SummarizationSetBy = Automatic
+
+	column GLACCOUNT_HIER_LEVEL9_TEXT
+		dataType: string
+		lineageTag: e8af76fd-1330-45d9-81c8-d69b5e5b6743
+		summarizeBy: none
+		sourceColumn: GLACCOUNT_HIER_LEVEL9_TEXT
+
+		annotation SummarizationSetBy = Automatic
+
+	partition GLACCOUNTHIERARCHYWTEXT-9c5b9fb2-f9b7-4322-a461-5cc5bdebffd9 = m
+		mode: dual
+		source =
+				let
+				    Source = Sql.Database(Server, Database),
+				    dmgold_GLACCOUNTHIERARCHYWTEXT1 = Source{[Schema=Schema_Name,Item="vGLACCOUNTHIERARCHYWTEXT"]}[Data]
+				in
+				    dmgold_GLACCOUNTHIERARCHYWTEXT1
+
+	annotation PBI_ResultType = Table
+

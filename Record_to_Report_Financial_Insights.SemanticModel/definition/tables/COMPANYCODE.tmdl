@@ -1,0 +1,245 @@
+/// Company code dimension with organizational unit details
+table COMPANYCODE
+	lineageTag: d2529bd6-08ba-44ab-bf23-c96304af0f9e
+
+	/// Primary Key for the table.
+	column Key
+		dataType: int64
+		isHidden
+		isKey
+		formatString: 0
+		lineageTag: 1193aa41-b20e-46ea-b23b-a71f5277f1fb
+		summarizeBy: none
+		sourceColumn: Key
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Timestamp indicating last update time in silver lakehouse.
+	column _UpdateTimeStamp
+		dataType: dateTime
+		isHidden
+		formatString: m/d/yyyy
+		lineageTag: bb918e3b-fda7-4345-ae97-58292c8c28ea
+		summarizeBy: none
+		sourceColumn: _UpdateTimeStamp
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Name of the source system.
+	column _SystemName
+		dataType: string
+		isHidden
+		lineageTag: a3b7f314-4003-4341-af0e-b05c573a997f
+		summarizeBy: none
+		sourceColumn: _SystemName
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Address.
+	column ADDRESSID
+		dataType: string
+		lineageTag: 5de88cef-3900-4cec-a265-afb654416208
+		summarizeBy: none
+		sourceColumn: ADDRESSID
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Indicator: Discount base amount is the net value.
+	column CASHDISCOUNTBASEAMTISNETAMT
+		dataType: string
+		lineageTag: 284827a8-3498-4029-8b35-5ceebb3c55f3
+		summarizeBy: none
+		sourceColumn: CASHDISCOUNTBASEAMTISNETAMT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Chart of Accounts.
+	column CHARTOFACCOUNTS
+		dataType: string
+		lineageTag: ce1b6e4d-9810-4c5a-8a95-a27c06b9e7cd
+		summarizeBy: none
+		sourceColumn: CHARTOFACCOUNTS
+
+		annotation SummarizationSetBy = Automatic
+
+	/// City.
+	column CITYNAME
+		dataType: string
+		lineageTag: aec29578-10a2-450d-b58f-943f5e17951a
+		summarizeBy: none
+		sourceColumn: CITYNAME
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Company.
+	column COMPANY
+		dataType: string
+		lineageTag: 38be9d97-0d34-4765-b2d8-9b04d4725dab
+		summarizeBy: none
+		sourceColumn: COMPANY
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Company Code.
+	column COMPANYCODE
+		dataType: string
+		lineageTag: 9d9b30c1-9860-4bf1-9068-3c9ab12dc3ec
+		summarizeBy: none
+		sourceColumn: COMPANYCODE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Name of Company Code or Company.
+	column COMPANYCODENAME
+		dataType: string
+		lineageTag: 6f235847-29f7-4a41-8985-af5a27afbbf1
+		summarizeBy: none
+		sourceColumn: COMPANYCODENAME
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Controlling Area.
+	column CONTROLLINGAREA
+		dataType: string
+		lineageTag: fbd3d486-8c34-4bf4-a99f-e4a59ec40ac3
+		summarizeBy: none
+		sourceColumn: CONTROLLINGAREA
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Country/Region Key.
+	column COUNTRY
+		dataType: string
+		lineageTag: 85a00060-ded8-4139-9222-79476bea3e2f
+		summarizeBy: none
+		sourceColumn: COUNTRY
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Alternative Chart of Accounts.
+	column COUNTRYCHARTOFACCOUNTS
+		dataType: string
+		lineageTag: b79ccd37-ba1b-4abc-8145-195e51ee4191
+		summarizeBy: none
+		sourceColumn: COUNTRYCHARTOFACCOUNTS
+
+		annotation SummarizationSetBy = Automatic
+
+	column CREDITCONTROLAREA
+		dataType: string
+		lineageTag: 79c73bfe-88ee-4116-a8d4-365297df5229
+		summarizeBy: none
+		sourceColumn: CREDITCONTROLAREA
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Currency Key.
+	column CURRENCY
+		dataType: string
+		lineageTag: 5d9eb7cb-ffb0-4db4-a9e0-330911c923d2
+		summarizeBy: none
+		sourceColumn: CURRENCY
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Indicator: Document Date As the Basis for Tax Determination.
+	column DOCDATEISUSEDFORTAXDETN
+		dataType: string
+		lineageTag: 42b8a438-1bb9-4167-8429-c1bcfd2aa7ac
+		summarizeBy: none
+		sourceColumn: DOCDATEISUSEDFORTAXDETN
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Indicator: Extended Withholding Tax Active.
+	column EXTENDEDWHLDGTAXISACTIVE
+		dataType: string
+		lineageTag: a7adbbc8-0a8d-4f15-bd42-70fcb4eb82a6
+		summarizeBy: none
+		sourceColumn: EXTENDEDWHLDGTAXISACTIVE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Field Status Variant.
+	column FIELDSTATUSVARIANT
+		dataType: string
+		lineageTag: 1a652458-13cc-4af0-90e0-d83956331724
+		summarizeBy: none
+		sourceColumn: FIELDSTATUSVARIANT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Financial Management Area.
+	column FINANCIALMANAGEMENTAREA
+		dataType: string
+		lineageTag: 173babb2-6e3e-4464-bb9c-bdf854fcf4ba
+		summarizeBy: none
+		sourceColumn: FINANCIALMANAGEMENTAREA
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Fiscal Year Variant.
+	column FISCALYEARVARIANT
+		dataType: string
+		lineageTag: 13853411-96c2-4d8c-906b-bfdaa0f1c93c
+		summarizeBy: none
+		sourceColumn: FISCALYEARVARIANT
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Language Key.
+	column LANGUAGE
+		dataType: string
+		lineageTag: c1e01101-635d-4995-9bf9-1b748adb0597
+		summarizeBy: none
+		sourceColumn: LANGUAGE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Output Tax Code for Non-Taxable Transactions.
+	column NONTAXABLETRANSACTIONTAXCODE
+		dataType: string
+		lineageTag: 63ed7a68-80e4-43e0-8ed2-80e0af75cee3
+		summarizeBy: none
+		sourceColumn: NONTAXABLETRANSACTIONTAXCODE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Taxes on Sales/Purchases Group.
+	column TAXABLEENTITY
+		dataType: string
+		lineageTag: 1d87f816-474d-4ee9-bf5a-f3ce4af0324c
+		summarizeBy: none
+		sourceColumn: TAXABLEENTITY
+
+		annotation SummarizationSetBy = Automatic
+
+	/// Tax Reporting Date Active in Documents.
+	column TAXRPTGDATEISACTIVE
+		dataType: string
+		lineageTag: d23f48b2-b4dc-48f6-a580-13aa128ab994
+		summarizeBy: none
+		sourceColumn: TAXRPTGDATEISACTIVE
+
+		annotation SummarizationSetBy = Automatic
+
+	/// VAT Registration Number.
+	column VATREGISTRATION
+		dataType: string
+		lineageTag: c2c0b328-9fe2-44f7-b599-4e135d559022
+		summarizeBy: none
+		sourceColumn: VATREGISTRATION
+
+		annotation SummarizationSetBy = Automatic
+
+	partition COMPANYCODE-66f952d6-2ccf-4469-b2a8-7ced999f9ea1 = m
+		mode: dual
+		source =
+				let
+				    Source = Sql.Database(Server, Database),
+				    dmgold_I_COMPANYCODE = Source{[Schema=Schema_Name,Item="I_COMPANYCODE"]}[Data]
+				in
+				    dmgold_I_COMPANYCODE
+
+	annotation PBI_ResultType = Table
+

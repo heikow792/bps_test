@@ -1,0 +1,35 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.0.0/schema.json",
+  "name": "da2b1fc60510eb829f7c",
+  "position": {
+    "x": 0,
+    "y": 3.25,
+    "z": 42001,
+    "height": 27.25,
+    "width": 34.25,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "image",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "imageUrl": {
+              "expr": {
+                "ResourcePackageItem": {
+                  "PackageName": "RegisteredResources",
+                  "PackageType": 1,
+                  "ItemName": "Data_Bar_Vertical_Highlight26202892008048195.png"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "parentGroupName": "e483aece8ca6ffcff19a",
+  "howCreated": "InsertVisualButton"
+}

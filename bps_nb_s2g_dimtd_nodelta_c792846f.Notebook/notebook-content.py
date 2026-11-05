@@ -1,0 +1,428 @@
+# Fabric notebook source
+
+# METADATA ********************
+
+# META {
+# META   "kernel_info": {
+# META     "name": "synapse_pyspark"
+# META   },
+# META   "dependencies": {
+# META     "lakehouse": {
+# META       "default_lakehouse": "7c0efad9-aa68-4f6f-ad1b-d055d687a18f",
+# META       "default_lakehouse_name": "bps_silver_c792846f",
+# META       "default_lakehouse_workspace_id": "649676ea-3e7c-457d-a728-7e8e8cdafee9",
+# META       "known_lakehouses": [
+# META         {
+# META           "id": "7c0efad9-aa68-4f6f-ad1b-d055d687a18f"
+# META         },
+# META         {
+# META           "id": "18275add-7d43-4a42-815a-b1c738d97308"
+# META         }
+# META       ]
+# META     },
+# META     "environment": {
+# META       "environmentId": "0aba069f-9427-ae29-43d5-d8ff05f1a1ba",
+# META       "workspaceId": "00000000-0000-0000-0000-000000000000"
+# META     }
+# META   }
+# META }
+
+# MARKDOWN ********************
+
+# > ⚠️ **Do Not Edit** — This notebook is maintained and deployed by **Business Process Solutions**. Any manual changes will be overwritten during the next update. Want to make changes? Duplicate this notebook and work from the copy.
+
+# MARKDOWN ********************
+
+# ##### Input Parameters
+
+# PARAMETERS CELL ********************
+
+p_lookup_output = ""
+p_guid = ""
+p_system_name = ""
+p_gold_lakehouse_name = ""
+p_silver_lakehouse_name = ""
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
+# MARKDOWN ********************
+
+# ##### Import Modules
+
+# CELL ********************
+
+import ast
+import json
+
+from delta import DeltaTable
+import sempy.fabric as fabric
+from pyspark.sql import SparkSession
+from pyspark.sql.functions import col, max, row_number, when
+from pyspark.sql.window import Window
+
+from common_lib.constants import DEFAULT_LOG_COLUMNS
+from common_lib.logger.dataframe_logger import DataFrameLogger
+from common_lib.utils import create_delta_file_in_gold, get_log_file_path, get_null_safe_join_condition, parse_lakehouse_details, \
+    validate_required_params, validate_delta_table, validate_watermark_columns, \
+    validate_duplicate_primary_keys, validate_record_count_match
+from common_lib.exceptions import LakehouseNotFoundException, DeltaTableNotFoundException, DuplicateEntriesInTable, \
+WaterMarkColumnsNotFound, RecordCountMismatchException
+from pyspark.sql.utils import AnalysisException, PythonException, QueryExecutionException, IllegalArgumentException, ParseException
+
+import notebookutils
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
+# MARKDOWN ********************
+
+# ##### Initial Validations
+
+# CELL ********************
+
+validate_required_params(
+    p_silver_lakehouse_name=p_silver_lakehouse_name,
+    p_gold_lakehouse_name=p_gold_lakehouse_name,
+    p_lookup_output=p_lookup_output
+)
+
+# MARKDOWN ********************
+
+# ##### Common Helper Functions
+
+# CELL ********************
+
+def get_lakehouse_details(lakehouse_name: str, workspace: str = None):
+    """
+    Function that fetches and stores all the details about the lakehouse.
+    """
+    try:
+        workspace = fabric.resolve_workspace_id(workspace) or fabric.get_workspace_id()
+        data = notebookutils.lakehouse.getWithProperties(name=lakehouse_name, workspaceId=workspace)
+        return data
+    except Exception as e:
+        if "ArtifactNotFoundException" in str(e):
+            raise LakehouseNotFoundException(lakehouse_name=lakehouse_name, workspace_id=workspace)
+        else:
+            print(f"An error occurred while fetching lakehouse details: {e}")
+            raise e
+
+silver_lakehouse_details = parse_lakehouse_details(get_lakehouse_details(p_silver_lakehouse_name))
+gold_lakehouse_details = parse_lakehouse_details(get_lakehouse_details(p_gold_lakehouse_name))
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
+# MARKDOWN ********************
+
+# ##### Setup Spark Session and Logger
+
+# CELL ********************
+
+spark = SparkSession.builder.appName("LogAnalysis").getOrCreate()
+spark.conf.set("spark.databricks.delta.schema.autoMerge.enabled", "true")
+spark.conf.set("spark.sql.legacy.parquet.datetimeRebaseModeInWrite", "CORRECTED")
+spark.conf.set("spark.sql.legacy.parquet.datetimeRebaseModeInRead", "CORRECTED")
+spark.conf.set("spark.sql.parquet.datetimeRebaseModeInRead", "CORRECTED")
+spark.conf.set("spark.sql.parquet.datetimeRebaseModeInWrite", "CORRECTED")
+spark.conf.set("spark.sql.parquet.int96RebaseModeInWrite", "CORRECTED")
+spark.conf.set("spark.sql.parquet.vorder.enabled", "true")
+spark.conf.set('spark.native.enabled', 'true')
+
+# Setup Logger
+log_folder_path = get_log_file_path(silver_lakehouse_details['tables_path'])
+log_file_path = f'{log_folder_path}{p_guid}'
+print(f"Logs will be saved at {log_file_path}")
+
+# Create logger object
+logger = DataFrameLogger(
+    log_file_path = log_file_path,
+    guid = p_guid,
+    log_columns = DEFAULT_LOG_COLUMNS,
+    prefix="Dimension TD No Delta",
+    runtime_context = notebookutils.runtime.context,
+    stage = "S2G",
+    system_name = p_system_name
+)
+
+exit_message = f"Processing for No-Delta Time Dependent Dimensions completed successfully."
+error_message = None
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
+# MARKDOWN ********************
+
+# ##### Function to process Time Dependent Dimension (Delta Not Enabled)
+
+# CELL ********************
+
+def process_dimtd_no_delta_data(
+    p_CDSViewName: str,
+    p_key_fields_arr: list,
+    p_silver_tables_path: str,
+    p_gold_tables_path: str,
+    p_key_fields_distinct: list
+):
+
+    try:
+        err_message = None
+        # Defining paths
+        silver_dim_path = p_silver_tables_path + p_CDSViewName
+
+        # Validate if the delta table exists in silver layer
+        validate_delta_table(
+            spark=spark,
+            table_path=p_silver_tables_path,
+            p_CDSViewName=p_CDSViewName,
+            logger=logger
+        )
+
+        # Loading data to silver DF
+        silver_dim = DeltaTable.forPath(spark, silver_dim_path)
+        silver_dim_df = silver_dim.toDF()
+
+        # Check if the required watermark columns are present in the silver table
+        validate_watermark_columns(
+            spark=spark,
+            table_path=p_silver_tables_path,
+            p_CDSViewName=p_CDSViewName,
+            df=silver_dim_df,
+            isDeltaTable=False,
+            logger=logger
+        )
+
+        # Loading data to gold DF
+        gold_dim_path = p_gold_tables_path + p_CDSViewName
+
+        # check and create delta file in gold layer
+        is_new_file_created = create_delta_file_in_gold(
+            spark = spark,
+            delta_file_path = gold_dim_path,
+            silver_df = silver_dim_df,
+            create_empty_df = False,
+            logger = logger)
+
+        gold_dim = DeltaTable.forPath(spark, gold_dim_path)
+        gold_dim_df = gold_dim.toDF()
+
+        # Select the highest processing timestamp for each _SystemName
+        # Group by _SystemName
+        system_name_df = silver_dim_df.groupBy("_SystemName")
+
+        # Calculate the highest _UpdateTimestamp for each group:
+        max_timestamp_df = system_name_df.agg(max("_UpdateTimestamp").alias("MaxTimestamp"))
+
+        # Alias both DataFrames
+        silver_dim_df = silver_dim_df.alias("a")
+        max_timestamp_df = max_timestamp_df.alias("b")
+
+        # Now, join this DataFrame back with the original DataFrame to get the desired rows
+        silver_dim_df = silver_dim_df.join(
+            max_timestamp_df,
+            [
+                col("a._SystemName") == col("b._SystemName"),
+                col("a._UpdateTimestamp") == col("b.MaxTimestamp")],
+                "inner") \
+            .select("a.*")
+
+        # Check the number of rows to be processed
+        rows_to_process = silver_dim_df.count()
+        if rows_to_process > 0:
+            logger.info(f"Processing {rows_to_process} rows.")
+
+            # Calculate distinct records from silver_dim_df
+            silver_dim_df_distinct = silver_dim_df.select(*p_key_fields_distinct).distinct()
+            gold_dim_df_distinct = gold_dim_df.select(*p_key_fields_distinct, 'Key').distinct()
+            silver_distinct_alias = 'silver_distinct'
+            gold_distinct_alias = 'gold_distinct'
+            silver_distinct_df = silver_dim_df_distinct.alias(silver_distinct_alias)
+            gold_distinct_df = gold_dim_df_distinct.alias(gold_distinct_alias)
+            distinct_join_condition = get_null_safe_join_condition(
+                silver_distinct_df,
+                gold_distinct_df,
+                p_key_fields_distinct
+            )
+            silver_dim_df_distinct = silver_distinct_df.join(
+                gold_distinct_df,
+                on=distinct_join_condition,
+                how='left') \
+                .select(
+                    f"{silver_distinct_alias}.*",
+                    col(f"{gold_distinct_alias}.Key").alias("Key")
+                )
+
+            # Checking the highest assigned surrogate key
+            if gold_dim_df.limit(1).count() > 0:
+                max_sk_row = gold_dim_df.agg(max("Key").alias("maxKey")).collect()[0]
+                if max_sk_row['maxKey'] is not None:
+                    max_sk = max_sk_row['maxKey']
+                else:
+                    max_sk = -1
+
+            # If max_sk is -1, start from 1, else continue from max_sk + 1
+            if max_sk == -1:
+                start_sk = 1
+            else:
+                start_sk = max_sk + 1
+
+            logger.info(f"Starting surrogate key: {start_sk}, max surrogate key: {max_sk}")
+
+            # Window specification for generating new surrogate keys
+            window_spec = Window \
+                .orderBy(*p_key_fields_distinct) \
+                .rowsBetween(Window.unboundedPreceding, Window.currentRow)
+
+            # Generate surrogate keys where needed and retain existing keys
+            silver_dim_df_distinct = silver_dim_df_distinct.withColumn(
+                'Key',
+                when(
+                    col('Key').isNull(),
+                    row_number().over(window_spec) + start_sk - 1) \
+                .otherwise(col('Key')))
+            # silver_dim_df_distinct.orderBy(col("Key").asc()).show(10)
+
+            # Join back the distinct values to the main Silver DF
+            silver_main_alias = 'silver_main'
+            keyed_distinct_alias = 'keyed_distinct'
+            silver_main_df = silver_dim_df.alias(silver_main_alias)
+            keyed_distinct_df = silver_dim_df_distinct.alias(keyed_distinct_alias)
+            main_join_condition = get_null_safe_join_condition(
+                silver_main_df,
+                keyed_distinct_df,
+                p_key_fields_distinct
+            )
+            gold_dim_df = silver_main_df.join(
+                keyed_distinct_df,
+                on=main_join_condition,
+                how='left') \
+                .select(
+                    f"{silver_main_alias}.*",
+                    col(f"{keyed_distinct_alias}.Key").alias("Key")
+                )
+
+            # validate if there are any duplicate rows in the table
+            validate_duplicate_primary_keys(
+                spark=spark,
+                table_path=p_silver_tables_path,
+                p_CDSViewName=p_CDSViewName,
+                df=gold_dim_df,
+                primary_key_columns=p_key_fields_arr,
+                logger=logger
+            )
+
+            # Create a DataFrame with a single row with Key = -1 and other columns as null
+            default_row = [(None,) * (len(gold_dim_df.schema) - 1) + (-1,)]  # None for all columns except for 'Key'
+            default_row_df = spark.createDataFrame(default_row, schema=gold_dim_df.schema)
+            gold_dim_df = gold_dim_df.union(default_row_df)
+            # gold_dim_df.orderBy(col("Key").asc()).show(10)
+
+            gold_dim_df.write.format("delta").mode("overwrite").option("mergeSchema", "true").save(gold_dim_path)
+
+            logger.info(f"Written {gold_dim_df.count()} rows.")
+
+        else:
+            logger.info("No rows to process")
+
+    except (AnalysisException, PythonException, QueryExecutionException, IllegalArgumentException, ParseException) as exp:
+        err_message = f"Dimension Processing for {p_CDSViewName} failed due to error: {exp.desc}"
+        logger.error(err_message)
+
+    except Exception as exception:
+        err_message = f"Dimension Processing for {p_CDSViewName} failed due to error: {exception}"
+        logger.error(err_message)
+
+    finally:
+        return err_message
+
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
+# MARKDOWN ********************
+
+# ##### Code to process Input Parameters and call Process Dimension Function.
+
+# CELL ********************
+
+processed_input = json.loads(p_lookup_output)
+full_error_message = ""
+logger.info("Starting Dimension TD No Delta Processing")
+
+for input in processed_input:
+    try:
+
+        p_CDSViewName = input["CDSViewName"]
+        p_key_fields = input["KeyFields"]
+
+        p_key_fields_arr = ast.literal_eval(p_key_fields)
+        p_key_fields_arr.append('_SystemName')
+
+        p_key_fields_distinct = p_key_fields_arr.copy()
+        if 'VALIDITYENDDATE' in p_key_fields_distinct:
+            p_key_fields_distinct.remove('VALIDITYENDDATE')
+
+        logger.prefix = p_CDSViewName
+        logger.info(f"Start processing for {p_CDSViewName}")
+        error_message = process_dimtd_no_delta_data(
+            p_CDSViewName,
+            p_key_fields_arr,
+            silver_lakehouse_details['tables_path'],
+            gold_lakehouse_details['tables_path'],
+            p_key_fields_distinct
+        )
+        logger.info(f"Processing completed for {p_CDSViewName}")
+
+        # if return value if not None, then it means the processing failed.
+        if error_message:
+            full_error_message += "[Failed] - " + error_message[:500] + "... | "
+
+    except Exception as exception:
+        err_message = f"[Failed] - Dimension Processing for {p_CDSViewName} failed due to error: {exception}"
+        logger.error(err_message)
+        full_error_message += err_message[:500] + "... | "
+
+    finally:
+        logger.save_logs(spark=spark)
+        if len(full_error_message) > 0:
+            exit_message = full_error_message
+
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }
+
+# CELL ********************
+
+notebookutils.notebook.exit(value = exit_message)
+
+# METADATA ********************
+
+# META {
+# META   "language": "python",
+# META   "language_group": "synapse_pyspark"
+# META }

@@ -1,0 +1,284 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.3.0/schema.json",
+  "name": "3ce787753854bbc32dd9",
+  "position": {
+    "x": 239.45578231292518,
+    "y": 113.86708529565672,
+    "z": 11000,
+    "height": 309.78545264259549,
+    "width": 1011.4076399790686,
+    "tabOrder": 7000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "GLACCOUNTLINEITEMRAWDATA"
+                    }
+                  },
+                  "Property": "ACCOUNTINGDOCUMENT"
+                }
+              },
+              "queryRef": "GLACCOUNTLINEITEMRAWDATA.ACCOUNTINGDOCUMENT",
+              "nativeQueryRef": "ACCOUNTINGDOCUMENT"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "GLACCOUNTLINEITEMRAWDATA"
+                    }
+                  },
+                  "Property": "DOCUMENTDATE"
+                }
+              },
+              "queryRef": "GLACCOUNTLINEITEMRAWDATA.DOCUMENTDATE",
+              "nativeQueryRef": "DOCUMENTDATE"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "GLACCOUNTLINEITEMRAWDATA"
+                    }
+                  },
+                  "Property": "POSTINGDATE"
+                }
+              },
+              "queryRef": "GLACCOUNTLINEITEMRAWDATA.POSTINGDATE",
+              "nativeQueryRef": "POSTINGDATE"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "GLACCOUNTLINEITEMRAWDATA"
+                    }
+                  },
+                  "Property": "CREATIONDATE"
+                }
+              },
+              "queryRef": "GLACCOUNTLINEITEMRAWDATA.CREATIONDATE",
+              "nativeQueryRef": "CREATIONDATE"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "GLACCOUNTLINEITEMRAWDATA"
+                    }
+                  },
+                  "Property": "ACCOUNTINGDOCUMENTTYPE"
+                }
+              },
+              "queryRef": "GLACCOUNTLINEITEMRAWDATA.ACCOUNTINGDOCUMENTTYPE",
+              "nativeQueryRef": "ACCOUNTINGDOCUMENTTYPE"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "9D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "grid": [
+        {
+          "properties": {
+            "outlineWeight": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            },
+            "gridHorizontal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "gridHorizontalWeight": {
+              "expr": {
+                "Literal": {
+                  "Value": "5D"
+                }
+              }
+            },
+            "gridHorizontalColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "rowPadding": {
+              "expr": {
+                "Literal": {
+                  "Value": "6D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Accounting Documents'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10.5D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "d0baeb776560ccb009b3",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "GLACCOUNTLINEITEMRAWDATA"
+              }
+            },
+            "Property": "ACCOUNTINGDOCUMENT"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "2fd21d1b91961be7b7a7",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "GLACCOUNTLINEITEMRAWDATA"
+              }
+            },
+            "Property": "DOCUMENTDATE"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "144b6384a0a3323aaeeb",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "GLACCOUNTLINEITEMRAWDATA"
+              }
+            },
+            "Property": "POSTINGDATE"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "d85ccfc0bec91d5d0a69",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "GLACCOUNTLINEITEMRAWDATA"
+              }
+            },
+            "Property": "CREATIONDATE"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "b0e26097e5e42b0366d0",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "GLACCOUNTLINEITEMRAWDATA"
+              }
+            },
+            "Property": "ACCOUNTINGDOCUMENTTYPE"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

@@ -1,0 +1,57 @@
+table _PRODUCTGROUP2TEXT
+	lineageTag: 02d34253-b5d4-4900-aeb0-0ec6a2493a53
+
+	column FIELD_PARAM_PRODUCTGROUP2TEXT
+		lineageTag: 190288e7-a31f-4c77-a214-ec0262d25ec8
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'FIELD_PARAM_PRODUCTGROUP2TEXT Order'
+
+		relatedColumnDetails
+			groupByColumn: 'FIELD_PARAM_PRODUCTGROUP2TEXT Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FIELD_PARAM_PRODUCTGROUP2TEXT Fields'
+		isHidden
+		lineageTag: 601462d5-5800-4dd7-a8b0-56d2fba3793e
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'FIELD_PARAM_PRODUCTGROUP2TEXT Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "kind": 2,
+				  "version": 3
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'FIELD_PARAM_PRODUCTGROUP2TEXT Order'
+		isHidden
+		formatString: 0
+		lineageTag: 35bec94a-adb6-4b0e-8c5c-e90bcbbfd9bd
+		summarizeBy: none
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	column _ISOLanguage = MID(_PRODUCTGROUP2TEXT[FIELD_PARAM_PRODUCTGROUP2TEXT Fields], SEARCH("[", _PRODUCTGROUP2TEXT[FIELD_PARAM_PRODUCTGROUP2TEXT Fields])+1, 2)
+		isHidden
+		lineageTag: 6d65584c-5629-45ef-8f2c-7897f3305e9a
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _PRODUCTGROUP2TEXT = calculated
+		mode: import
+		source =
+				{
+				    ("Product Group 2", NAMEOF('PRODUCTGROUP2TEXT'[DE]), 0),
+				    ("Product Group 2", NAMEOF('PRODUCTGROUP2TEXT'[EN]), 1),
+				    ("Product Group 2", NAMEOF('PRODUCTGROUP2TEXT'[ES]), 2),
+				    ("Product Group 2", NAMEOF('PRODUCTGROUP2TEXT'[FR]), 3)
+				}
+
+	annotation PBI_Id = 276fbb4e9683487a93bf9d755fffff5b
+
